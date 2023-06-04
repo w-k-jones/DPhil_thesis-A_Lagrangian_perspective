@@ -1,16 +1,41 @@
 \documentclass[12pt]{ociamthesis}  % default square logo 
 %\documentclass[12pt,beltcrest]{ociamthesis} % use old belt crest logo
 %\documentclass[12pt,shieldcrest]{ociamthesis} % use older shield crest logo
-
 %load any additional packages
-\usepackage{amssymb}
+
+\RequirePackage{array}
+\RequirePackage{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\RequirePackage{color}
+\RequirePackage{amssymb}
+\RequirePackage[intlimits,fleqn,tbtags]{amsmath}
+\RequirePackage{url}\urlstyle{same}
+\RequirePackage{accents}
+\usepackage[authoryear, square]{natbib}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{cancel}
+\usepackage{multirow}
+\usepackage{supertabular}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{amsthm}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{rotating}
+
+\DeclareRobustCommand*\unit[1]
+ {\ensuremath{%
+   {\thinmuskip3mu\relax
+    \def\mu{\text{\textmu}}\def~{\,}%
+    \ifx\f@series\testbx\mathbf{#1}\else\mathrm{#1}\fi}}}
 
 %input macros (i.e. write your own macros file called mymacros.tex 
 %and uncomment the next line)
 %\include{mymacros}
 
 \title{Deep Covective Cloud Lifecycle\\[1ex]     %your thesis title,
-    from a Geostationary Perspective}   %note \\[1ex] is a line break in the title
+from a Geostationary Perspective}   %note \\[1ex] is a line break in the title
 
 \author{William Kenneth Jones}             %your name
 \college{Wolfson College}  %your college
@@ -42,9 +67,12 @@
 \end{romanpages}            % end roman page numbering
 
 %now include the files of latex for each of the chapters etc
-\include{chapter1}
-\include{chapter2}
-\include{conclusions}
+\include{introduction}
+\include{background}
+\include{chapters/tracking_method}
+\include{chapters/lifecycle}
+\include{chapters/radiative_effect}
+\include{conclusion}
 
 %now enable appendix numbering format and include any appendices
 \appendix
@@ -55,7 +83,9 @@
 \addcontentsline{toc}{chapter}{Bibliography}
 %uncomment next line to change bibliography name to references
 %\renewcommand{\bibname}{References}
+% \bibliographystyle{natbib.sty}
 \bibliography{refs}        %use a bibtex bibliography file refs.bib
-\bibliographystyle{plain}  %use the plain bibliography style
+\bibliographystyle{apalike}  %use the plain bibliography style
+
 
 \end{document}

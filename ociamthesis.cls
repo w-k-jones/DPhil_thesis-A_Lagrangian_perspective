@@ -251,3 +251,26 @@
 \newenvironment{romanpages}
 {\cleardoublepage\setcounter{page}{1}\renewcommand{\thepage}{\roman{page}}}
 {\cleardoublepage\renewcommand{\thepage}{\arabic{page}}\setcounter{page}{1}}
+
+\newcommand\tophline{\hline\noalign{\vspace{1mm}}}
+\newcommand\middlehline{\noalign{\vspace{1mm}}\hline\noalign{\vspace{1mm}}}
+\newcommand\bottomhline{\noalign{\vspace{1mm}}\hline}
+\newcommand\hhline{\noalign{\vspace{1mm}}\hline\noalign{\vspace{1mm}}}
+\newdimen\tabularwidth
+\def\@tabular{%
+  \leavevmode
+  \setbox\z@
+  \hbox \bgroup $\col@sep\tabcolsep \let\d@llarbegin\begingroup
+                                    \let\d@llarend\endgroup
+  \@tabarray}
+\def\endtabular{\endarray $\egroup
+  \global\tabularwidth\wd\z@
+  \unhbox\z@}
+\expandafter\let\csname endtabular*\endcsname=\endtabular
+\DeclareRobustCommand\belowtable[1]{%
+  \par\vspace{1ex}%
+  {\if@stage@final\else\def\@tempa{table}\ifx\@captype\@tempa\else\centering\fi\fi
+   \ifdim\tabularwidth<10mm\tabularwidth\hsize\fi
+   \leavevmode\vrule\@width\z@\@height2ex\@depth\z@
+   \parbox{\tabularwidth}{\raggedright\scriptsize#1}%
+   \if@stage@final\else\par\fi}}
