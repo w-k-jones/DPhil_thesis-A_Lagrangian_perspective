@@ -28,18 +28,6 @@
     \label{fig:compare_sat_radar_glm}
 \end{figure*}
 
-
-Deep convective clouds (DCCs) are dynamical atmospheric phenomena resulting from instability in the troposphere.
-DCCs consist of a vertically growing core with a diameter of ~10~\unit{km} and updraught velocities of around 10~\unit{ms\textsuperscript{-1}} \citep{weisman_mesoscale_2015}, and a surrounding anvil cloud formed due to horizontal divergence of cloud droplets lifted to the level of neutral buoyancy \citep{houze_chapter_2014}.
-The lifecycle of DCCs can be separated into three sections: a growing phase, where the core develops vertically; a mature phase in which the anvil cloud develops horizontally while convection continues within the core, and a dissipating phase in which the anvil cloud dissipates after convective activity ceases within the core \citep{wall_life_2018}.
-For isolated DCCs -- consisting of a single core -- the overall lifecycle typically spans 1-3~hours \citep{chen_diurnal_1997}.
-However, DCCs may also form with multiple cores feeding a single anvil cloud \citep{roca_simple_2017}, and in these cases may span areas several orders of magnitude larger \citep{houze_mesoscale_2004}, and exist for 10-20~hours or longer \citep{chen_diurnal_1997}.
-
-DCCs are strongly linked with extreme weather events, including heavy precipitation, lightning and hail \citep{westra_future_2014, houze_chapter_2014, williams_radar_1992, bruning_theory_2013, punge_hail_2016, matsudo_severe_2011}. 
-DCCs are also strongly linked to global climate circulation and the global energy budget \citep{houze_mesoscale_2004, fritsch_mesoscale_2001, johnson_mesoscale_2001}.
-Furthermore, the frequency and intensity of DCCs and their associated precipitation are expected to increase with global warming, a prediction that is supported by both global climate model \citep{allen_constraints_2002, trenberth_changing_2003, held_robust_2006, muller_energetic_2011, ogorman_energetic_2012, ogorman_precipitation_2015} and observational evidence \citep{tan_increases_2015, berg_strong_2013, aumann_increased_2018, houze_extreme_2019}.
-Improving our understanding of the behaviour of DCCs and their interactions with the wider environment is vital for predicting the impacts of future climate change \citep{westra_future_2014}.
-
 Sequences of images from satellite instruments have been used to detect and track the motion of deep convective clouds and tropical storms since the earliest geostationary weather satellites \citep{menzel_cloud_2001}.
 Whereas early detection and tracking were performed by hand, numerous algorithms have been developed for the purpose of performing this task automatically, and are widely used for both forecasting and research purposes \citep[e.g.][]{mecikalski_use_2011, senf_characterization_2015, senf_satellite-based_2017, feng_life_2012, feng_spatiotemporal_2019, zinner_cb-tram:_2008}.
 There is a continual effort both to improve existing algorithms and develop new methods to support these activities.
@@ -156,11 +144,11 @@ Secondarily, observations from the NEXRAD weather radar network and the geostati
 
 
 The Advanced Baseline Imager (ABI) is a visible and IR radiometer aboard the Geostationary Operational Environmental Satellite (GOES)-16 series of weather satellites \citep{schmit_closer_2016}.
-GOES-16, also known as GOES-East, is situated in a geostationary orbit at 75.2°W above the equator, providing a field of view (or "Earth-disc") covering most of the western hemisphere, including all of South America and most of North America.
+GOES-16, also known as GOES-East, is situated in a geostationary orbit at 75.2°W above the equator, providing a field of view (or `Earth-disc') covering most of the western hemisphere, including all of South America and most of North America.
 ABI has 16 channels operating in a range of spectral bands in the visible, Near-IR and thermal-IR.
 The majority of these channels have a resolution of 2 \unit{km} at the sub-satellite point, although this reduces to approximately 3 \unit{km} across most of the continental United States due to the satellite viewing angle.
 ABI operates in a flexible scan mode, imaging the continental US (CONUS) once every 5 minutes, the full disc every 10 minutes (15 minutes prior to April 2019), and two mesoscale regions of approximately 2500 by 2500 \unit{km} every minute.
-Additionally, it is capable of scanning the full-disc every five minutes if no other scans are performed.
+Additionally, it is capable of scanning the full disc every five minutes if no other scans are performed.
 This combination of high spatial and temporal resolution makes ABI suitable for detecting and tracking small and developing DCCs, as well as providing the spatial coverage to also track large mesoscale convective systems \citep{heikenfeld_tobac_2019}.
 
 Compared to older geostationary instruments, ABI has higher spatial and temporal resolution, more channels in both the LW IR window spectrum and the LW IR water vapour (WV) spectrum, and low noise (table \ref{table:abi_comparison}) \citep{iacovazzi_goes-16_2020}.
@@ -168,7 +156,7 @@ This, combined with many of the channels being derived from those aboard the Vis
 A number of artifacts are known to occur in ABI imagery \citep{gunshor_goes-r_2020}.
 Although the majority of these artifacts are removed using the data quality flag associated with the ABI data, we have found a number of cases in which bad detector stripes (described in section 3.2 of \citet{gunshor_goes-r_2020}) are not flagged in the data, and so detection and tracking of DCCs has not been performed during the time periods these artifacts occurred.
 
-In this paper we have used the ABI level 2 multi-channel cloud and moisture imagery product (MCMIP) which provides calibrated reflectances and brightness temperatures for all ABI channels on a common grid \citep{schmit_chapter_2020}, using the 5 minute frequency imagery provided over the CONUS region.
+In this chapter, we have used the ABI level 2 multi-channel cloud and moisture imagery product (MCMIP) which provides calibrated reflectances and brightness temperatures for all ABI channels on a common grid \citep{schmit_chapter_2020}, using the 5-minute frequency imagery provided over the CONUS region.
 The case study shown in the figures throughout this paper is for a subset of the CONUS scan region centred at 83.7\textdegree~W, 29.2\textdegree~N, over the time period of 18:00:00 to midnight UTC on the 19th June 2018.
 Validation was performed on a subset of the CONUS scan region from 114 to 76\textdegree~W and 24 to 45\textdegree~N over the entirety of 2018.
 All data has been sourced through the National Oceanic and Atmospheric Administration Big Data Program.
@@ -195,7 +183,7 @@ Noise equivalent temperature    & 0.1K @ 300~K  & 0.25 @ 300~K & 0.09~K @ 300~K 
 
 \subsubsection{Selection of ABI Channels and Channel Combinations}
 
-In order to have equal performance during both day and nighttime, a selection of longwave IR ABI channels are used for the detection and tracking of DCCs (see fig. \ref{fig:abi_channels}). 
+In order to have an equal performance during both day and nighttime, a selection of longwave IR ABI channels are used for the detection and tracking of DCCs (see fig. \ref{fig:abi_channels}). 
 These channels consist of the long wave LW clean and dirty window channels at 10.8 \unit{\mu m} and 12.3 \unit{\mu m} respectively, and the upper and lower troposphere water vapour channels at 6.2 \unit{\mu m} and 7.3 \unit{\mu m} respectively.
 Whereas the LW window IR brightness temperature is commonly used for the detection of DCCs using threshold-based methods, we have decided not to use it for this purpose in this method due to the wide range of brightness temperatures observed within anvil clouds, and the variance of anvil cloud temperature because of changes in tropopause temperature due to meteorology and latitude.
 However, the information contained within this field is used to for the optical flow calculation of the cloud motion field.
@@ -204,17 +192,17 @@ Two additional combinations of channels are used to detect areas of deep convect
 The water vapour difference (WVD) combination (fig. \ref{fig:abi_channels}b) of the upper troposphere WV channel minus the lower troposphere WV channel has been shown to provide a high detection rate for deep convective clouds \citep{muller_role_2018, muller_novel_2019}.
 In clear sky or low cloud conditions, WVD shows the temperature difference between the upper and lower troposphere of generally around -20 K. 
 However, in the presence of high, thick clouds the 6.2 \unit{\mu m} has an additional contribution from stratospheric water vapour resulting in a warmer, and in extreme cases positive WVD value \citep{schmetz_monitoring_1997}.
-Because both the WV channels are strongly absorbed by water vapour in the lower troposphere, the WVD field is not affected by surface and low altitude features and provides clear distinction between thick, high cloud and the background across a wide range of situations.
+Because both the WV channels are strongly absorbed by water vapour in the lower troposphere, the WVD field is not affected by surface and low altitude features and so provides a clear distinction between thick, high clouds and the background across a wide range of situations.
 \citet{muller_novel_2019} found that a threshold of -5~\textdegree C gave a high detection rate of anvil clouds.
 Furthermore, as the WVD values are relative to the lower stratosphere temperatures, this field is much less affected by location and meteorology than the LW IR channels.
-However, the WVD is still prone to the false detections of non-convective clouds when using a thresholding method as it cannot directly distinguish between thick, high-altitude cloud that are associated with deep convection and those that are not.
+However, the WVD is still prone to the false detections of non-convective clouds when using a thresholding method as it cannot directly distinguish between thick, high-altitude clouds that are associated with deep convection and those that are not.
 
 The Split Window Difference (SWD), consisting of the clean IR window channel minus the dirty IR window channel (fig. \ref{fig:abi_channels}c), aids in the detection and separation of optically thin anvil cloud (including cirrus outflow) from optically thick anvil due to the difference in ice particle emissivity between these two channels \citep{heidinger_gazing_2009}.
 As a result, this combination displays warm temperatures of around 10~\unit{K} for thin, ice clouds, near 0~\unit{K} for thick clouds, and approximately 5~\unit{K} for clear skies due to the contribution of boundary layer water vapour.
-The SWD is, however, also sensitive to low level clouds and low level water vapour concentrations, and so cannot be used alone to detect DCCs.
+The SWD is, however, also sensitive to low-level clouds and low-level water vapour concentrations, and so cannot be used alone to detect DCCs.
 It remains important to consider the SWD field due to the difficulty in separating anvil clouds from cirrus when using LW IR BT alone \citep{hong_detection_2005}. 
 By subtracting the SWD from the WVD field, we can reduce the sensitivity of our detection scheme to cirrus clouds, reducing the rate of erroneous detections.
-Further, adding the SWD field to WVD field can enhance the appearance of cirrus, enabling the detection of thin ice cloud associated with cirrus outflow and dissipating anvils.
+Further, adding the SWD field to the WVD field can enhance the appearance of cirrus, enabling the detection of thin ice clouds associated with cirrus outflow and dissipating anvils.
 
 
 \subsection{Geostationary Lightning Mapper}
@@ -225,7 +213,7 @@ GLM has the same field of view as the ABI instrument, albeit with a lower spatia
 
 As lightning observations are strongly correlated with DCCs, data from GLM is used to validate the detection of DCCs using ABI.
 The level 2 GLM Lightning Cluster-Filter Algorithm product provides a dataset of events, groups and flashes processed from the GLM data \citep{peterson_research_2019}, and filters artifacts from the level 1 GLM data \citep{peterson_removing_2020}.
-From this dataset we extract detected flashes as evidence of DCC occurence.
+From this dataset, we extract detected flashes as evidence of DCC occurrence.
 These locations are then processed by mapping their frequency onto the ABI grid for validation of the algorithm.
 
 \section{Method}
@@ -258,7 +246,7 @@ However, although AMVs may provide useful information about the motion of DCCs, 
 
 Optical flow algorithms are a family of algorithms used to estimate the apparent motion of objects observed in a series of images \citep{aggarwal_computation_1988}. 
 A wide range of optical flow algorithms exist, and these have been successfully applied to many computer vision applications. 
-It should be noted that optical flow does not necessarily represent the physical motion of an object, and is instead an estimation of the relative motion between an object and the observer and additionally any change in the apparent object (including growing, shrinking or other warping of the object). 
+It should be noted that optical flow does not necessarily represent the physical motion of an object, but is instead an estimation of the relative motion between an object and the observer and additionally any change in the apparent object (including growing, shrinking or other warping of the object). 
 
 Optical flow algorithms have been previously shown to be accurate for the prediction of AMVs using geostationary satellite images \citep{wu_deriving_2016}, as long as the observations are sufficiently frequent such that the motion of unique features between images is less than the length scale at which neighbouring features can be resolved \citep{bresky_feasibility_2006}.
 \citet{heikenfeld_tobac_2019} found that at imaging frequencies of less than 5~minutes the motion of DCC cores was less than the spacing between neighbouring cores in the majority of cases, indicating that the frequency of the ABI CONUS scan region is suitable for calculating optical flow vectors of DCCs.
@@ -275,9 +263,9 @@ This calculation is performed by finding the minimum cross-correlation over incr
 This iterative approach allows flow vectors to be calculated to sub-pixel accuracy.
 In this framework, we have used the implementation of the Farnebäck algorithm from the OpenCV image processing package \citep{opencv_library}.
 Although other optical flow algorithms may provide better accuracy in different circumstances \citep{baker_database_2011}, we have found that the ability of the Farnebäck algorithm to accept a range of parameters is important for detecting the motion of clouds across a wide range of scales.
-The choice of parameters used is a compromise between the ability to robustly detect flow vectors in areas of the image with low contrast between features (e.g. in the centre of anvil clouds), versus the fidelity of the motion vectors detected for small, high contrast features such as developing cores.
+The choice of parameters used is a compromise between the ability to robustly detect flow vectors in areas of the image with low contrast between features (e.g. in the centre of anvil clouds), versus the fidelity of the motion vectors detected for small, high-contrast features such as developing cores.
 Table \ref{table:parameters} shows the parameters chosen for the Farnebäck algorithm for ABI imagery in the CONUS scan region, which has a temporal resolution of 5~minutes and the spatial resolution of 2~km.
-The values used for the window size parameter is scale dependent, proportional to the time between subsequent images and inversely proportional the spatial resolution.
+The values used for the window size parameter are scale dependent, proportional to the time between subsequent images and inversely proportional to the spatial resolution.
 %t
 \begin{table}[t]
 \caption{}
@@ -309,9 +297,9 @@ We find that in the majority of cases that the relative uncertainty in the magni
 Two potential sources of uncertainty are the assumptions made by the Farnebäck algorithm that the feature being tracked remains the same size and intensity in subsequent images.
 For optical flow tracking using brightness temperature images of growing DCCs, neither of these assumptions are true.
 However, we have taken steps to reduce the impact of both these sources of uncertainty on the tracking algorithm.
-For the first of these assumptions, we find that in the case of small, fast moving DCCs -- where the accuracy of the optical flow vectors is most important -- the changes in size of the DCC is small compared to the overall motion, and so the uncertainty introduced is small.
+For the first of these assumptions, we find that in the case of small, fast-moving DCCs -- where the accuracy of the optical flow vectors is most important -- the changes in size of the DCC is small compared to the overall motion, and so the uncertainty introduced is small.
 Comparably, for large DCCs where the changes in size may be large compared to the motion, the uncertainty introduces has less impact on the tracking algorithm.
-In the worst case scenario the estimated optical flow field will be zero, in which case the "3D" detection and tracking algorithm works in the same manner as that of \citet{fiolleau_algorithm_2013}, which is suitable for use on these larger DCCs.
+In the worst-case scenario, the estimated optical flow field will be zero, in which case the "3D" detection and tracking algorithm works in the same manner as that of \citet{fiolleau_algorithm_2013}, which is suitable for use on these larger DCCs.
 To reduce uncertainty caused by the second assumption we normalise the range of brightness temperatures between subsequent images when estimating optical flow to reduce the change in brightness temperature observed for growing DCCs.
 
 \subsection{A Semi-Lagrangian Framework for Morphological Image Processing}
@@ -354,7 +342,7 @@ Edge detection enables the segmentation of an image into separate regions withou
 Watershed algorithms are a method of image segmentation that equate an image to a topographical map, with elevation according to the value of the pixel.
 Each pixel is then descended towards its local minima until it reaches a predefined marker region.
 The method takes its name from the geographical feature of the same name, which refers to the separation between adjacent drainage basins.
-Although this physical interpretation of the algorithm applies to two dimensional images, the method can be applied to arrays with any number of dimensions, such as the method used by \citet{fiolleau_algorithm_2013} which applied watershedding to a three dimensional field.
+Although this physical interpretation of the algorithm applies to two-dimensional images, the method can be applied to arrays with any number of dimensions, such as the method used by \citet{fiolleau_algorithm_2013} which applied watershedding to a three-dimensional field.
 
 Labelling algorithms assign unique identifiers to each segmented region provided by either the edge detection or watershed algorithms.
 
@@ -368,11 +356,11 @@ Labelling algorithms assign unique identifiers to each segmented region provided
 \end{figure*}
 
 Growing deep convective cores are detected in a similar manner to that used by \citet{zinner_cb-tram:_2008}.
-We have found that the WVD field provides the best observations for detecting growing deep convective cores as the field isolates growth in the mid troposphere, removing spurious observations of growth due to boundary layer convection and cloud formation.
+We have found that the WVD field provides the best observations for detecting growing deep convective cores as the field isolates growth in the mid-troposphere, removing spurious observations of growth due to boundary layer convection and cloud formation.
 The growth is calculated using the finite difference of the WVD field in the Lagrangian perspective.
 
-We classify a region of growing deep convection as a region of continuous warming of the WVD field of at least 0.5 \unit{K} per minute over a 15 minute period, covering an area of at least 3 by 3 pixels (approximately 9 by 9 km) at each time step.
-This threshold for cloud top growth is based on previous studies which have found a cooling of 8\unit{K} over a 15 minute period to be a good predictor of intense convection \citep{roberts_nowcasting_2003, hartung_intercomparison_2013}.
+We classify a region of growing deep convection as a region of continuous warming of the WVD field of at least 0.5 \unit{K} per minute over a 15-minute period, covering an area of at least 3 by 3 pixels (approximately 9 by 9 km) at each time step.
+This threshold for cloud top growth is based on previous studies which have found a cooling of 8\unit{K} over a 15-minute period to be a good predictor of intense convection \citep{roberts_nowcasting_2003, hartung_intercomparison_2013}.
 The region of growing cloud is then expanded through the use of a watershed operation to fill surrounding areas of the cloud field with a detected growth rate greater than 0.25 \unit{K} per minute to detect weaker areas of updraft within the growing cores.
 Finally, each region of detected growth is labelled, and each label checked to ensure that the growth region ends with a WVD field with a value of greater than -5, indicating the formation of an anvil cloud \citep{muller_role_2018}.
 
@@ -385,7 +373,7 @@ However, during the mature stage of the DCC, discrepancies develop between the o
 %f
 \begin{figure*}[t]
     \includegraphics[width=12cm]{figure07.pdf}
-    \caption{Detection of anvil cloud extent for the mature DCC cluster in \ref{fig:compare_sat_radar_glm} using the edge gradient method. a.: The combined field of the WVD minus the SWD, to isolate the thick anvil, between the upper and lower thresholds of -5 and -15\unit{K} respectively. b.: the detected edge gradient magnitude of the field between these thresholds, which is used to detect the outer extend of the thick anvil cloud. c.: the combined field of WVD plus the SWD, to enhance the thin anvil, and d.: the calculated edge magnitude of this field.}
+    \caption{Detection of anvil cloud extent for the mature DCC cluster in \ref{fig:compare_sat_radar_glm} using the edge gradient method. a.: The combined field of the WVD minus the SWD, to isolate the thick anvil, between the upper and lower thresholds of -5 and -15\unit{K} respectively. b.: the detected edge gradient magnitude of the field between these thresholds, which is used to detect the outer extent of the thick anvil cloud. c.: the combined field of WVD plus the SWD, to enhance the thin anvil, and d.: the calculated edge magnitude of this field.}
     \label{fig:edge_detection}
 \end{figure*}
 
@@ -396,19 +384,19 @@ However, during the mature stage of the DCC, discrepancies develop between the o
     \label{fig:detected_anvils}
 \end{figure}
 
-The region of anvil cloud associated with the growing convective clouds detected in the previous section is detected and tracked using an edge-base watershed segmentation approach.
+The region of anvil cloud associated with the growing convective clouds detected in the previous section is detected and tracked using an edge-based watershed segmentation approach.
 The edge-based approach to cloud detection avoids the use of a fixed threshold for anvil temperature, and so can detect a more accurate extent of the anvil cloud \citep{dim_alternative_2013}.
 We define an upper threshold for the WVD field of -5~\unit{K}, as used by \citet{muller_role_2018}, and a lower threshold of -15~\unit{K}, which we define as definite non-anvil cloud.
 Because the presence of thin cirrus outflow from the anvil clouds can make it difficult to determine the extent of the anvil cloud, we use the SWD field as described in section 2.1 to either remove or include the region of cirrus outflow in the detected anvil region.
 To detect the thick anvil cloud, we subtract the SWD field (fig. \ref{fig:edge_detection}a).
-In this case, the upper and lower threshold remain the same as the SWD field is approximately 0~K for thick, high clouds, and so has no effect on the temperature of these features.
+In this case, the upper and lower thresholds remain the same as the SWD field is approximately 0~K for thick, high clouds, and so has no effect on the temperature of these features.
 For detecting the thin anvil region, we add the SWD field and increase the value of both thresholds by 5~K to 0~K and -10~K respectively (fig. \ref{fig:edge_detection}c).
-This change is made to account for the effect of low level water vapour on the SWD field which gives a background value of approximately 5~K.
+This change is made to account for the effect of low-level water vapour on the SWD field which gives a background value of approximately 5~K.
 Between these two thresholds, we have a region in which we are uncertain of the extent of the anvil cloud.
 By applying a Sobel filter to detect the local gradient magnitude of the combined WVD/SWD field \citep{sobel_isotropic_2014}, we detect the outer extent of the anvil cloud within this region where we see the greatest magnitude in the detected edges (see fig. \ref{fig:edge_detection}b,d).
 %(fig. \ref{fig:edge_detection}b).
 
-When applied to the detected edges of the anvil clouds using the sobel filter, with the growth regions detected previously as markers, the watershed method allows us to detect those anvil regions associated with detected regions of growing DCCs, while avoiding the detection of non-convective regions of high, cold cloud.
+When applied to the detected edges of the anvil clouds using the Sobel filter, with the growth regions detected previously as markers, the watershed method allows us to detect those anvil regions associated with detected regions of growing DCCs, while avoiding the detection of non-convective regions of high, cold clouds.
 Furthermore, due to the application of the watershed algorithm to both the spatial and temporal dimensions of the sequence of images through the semi-Lagrangian framework, we are able to detect the associated anvil clouds after the growth of the DCC is no longer observed (see fig. \ref{fig:detected_anvils}).
 
 Figure \ref{fig:detected_anvils} shows an example of the results of detecting and tracking DCC cores and their associated anvils.
@@ -485,7 +473,7 @@ When considering that the resolution of GLM is a factor of four less than that o
 
 Validation was performed using GOES-16 ABI data from the CONUS scan region for the entirety of 2018, which was processed using the method described in this article.
 In total validation was performed for 290 days of ABI data, the remaining 75 days being excluded due to missing observations from either the ABI or GLM instruments aboard GOES-16, or artifacts present in the ABI data.
-Detection and tracking of DCCs was performed on a subset of the CONUS scan region for each 25 hour period consisting of the array locations of 500-1750 in the x dimension and 250-1000 in the y dimension, corresponding to a bounding box of 113.6~\degree W to 76.2~\degree W and 24.5~\degree N to 44.2~\degree N respectively.
+Detection and tracking of DCCs was performed on a subset of the CONUS scan region for each 24-hour period consisting of the array locations of 500-1750 in the x dimension and 250-1000 in the y dimension, corresponding to a bounding box of 113.6~\degree W to 76.2~\degree W and 24.5~\degree N to 44.2~\degree N respectively.
 By performing validation over both a large region, including a range of both land and ocean domains, and a full year time period, we aim to avoid any bias in the validation associated with the variability of the accuracy of the method with location and season.
 
 %t
