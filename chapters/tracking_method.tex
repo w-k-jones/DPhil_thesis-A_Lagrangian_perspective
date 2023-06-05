@@ -23,7 +23,7 @@
 
 %f
 \begin{figure*}[t]
-    \includegraphics[width=12cm]{figure01.pdf}
+    \includegraphics[width=\columnwidth]{figures/chapter1_01.png}
     \caption{Observations of a cluster of deep convective clouds over North-West Florida throughout three stages of their lifecycle. This cluster of DCCs occurred on the afternoon of 19\textsuperscript{th} June 2018. The "growing" column was observed at 17:00 UTC, the "mature" column at 19:00 UTC, and the dissipating column at 21:00 UTC. Note that, unless otherwise specified, this case study is used for all subsequent figures in this article.}
     \label{fig:compare_sat_radar_glm}
 \end{figure*}
@@ -60,7 +60,7 @@ There exists a significant difference between the diurnal cycles of deep convect
 
 %f
 \begin{figure}[t]
-    \includegraphics[width=7cm]{figure02.pdf}
+    \includegraphics[width=\columnwidth]{figures/chapter1_02.png}
     \caption{Cross sections of the DCC observed in figure \ref{fig:compare_sat_radar_glm} as they develop over time. a.: The location of the cross-section within the observed DCC. The mean of values is taken in the North-South axis. b.: ABI 10.8 \unit{\mu m} brightness temperature, showing rapid cooling for the first 30 minutes, followed by an expanding region of anvil cloud that begins to thin and warm after 2-3 hours. c.: Column mean radar reflectivity, showing the presence and location of the convective core. Initiation occurred at 82.0°W 28.5°N at a time of 17:00 UTC.}
     \label{fig:dcc_over_time}
 \end{figure}
@@ -135,7 +135,7 @@ Secondarily, observations from the NEXRAD weather radar network and the geostati
 
 %f
 \begin{figure}[t]
-    \includegraphics[width=8cm]{figure03.pdf}
+    \includegraphics[width=\columnwidth]{figures/chapter1_03.png}
     \caption{ABI channels and channel differences used with the detection and tracking algorithm. a.: The 10.8 \unit{\mu m} brightness temperature, or clean longwave window channel, which can differentiate clouds at all altitudes by their brightness temperature. b.: the water vapour difference (WVD) combination, of the 6.2 \unit{\mu m} upper troposphere water vapour channel minus the 7.3 \unit{\mu m} lower troposphere water vapour channel, which is strongly negative for clear sky and low cloud, but approaches positive values for thick, high clouds. c.: the split window difference (SWD) combination of the 10.8 \unit{\mu m} clean longwave window channel minus the 12.3 \unit{\mu m} dirty longwave window channel, which is near zero for thick clouds, around 5 \unit{K} for clear skies and approximately 10 \unit{K} for thin, ice clouds.}
     \label{fig:abi_channels}
 \end{figure}
@@ -234,7 +234,7 @@ We present here a novel method for detecting and tracking both the growing cores
 
 %f
 \begin{figure*}[t]
-    \includegraphics[width=12cm]{figure04.pdf}
+    \includegraphics[width=\columnwidth]{figures/chapter1_14.png}
     \caption{Cloud motion field for the DCC observed in figure \ref{fig:compare_sat_radar_glm} calculated using optical flow over a 30 minute period. a.: The initial image and b.: the final image. c.: The calculated optical flow vector field, with the detected motion displayed by the red arrows and the velocity of the vectors by the background. Optical flow vectors are estimated across the entire domain, but are here only visible for the region of high anvil cloud. d.: the relative uncertainty distribution of calculated optical flow vectors}
     \label{fig:optical_flow}
 \end{figure*}
@@ -315,7 +315,7 @@ As a result, it is important to include the effects of advection when comparing 
 
 %f
 \begin{figure}[t]
-    \includegraphics[width=8.3cm]{figure05.pdf}
+    \includegraphics[width=\columnwidth]{figures/chapter1_15.png}
     \caption{A comparison of convolution stencils with square connectivity in Eulerian (a) and Lagrangian (b) frameworks. In the Lagrangian framework, the points at prior and subsequent time steps are offset by the calculated optical flow field.}
     \label{fig:convolution_kernels}
 \end{figure}
@@ -350,7 +350,7 @@ Labelling algorithms assign unique identifiers to each segmented region provided
 
 %f
 \begin{figure*}[t]
-    \includegraphics[width=12cm]{figure06.pdf}
+    \includegraphics[width=\columnwidth]{figures/chapter1_16.png}
     \caption{Detection of growing deep convective cloud regions for the DCC cluster in figure \ref{fig:compare_sat_radar_glm}. 15 minute average cooling rate in the GOES-16 ABI water vapour difference field is used to detect growing cores. This is effective in the growing phases of convection (a.), but becomes less effective during the mature phase (b.). Comparison with NEXRAD column mean radar reflectivity remapped to the ABI grid(c., d.). An average cooling rate of greater than 0.5 \unit{K min\textsuperscript{-1}} is indicative of a growing convective core.}
     \label{fig:core_detection}
 \end{figure*}
@@ -372,14 +372,14 @@ However, during the mature stage of the DCC, discrepancies develop between the o
 
 %f
 \begin{figure*}[t]
-    \includegraphics[width=12cm]{figure07.pdf}
+    \includegraphics[width=\columnwidth]{figures/chapter1_17.png}
     \caption{Detection of anvil cloud extent for the mature DCC cluster in \ref{fig:compare_sat_radar_glm} using the edge gradient method. a.: The combined field of the WVD minus the SWD, to isolate the thick anvil, between the upper and lower thresholds of -5 and -15\unit{K} respectively. b.: the detected edge gradient magnitude of the field between these thresholds, which is used to detect the outer extent of the thick anvil cloud. c.: the combined field of WVD plus the SWD, to enhance the thin anvil, and d.: the calculated edge magnitude of this field.}
     \label{fig:edge_detection}
 \end{figure*}
 
 %f
 \begin{figure}[t]
-    \includegraphics[width=8.3cm]{figure08.pdf}
+    \includegraphics[width=0.8\columnwidth]{figures/chapter1_18.png}
     \caption{Detected regions of thin anvil cloud (blue), thick anvil cloud (orange), and developing cores (red) overlaid on the GOES-16 ABI 10.8 \unit{\mu m} brightness temperature field for the DCC cluster from figure \ref{fig:compare_sat_radar_glm}. The three stages of the DCC lifecycle are shown; the growth phase (a.), the mature phase (b.), and the dissipating phase (c.). Note that the anvil region continues to be detected in c. after growing cores are no longer detected.}
     \label{fig:detected_anvils}
 \end{figure}
