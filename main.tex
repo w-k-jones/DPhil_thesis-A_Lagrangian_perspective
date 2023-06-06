@@ -2,6 +2,7 @@
 %\documentclass[12pt,beltcrest]{ociamthesis} % use old belt crest logo
 %\documentclass[12pt,shieldcrest]{ociamthesis} % use older shield crest logo
 %load any additional packages
+% \usepackage[doublespacing]{setspace}
 
 \RequirePackage{array}
 \RequirePackage{graphicx}
@@ -24,6 +25,10 @@
 \usepackage{subfig}
 \usepackage{rotating}
 \usepackage{siunitx}
+\usepackage[hidelinks]{hyperref}
+\usepackage[acronym]{glossaries}
+\makeglossaries
+\input{acronyms}
 
 \DeclareRobustCommand*\unit[1]
  {\ensuremath{%
@@ -35,7 +40,7 @@
 %and uncomment the next line)
 %\include{mymacros}
 
-\title{Deep Covective Cloud Lifecycle\\[1ex]     %your thesis title,
+\title{Deep Convective Cloud Lifecycle\\[1ex]     %your thesis title,
 from a Geostationary Perspective}   %note \\[1ex] is a line break in the title
 
 \author{William Kenneth Jones}             %your name
@@ -47,6 +52,7 @@ from a Geostationary Perspective}   %note \\[1ex] is a line break in the title
 
 %end the preamble and start the document
 \begin{document}
+\pagenumbering{gobble} % Suppress page numbering for frontmatter
 
 %this baselineskip gives sufficient line spacing for an examiner to easily
 %markup the thesis with comments
@@ -58,32 +64,48 @@ from a Geostationary Perspective}   %note \\[1ex] is a line break in the title
 
 
 \maketitle                  % create a title page from the preamble info
-\include{dedication}        % include a dedication.tex file
-\include{acknowlegements}   % include an acknowledgements.tex file
-\include{abstract}          % include the abstract
+% \include{dedication}        % include a dedication.tex file
+% \include{acknowlegements}   % include an acknowledgements.tex file
+% \include{abstract}          % include the abstract
 
 \begin{romanpages}          % start roman page numbering
+
 \tableofcontents            % generate and include a table of contents
+
+\addcontentsline{toc}{chapter}{List of Figures}
 \listoffigures              % generate and include a list of figures
+
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+
+\addcontentsline{toc}{chapter}{List of Acronyms}
+\clearpage
+\printglossary[type=\acronymtype, title={List of Acronyms}, nogroupskip]
+
 \end{romanpages}            % end roman page numbering
+\pagenumbering{arabic}      % turn on arabic numbering
+
+
 
 %now include the files of latex for each of the chapters etc
-\include{introduction}
+% \baselineskip=24pt plus1pt % double line spacing
+% \include{introduction}
 \include{chapters/tracking_method}
-\include{chapters/lifecycle}
-\include{chapters/radiative_effect}
-\include{conclusion}
+% \include{chapters/lifecycle}
+% \include{chapters/radiative_effect}
+% \include{conclusion}
 
 %now enable appendix numbering format and include any appendices
-\appendix
-\include{appendix1}
-\include{appendix2}
+% \appendix
+% \include{appendix1}
+% \include{appendix2}
+
+\baselineskip=18pt plus1pt
 
 %next line adds the Bibliography to the contents page
 \addcontentsline{toc}{chapter}{Bibliography}
 %uncomment next line to change bibliography name to references
 %\renewcommand{\bibname}{References}
-% \bibliographystyle{natbib.sty}
 \bibliography{refs}        %use a bibtex bibliography file refs.bib
 \bibliographystyle{apalike}  %use the plain bibliography style
 

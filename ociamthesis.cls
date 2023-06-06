@@ -252,6 +252,9 @@
 {\cleardoublepage\setcounter{page}{1}\renewcommand{\thepage}{\roman{page}}}
 {\cleardoublepage\renewcommand{\thepage}{\arabic{page}}\setcounter{page}{1}}
 
+
+
+%Copernicus journals commands
 \newcommand\tophline{\hline\noalign{\vspace{1mm}}}
 \newcommand\middlehline{\noalign{\vspace{1mm}}\hline\noalign{\vspace{1mm}}}
 \newcommand\bottomhline{\noalign{\vspace{1mm}}\hline}
