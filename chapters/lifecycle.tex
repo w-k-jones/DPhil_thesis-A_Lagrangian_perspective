@@ -37,7 +37,7 @@ However a number of difficulties must be taken into account when utilising geost
 \end{figure*}
 
 Figure \ref{fig:compare_sat_radar_glm} provides an example of how geostationary satellite imagery compares to observations of DCCs using ground-based cloud radar and lightning observations.
-In fig. \ref{fig:compare_sat_radar_glm}a, \ref{fig:compare_sat_radar_glm}d, \ref{fig:compare_sat_radar_glm}g and \ref{fig:compare_sat_radar_glm}e, we see how a growing DCC is observed by visible/near infrared (NIR) satellite imagery, 10.8~\unit{\mu m} longwave (LW) infrared (IR) satellite imagery, lightning flash observations from a satellite instrument and column radar reflectivity respectively.
+In fig. \ref{fig:compare_sat_radar_glm}a, \ref{fig:compare_sat_radar_glm}d, \ref{fig:compare_sat_radar_glm}g and \ref{fig:compare_sat_radar_glm}e, we see how a growing DCC is observed by visible/near infrared (NIR) satellite imagery, 10.4\,\unit{\mu m} longwave (LW) infrared (IR) satellite imagery, lightning flash observations from a satellite instrument and column radar reflectivity respectively.
 Figures \ref{fig:compare_sat_radar_glm}b, \ref{fig:compare_sat_radar_glm}e, \ref{fig:compare_sat_radar_glm}h and \ref{fig:compare_sat_radar_glm}k show observations of a mature DCC, and \ref{fig:compare_sat_radar_glm}c, \ref{fig:compare_sat_radar_glm}f, \ref{fig:compare_sat_radar_glm}i and \ref{fig:compare_sat_radar_glm}l show those of a dissipating DCC.
 While lightning and radar observations are capable of detecting deep convection in the growing and mature phase of DCCs, neither can detect either the full extent of the anvil cloud or the dissipating phase of the DCC.
 The ability to detect and track the anvil cloud over its entire lifetime is important to study the anvil cloud radiative forcing on the climate, the response to temperature change \citep{bony_thermodynamic_2016, hartmann_tropical_2016, ceppi_cloud_2017, gasparini_what_2019} and possible feedbacks on subsequent convective activity \citep{varble_erroneous_2018}.
@@ -79,11 +79,11 @@ This method can be outlined in the following steps:
 \begin{figure}[t]
     \centering
     \includegraphics[width=8.3cm]{figure03.pdf}
-    \caption{ABI channels and channel differences used with the detection and tracking algorithm. a.: The 10.8 \unit{\mu m} brightness temperature, also known as the clean longwave window channel. b.: the water vapour difference (WVD) combination, of the 6.2 \unit{\mu m} upper troposphere water vapour channel minus the 7.3 \unit{\mu m} lower troposphere water vapour channel. c.: the split window difference (SWD) combination of the 10.8 \unit{\mu m} clean longwave window channel minus the 12.3 \unit{\mu m} dirty longwave window channel.}
+    \caption{ABI channels and channel differences used with the detection and tracking algorithm. a.: The 10.4\,\unit{\mu m} brightness temperature, also known as the clean longwave window channel. b.: the water vapour difference (WVD) combination, of the 6.2\,\unit{\mu m} upper troposphere water vapour channel minus the 7.3\,\unit{\mu m} lower troposphere water vapour channel. c.: the split window difference (SWD) combination of the 10.4\,\unit{\mu m} clean longwave window channel minus the 12.4\,\unit{\mu m} dirty longwave window channel.}
     \label{fig:abi_channels}
 \end{figure}
 
-The Advanced Baseline Imager (ABI), a radiometer aboard the Geostationary Operational Environmental Satellite (GOES)-16 weather satellite \citep{schmit_closer_2016}, provides visible and IR imagery at a nadir resolution of 2~\unit{km} or better, at intervals between 10 minutes to 30 seconds \citep{schmit_chapter_2020}.
+The Advanced Baseline Imager (ABI), a radiometer aboard the Geostationary Operational Environmental Satellite (GOES)-16 weather satellite \citep{schmit_closer_2016}, provides visible and IR imagery at a nadir resolution of 2\,\unit{km} or better, at intervals between 10 minutes to 30 seconds \citep{schmit_chapter_2020}.
 Situated in a geostationary orbit at 75.2°W above the equator, GOES-16 observes all of South America and most of North America.
 The combination of high spatial and temporal resolution makes ABI suitable for detecting and tracking small and developing DCCs, as well as providing the spatial coverage to also track large mesoscale convective systems \citep{heikenfeld_tobac_2019}.
 In addition, the better signal to noise ratio of ABI observations compared to previous geostationary imaging instruments \citep{iacovazzi_goes-16_2020}, combined with many of the channels being derived from those aboard the Visible Infrared Imaging Radiometer Suite (VIIRS), make the data from ABI better suited for research purposes than that from older instruments \citep{heidinger_chapter_2020}.
@@ -93,20 +93,20 @@ This product consists of calibrated reflectances and brightness temperatures on 
 All data has been sourced through the National Oceanic and Atmospheric Administration Big Data Program.
 
 In order to have equal performance during both day and nighttime, a selection of longwave IR ABI channels are used for the detection and tracking of DCCs (see figure \ref{fig:abi_channels}). 
-These channels consist of the LW clean and dirty window channels at 10.8 \unit{\mu m} and 12.3 \unit{\mu m} respectively, and the upper and lower troposphere water vapour channels at 6.2 \unit{\mu m} and 7.3 \unit{\mu m} respectively.
+These channels consist of the LW clean and dirty window channels at 10.4\,\unit{\mu m} and 12.4\,\unit{\mu m} respectively, and the upper and lower troposphere water vapour channels at 6.2\,\unit{\mu m} and 7.3\,\unit{\mu m} respectively.
 Whereas the LW window IR brightness temperature is commonly used for the detection of DCCs, we have decided not to use it for this purpose in this method due to the wide range of brightness temperatures observed within anvil clouds, and the variance of anvil cloud temperature because of changes in tropopause temperature due to meteorology and latitude.
 However, the information contained within this field is used to for the optical flow calculation of the cloud motion field.
 
 Two additional combinations of channels are used to detect areas of deep convective cloud anvil. 
 The water vapour difference (WVD) combination (figure \ref{fig:abi_channels}b) of the upper troposphere WV channel minus the lower troposphere WV channel has been shown to provide a high detection rate for deep convective clouds \citep{muller_role_2018, muller_novel_2019}.
 In clear sky or low cloud conditions, WVD shows the temperature difference between the upper and lower troposphere of generally around -20 K. 
-However, in the presence of high, thick clouds the 6.2 \unit{\mu m} has an additional contribution from stratospheric water vapour produces a warm, and in extreme cases positive WVD value \citep{schmetz_monitoring_1997}.
+However, in the presence of high, thick clouds the 6.2\,\unit{\mu m} has an additional contribution from stratospheric water vapour produces a warm, and in extreme cases positive WVD value \citep{schmetz_monitoring_1997}.
 This provides clear distinction between thick, high cloud and other clouds, with the cutoff value of -5 °C giving a high detection rate of anvil clouds \citep{muller_novel_2019}. 
 Furthermore, as the WVD values are relative to the lower stratosphere temperatures, this field is much less affected by location and meteorology than the LW IR channel.
 However, the WVD is still prone to the false detections of non-convective clouds when using a thresholding method.
 
 The split window difference (SWD) (figure \ref{fig:abi_channels}c) (the clean IR window channel minus the dirty IR window channel) aids in the detection and separation of optically thin anvil cloud (including cirrus outflow) from optically thick anvil due to the difference in ice particle emissivity between these two channels \citep{heidinger_gazing_2009}.
-As a result, this combination displays warm temperatures of around 10 \unit{K} for thin, ice clouds, near 0 \unit{K} for thick clouds, and approximately 5\unit{K} for clear skies due to the contribution of boundary layer water vapour.
+As a result, this combination displays warm temperatures of around 10\,\unit{K} for thin, ice clouds, near 0\,\unit{K} for thick clouds, and approximately 5\,\unit{K} for clear skies due to the contribution of boundary layer water vapour.
 The SWD is, however, also sensitive to low level clouds and low level water vapour concentrations, and so cannot be used alone to detect DCCs.
 The SWD field is useful, however, due to the difficulty in separating anvil clouds from cirrus when using LW IR BT alone \citep{hong_detection_2005}. 
 By subtracting the SWD from the WVD field, we can reduce the sensitivity of our detection scheme to cirrus clouds, reducing the rate of erroneous detections.
@@ -116,15 +116,15 @@ Further, adding the SWD field to WVD field can enhance the appearance of cirrus,
 
 The detection and classification of DCCs occurs over three steps.
 First, the cores are detected using regions of cooling cloud top BT.
-\citet{roberts_nowcasting_2003} identified cloud top cooling rates of between 4 and 8~\unit{K} over a 15 minute period as being associated with weak convection, and greater than 8~\unit{K} as associated with more intense convective development.
-Here we use corresponding threshold values of 0.25 and 0.5~\unit{K minute\textsuperscript{-1}} respectively to detect developing deep convective cores.
-If we assume that the cloud top temperature of a growing DCC core follows the moist pseudo-adiabat then this upper bound is equivalent to a cloud top vertical velocity of approximately 1.5~\unit{ms\textsuperscript{-1}}.
+\citet{roberts_nowcasting_2003} identified cloud top cooling rates of between 4 and 8\,\unit{K} over a 15 minute period as being associated with weak convection, and greater than 8\,\unit{K} as associated with more intense convective development.
+Here we use corresponding threshold values of 0.25 and 0.5\,\unit{K minute\textsuperscript{-1}} respectively to detect developing deep convective cores.
+If we assume that the cloud top temperature of a growing DCC core follows the moist pseudo-adiabat then this upper bound is equivalent to a cloud top vertical velocity of approximately 1.5\,\unit{ms\textsuperscript{-1}}.
 It should be made clear that this is not the same as the vertical velocity of the updraft within the core, and it is expected that the cloud top growth will be slower due to the impacts of entrainment on the growing cloud.
 
-A core is defined as a region of continuous cooling BT exceeding 0.25~\unit{K minute\textsuperscript{-1}}, with at least one time step with as cooling rate greater than 0.5~\unit{K minute\textsuperscript{-1}}.
+A core is defined as a region of continuous cooling BT exceeding 0.25\,\unit{K minute\textsuperscript{-1}}, with at least one time step with as cooling rate greater than 0.5\,\unit{K minute\textsuperscript{-1}}.
 Several further constraints are applied to the detection of growing cores.
 First, a core must exist for at least 15 minutes.
-Secondly, the core must reach a WVD of greater than -5~\unit{K}, the criteria used by \citet{muller_role_2018} to detect high, thick clouds.
+Secondly, the core must reach a WVD of greater than -5\,\unit{K}, the criteria used by \citet{muller_role_2018} to detect high, thick clouds.
 The challenge of detecting changes in BT due to vertical cloud growth, rather than that due to horizontal motion or growth of the anvil cloud \citep{hartung_intercomparison_2013}, is handled by using the semi-lagrangian framework to account for cloud motion when calculating the change in BT over time.
 Furthermore, a curvature filter is used to isolate growth only in regions that display a peak of cold BT, in order to prevent erroneous detections of cloud growth in regions where multiple clouds and merging together.
 When calculating the BT cooling rate, the WVD field, rather than LW IR window BT, is used as this is only sensitive to mid- and upper-level growth associated with deep convection.
@@ -133,7 +133,7 @@ When calculating the BT cooling rate, the WVD field, rather than LW IR window BT
 \begin{figure}[t]
     \centering
     \includegraphics[width=8.3cm]{figure08.pdf}
-    \caption{Detected regions of thin anvil cloud (blue), thick anvil cloud (orange), and developing cores (red) overlaid on the GOES-16 ABI 10.8 \unit{\mu m} brightness temperature field for the DCC cluster from figure \ref{fig:compare_sat_radar_glm}. The three stages of the DCC lifecycle are shown; the growth phase (a.), the mature phase (b.), and the dissipating phase (c.). Note that the anvil region continues to be detected in c. after growing cores are no longer detected.}
+    \caption{Detected regions of thin anvil cloud (blue), thick anvil cloud (orange), and developing cores (red) overlaid on the GOES-16 ABI 10.4\,\unit{\mu m} brightness temperature field for the DCC cluster from figure \ref{fig:compare_sat_radar_glm}. The three stages of the DCC lifecycle are shown; the growth phase (a.), the mature phase (b.), and the dissipating phase (c.). Note that the anvil region continues to be detected in c. after growing cores are no longer detected.}
     \label{fig:detected_anvils}
 \end{figure}
 
@@ -142,7 +142,7 @@ Rather than use BT thresholds for detecting the anvil cloud, we use the detected
 By using the detected core regions as the initial seed for the watershed segmentation, we only detect anvil clouds that are associated with detected regions of convective growth.
 Utilising the semi-Lagrangian scheme to account for cloud motion, we can apply the "3d" watershedding method to cases of small, rapidly moving cores and anvils where previously this approach would not be applicable.
 Use of the edge detection method allows us to avoid the use of a fixed threshold and instead detect the full extent of the anvil cloud while avoiding the challenges of warm BT thresholds previously discussed.
-To detect the region of thick anvil cloud associated with cores, the edge detection method is applied to the WVD field minus the SWD field (to remove thin cirrus), with edges detected in the range of -5 and -15~\unit{K}.
+To detect the region of thick anvil cloud associated with cores, the edge detection method is applied to the WVD field minus the SWD field (to remove thin cirrus), with edges detected in the range of -5 and -15\,\unit{K}.
 A detected thick anvil cloud may be associated with multiple cores, allowing us to detect cases where the multiple DCCs have merged into one.
 Finally, we detect the thin anvil region -- including cirrus outflow -- by repeating the procedure for detecting the thick anvils but instead using the WVD field plus the SWD field for edge detection.
 This allows us to detect thin, high level clouds that are associated with detected cores and anvils without detecting isolated cirrus.
@@ -154,7 +154,7 @@ In figure \ref{fig:detected_anvils}c, we see the detected anvil cloud begin to d
 It should be noted that the algorithm is capable of tracking both individual cores and their associated anvil clouds, including when multiple cores feed into a single anvil.
 Furthermore, the anvil cloud and the outflow region continue to be tracked after growing cores can no longer be detected.
 
-In this study, we have generated a dataset of detected cores and their associated anvil clouds for a subset of the GOES-16 CONUS region spanning from 114 to 76\textdegree~W and from 24 to 45\textdegree~N, an area of approximately 2,500 by 1,875~\unit{km}, for the entirety of the year 2018.
+In this study, we have generated a dataset of detected cores and their associated anvil clouds for a subset of the GOES-16 CONUS region spanning from 114 to 76\textdegree~W and from 24 to 45\textdegree~N, an area of approximately 2,500 by 1,875\,\unit{km}, for the entirety of the year 2018.
 Days were excluded from the dataset when there were periods of missing data exceeding 15~minutes or when anomalies in the ABI data that may have affected core or anvil detection were present.
 In total, this removed 35~days, resulting in the remaining dataset covering 330~days of 2018.
 
@@ -225,7 +225,7 @@ The larger barrier to initiation presented by the increased CIN also leads to gr
 In coastal regions, we also see a change in the time of initiation near to the sea, likely due to sea breeze triggering of convection.
 In fig. \ref{fig:sea_breeze_effect} we explicitly show this relationship by plotting the mean time of core detection against distance from the coast.
 We see a clear trend towards an earlier time of detection as the distance to the coast reduces, indicative of a sea breeze effect.
-The maximum extent of the sea breeze effect extends to between approximately 200~\unit{km}, similar to the extent of the sea breeze effect quantified using models over the Congo \citep{park_environmental_2020}.
+The maximum extent of the sea breeze effect extends to between approximately 200\,\unit{km}, similar to the extent of the sea breeze effect quantified using models over the Congo \citep{park_environmental_2020}.
 
 %f
 \begin{figure}[t]
@@ -314,11 +314,11 @@ The distribution of core cooling rates again shows little difference between eac
 
 Figure \ref{fig:lifetime_vs_tod} compares how the average lifetime of detected cores changes with their maximum observed cooling rate.
 For low values of core cooling rate, we see a similar, positive linear relationship between cooling rate and lifetime between all regions, indicating that more intense convection leads to longer periods of cores being observed.
-However, for values beyond cooling rates of 1.0-1.2~\unit{K minute\textsuperscript{-1}} we see an inflection in the relationship, with larger cooling rates leading to shorter lifetimes.
+However, for values beyond cooling rates of 1.0-1.2\,\unit{K minute\textsuperscript{-1}} we see an inflection in the relationship, with larger cooling rates leading to shorter lifetimes.
 This may be explained by the influence of the tropopause on the detection period of growing convection.
 For convective cores that reach the tropopause, this sets a hard limit on the maximum period over which convective growth is detected by cloud-top cooling.
 As a result, deep convective cores which display larger cloud-top cooling rates will reach the tropopause faster and hence have a shorter detected lifetime.
-However, the reduced number of observations for cores with large cooling rates (>1~\unit{K minute\textsuperscript{-1}}) means that these values should be treated with caution as they may be a result of uncertainty.
+However, the reduced number of observations for cores with large cooling rates (>1\,\unit{K minute\textsuperscript{-1}}) means that these values should be treated with caution as they may be a result of uncertainty.
 
 % %f
 % \begin{figure}[h]
@@ -397,7 +397,7 @@ By producing the first continental scale dataset of both DCC cores and anvils, w
 We have been able to show a number of key differences in the seasonal, diurnal and regional patterns of DCCs across the continental US.
 The spatial distribution of DCC cores across the continental US depends strongly on the seasonal cycle.
 The properties of cores themselves, including the lifetime, cooling rate, and time of initiation, have regional dependencies.
-We see a large land/sea contrast in time of initiation, and a sea breeze effect which extends for approximately 200~\unit{km} inland.
+We see a large land/sea contrast in time of initiation, and a sea breeze effect which extends for approximately 200\,\unit{km} inland.
 In addition, we see differences in the distribution of core time of detection between the two inland regions -- the Midwest and the Great Plains -- with the Great Plains showing a greater spread of convection throughout the night time.
 In addition, the Great Plains region shows increased core cooling rates and lifetimes compared to other regions, both of which are associated with more intense convection.
 It may be the case that this later time of initiation results in more intense deep convective storms.
