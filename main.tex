@@ -24,17 +24,11 @@
 \usepackage{float}
 \usepackage{subfig}
 \usepackage{rotating}
-\usepackage{siunitx}
 \usepackage[hidelinks]{hyperref}
 \usepackage[acronym]{glossaries}
+
 \makeglossaries
 \input{acronyms}
-
-\DeclareRobustCommand*\unit[1]
- {\ensuremath{%
-   {\thinmuskip3mu\relax
-    \def\mu{\text{\textmu}}\def~{\,}%
-    \ifx\f@series\testbx\mathbf{#1}\else\mathrm{#1}\fi}}}
 
 %input macros (i.e. write your own macros file called mymacros.tex 
 %and uncomment the next line)
@@ -91,7 +85,7 @@ from a Geostationary Perspective}   %note \\[1ex] is a line break in the title
 %now include the files of latex for each of the chapters etc
 % \baselineskip=24pt plus1pt % double line spacing
 % \include{introduction}
-% \include{chapters/tracking_method}
+\include{chapters/tracking_method}
 % \include{chapters/lifecycle}
 \include{chapters/radiative_effect}
 % \include{conclusion}
