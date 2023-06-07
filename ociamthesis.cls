@@ -277,3 +277,10 @@
    \leavevmode\vrule\@width\z@\@height2ex\@depth\z@
    \parbox{\tabularwidth}{\raggedright\scriptsize#1}%
    \if@stage@final\else\par\fi}}
+
+\DeclareRobustCommand*\unit[1]
+ {\ensuremath{%
+   {\thinmuskip3mu\relax
+    \def\mu{\text{\textmu}}
+    \def~{\,}%
+    \ifx\f@series\testbx\mathbf{#1}\else\mathrm{#1}\fi}}}
