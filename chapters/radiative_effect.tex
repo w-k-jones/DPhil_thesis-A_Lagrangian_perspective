@@ -1,1 +1,717 @@
 \chapter{A Lagrangian Perspective on the Lifecycle and Cloud Radiative Effect of Deep Convective Clouds Over Africa}
+
+% \textbf{Abstract}
+
+% The anvil clouds of tropical deep convection have large radiative
+% effects in both the shortwave and longwave spectra with magnitudes of
+% both over 100Wm\textsuperscript{-2}. Despite this, due to the opposite
+% sign of these fluxes the net, long-term average of anvil cloud radiative
+% effect (CRE) over the tropics is neutral. Much of the related literature
+% has focused on the interaction between anvil cloud temperature and its
+% impact on the longwave flux component, and how this may respond to
+% climate change. However, tropical deep convection over land has a strong
+% diurnal cycle which may couple with the shortwave component of anvil
+% cloud radiative effect.
+
+% To study the interaction between deep convective cloud (DCC) lifecycle
+% and CRE, we investigate the behaviour of both isolated and clustered
+% DCCs in a 4-month case study over sub-Saharan Africa (May-August 2016).
+% Using a novel cloud tracking algorithm, we detect and track growing
+% convective cores and their associated anvil clouds using geostationary
+% satellite observations from Meteosat SEVIRI. Retrieved cloud properties
+% and derived broadband radiative fluxes are provided by the CC4CL
+% algorithm. By combining the cloud properties with the tracked DCCs, we
+% produce a dataset of anvil cloud properties along their lifetimes. While
+% the majority of DCCs tracked in this dataset are isolated, with only a
+% single core, the overall coverage of anvil clouds is dominated by those
+% of clustered, multi-core anvils due to their larger areas and lifetimes.
+
+% We find that the distribution of anvil cloud CRE of our tracked DCCs has
+% a bimodal distribution. The interaction between the lifecycles of DCCs
+% and the diurnal cycle results in a wide range of CRE in the SW
+% component, while the LW component remains in a comparatively narrow
+% range of values. Very few individual anvil clouds have net CRE close to
+% zero, and those which do tend to be larger, longer-lived, and have more
+% cores. Despite this, we find that the total integrated anvil cloud CRE
+% across all tracked DCCs is indeed zero within our range of uncertainty
+% (0.86±0.91 Wm-2). Changes in the lifecycle of DCCs, such as shifts in
+% the time of triggering, or the length of the dissipating phase, could
+% have large impacts on the SW anvil CRE and lead to complex responses
+% that are not considered by theories of LW anvil CRE feedbacks.
+
+\section{Introduction}
+
+Deep convective clouds (DCCs) play a key role in the tropical
+atmosphere. Forming the ascending branch of the Hadley cells near the
+equator, DCCs are critical to the circulation and heat transfer of the
+tropics (Riehl and Malkus 1958, Weisman 2015). DCCs are also a cause of
+extreme weather events including floods, lightning and hail (Westra et
+al., 2014). Mesoscale convective systems (MCSs) -- large, long-lived
+convective systems in which the anvils of multiple convective cores
+combine into a single, large ``cloud shield'' (Chen and Houze 1996,
+Houze 2004, Roca et al. 2017) -- are responsible for the majority of
+precipitation in the tropics (Tan et al. 2015). Changes in the behaviour
+of DCCs with climate change have the potential for major impacts on the
+atmosphere, weather and society.
+
+DCCs also exert a key influence on the temperature of the tropics
+through their cloud radiative effect (CRE). Due to their size, height
+and depth, DCC anvils have large radiative effects in both the shortwave
+(SW) and longwave (LW), with both having average magnitudes in excess of
+100Wm\textsuperscript{-2} (Hartmann 2016, Wall and Hartmann 2018).
+However, due to the opposite signs of these two components, the average
+anvil CRE in the tropics is approximately zero (Ramanathan et al. 1989,
+Hartmann et al. 1992, Stephens et al. 2018). Radiation is also key to
+the lifecycle of DCCs. Over land, convection is typically initiated by
+the heating of the surface and lower troposphere by solar SW radiation,
+resulting in a peak of convective activity in the late afternoon. Over
+the ocean however, convection is often triggered by LW cooling of the
+upper troposphere, and so convective activity occurs more frequently in
+the morning. However, the occurrence of convection is more uniform
+throughout the diurnal cycle compared to that over land (Taylor et al.
+2017). Radiation also has an impact on DCC lifecycle through the
+differential heating of the anvil cloud, which destabilises the anvil
+cloud leading to dissipation due to entrainment and evaporation.
+However, SW heating of the anvil cloud top during daytime acts to
+stabilise and delay this process, leading to differences in anvil
+lifetime depending on the diurnal cycle (Sokol and Hartmann, 2020).
+
+There are a number of hypotheses regarding the CRE of tropical anvil
+clouds that consider whether the neutral CRE of tropical anvils is the
+result of a feedback mechanism. The thermostat hypothesis proposes that
+in a warmer environment anvil clouds produce thicker cirrus which acts
+to cool the tropics through increased SW reflectance (Ramanathan and
+Collins, 1991). The Iris hypothesis proposes an alternate negative
+feedback mechanism in which anvil clouds reduce in area in response to
+warming surface temperature (due to an increase in precipitation
+efficiency), resulting in greater LW emission from the surrounding clear
+regions (Lindzen et al. 2001), however support for this effect is
+disputed (Del Genio and Kovari 2002, Lin et al. 2004). On the other
+hand, the fixed anvil temperature (FAT) hypothesis argues that the anvil
+cloud top temperature remains constant in a warming climate due to the
+tendency of tropical anvil clouds to detrain at the level at which water
+vapour cooling becomes inefficient (around 200 K). This would result in
+a positive feedback mechanism whereby anvil clouds become higher to
+maintain the same cloud top temperature and so have a larger LW CRE due
+to the warmer surface temperatures (Hartmann and Larson, 2002). While
+there is evidence that this is the case for the largest DCC anvils, it
+is debated whether these observations are due to FAT or due to fixed
+tropopause temperature (FiTT) (Seeley et al. 2019). The proportionately
+higher anvil temperature (PHAT) hypothesis argues instead that while
+anvil clouds will become higher with warming temperatures, an associated
+increase in static stability results in warmer anvil temperatures and a
+reduced LW response compared to FAT (Zelinka and Hartmann, 2010). This
+reduced response more closely matches the LW response of tropical clouds
+in global climate models. Some observations of tropical anvil clouds
+have instead suggested that warming of the surface invigorates
+convection, leading to higher and colder anvil CTT and a stronger LW
+warming response (Igel et al., 2014).
+
+These hypotheses however only consider changes in anvil properties such
+as area, reflectance and temperature, and FAT and PHAT only consider the
+LW feedback. Changes to the lifecycle and diurnal cycle of deep
+convection may also be an important factor, in particular when
+considering the SW feedback. Deep convection over land may be perturbed
+in particular by factors which influence SW fluxes, such as aerosols.
+Observations have shown that the increase in tropical precipitation can
+be attributed to an increase in the frequency of deep convection, rather
+than an intensification of individual DCCs (Tan et al. 2015).
+
+In this article, we investigate how the lifecycle of deep convection
+impacts the cloud radiative effect of anvil clouds. To do so, we use a
+novel cloud tracking methodology in conjunction with derived all-sky and
+clear-sky radiative fluxes to characterise the CRE over the lifecycles
+of individual anvil clouds. This methodology is applied to 4 months of
+data produced for the ESA Cloud-CCI+ project over sub-Saharan Africa.
+This dataset allows us to investigate both the CRE of individual CREs,
+as well as the net anvil CRE over the entire region. We find that the
+overall distribution of anvil CRE is determined by the relationship
+between DCC lifecycle and the diurnal cycle of the SW CRE, and discuss
+the implications of this for the response of DCCs to a changing climate.
+
+\section{Data}
+
+For this case study, we used data from the Spinning Enhanced Visible and
+Infra-Red Imager (SEVIRI) (Schmid 2000) aboard the Meteosat Second
+Generation (MSG) Meteosat-11 satellite, which is in a geostationary
+orbit above the equator at 0°W. We use data from 4 months (May-August
+2016) over sub-Saharan Africa (approximately 18°W-46°E, 31°S-15°N) at
+the full resolution of SEVIRI, as well as retrieved cloud properties and
+derived broadband fluxes produced by the ESA Cloud-CCI+ project.
+Calibrated brightness temperature (BT) from SEVIRI is used by the
+tracking algorith, and calibrated reflectances and BT are used by the
+cloud retrieval.
+
+SEVIRI is a visible and infra-red (IR) radiometer with a nadir spatial
+resolution of 3km and a temporal sampling time of 15 minutes for the
+full earth disc. SEVIRI has 12 channels across the visible, \acrshort{nir} and
+thermal-IR spectrum, with one being a high-resolution visible channel
+with a nadir resolution of 1km. A brief overview of these channels,
+along with which are used for tracking DCCs and the cloud properties
+retrieval, is provided in table 1:
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lllcc}
+\tophline
+Channel & Wavelength (\unit{\mu m}) & Description & Tracking & Retrieval\tabularnewline
+\middlehline
+1 & 0.64 & Visible & & \checkmark\tabularnewline
+2 & 0.81 & \acrshort{nir} & & \checkmark\tabularnewline
+3 & 1.64 & \acrshort{nir} & & \checkmark\tabularnewline
+4 & 3.92 & \acrshort{nir} Window & & \checkmark\tabularnewline
+5 & 6.25 & Upper troposphere \acrshort{wv} & \checkmark & \checkmark\tabularnewline
+6 & 7.35 & Lower troposphere \acrshort{wv} & \checkmark & \checkmark\tabularnewline
+7 & 8.70 & Mid-IR window & &\tabularnewline
+8 & 9.66 & Ozone & &\tabularnewline
+9 & 10.8 & Clean LW window & \checkmark & \checkmark\tabularnewline
+10 & 12.0 & Dirty LW window & \checkmark & \checkmark\tabularnewline
+11 & 13.4 & CO\textsubscript{2} & & \checkmark\tabularnewline
+12 & 0.6-0.9 & High-resolution visible & &\tabularnewline
+\bottomhline
+\end{tabular}
+\caption[
+SEVIRI channels and their use in the DCC tracking algorithm and cloud properties retrieval
+]{
+SEVIRI channels and their use in the DCC tracking algorithm and cloud properties retrieval.
+}
+\label{table:seviri_channels}
+\end{table}
+
+
+
+An example of observations from SEVIRI is shown in fig. 1 for 15:00:00
+UTC on 1\textsuperscript{st} June 2016. A visible composite (Fig. 1a) is
+constructed using the 1.64\,\unit{\mu m} and 0.81\,\unit{\mu m} near-infrared and 0.64\,\unit{\mu m} visible
+channels for the red, green and blue channels respectively. In this
+composite, ice clouds -- which appear cyan -- can be seen over central
+Africa and the southern Atlantic. Fig. 1b shows the 10.8\,\unit{\mu m} brightness
+temperature for the same scene, showing the coldest temperatures for the
+high ice clouds over central Africa. Two combinations of channels are
+used for the detection of anvil clouds. The \acrshort{wvd}
+(WVD), shown in Fig. 1c, consists of the 6.3\,\unit{\mu m} brightness temperature
+minus the 7.4\,\unit{\mu m} brightness temperature. In clear skies the WVD is
+negative, with values around -20 to -15 K, due to the higher, and thus
+colder, emission height of the 6.3\,\unit{\mu m} channel. In high, thick clouds,
+however, the temperatures of the 6.3 and 7.4\,\unit{\mu m} channels converge and so
+the WVD becomes closer to 0. In the cases of the highest clouds, the WVD
+can become positive due to emission from stratospheric WV in the 6.3\,\unit{\mu m}
+channel. The split window difference (SWD), shown in Fig. 1d, consists
+of the 10.8\,\unit{\mu m} BT channel minus the 12.0\,\unit{\mu m} channel. While the SWD is
+sensitive to near-surface WV due to absorption in the 12.0\,\unit{\mu m} channel, it
+is also sensitive to thin ice clouds due to the difference in emissivity
+of ice particles between the two channels. While for thick clouds the
+SWD will be 0 K, for thin ice clouds the lower emission height of the
+10.8\,\unit{\mu m} BT channel results in a positive value of 5 K. SEVIRI has wider
+wavebands for these two channels compared to newer sensors such as the
+GOES-16 ABI, and as such is less sensitive to the presence of thin ice
+clouds.
+
+Retrieved cloud properties -- including optical thickness, effective
+radius, liquid/ice water path, cloud top temperature and height -- are
+provided by the community cloud retrieval for climate (CC4CL) algorithm
+(Sus et al. 2018, McGarragh et al. 2018). These properties are all
+retrieved at the same resolution as the input SEVIRI data. Broadband
+fluxes are derived using the BUGSRad radiative transfer model (Stephens
+et al. 2001) using input cloud properties from the CC4CL retrieval and
+vertical temperature, moisture and trace gas profiles from ERA-5
+(Hersbach et al. 2020). The BUGSRad model provides top-of-atmosphere
+(ToA) and bottom-of-atmosphere (BoA) LW and SW radiative fluxes for both
+all-sky and clear-sky conditions. An example of these derived fluxes is
+shown in figure 2. Figure 2a shows net ToA fluxes, with a net warming
+during the daytime on the Western side of the image, and a net cooling
+at night-time on the Eastern side. Figure 2b shows the net ToA CRE, with
+a net cooling effect during the daytime and warming during the
+night-time for observed high clouds over central Africa. The SW (Fig.
+2c) and LW (Fig. 2d) components of the CRE show that while the LW,
+warming component has a smaller magnitude than the day-time, cooling SW
+CRE, it remains constant during both day- and night-time.
+
+Validation of the SEVIRI broadband fluxes was performed against
+calibrated monthly-mean observations of ToA broadband CRE from the
+clouds and the earth's radiant energy system (CERES) (Loeb et al., 2018)
+Energy Balanced and Filled (EBAF) climate data record. The results of
+this validation are shown in Fig. 3. Monthly mean fluxes were calculated
+for SEVIRI by first calculating the mean daily fluxes over each 1x1°
+grid square for days in which we have over 23 hours of observations, and
+then averaging these daily means over each month. Comparison of the net
+ToA CRE to CERES revealed a bias of -3.67Wm\textsuperscript{-2} (Fig.
+3a,b), consisting of a SW bias of -3.04Wm\textsuperscript{-2} (Fig.
+3c,d) and a LW bias of -0.63Wm\textsuperscript{-2} (Fig. 3e,f). These
+biases have been accounted for in all further CRE values given in this
+article.
+
+\section{Method}
+
+Detection and tracking of DCCs was performed using the tobac-flow
+algorithm (Jones et al. 2023), which has been designed specifically to
+track both isolated and clustered DCCs in geostationary satellite
+imagery over their entire lifecycle. While geostationary satellite
+imagery provides high-resolution observations over large domains and
+long time periods, which is ideal for studying deep convection, the
+inability of passive remote sensing to observe convective updrafts
+directly makes the detection and tracking of DCCs difficult.
+
+Algorithms for the detection and tracking of DCCs can generally be split
+into two groups. Firstly, those designed for tracking deep convective
+cores, or isolated DCCs, such as Cb-TRAM (Zinner et al. 2008, 2011) or
+tobac (Heikenfeld et al. 2019, Sokolowsky et al. 2023). These algorithms
+work by detecting regions of convective updraft or a proxy (such as
+cloud top cooling rate), and then treating these regions as point-like
+objects that are advected over time. Secondly, those designed for
+tracking mesoscale convective systems such as PyFLEXTRKR (Feng et al.
+2022), TAMS (Núñez Ocasio et al. 2020) or TOOCAN (Fiolleau and Roca,
+2013). These algorithms detect large regions of cold cloud tops
+indicating anvils, and then link them over time by overlapping regions
+at subsequent time steps. There is no ``best'' method for tracking all
+types of convection however (Lakshmanan and Smith, 2009). The algorithms
+for tracking isolated convective cells perform worse for clustered
+convection when the motion and shape of the DCC cannot be adequately
+represented as a single vector. On the other hand, the MCS tracking
+algorithms perform worse for smaller, isolated DCCs as the motion of the
+anvil between time steps may mean it does not overlap with the previous
+step.
+
+To approach the challenge of tracking both isolated DCCs and large,
+clustered systems, we address the role of cloud motion in the scaling
+problem. tobac-flow first estimates the motion of DCCs at each pixel
+using an optical-flow algorithm. Then, using these estimated motion
+vectors, we construct a semi-Lagrangian framework in which to perform
+the detection and tracking. This framework removes the problem of DCC
+motion, allowing us to track both isolated and large DCCs at the same
+time.
+
+We detect growing convective cores where we observe regions of rapid
+cooling in the 10.8\,\unit{\mu m} BT channel and the \acrshort{wvd} (WVD);
+the difference between the 6.2\,\unit{\mu m} and 7.3\,\unit{\mu m} channels. Using both
+differences allows us to detect growing DCCs close to the surface and
+continue tracking them into the upper troposphere. We classify a core as
+a region of cooling temperature that has existed for at least 15 minutes
+and has cooled by at least 8K in a 15-minute period. This threshold
+provides a strong indicator of intense convective activity (Roberts and
+Rutledge 2003), and so provides an accurate detection of growing DCCs.
+Starting from these convective cores, we then detect the surrounding
+anvil cloud using the WVD field (Müller et al. 2018, 2019) and continue
+to detect the anvil until its dissipation, even after the core is no
+longer visible. Each anvil cloud can be associated with multiple cores,
+allowing us to identify cases of clustered convection. As we detect the
+cores based on cloud-top cooling, however, we can only detect the cores
+themselves during the growing phase, and cannot detect cores which occur
+underneath cold, high, anvil clouds. Due to the lack of sensitivity of
+the SEVIRI SWD to thin ice clouds, we only detect and track the thick
+portion of the anvil in this article.
+
+An example of the cores and anvils detected by the tobac-flow algorithm
+is shown in Fig. 4, at 3-hourly intervals. In Fig. 3a, we see a large
+number of developing cores over central Africa. In Fig. 3b, we see more
+developing cores over Western Africa as the pattern of initiation has
+shifted with the diurnal cycle. In Fig. 3c,d we observe fewer new
+developing cores later in the day, but the larger anvil clouds persist
+into the night-time.
+
+Over the 4-month period of the case study, we detect a total of 145,463
+cores (of which 79,592 are associated with anvil clouds) and 35,941
+anvils after quality controls have been applied. Using the detected
+regions of core and anvil clouds, the cloud properties and CRE are
+calculated for each DCC at each time step from the retrieval and
+broadband fluxes data. The resulting dataset allows us to analyse the
+properties of each DCC over their lifetimes from a Lagrangian
+perspective.
+
+\section{Results}
+
+\subsection{Spatial and temporal distributions}
+
+Figure 5(a) shows the frequency of core detections for each 1x1° grid
+square over the period of the case study. The majority of observed
+convection occurs over the Guinea-Congo region. During the months of
+May-August, the ITCZ is at its northernmost extent over Africa
+(Nicholson 2018). The West African monsoon occurs during these
+months, with the primary band of convection located between 5-15°N
+(Nicholson 2009), which our observations agree with. We observed the
+maximum frequency of convection at around 6°N, 12°E over the Western
+High Plateau of Cameroon, with high frequencies of convection also
+observed over the Nigerian coastal plains to the West and the Jos
+Plateau in Northern Nigeria. High rates of convection are also observed
+over the coastal plains and inland highlands of Guinea, Sierra Leone and
+Liberia (5-12°N, 5-15°W)
+
+Figure 5(b) shows the average time of detection for convection in each
+1x1° grid square. The average is calculated as the circular mean of the
+local solar times of core detection in the grid square. Grid squares
+with a standard deviation greater than 6 hours (indicating a broad
+spread of initiation times) are given single hatching, and those with
+standard deviations greater than 12 hours have cross-hatching. The most
+notable feature of the time of detection is the clear contrast between
+land and sea. Convection over the land tends to occur in the afternoon
+(15:00-18:00), whereas over the ocean it occurs between midnight and
+early morning (00:00-09:00). Furthermore, convection over land tends to
+occur in a fairly narrow range of times whereas over the ocean
+convection occurs throughout the diurnal cycle, resulting in the
+hatching applied to much of the ocean region. There is also a noticeable
+lake effect on the time of convection occurring over Lake Victoria (2°S,
+34°E) and Lake Tanganyika (7°S, 31°E), with convection typically
+observed in the early morning.
+
+When we compare the regions of Cameroon and Nigeria (4-10°N, 6-14°E),
+where we detect the most cores in Fig. 5(a), with the average time of
+detection in Fig. 5(b), we see that the grid squares with more cores
+also tend to have an earlier average time of detection than the
+surrounding grid squares. Precipitation over the Nigerian plains and the
+Jos plateau is linked to South-westerly winds bringing moist, warm air
+from the Gulf of Guinea (Vondou et al. 2010). This warm air may then
+trigger convection both through the sea breeze effect and orographic
+lifting when it reaches the highlands, explaining both the higher
+frequency and earlier timing of convection compared to surrounding
+regions. A similar relationship between the high frequency of convection
+and earlier time of detection is also seen over the Guinea/Sierra
+Leone/Liberia region (5-12°N, 5-15°W), and may be due to the same
+mechanism.
+
+It should be noted that due to the method of detection, cores that
+develop under existing anvils are less likely to be detected than those
+in clear sky regions. As a result, we may underestimate the occurrence
+of later occurring cores, particularly in regions such as the Northern
+Sahel where a second, night-time peak of precipitation has been
+observed.
+
+For all further analysis, we consider only cores and anvils that are
+detected north of 15°S in order to constrain our analysis to tropical
+DCCs.
+
+\subsection{Anvil Cloud Properties}
+
+To investigate how the behaviour of DCC anvils is affected by their
+organisation, we group observed anvils based on how many cores are
+associated with them, from isolated DCCs with one core to
+highly-clustered DCCs (such as tropical cloud clusters and MCSs) with 10
+or more cores. Anvils with 6-9 cores, and with 10 or more cores, are
+grouped together to ensure that these groups have a comparable number of
+members for analysis.
+
+Figure 6 shows properties related to the anvil area and lifetime linked
+to the number of cores. In Fig. 6(a) we show the average anvil maximum
+area for each group. We find that the maximum area increases
+approximately linearly with the number of cores, with increasingly
+clustered anvils having increasingly larger maximum areas, and highly
+clustered anvils having substantially larger anvils. Figure 6(b) shows
+the average anvil lifetime compared to the number of cores. While the
+lifetime also increases with the number of cores, the difference between
+isolated and highly clustered anvils is proportionately smaller.
+
+Figure 6(c) shows the number of anvils observed with differing numbers
+of cores. We see that the vast majority of all anvils observed are
+isolated DCCs, with over 80\% having a single detected core. As the
+number of cores increases, the number of anvils detected decreases
+rapidly. However, when considering the large increase in both anvil area
+and lifetime with the number of cores, the total anvil coverage for
+highly clustered anvils is much larger (see Fig. 6(d)). Despite their
+high frequency, isolated DCCs only account for 12\% of total anvil
+coverage, whereas highly clustered (10+ cores) account for over 50\%.
+Previous studies have found that despite being few in number, MCSs
+account for the majority of precipitation in Western Africa (Vizy and
+Cook 2018).
+
+Figure 7(a) shows the average mean cloud top temperature (CTT), and Fig.
+7(b) the average minimum CTT for anvils with different numbers of cores.
+While the more clustered anvils have colder average anvil CTT, this
+decrease plateaus around 225K. However, the absolute minimum observed
+CTT within each anvil shows a much greater difference with an increasing
+number of cores. The most clustered anvils tend to have a minimum CTT of
+around 185K, indicating the presence of overshooting tops and the most
+intense convection. However, care should be taken when interpreting such
+retrieved CTT due to the large uncertainty associated with sensor noise
+at these cold temperatures.
+
+Futyan and Del Genio (2007) divide the DCC lifecycle into growing,
+mature and dissipating phases based on the time of observation of the
+coldest anvil CTT, maximum anvil area and dissipation of the anvil. In
+Fig. 8 we show the distribution of the time taken to reach each of these
+lifecycle milestones for anvils separated by the number of associated
+cores. For all cases, the average time of minimum anvil CTT occurs
+before the maximum area, indicating that the anvils continue to grow
+beyond the maximum of convective activity. As the number of cores
+associated with each anvil increases, the time of the coldest CTT and
+largest area occur proportionately earlier during the lifetime of the
+anvil. As a result, these more clustered anvils spend more of their
+lifetime existing with warming, shrinking anvils than the isolated DCCs.
+
+In Fig. 9, we compare the proportion of the overall anvil lifetime spent
+in each of the lifecycle phases defined by Futyan and Del Genio to the
+number of cores associated with the anvil. There is a clear trend that,
+as the number of cores increases, the proportion of the lifecycle spent
+in the growing phase decreases, and the proportion spent in the mature
+and dissipating phases increases. Although this approach to classifying
+the lifecycle of anvil clouds is simplistic and does not capture the
+complexities of large, long-lived DCCs which may go through multiple
+cycles of growth, dissipation and re-invigoration, it can provide a
+useful perspective when considering the LW CRE of DCCs. The time of the
+coldest average CTT will be when the LW CRE of the anvil cloud is at its
+greatest, and so can help understand the evolution of the anvil CRE over
+its lifetime.
+
+\subsection{Anvil Cloud CRE}
+
+Using the broadband fluxes data in conjunction with the tracked DCC
+dataset, we are able to track how the SW, LW and net CRE evolve over the
+lifetime of each tracked anvil. Figure 6 shows the time series of SW, LW
+and net CRE as well as the cumulative average CRE for a number of
+different cases of anvil lifecycles. Note that all fluxes are
+top-of-atmosphere and measured in the downward direction, so a positive
+value is warming and a negative value represents cooling.
+
+Figure 10(a) shows the case of an isolated, short-lived DCC. The DCC
+initiates during the daytime, during which the SW CRE dominates and the
+net CRE is negative (cooling). However, towards the end of the four-hour
+lifecycle of the DCC, it transitions to night-time and so while the SW
+CRE reduces and eventually becomes zero, the LW CRE dominates and the
+net CRE is positive (warming). While this period of warming moves the
+cumulative average CRE towards zero, it remains overall negative for the
+overall lifetime of the DCC both due to the longer period spent during
+the daytime, and the larger area of the anvil cloud during this period.
+
+Figure 10(b) shows the case of a longer-lived (22 hours), clustered DCC.
+It initiates in the morning, and so the SW cooling dominates for the
+first half of the anvil lifetime. Compared to the isolated DCC, it
+exists for much longer during the night time, and so the cumulative
+average becomes positive over the full lifetime of the anvil cloud.
+
+Figure 10(c) shows the case of a four-day, highly clustered convective
+event. In this case, we see the net CRE alternative between warming and
+cooling throughout the diurnal cycle. The cumulative CRE also alternates
+between overall warming and cooling throughout the lifetime of the anvil
+and is results in a small net cooling effect.
+
+We see in both the longer-lived cases (fig. 10(b) and 10(c)) that the LW
+CRE reduces towards the end of the anvil cloud lifetime. This may be
+reflective of the findings from Fig. 8 that the minimum average CTT
+occurs before the mid-point of the cloud lifecycle for longer-lived
+systems. In addition, the accumulated LW cooling of the anvil top may
+drive subsidence and reduce the cloud-top height of the anvil over time
+(Sokol and Hartmann, 2020)
+
+Figure 11 shows the distribution of net lifetime CRE for all tracked
+anvils. The overall negative average value of -8.17±0.85
+Wm\textsuperscript{-2} is approximately zero when considering the
+negative bias in the broadband flux dataset. However, the distribution
+shows a bimodal structure, with two peaks at around
++100Wm\textsuperscript{-2} (warming) and -180Wm\textsuperscript{-2}
+(cooling). The distribution is coloured according to the mean number of
+cores associated with the anvils in each bin of the distribution. Both
+the peaks of the distribution are mainly composed of isolated DCCs which
+occur during the daytime (negative peak) or night-time (positive peak).
+The centre of the distribution -- with average CREs close to zero --
+shows a greater number of the clustered DCCs with multiple cores which,
+due to their longer lifetime, tend to exist during both the day- and
+night time.
+
+In Fig. 12 we break down the CRE distribution into that of the SW (fig.
+12(a)) and LW (fig. 12(b)) components. The SW CRE shows a similar
+bimodal distribution to that of the net CRE, whereas the LW distribution
+shows a normal distribution. The SW CRE has a large peak at
+0Wm\textsuperscript{-2} for DCCs that occur during the night-time, and a
+broad peak centred around -300Wm\textsuperscript{-2} consisting of
+daytime DCCs, with the average falling between the two. Note that the
+average for the LW falls to the right of the peak of the distribution
+because the average is integrated over the anvil area and lifetime, and
+the largest and longest-lived anvils tend to have colder CTT and hence
+larger LW CRE.
+
+Figure 13 shows the average net anvil CRE binned by intervals of time of
+detection and mean anvil CTT. We see that, as expected, mean anvil CRE
+becomes more positive with increasing CTT. However, the diurnal cycle of
+detection shows a much stronger contrast, with anvils detected during
+the daytime having a cooling effect compared to those at night. This
+diurnal cycle effect is stronger for those anvils with cooler average
+CTT, generally representing isolated, shorter-lived DCCs, and is weaker
+for colder anvil CTT. Note also that the phase of the diurnal cycle
+shifts to earlier times of detection as average anvil CTT become colder,
+as these DCCs tend to have longer lifetimes.
+
+For anvil cloud CRE to be radiatively balanced, sufficient DCCs must
+initiate during the daytime, cooling region shown in Fig. 13 to balance
+the warming effect of DCCs initiating during the rest of the diurnal
+cycle. As anvil temperatures become colder, this region becomes narrower
+and shifts earlier in the day, due to both the increased LW CRE of
+colder anvil clouds and also due to the tendency of these anvils to have
+longer lifetimes. As a result, if warming surface temperatures lead to
+the invigoration of DCCs, the warming effect we would see would be
+larger than just that due to the change in anvil temperature alone. To
+restore the net anvil CRE to zero, the distribution of DCCs may need to
+shift earlier in the diurnal cycle, leading to large changes in the
+patterns of convection and precipitation. This may also further affect
+the anvil lifetime, due to the differences in the anvil subsidence
+between day- and nighttime (Sokol and Hartmann, 2020)
+
+\subsection{Summary}
+
+By combining a novel cloud tracking algorithm with a new dataset of
+derived all-sky and clear-sky fluxes from geostationary satellite
+observations, we were able to detect and track DCC anvils and their
+associated cores for both isolated and clustered DCCs and investigate
+their properties, lifecycle and CRE. As this study was performed using
+data from May-August (Northern hemisphere summer), we observed the
+majority of convective activity over the Guinea-Congo rainforest and
+Savanna regions, as the ITCZ is at its northernmost extent.
+
+We evaluate the degree of convective clustering of each anvil by
+measuring the number of cores it is associated with. We find that, as
+expected, anvils with the greatest number of cores -- including MCSs --
+have larger anvil areas, longer lifetimes and the coldest cloud tops. As
+a result, despite the majority of observed DCCs being isolated, the
+highly clustered anvils make up most of the anvil coverage, and so cause
+most of the anvil impact over this region. We also find that the
+proportion of the lifecycle spent in the mature and dissipating phases
+increases with the number of cores, and the proportion spent in the
+growing phase decreases.
+
+When looking into the net CRE of anvils, we find that, although the
+average CRE across all observed anvils is approximately zero, few anvils
+have near zero CRE themselves. We find a bimodal distribution of anvil
+CRE, with isolated DCCs that occur during the daytime causing the
+negative (cooling) peak, and those which occur during the night-time
+causing the positive (warming) peak. The systems with near zero CRE tend
+to live longer with more cores, and exist during both the day- and
+night-time. As a result, when considering the magnitude of the anvil
+CRE, isolated DCCs have an outsize contribution to the overall average
+anvil CRE of 18.7\% compared to their proportion of all anvil coverage
+(11.9\%).
+
+The interaction between the diurnal cycle of convection and DCC lifetime
+plays a key role in the shape of the SW anvil CRE distribution and is
+important to consider in regard to anvil CRE feedback. As the LW CRE is
+normally distributed, a response to changing cloud top height or
+temperature may occur as a shift in the distribution. However, the
+bimodal distribution of the SW CRE must result in more complex
+adjustments to shift the overall mean. As the position of the peak at 0
+Wm\textsuperscript{-2} relating to night-time DCCs is fixed, to change
+the overall average SW CRE either the width of the distribution has to
+increase or decrease, or the number of DCCs occurring during the day- or
+night-time has to increase. The former has important implications for
+the diurnal cycle of temperature in the tropics, and the latter for the
+diurnal cycle of convection.
+
+This highlights topics of interest for future research. Firstly, as this
+study only involved 4 months of data during the Northern Hemisphere
+summer, we were not able to investigate the impact of the seasonal cycle
+on the behaviour of DCCs and their CRE. Extending this research to a
+full year of data over a larger domain would allow investigation of
+seasonal and regional differences, in particular also over the oceans.
+Secondly, an investigation of atmospheric heating effects from DCCs. SW
+and LW fluxes have notably different effects on atmospheric heating, and
+so although the top-of-atmosphere flux may be in balance for tropical
+DCCs, changes in the LW or SW CRE may have resulted in different heating
+profiles and diurnal cycles. In particular, anvil heating by LW and SW
+is important to anvil lifetime and dependent on the diurnal cycle
+(Harrop and Hartmann 2018, Sokol and Hartmann 2020), and so gaining a
+better understanding of this may aid in understanding the lifecycle of
+both isolated and clustered convection in the tropics. Finally,
+investigating the response of DCC CRE to perturbations of the diurnal
+cycle of deep convection. Anthropogenic effects such as biomass burning
+aerosol radiative effect and land use change may change the diurnal
+cycle of deep convection over land, and as shown this may have a large
+influence on the ToA CRE. Understanding how the CRE of deep convection
+responds to changes in the diurnal cycle may be key to understanding
+future changes in deep convection in the tropics.
+
+\includegraphics[width=6.26389in,height=4.08637in]{media/image1.png}
+
+Figure 1: Example observations from the Meteosat SEVIRI instrument at
+15:00:00 UTC on 2016/6/01. a: A visible composite formed using the 1.6,
+0.81 and 0.64 micron channels as the red, green and blue channels
+respectively, with 10.8 micron brightness temperature during the
+night-time. The scene shows a cluster of cold cloud tops (cyan) over
+central Africa and over the Southern Atlantic. b: 10.8 micron brightness
+temperature. c: \acrshort{wvd} (WVD) formed by the 6.3 micron
+channel minus the 7.4 micron channel. d: Split window difference (SWD)
+formed by the 10.8 micron channel minus the twelve micron channel.
+
+\includegraphics[width=6.25465in,height=3.94375in]{media/image2.png}
+
+Figure 2: An example of the top of atmosphere (ToA) cloud radiative
+effect (CRE) derived using the radiative flux model, for the same time
+as shown in figure 1 (15:00:00 UTC on 2016/6/01). a: net ToA radiative
+flux. b: net ToA CRE. c: shortwave (SW) upwards CRE. d: longwave (LW)
+upwards CRE.
+
+\includegraphics[width=6.26389in,height=6.37778in]{media/image3.png}
+
+Figure 3: Validation of derived broadband fluxes against monthly
+CERES-EBAF CRE. a.: The mean difference in net ToA CRE by 1x1° grid
+square. b.: A comparison of observed ToA net CRE for SEVIRI against
+CERES, with all locations in blue, and those where we observe DCC anvils
+in red. c.: the mean difference in SW ToA CRE. d.: comparison of SW ToA
+CRE for SEVIRI and CERES. e.: the mean difference in LW CRE. f.:
+comparison of LW ToA CRE. The stippling in a,c,e represents the
+locations in which we observe DCC anvils, with the size of the dots
+corresponding to the number of observations. The solid lines in b,d,f
+show the linear regression for all locations (blue) and the locations in
+we observe dcc anvils (red), weighted by the number of observations.
+
+\includegraphics[width=6.26389in,height=5.42099in]{media/image4.png}
+
+Figure 4: Detected cores (red outline) and anvils (blue outline) at
+3-hour time intervals. All times are given in UTC.
+
+\includegraphics[width=6.26in,height=8.15139in]{media/image5.png}
+
+Figure 5: number of detected cores (a) and average hour of core
+detection (b) by 1x1° grid box. Grid boxes in (b) with a standard
+deviation greater than 6 hours are single-hatched, and greater than 12
+hours cross-hatched
+
+\includegraphics[width=6.26389in,height=6.10531in]{media/image6.png}
+
+Figure 6: Anvil statistics by number of associated cores for average
+maximum area (a), average lifetime (b), occurrence of anvils by number
+of cores (c), and percentage of total anvil coverage (d). Error bars (a,
+b) show standard error of the mean
+
+\includegraphics[width=5.80457in,height=3.31042in]{media/image7.png}
+
+Figure 7: Anvil statistics by number of cores for average anvil cloud
+top temperature (a), and average minimum anvil temperature (b). Error
+bars (a,b) show standard error of the mean
+
+\includegraphics[width=6.26389in,height=4.85862in]{media/image8.png}
+
+Figure 8: The distribution of time to coldest mean anvil CTT (orange),
+largest anvil area (green) and time of anvil dissipation (red) for
+anvils grouped by number of cores. The vertical lines show the mean time
+for each distribution.
+
+\includegraphics[width=6.26389in,height=5.03567in]{media/image9.png}
+
+Figure 9: The proportion of anvil lifetime spent in the growing
+(orange), mature (green) and dissipating (red) phase, according the
+criteria used by Futyan and Del Genio (2007)
+
+\includegraphics[width=5.78218in,height=9.05037in]{media/image10.png}
+
+Figure 10: Anvil net, LW, and SW CRE, accumulated mean CRE over anvil
+lifetime and anvil area for (a) an isolated, short-lived (4-hour) DCC,
+(b)a moderately clustered, 1-day long DCC, and (c) a large, clustered,
+4-day long DCC. All times are the local solar time, to the nearest 5
+minute interval
+
+\includegraphics[width=6.26389in,height=4.64149in]{media/image11.png}
+
+Figure 11: The distribution of lifetime anvil CRE for all observed
+anvils. The mean number of cores per anvil in each bin is indicated by
+the colour scale. The vertical dashed line shows the integrated mean CRE
+over all anvils, weighted by the anvil areas (0.86±0.91
+Wm\textsuperscript{-2}).
+
+\includegraphics[width=6.26389in,height=3.46779in]{media/image12.png}
+
+Figure 12: The distributions of mean anvil SW CRE (a) and LW CRE (b).
+The vertical dashed line shows the integrated mean CRE over all anvils
+(SW: -133.9±0.9 Wm\textsuperscript{-2}, LW: 134.8±0.1
+Wm\textsuperscript{-2})
+
+\includegraphics[width=6.26389in,height=4.98401in]{media/image13.png}
+
+Figure 13: Average anvil CRE binned by the time of detection (local
+time) and mean anvil CTT.
+
+\end{document}

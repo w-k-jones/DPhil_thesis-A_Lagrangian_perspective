@@ -63,7 +63,7 @@ from a Geostationary Perspective}   %note \\[1ex] is a line break in the title
 \setcounter{tocdepth}{3}
 
 
-\maketitle                  % create a title page from the preamble info
+% \maketitle                  % create a title page from the preamble info
 % \include{dedication}        % include a dedication.tex file
 % \include{acknowlegements}   % include an acknowledgements.tex file
 % \include{abstract}          % include the abstract
@@ -80,8 +80,9 @@ from a Geostationary Perspective}   %note \\[1ex] is a line break in the title
 
 \addcontentsline{toc}{chapter}{List of Acronyms}
 \clearpage
+\baselineskip=12pt plus1pt % reduce for glossary
 \printglossary[type=\acronymtype, title={List of Acronyms}, nogroupskip]
-
+\baselineskip=18pt plus1pt
 \end{romanpages}            % end roman page numbering
 \pagenumbering{arabic}      % turn on arabic numbering
 
@@ -90,9 +91,9 @@ from a Geostationary Perspective}   %note \\[1ex] is a line break in the title
 %now include the files of latex for each of the chapters etc
 % \baselineskip=24pt plus1pt % double line spacing
 % \include{introduction}
-\include{chapters/tracking_method}
+% \include{chapters/tracking_method}
 % \include{chapters/lifecycle}
-% \include{chapters/radiative_effect}
+\include{chapters/radiative_effect}
 % \include{conclusion}
 
 %now enable appendix numbering format and include any appendices
