@@ -4,14 +4,13 @@
 %load any additional packages
 % \usepackage[doublespacing]{setspace}
 
-\RequirePackage{array}
-\RequirePackage{graphicx}
-\DeclareGraphicsExtensions{.pdf,.png,.jpg}
-\RequirePackage{color}
-\RequirePackage{amssymb}
-\RequirePackage[intlimits,fleqn,tbtags]{amsmath}
-\RequirePackage{url}\urlstyle{same}
-\RequirePackage{accents}
+\usepackage{array}
+\usepackage{graphicx}\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage[intlimits,fleqn,tbtags]{amsmath}
+\usepackage{url}\urlstyle{same}
+\usepackage{accents}
 \usepackage[authoryear, square]{natbib}
 \usepackage[english]{babel}
 \usepackage{tabularx}
@@ -26,6 +25,8 @@
 \usepackage{rotating}
 \usepackage[hidelinks]{hyperref}
 \usepackage[acronym]{glossaries}
+\usepackage[modulo]{lineno}
+% \usepackage[section]{placeins} % force floats into the section they are defined in
 
 \makeglossaries
 \input{acronyms}
@@ -58,9 +59,10 @@ from a Geostationary Perspective}   %note \\[1ex] is a line break in the title
 
 
 % \maketitle                  % create a title page from the preamble info
-% \include{dedication}        % include a dedication.tex file
-% \include{acknowlegements}   % include an acknowledgements.tex file
-% \include{abstract}          % include the abstract
+% \include{frontmatter/dedication}        % include a dedication.tex file
+% \include{frontmatter/acknowlegements}   % include an acknowledgements.tex file
+% \include{frontmatter/statement_of_originality} % originality statement
+% \include{frontmatter/abstract}          % include the abstract
 
 \begin{romanpages}          % start roman page numbering
 
@@ -72,10 +74,10 @@ from a Geostationary Perspective}   %note \\[1ex] is a line break in the title
 \addcontentsline{toc}{chapter}{List of Tables}
 \listoftables
 
-\addcontentsline{toc}{chapter}{List of Acronyms}
+\addcontentsline{toc}{chapter}{List of Acronyms and Symbols}
 \clearpage
 \baselineskip=12pt plus1pt % reduce for glossary
-\printglossary[type=\acronymtype, title={List of Acronyms}, nogroupskip]
+\printglossary[type=\acronymtype, title={List of Acronyms and Symbols}, nogroupskip]
 \baselineskip=18pt plus1pt
 \end{romanpages}            % end roman page numbering
 \pagenumbering{arabic}      % turn on arabic numbering
@@ -84,11 +86,12 @@ from a Geostationary Perspective}   %note \\[1ex] is a line break in the title
 
 %now include the files of latex for each of the chapters etc
 % \baselineskip=24pt plus1pt % double line spacing
-% \include{introduction}
+\linenumbers
+% \include{chapters/introduction}
 \include{chapters/tracking_method}
 % \include{chapters/lifecycle}
-\include{chapters/radiative_effect}
-% \include{conclusion}
+% \include{chapters/radiative_effect}
+% \include{chapters/conclusion}
 
 %now enable appendix numbering format and include any appendices
 % \appendix

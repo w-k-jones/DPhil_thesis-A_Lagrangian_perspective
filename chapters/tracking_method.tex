@@ -1,4 +1,4 @@
-\chapter{A Semi-Lagrangian Method for Detecting and Tracking \acrshort{dcc}s in Geostationary Satellite Observations}
+\chapter{A Semi-Lagrangian Method for Detecting and Tracking \acrshort{dcc}s in Geostationary Satellite Observations} \label{chp:tracking_method}
 
 % \runningtitle{A Semi-Lagrangian Method for Detecting and Tracking \acrshort{dcc}s in...}
 
@@ -248,7 +248,67 @@ These locations are then processed by mapping their frequency onto the \acrshort
 
 \section{Theory}
 
-\subsection{Observing growing convective cores}
+To better understand how \acrshort{dcc}s appear in \acrshort{goes} \acrshort{abi} observations, a series of experiments were performed using a radiative transfer model.
+These experiments were performed using libRadTran v2.0.4 \citep{emde_libradtran_2016}, utilising the DISORT radiative transfer solver \citep{buras_new_2011} and the REPTRAN absorbtion parameterisation \citep{gasteiger_representative_2014}.
+A tropical atmospheric profile was used to represent the atmospheric conditions under which deep convection typically occurs.
+A complete list of the options used to set up the radiative transfer model across all simulations is provided in table \ref{table:libradtran}.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lll}
+\tophline
+Option          & Value                 & Description                   \\ 
+\middlehline
+rte\_solver     & disort                & DISORT solver                 \\
+source          & thermal               & thermal \acrshort{ir} spectra \\
+wavelength      & 3000--15000           & 3--15\,\unit{\mu m}           \\
+output\_user    & lambda edir eup uu    & wavelength, direct, diffuse   \\
+                &                       &irradiance and all radiances   \\
+zout            & 0 TOA                 & surface and \acrshort{toa}    \\
+albedo          & 0.5                   & surface albedo                \\
+umu             & -1.0, 1.0             & downward \& upward            \\
+sza             & 0                     & solar zenith angle            \\
+mol\_abs\_param & reptran fine          & REPTRAN parameterisation      \\
+atmosphere\_file& afglt.dat             & tropical atmosphere profile   \\
+\bottomhline
+\end{tabular}
+\caption[
+    Selected options for the libRadTran simulations
+    ]{
+    Selected options for the libRadTran simulations.
+    }
+\label{table:libradtran}
+\end{table}
+
+In each of the simulations, a cloud layer is included in addition to these options to represent a \acrshort{dcc} in different phases of the lifecycle.
+For liquid cloud droplets we use the Hu parameterisation \citep{hu_accurate_1993}, and for ice particles we use the Fu scheme \citep{fu_accurate_1996, fu_accurate_1998}. To show how the simulated clouds are observed by \acrshort{goes}-16, we calculate \acrshort{bt} from the simulated radiances, and then integrate over the spectral response function of each of the \acrshort{abi} channels.
+
+\subsection{Observing growing convective cores}\label{sec:theory_core}
+
+The first experiment aims to represent how a vertically developing \acrshort{dcc} core would appear in \acrshort{abi} observations.
+To do so, we run a series of simulations with increasing cloud top heights between 1 and 15\,\unit{k m} at 1\,\unit{k m} intervals.
+These cloud layers are given a base height of 0\,\unit{k m}, \acrshort{lwc} of 1,000\,\unit{g m^{-2}}, and droplet \acrshort{re} of 15\,\unit{\mu m}.
+These values were chosen to represent typical conditions seen in a convective core.
+Although we use liquid droplets at all altitudes, simulations with ice cloud droplets showed negligible differences for cloud layers of this thickness.
+
+Figure~\ref{fig:cloud_height_spectra} shows \acrshort{bt} spectra for increasing cloud height, with the spectral response functions of the ten thermal \acrshort{ir} \acrshort{abi} channels plotted in the background.
+With such a large \acrshort{lwc}, the \acrshort{bt} matches the \acrshort{ctt} apart from the absorption regions of CO\textsubscript{2} (4.2--4.5\,\unit{\mu m} and \>13.2\,\unit{\mu m}) and ozone (9.4--10.2\,\unit{\mu m}), and the \acrshort{wv} absorption for low-level clouds (5--8\,\unit{\mu m}).
+
+The change in observed \acrshort{bt} with height for the 6.2, 7.3, 10.4, and 12.4\,\unit{\mu m} \acrshort{bt} channels along with the \acrshort{wvd} and \acrshort{swd} is plotted in Fig.~\ref{fig:cloud_height_channels}. 
+Above 3\,\unit{k m }, the 10.4 and 12.4\,\unit{\mu m} channels show a constant decrease observed \acrshort{bt} at the moist pseudo-adiabatic lapse rate of 6\,\unit{K}.
+Due to the contribution of \acrshort{wv} to the 6.2 and 7.3\,\unit{\mu m} channels at lower \acrshort{cth}, the \acrshort{wvd} shows the most response to vertical development between 6 and 10\,\unit{k m}.
+The \acrshort{swd} shows a response to clouds developing at a low altitude.
+It has been proposed that this can be used to detect the onset of convection in clear sky conditions before other observations, such as cloud radars \citep{lindsey_use_2014, lindsey_using_2018}.
+
+Figure~\ref{fig:cloud_height_cooling_rates} shows the change in \acrshort{bt} observed over a vertically developing core in units of \unit{K minute^{-1}/m s^{-1}} (i.e. the \acrshort{bt} change per minute, per \unit{m s^{-1}} of vertical development rate).
+Although this is an odd choice of unit, it is used to better compare the observed change in \acrshort{bt} by a geostationary satellite (measured in \unit{K}, with a typical sampling time on the order of minutes), to the vertical velocity of the cloud top (typically measured in \unit{m s^{-1}}.
+Above 3\,\unit{km}, the 10.4\,\unit{\mu m} \acrshort{bt} shows a consistent cooling rate of 0.4\,\unit{K minute^{-1}}.
+\citet{roberts_nowcasting_2003} found a threshold for severe convection of 8\,\unit{K} cooling over 15~minutes, or approximately 0.5\,\unit{K minute^{-1}}, which would represent a cloud top vertical velocity of 1.25\,\unit{m s^{-1}} according to our simulation.
+The \acrshort{wvd} shows a maximum rate of change between 7 and 8\,\unit{k m}, with a warming rate of half the magnitude of the \acrshort{bt} cooling rate.
+
+Overall, we see from this experiment that the 10.4\,\unit{\mu m} \acrshort{bt} channel from \acrshort{abi} can be used to clearly identify a vertically developing core across a wide range of altitudes.
+On the other hand, the \acrshort{wvd} is only sensitive to vertically developing clouds in a narrower range of altitudes, and shows a weaker rate of \acrshort{bt} change.
+However, this sensitivity to vertical development at a mid to high altitude may be helpful in distinguishing between \acrshort{dcc}s and other, vertically developed clouds at lower altitudes, such as cumulus congestus.
 
 \begin{figure}[t]
     \includegraphics[width=\textwidth]{figures/chapter1_05.png}
@@ -281,6 +341,24 @@ These locations are then processed by mapping their frequency onto the \acrshort
 \end{figure}
 
 \subsection{Observing anvil clouds}
+
+In the second experiment, we investigate how anvil clouds of different \acrshort{od} appear in \acrshort{abi} observations.
+The simulations were run with an ice cloud with \acrshort{cth} at 14\,\unit{k m}, cloud base height at 12\,\unit{km} and cloud top \acrshort{re} of 20\,\unit{\mu m}, aiming to represent the typical properties of a dissipating anvil cloud \citep{sokol_tropical_2020}.
+This simulation was then run for a range of \acrshort{od} between 0.125 and 10, with intervals of 0.125 between 0.125 and 1, 0.25 between 1 and 2, 0.5 between 2 and 5, and 1 between 5 and 10.
+
+\acrshort{bt} spectra for these simulations are shown in Fig.~\ref{fig:optical_depth_spectra}, along with the \acrshort{abi} spectral response functions as in Fig.~\ref{fig:cloud_height_spectra}.
+As before, we see absorption due to CO\textsubscript{2}, ozone, and \acrshort{wv}.
+Unlike the simulations in section \ref{sec:theory_core} however, we see a difference in the \acrshort{bt} spectra across the \acrshort{lw} window (10--13\,\unit{\mu m}) for clouds with \acrshort{od} between 0 and 2, with colder \acrshort{bt} at longer wavelengths.
+This is due to the difference in ice emissivity across this range of wavelengths \citep{fu_radiation_2015}.
+As the emissivity of ice particles reduces for wavelengths at 10\,\unit{\mu m} and below there is a greater contribution from the atmosphere below the cloud layer and, as a result, warmer \acrshort{bt}s are observed.
+It should be noted that this difference is dependent on the size of the ice particles, with smaller \acrshort{re} resulting in a larger difference in emissivity \citep{dubuisson_sensitivity_2008}.
+
+Figure~\ref{fig:optical_depth_channels} shows simulated \acrshort{abi} observations for the 6.2, 7.3, 10.4, and 12.4\,\unit{\mu m} \acrshort{bt} channels, the \acrshort{wvd} and the \acrshort{swd} for a range of \acrshort{od} between 0.1 and 10.
+At high \acrshort{od}, all channels show a cold \acrshort{bt} close to that of the \acrshort{ctt}, however, for \acrshort{od} below 3, the increased contribution from the atmosphere below results in warmer \acrshort{bt}.
+The \acrshort{wvd} similarly shows a more negative \acrshort{bt} difference at \acrshort{od} below 3, with a continual decrease for smaller \acrshort{od}.
+The \acrshort{swd} however shows an increasingly positive \acrshort{bt} difference for \acrshort{od} below 5, peaking at 10\,\unit{K} around 1~\acrshort{od}.
+However, below this \acrshort{od} the \acrshort{swd} decreases towards smaller positive values.
+As a result, the \acrshort{swd} has the potential to detect thin anvil cirrus at much low \acrshort{od} than \acrshort{bt} channels or \acrshort{wvd}, down to values around 0.25~\acrfull{od}.
 
 \begin{figure}[t]
     \includegraphics[width=\textwidth]{figures/chapter1_08.png}
@@ -410,7 +488,6 @@ Window type      & Gaussian \\
     Selected parameters for the Farnebäck optical flow algorithm
     }
 \label{table:parameters}
-% \belowtable{The values of parameters used in the Farnebäck algorithm for detection of optical flow vectors in this application.} % Table Footnotes
 \end{table}
 
 An example of the motion vectors calculated by the Farnebäck algorithm when applied to the 10.4\,\unit{\mu m} \acrshort{bt} field is shown in fig.~\ref{fig:optical_flow}.
