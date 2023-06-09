@@ -1,4 +1,159 @@
 
+@inproceedings{brox_high_2004,
+	address = {Berlin, Heidelberg},
+	title = {High {Accuracy} {Optical} {Flow} {Estimation} {Based} on a {Theory} for {Warping}},
+	volume = {3024},
+	isbn = {978-3-540-21981-1 978-3-540-24673-2},
+	url = {http://link.springer.com/10.1007/978-3-540-24673-2_3},
+	doi = {10.1007/978-3-540-24673-2_3},
+	abstract = {We study an energy functional for computing optical flow that combines three assumptions: a brightness constancy assumption, a gradient constancy assumption, and a discontinuity-preserving spatio-temporal smoothness constraint. In order to allow for large displacements, linearisations in the two data terms are strictly avoided. We present a consistent numerical scheme based on two nested fixed point iterations. By proving that this scheme implements a coarse-to-fine warping strategy, we give a theoretical foundation for warping which has been used on a mainly experimental basis so far. Our evaluation demonstrates that the novel method gives significantly smaller angular errors than previous techniques for optical flow estimation. We show that it is fairly insensitive to parameter variations, and we demonstrate its excellent robustness under noise.},
+	language = {en},
+	urldate = {2023-06-08},
+	publisher = {Springer Berlin Heidelberg},
+	author = {Brox, Thomas and Bruhn, Andrés and Papenberg, Nils and Weickert, Joachim},
+	editor = {Kanade, Takeo and Kittler, Josef and Kleinberg, Jon M. and Mattern, Friedemann and Mitchell, John C. and Nierstrasz, Oscar and Pandu Rangan, C. and Steffen, Bernhard and Sudan, Madhu and Terzopoulos, Demetri and Tygar, Dough and Vardi, Moshe Y. and Weikum, Gerhard and Pajdla, Tomás and Matas, Jiří},
+	year = {2004},
+	doi = {10.1007/978-3-540-24673-2_3},
+	note = {Book Title: Computer Vision - ECCV 2004
+Series Title: Lecture Notes in Computer Science},
+	pages = {25--36},
+	annote = {[TLDR] By proving that this scheme implements a coarse-to-fine warping strategy, this work gives a theoretical foundation for warping which has been used on a mainly experimental basis so far and demonstrates its excellent robustness under noise.},
+	file = {Full Text:/Users/jonesw/Zotero/storage/BGSDKBPR/Brox et al. - 2004 - High Accuracy Optical Flow Estimation Based on a T.pdf:application/pdf},
+}
+
+
+@inproceedings{lucas_iterative_1981,
+	address = {San Francisco, CA, USA},
+	series = {{IJCAI}'81},
+	title = {An iterative image registration technique with an application to stereo vision},
+	abstract = {Image registration finds a variety of applications in computer vision. Unfortunately, traditional image registration techniques tend to be costly. We present a new image registration technique that makes use of the spatial intensity gradient of the images to find a good match using a type of Newton-Raphson iteration. Our technique is taster because it examines far fewer potential matches between the images than existing techniques Furthermore, this registration technique can be generalized to handle rotation, scaling and shearing. We show how our technique can be adapted tor use in a stereo vision system.},
+	urldate = {2023-06-08},
+	booktitle = {Proceedings of the 7th international joint conference on {Artificial} intelligence - {Volume} 2},
+	publisher = {Morgan Kaufmann Publishers Inc.},
+	author = {Lucas, Bruce D. and Kanade, Takeo},
+	month = aug,
+	year = {1981},
+	pages = {674--679},
+}
+
+
+@inproceedings{wulff_efficient_2015,
+	title = {Efficient sparse-to-dense optical flow estimation using a learned basis and layers},
+	doi = {10.1109/CVPR.2015.7298607},
+	abstract = {We address the elusive goal of estimating optical flow both accurately and efficiently by adopting a sparse-to-dense approach. Given a set of sparse matches, we regress to dense optical flow using a learned set of full-frame basis flow fields. We learn the principal components of natural flow fields using flow computed from four Hollywood movies. Optical flow fields are then compactly approximated as a weighted sum of the basis flow fields. Our new PCA-Flow algorithm robustly estimates these weights from sparse feature matches. The method runs in under 200ms/frame on the MPI-Sintel dataset using a single CPU and is more accurate and significantly faster than popular methods such as LDOF and Classic+NL. For some applications, however, the results are too smooth. Consequently, we develop a novel sparse layered flow method in which each layer is represented by PCA-Flow. Unlike existing layered methods, estimation is fast because it uses only sparse matches. We combine information from different layers into a dense flow field using an image-aware MRF. The resulting PCA-Layers method runs in 3.2s/frame, is significantly more accurate than PCA-Flow, and achieves state-of-the-art performance in occluded regions on MPI-Sintel.},
+	booktitle = {2015 {IEEE} {Conference} on {Computer} {Vision} and {Pattern} {Recognition} ({CVPR})},
+	author = {Wulff, Jonas and Black, Michael J.},
+	month = jun,
+	year = {2015},
+	note = {ISSN: 1063-6919},
+	keywords = {Adaptive optics, Computational modeling, Interpolation, Optical imaging, Optical signal processing, Principal component analysis, Robustness},
+	pages = {120--130},
+	file = {IEEE Xplore Abstract Record:/Users/jonesw/Zotero/storage/JJVFGKN4/7298607.html:text/html},
+}
+
+
+@inproceedings{bouguet_pyramidal_1999,
+	title = {Pyramidal implementation of the lucas kanade feature tracker},
+	url = {https://www.semanticscholar.org/paper/Pyramidal-implementation-of-the-lucas-kanade-Bouguet/aa972b40c0f8e20b07e02d1fd320bc7ebadfdfc7},
+	abstract = {1 Problem Statement Let I and J be two 2D grayscaled images. The two quantities I(x) = I(x, y) and J(x) = J(x, y) are then the grayscale value of the two images are the location x = [x y] , where x and y are the two pixel coordinates of a generic image point x. The image I will sometimes be referenced as the first image, and the image J as the second image. For practical issues, the images I and J are discret function (or arrays), and the upper left corner pixel coordinate vector is [0 0] . Let nx and ny be the width and height of the two images. Then the lower right pixel coordinate vector is [nx â 1 ny â 1] . Consider an image point u = [ux uy] on the first image I. The goal of feature tracking is to find the location v = u + d = [ux+dx uy +dy] on the second image J such as I(u) and J(v) are âsimilarâ. The vector d = [dx dy] is the image velocity at x, also known as the optical flow at x. Because of the aperture problem, it is essential to define the notion of similarity in a 2D neighborhood sense. Let Ïx and Ïy two integers. We define the image velocity d as being the vector that minimizes the residual function defined as follows:},
+	urldate = {2023-06-08},
+	author = {Bouguet, J.},
+	year = {1999},
+	annote = {[TLDR] It is essential to define the notion of similarity in a 2D neighborhood sense and the image velocity d is defined as being the vector that minimizes the residual function defined as follows.},
+	file = {Full Text PDF:/Users/jonesw/Zotero/storage/V2LP53MP/Bouguet - 1999 - Pyramidal implementation of the lucas kanade featu.pdf:application/pdf},
+}
+
+
+@article{zach_duality_2007,
+	title = {A {Duality} {Based} {Approach} for {Realtime} {TV}-{L1} {Optical} {Flow}: 29th {DAGM} {Symposium} on {Pattern} {Recognition}},
+	shorttitle = {A {Duality} {Based} {Approach} for {Realtime} {TV}-{L1} {Optical} {Flow}},
+	url = {http://www.vrvis.at},
+	urldate = {2023-06-08},
+	journal = {Proceedings 29th DAGM Symposium "Pattern Recognition"},
+	author = {Zach, Christopher and Pock, Thomas and Bischof, Horst},
+	year = {2007},
+	note = {Publisher: Springer},
+	pages = {214--223},
+}
+
+
+@article{perez_tv-l1_2013,
+	title = {{TV}-{L1} {Optical} {Flow} {Estimation}},
+	volume = {3},
+	issn = {2105-1232},
+	url = {https://www.ipol.im/pub/art/2013/26/},
+	doi = {10.5201/ipol.2013.26},
+	abstract = {This article describes an implementation of the optical flow estimation method introduced by Zach, Pock and Bischof in 2007. This method is based on the minimization of a functional containing a data term using the L1 norm and a regularization term using the total variation of the flow. The main feature of this formulation is that it allows discontinuities in the flow field, while being more robust to noise than the classical approach of Horn and Schunck. The algorithm is an efficient numerical scheme, which solves a relaxed version of the problem by alternate minimization.},
+	language = {en},
+	urldate = {2023-06-08},
+	journal = {Image Processing On Line},
+	author = {Pérez, Javier Sánchez and Meinhardt-Llopis, Enric and Facciolo, Gabriele},
+	month = jul,
+	year = {2013},
+	pages = {137--150},
+	file = {Full Text PDF:/Users/jonesw/Zotero/storage/GNZRBRZ8/PÃ©rez et al. - 2013 - TV-L1 Optical Flow Estimation.pdf:application/pdf},
+}
+
+
+@inproceedings{weinzaepfel_deepflow_2013,
+	title = {{DeepFlow}: {Large} {Displacement} {Optical} {Flow} with {Deep} {Matching}},
+	shorttitle = {{DeepFlow}},
+	url = {https://openaccess.thecvf.com/content_iccv_2013/html/Weinzaepfel_DeepFlow_Large_Displacement_2013_ICCV_paper.html},
+	urldate = {2023-06-08},
+	author = {Weinzaepfel, Philippe and Revaud, Jerome and Harchaoui, Zaid and Schmid, Cordelia},
+	year = {2013},
+	pages = {1385--1392},
+	file = {Full Text PDF:/Users/jonesw/Zotero/storage/DPG7D92F/Weinzaepfel et al. - 2013 - DeepFlow Large Displacement Optical Flow with Dee.pdf:application/pdf},
+}
+
+
+@misc{kroeger_fast_2016,
+	title = {Fast {Optical} {Flow} using {Dense} {Inverse} {Search}},
+	url = {http://arxiv.org/abs/1603.03590},
+	doi = {10.48550/arXiv.1603.03590},
+	abstract = {Most recent works in optical flow extraction focus on the accuracy and neglect the time complexity. However, in real-life visual applications, such as tracking, activity detection and recognition, the time complexity is critical. We propose a solution with very low time complexity and competitive accuracy for the computation of dense optical flow. It consists of three parts: 1) inverse search for patch correspondences; 2) dense displacement field creation through patch aggregation along multiple scales; 3) variational refinement. At the core of our Dense Inverse Search-based method (DIS) is the efficient search of correspondences inspired by the inverse compositional image alignment proposed by Baker and Matthews in 2001. DIS is competitive on standard optical flow benchmarks with large displacements. DIS runs at 300Hz up to 600Hz on a single CPU core, reaching the temporal resolution of human's biological vision system. It is order(s) of magnitude faster than state-of-the-art methods in the same range of accuracy, making DIS ideal for visual applications.},
+	urldate = {2023-06-08},
+	publisher = {arXiv},
+	author = {Kroeger, Till and Timofte, Radu and Dai, Dengxin and Van Gool, Luc},
+	month = mar,
+	year = {2016},
+	note = {arXiv:1603.03590 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Robotics},
+	annote = {Comment: 9 pages main paper + 16 pages supplementary material},
+	file = {arXiv Fulltext PDF:/Users/jonesw/Zotero/storage/I5LWDEEB/Kroeger et al. - 2016 - Fast Optical Flow using Dense Inverse Search.pdf:application/pdf},
+}
+
+@book{yau_short_1989,
+	title = {A {Short} {Course} in {Cloud} {Physics} - 3rd {Edition}},
+	isbn = {0-7506-3215-1},
+	publisher = {Butterworth-Heinemann},
+	author = {Yau, K., M. and Rogers, R., R.},
+	year = {1989},
+	file = {A Short Course in Cloud Physics - 3rd Edition:/Users/jonesw/Zotero/storage/QBLYPSUG/978-0-08-057094-5.html:text/html},
+}
+
+
+@article{crum_wsr-88d_1993,
+	title = {The {WSR}-{88D} and the {WSR}-{88D} {Operational} {Support} {Facility}},
+	volume = {74},
+	issn = {0003-0007, 1520-0477},
+	url = {https://journals.ametsoc.org/view/journals/bams/74/9/1520-0477_1993_074_1669_twatwo_2_0_co_2.xml},
+	doi = {10.1175/1520-0477(1993)074<1669:TWATWO>2.0.CO;2},
+	abstract = {The Weather Surveillance Radarâ1988 Doppler (WSR-88D) System is the product of the Next Generation Weather Radar (NEXRAD) program, a joint effort of the U.S. Departments of Commerce, Defense, and Transportation. WSR-88D Systems meet the common needs of the three agencies and are being installed across the United States and at selected overseas sites. These systems provide Doppler capabilities, increased receiver sensitivity, and real-time display of base and derived products that will enable forecasters to improve the detection of and give greater advanced warning of severe weather events. Many nonsevere weather and hydrological applications are also expected. WSR-88D Systems will be modified and enhanced during their operational life to meet changing requirements, technological advancements, and improved understanding of the application of these systems to real-time operations. The NEXRAD agencies established the Operational Support Facility (OSF) to provide centralized WSR-88D operator training and software, maintenance, and engineering support. This paper provides an overview of the NEXRAD program, the WSR-88D System, and the role of the OSF in supporting the WSR-88D and its users. Examples of some of the products are also presented.},
+	language = {en},
+	number = {9},
+	urldate = {2023-06-08},
+	journal = {Bulletin of the American Meteorological Society},
+	author = {Crum, Timothy D. and Alberty, Ron L.},
+	month = sep,
+	year = {1993},
+	note = {Publisher: American Meteorological Society
+Section: Bulletin of the American Meteorological Society},
+	pages = {1669--1688},
+	file = {Full Text PDF:/Users/jonesw/Zotero/storage/RALEH97Z/Crum and Alberty - 1993 - The WSR-88D and the WSR-88D Operational Support Fa.pdf:application/pdf},
+}
+
+
 @article{dubuisson_sensitivity_2008,
 	title = {Sensitivity of {Thermal} {Infrared} {Radiation} at the {Top} of the {Atmosphere} and the {Surface} to {Ice} {Cloud} {Microphysics}},
 	volume = {47},
