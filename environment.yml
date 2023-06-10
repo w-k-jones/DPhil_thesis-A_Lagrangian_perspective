@@ -25,6 +25,7 @@ dependencies:
   - netcdf4
   - arm_pyart
   - cmcrameri
+  - palettable
   - pip
   - pip:
      - "--editable=git+https://github.com/w-k-jones/tobac-flow.git@v1.8#egg=tobac_flow"
