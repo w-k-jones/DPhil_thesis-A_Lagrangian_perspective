@@ -421,24 +421,30 @@ We present here a novel method for detecting and tracking both the growing cores
     \centering
     \includegraphics[width=0.9\textwidth]{figures/chapter1_11.png}
     \caption[
-    A comparison of the Lagrangian change in \acrshort{bt} using different optical flow methods  
-    ]{}
+    The difference in \acrshort{bt} between subsequent \acrshort{abi} observations when taking into account the cloud motion predicted by the different optical flow algorithms.
+    ]{
+    The difference in \acrshort{bt} between subsequent \acrshort{abi} observations when taking into account the cloud motion predicted by the different optical flow algorithms. The plots are again shown for the time step at 19:00:00~\acrshort{utc}, with the 10.4\,\unit{\mu m} \acrshort{bt} at this time step shown for reference (a). b: the Eulerian difference in \acrshort{bt}; c--h: the Lagrangian difference in \acrshort{bt} using motion vectors predicted by each of the optical flow algorithms.
+    }
     \label{fig:opt_flow_differences}
 \end{figure}
 
 \begin{figure}[t]
     \includegraphics[width=\textwidth]{figures/chapter1_12.png}
     \caption[
-    The mean square error of the \acrshort{bt} difference and residual motion vector magnitude for different optical flow methods
-    ]{}
+    A comparison of the \acrshort{bt} difference and residual vector magnitude \acrshort{mse} for each of the optical flow algorithms
+    ]{
+    A comparison of the \acrshort{mse} for each of the optical flow algorithms. a: \acrshort{bt} difference \acrshort{mse} for all pixels and (b) for pixels with \acrshort{bt} $<$ 273\,\unit{K}. c: \acrshort{mse} of the residual vector magnitude for all pixels and (d) for pixels with \acrshort{bt} $<$ 273\,\unit{K}.
+    }
     \label{fig:opt_flow_mse}
 \end{figure}
 
 \begin{figure}[t]
     \includegraphics[width=\textwidth]{figures/chapter1_13.png}
     \caption[
-    The performance cost of different optical flow methods
-    ]{}
+    A comparison of the computational performance of each optical flow method
+    ]{
+    A comparison of the computational performance of each optical flow method. Run-time was measured for a sequence of 48 300\texttimes300 pixel \acrshort{abi} 10.4\,\unit{\mu m} \acrshort{bt} images.
+    }
     \label{fig:opt_flow_cost}
 \end{figure}
 
@@ -615,16 +621,18 @@ Labelling algorithms assign unique identifiers to each segmented region provided
 \end{figure}
 
 Growing deep convective cores are detected in a similar manner to that used by \citet{zinner_cb-tram:_2008}.
-We have found that the \acrshort{wvd} field provides the best observations for detecting growing deep convective cores as the field isolates growth in the mid-troposphere, removing spurious observations of growth due to boundary layer convection and cloud formation.
-The growth is calculated using the finite difference of the \acrshort{wvd} field in the Lagrangian perspective.
+The growth rates are calculated using the finite difference of the 10.4\,\unit{\mu m } \acrshort{bt} and \acrshort{wvd} fields in the Lagrangian perspective.
+We have found that combining both the 10.4\,\unit{\mu m} \acrshort{bt} and the \acrshort{wvd} field provides the best observations for detecting growing deep convective cores.
+The \acrshort{bt} field shows cooling cloud tops throughout the troposphere, while the \acrshort{wvd} isolates growth in the mid- to upper-troposphere, removing spurious observations of growth due to boundary layer convection and cloud formation.
 
-We classify a region of growing deep convection as a region of continuous warming of the \acrshort{wvd} field of at least 0.5\,\unit{K} per minute over a 15-minute period, covering an area of at least 3 by 3 pixels (approximately 9 by 9\,\unit{km}) at each time step.
-This threshold for cloud top growth is based on previous studies which have found a cooling of 8\,\unit{K} over a 15-minute period to be a good predictor of intense convection \citep{roberts_nowcasting_2003, hartung_intercomparison_2013}.
-The region of growing cloud is then expanded through the use of a watershed operation to fill surrounding areas of the cloud field with a detected growth rate greater than 0.25\,\unit{K} per minute to detect weaker areas of updraft within the growing cores.
-Finally, each region of detected growth is labelled, and each label checked to ensure that the growth region ends with a \acrshort{wvd} field with a value of greater than -5, indicating the formation of an anvil cloud \citep{muller_role_2018}.
+We classify a region of growing deep convection as a region of either continuous cooling of greater than 0.5\,\unit{K} per minute in the 10.4\,\unit{\mu m} \acrshort{bt} field, or continuous warming of the \acrshort{wvd} field of at least 0.25\,\unit{K} per minute.
+These growth rates must be detected over a minimum 15-minute period, covering an area of at least 3 by 3 pixels (approximately 7.5 by 7.5\,\unit{km}) at each time step.
+Each region of detected growth is given a unique label, the average \acrshort{bt} of the detected cloud at each time step is calculated, and any label which fail to meet the cooling rate thresholds of 8\,\unit{K} over a 15-minute period (from \citep{roberts_nowcasting_2003, hartung_intercomparison_2013}) are removed.
+Finally, each label is checked to ensure that the growth region ends with a \acrshort{wvd} field with a value of greater than -5, indicating that the growing core reaches a high altitude \citep{muller_role_2018}.
 
-Figure~\ref{fig:core_detection} shows a comparison between the detected core cooling rates in \acrshort{abi} imagery and the corresponding column radar reflectivity measured by \acrshort{nexrad}. 
-During the early development of the core, the detected cooling rate (fig.~\ref{fig:core_detection}\,a) shows growth in the same locations as the \acrshort{nexrad} radar reflectivity (fig.~\ref{fig:core_detection}\,c).
+Figure~\ref{fig:core_detection} shows a comparison between the detected core cooling rates in \acrshort{abi} imagery and the corresponding column radar reflectivity measured by \acrshort{nexrad} for the case of newly developing convection (fig.~\ref{fig:core_detection}\,a,c,e) and mature \acrshort{dcc} (fig.~\ref{fig:core_detection}\,b,d,f)
+Both 10.4\,\unit{\mu m} \acrshort{bt} and \acrshort{wvd} growth rates show growth detected in the same locations as the high column radar reflectivity from \acrshort{nexrad}.
+
 However, during the mature stage of the \acrshort{dcc}, discrepancies develop between the observed cooling rate (fig.\ref{fig:core_detection}\,b) and the radar reflectivity (fig.~\ref{fig:core_detection}\,d) due to the development of the anvil cloud blocking satellite observations of the core underneath.
 
 \subsection{Detection of Anvil Clouds}
@@ -701,16 +709,16 @@ At this point in the lifetime of the tracked \acrshort{dcc} we no longer observe
 
 \section{Evaluation}
 
-%f
-\begin{figure}[t]
-    \includegraphics[width=\textwidth]{figures/chapter1_19.png}
-    \caption[
-    \acrshort{pod}, \acrshort{far} and F-score for detected core and anvil regions evaluated against \acrshort{glm} lightning observations
-    ]{
+% %f
+% \begin{figure}[t]
+%     \includegraphics[width=\textwidth]{figures/chapter1_19.png}
+%     \caption[
+%     \acrshort{pod}, \acrshort{far} and F-score for detected core and anvil regions evaluated against \acrshort{glm} lightning observations
+%     ]{
     
-    }
-    \label{fig:validation}
-\end{figure}
+%     }
+%     \label{fig:validation}
+% \end{figure}
 
 
 The effectiveness of the semi-Lagrangian framework for the detection of \acrshort{dcc}s is evaluated by analysing the proximity of detected anvil cloud regions to lightning flash detection from \acrshort{glm}.
@@ -750,19 +758,19 @@ By performing validation over both a large region, including a range of both lan
 %t
 \begin{table}[t]
 \centering
-\begin{tabular}{lcrr}
+\begin{tabular}{lcrrr}
 \tophline
-Detection Method    & n         & \acrshort{pod}       & \acrshort{far}       \\ 
+Detection Method            & n         & \acrshort{pod}    & \acrshort{far}    & f1-score \\ 
 \middlehline
-Growth based        & 70,527    & 0.23      & 0.27      \\
-\acrshort{wvd} threshold       & 312,591   & 0.99      & 0.73      \\
-Semi-lagrangian     & 14,479    & 0.93      & 0.35      \\
+Growth-based                & 271,507   & 0.3314            & 0.1965            & 0.4693  \\
+\acrshort{wvd} threshold    & 332,419   & 0.9680            & 0.6776            & 0.4837  \\
+Semi-Lagrangian             & 62,443    & 0.9815            & 0.1440            & 0.9144 \\
 \bottomhline
 \end{tabular}
 \caption[
-\acrshort{pod} and \acrshort{far}s for three different detection methods validated against observed \acrshort{glm} flashes
+\acrshort{pod}, \acrshort{far} and f1-score for three different detection methods validated against observed \acrshort{glm} flashes
 ]{
-\acrshort{pod} and \acrshort{far} for three different detection methods validated against observed \acrshort{glm} flashes (n=47,096,707). Growth based refers to the detection of growing \acrshort{dcc}s using the method described in section 3.3. \acrshort{wvd} threshold uses the threshold method developed by \citet{muller_role_2018}. Semi-Lagrangian refers to the detection of anvils clouds connected to growing cores using the edge-based watershedding method described in section 3.4.
+\acrshort{pod}, \acrshort{far} and f1-score for three different detection methods validated against observed \acrshort{glm} flashes (n=69,228,768). Growth based refers to the detection of growing \acrshort{dcc}s using the method described in section 3.3. \acrshort{wvd} threshold uses the threshold method developed by \citet{muller_role_2018}. Semi-Lagrangian refers to the detection of anvils clouds connected to growing cores using the edge-based watershedding method described in section 3.4.
 } % Table Footnotes
 \label{table:validation}
 \end{table}
