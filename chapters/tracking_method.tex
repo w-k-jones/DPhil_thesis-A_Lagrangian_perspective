@@ -418,7 +418,8 @@ We present here a novel method for detecting and tracking both the growing cores
 \end{figure}
 
 \begin{figure}[t]
-    \includegraphics[width=\textwidth]{figures/chapter1_11.png}
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/chapter1_11.png}
     \caption[
     A comparison of the Lagrangian change in \acrshort{bt} using different optical flow methods  
     ]{}
@@ -501,58 +502,56 @@ For each set of optical flow vectors, the average vector over each 5\texttimes 5
 The two sparse methods (fig.~\ref{fig:opt_flow_comparison}\,f,g) show a closer match of the areas where optical flow vectors to the edge of the anvil cloud than the dense methods (fig.~\ref{fig:opt_flow_comparison}\,b--e), which have a tendency to smooth the detected vectors over a large area.
 Of all the methods, the Farnebäck algorithm tends to produce larger magnitudes, but correctly detects zero flow in areas without clouds, unlike most of the algorithms.
 
-Figure~\ref{fig:opt_flow_differences} shows the difference in \acrshort{bt} when taking into account the cloud motion predicted by the different optical flow algorithms.
+Figure~\ref{fig:opt_flow_differences} shows the difference in \acrshort{bt} between subsequent observations when taking into account the cloud motion predicted by the different optical flow algorithms.
+The plots are again shown for the time step at 19:00:00~\acrshort{utc}, with the 10.4\,\unit{\mu m} \acrshort{bt} at this time step shown again for reference in fig.~\ref{fig:opt_flow_differences}\,a.
+Figure~\ref{fig:opt_flow_differences}\,b shows the Eulerian difference in \acrshort{bt}; the difference in the \acrshort{bt} observed at the same pixel locations on subsequent time steps.
+We see large cooling rates of the left (downwind) side of the anvil cloud, not because the \acrshort{ctt} is cooling, but because of the expansion of the anvil cloud into previously cloud-free areas.
+Removing these erroneous observations of cloud-top cooling caused by the motion and expansion of the anvil cloud is the main objective of the semi-Lagrangian approach.
 
+The dense optical flow methods (fig.~\ref{fig:opt_flow_differences}\,c--f) show good performance in removing the anomalous cooling observations seen downwind of the anvil cloud.
+The Farnebäck, \acrshort{dis} and DeepFlow algorithms (fig.~\ref{fig:opt_flow_differences}\,c--e) all show a warming tendency towards the edge of the anvil cloud.
+Although this may be explained by an overestimation of the cloud motion by these algorithms, this may also be a real observation of apparent warming due to thinning of the detraining anvil cloud.
+The \acrshort{dualtvl1} algorithm (fig.~\ref{fig:opt_flow_differences}\,f) shows generally smaller differences than the other algorithms.
+This is likely due to the algorithm accounting for changes in brightness between observations, whereas the other algorithms assume that the brightness of tracked objects remains constant between observations.
 
+The two sparse optical flow algorithms (fig.~\ref{fig:opt_flow_differences}\,g,h) both show worse performance, with the sparse to dense method performing particularly poorly.
+Both algorithms show cooling downwind of the anvil, likely because the region-based methods used to map the sparse motion vectors to the whole image do not detect this region well.
 
-We use the Farnebäck algorithm \citep{farneback_two-frame_2003} to estimate optical flow vectors of observed \acrshort{dcc}s.
-The Farnebäck algorithm calculates a `dense' field of optical flow vectors, in which a flow vector is calculated for every pixel in the origin image which maps to its predicted location in the destination image.
-This calculation is performed by finding the minimum cross-correlation over increasingly smaller subsets of the image.
-This iterative approach allows flow vectors to be calculated to sub-pixel accuracy.
-In this framework, we have used the implementation of the Farnebäck algorithm from the OpenCV image processing package \citep{opencv_library}.
-Although other optical flow algorithms may provide better accuracy in different circumstances \citep{baker_database_2011}, we have found that the ability of the Farnebäck algorithm to accept a range of parameters is important for detecting the motion of clouds across a wide range of scales.
-The choice of parameters used is a compromise between the ability to robustly detect flow vectors in areas of the image with low contrast between features (e.g.\ in the centre of anvil clouds), versus the fidelity of the motion vectors detected for small, high-contrast features such as developing cores.
-Table \ref{table:parameters} shows the parameters chosen for the Farnebäck algorithm for \acrshort{abi} imagery in the \acrshort{conus} scan region, which has a temporal resolution of 5~minutes and the spatial resolution of 2~km.
-The values used for the window size parameter are scale-dependent, proportional to the time between subsequent images, and inversely proportional to the spatial resolution.
+Figure~\ref{fig:opt_flow_mse}\,a shows the \acrshort{mse} of the \acrshort{bt} differences shown in fig.~\ref{fig:opt_flow_differences} for each algorithm.
+As seen in fig.~\ref{fig:opt_flow_differences}, the \acrshort{dualtvl1} algorithm has the smallest differences, the other dense algorithms perform similarly, and the \acrshort{pca}-Flow and sparse to dense algorithms perform the worst.
+It should be noted that we should expect some differences in the \acrshort{bt} due to actual changes in the \acrshort{ctt}.
+Figure~\ref{fig:opt_flow_mse}\,b shows the \acrshort{mse} of the \acrshort{bt} differences for pixels with \acrshort{bt} less than 273\,\unit{K}, representing cold cloud observations.
 
+To estimate the uncertainty in the calculated motion vectors, we calculate the residual motion vectors for each algorithm.
+The residual motion is calculated by first warping each image to the locations predicted by the optical flow vectors, in the same manner used to calculate the \acrshort{bt} differences in fig.~\ref{fig:opt_flow_differences}.
+Then the optical flow algorithms are used to calculate a second set of residual vectors between each image and the subsequent warped image.
+In theory, if the initial motion vectors were calculated perfectly, warping the image by the optical flow vectors should result in the subsequent cloud in the same position as the prior image, and so the second set of motion vectors should calculate as zero.
+The magnitude of the residual motion vectors is therefore considered as the uncertainty in the initial set of motion vectors.
 
-\begin{table}[t]
-\centering
-\begin{tabular}{lcr}
-\tophline
-Parameter        & Value    \\ 
-\middlehline
-Window size      & 16       \\
-Levels           & 5        \\
-Pyramid scale    & 0.5      \\
-Iterations       & 3        \\
-Polynomial order & 5        \\
-Polynomial sigma & 1.1      \\
-Window type      & Gaussian \\
-\bottomhline
-\end{tabular}
-\caption[
-    Selected parameters for the Farnebäck optical flow algorithm
-    ]{
-    Selected parameters for the Farnebäck optical flow algorithm
-    }
-\label{table:parameters}
-\end{table}
+Figure~\ref{fig:opt_flow_mse}\,c,d show the \acrshort{mse} of the residual vector magnitudes for all pixels and pixels less than 273\,\unit{K} respectively.
+The DeepFlow and \acrshort{dualtvl1} algorithms again show the best accuracy, and sparse to dense the worst.
+The Farnebäck algorithm shows good accuracy across all pixels, as seen in the ability to correctly detect zero motion in cloudless skies in fig.~\ref{fig:opt_flow_comparison}.
+However, when considering only cold pixels the Farnebäck algorithm performs slightly worse than \acrshort{dis}.
+
+The results shown in fig.~\ref{fig:opt_flow_mse} suggest that the \acrshort{dualtvl1} algorithm is the best choice for estimating the motion vectors in satellite observations of \acrshort{dcc}.
+However, due to the large size and long sequences of images produced by \acrshort{abi}, it is also important to consider the computational cost of each algorithm.
+Figure~\ref{fig:opt_flow_cost} shows the run time in seconds for each algorithm applied to a sequence of 48 300\texttimes300~pixel \acrshort{abi} \acrshort{bt} images.
+Both the DeepFlow and \acrshort{dualtvl1} algorithms show significantly longer run times than any of the other algorithms.
+As a result, we have selected the Farnebäck algorithm for out tracking method as it offers the best balance of accuracy and computational performance for running on large datasets.
 
 An example of the motion vectors calculated by the Farnebäck algorithm when applied to the 10.4\,\unit{\mu m} \acrshort{bt} field is shown in fig.~\ref{fig:optical_flow}.
-By comparing the predicting flow vectors to the future evolution of the cloud field (dashed line), we can see that the algorithm correctly estimates the future evolution of the anvil cloud.
-
-We estimate the uncertainty of the optical flow vectors by comparing the residual error in the location of features in subsequent images after the detected motion from optical flow is accounted for (see fig.~\ref{fig:optical_flow}\,d).
-We restrict the estimation of uncertainty to regions of clouds with \acrshort{bt}s less than 270\,\unit{K} as these are the situations in which we see enough contrast with the background to detect optical flow motion vectors.
-We find that in the majority of cases that the relative uncertainty in the magnitude of the location offset versus the magnitude of the estimated optical flow vector is less than 10\,\%, with mean and median relative uncertainties of 15.0\,\% and 8.4\,\% respectively.
+Figure~\ref{fig:optical_flow}\,c shows the residual flow vectors, which are small compared to the detected cloud motion vectors (fig.~\ref{fig:optical_flow}).
+The main areas in which residual flow vectors can be seen are the regions around the edge of anvil clouds and in the center of thick anvil clouds where there are no clear features to track.
+Figure~\ref{fig:optical_flow}\,d shows the distribution of residual vector errors proportional to the detected cloud motion vectors.
+The majority of the residual errors are close to zero, and very few exceed 0.5.
+As in the majority of applications for the semi-Lagrangian we are only interested in the motion to the nearest pixel, these errors are acceptable.
 
 Two potential sources of uncertainty are the assumptions made by the Farnebäck algorithm that the feature being tracked remains the same size and intensity in subsequent images.
 For optical flow tracking using \acrshort{bt} images of growing \acrshort{dcc}s, neither of these assumptions are true.
 However, we have taken steps to reduce the impact of both these sources of uncertainty on the tracking algorithm.
-For the first of these assumptions, we find that in the case of small, fast-moving \acrshort{dcc}s -- where the accuracy of the optical flow vectors is most important -- the changes in size of the \acrshort{dcc} is small compared to the overall motion, and so the uncertainty introduced is small.
+For the first of these assumptions, we find that in the case of small, fast-moving \acrshort{dcc}s -- where the accuracy of the optical flow vectors is most important -- the changes in the size of the \acrshort{dcc} is small compared to the overall motion, and so the uncertainty introduced is small.
 Comparably, for large \acrshort{dcc}s where the changes in size may be large compared to the motion, the uncertainty introduces has less impact on the tracking algorithm.
 In the worst-case scenario, the estimated optical flow field will be zero, in which case the "3D" detection and tracking algorithm works in the same manner as that of \citet{fiolleau_algorithm_2013}, which is suitable for use on these larger \acrshort{dcc}s.
-To reduce uncertainty caused by the second assumption we normalise the range of \acrshort{bt}s between subsequent images when estimating optical flow to reduce the change in \acrshort{bt} observed for growing \acrshort{dcc}s.
 
 \subsection{A Semi-Lagrangian Framework for Morphological Image Processing}
 
@@ -734,7 +733,7 @@ We classify detection events into three categories:
 Using these three categories of events we can define two measures of accuracy for the detection of \acrshort{dcc}s.
 The \acrshort{pod} is defined as the number of correct detections divided by the total number of correct and missed detections.
 This provides a measure of how likely the algorithm is to detect a \acrshort{dcc} that exists in the ground truth.
-The \acrshort{far} (\acrshort{far}) is defined as the number of false detections divided by the total number of correct and false detections.
+The \acrshort{far} is defined as the number of false detections divided by the total number of correct and false detections.
 This provides a measure of how likely a \acrshort{dcc} detected by the algorithm is not present in the ground truth.
 
 When evaluating whether detected \acrshort{dcc} regions and lightning observations were collocated \citet{muller_novel_2019} considered events within 32\,\unit{km} and 15 minutes to be collocated.
