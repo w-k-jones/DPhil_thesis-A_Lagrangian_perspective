@@ -546,7 +546,7 @@ Both the DeepFlow and \acrshort{dualtvl1} algorithms show significantly longer r
 As a result, we have selected the Farnebäck algorithm for out tracking method as it offers the best balance of accuracy and computational performance for running on large datasets.
 
 An example of the motion vectors calculated by the Farnebäck algorithm when applied to the 10.4\,\unit{\mu m} \acrshort{bt} field is shown in fig.~\ref{fig:optical_flow}.
-Figure~\ref{fig:optical_flow}\,c shows the residual flow vectors, which are small compared to the detected cloud motion vectors (fig.~\ref{fig:optical_flow}).
+Figure~\ref{fig:optical_flow}\,c shows the residual flow vectors, which are small compared to the detected cloud motion vectors (fig.~\ref{fig:optical_flow}\,b).
 The main areas in which residual flow vectors can be seen are the regions around the edge of anvil clouds and in the center of thick anvil clouds where there are no clear features to track.
 Figure~\ref{fig:optical_flow}\,d shows the distribution of residual vector errors proportional to the detected cloud motion vectors.
 The majority of the residual errors are close to zero, and very few exceed 0.5.
@@ -607,7 +607,7 @@ Although this physical interpretation of the algorithm applies to two-dimensiona
 
 Labelling algorithms assign unique identifiers to each segmented region provided by either the edge detection or watershed algorithms.
 
-\subsection{Detection of Growing Deep Convection}
+\subsection{Detection of Growing Deep Convection} \label{sec:core_detection}
 
 %f
 \begin{figure}[t]
@@ -632,8 +632,10 @@ Finally, each label is checked to ensure that the growth region ends with a \acr
 
 Figure~\ref{fig:core_detection} shows a comparison between the detected core cooling rates in \acrshort{abi} imagery and the corresponding column radar reflectivity measured by \acrshort{nexrad} for the case of newly developing convection (fig.~\ref{fig:core_detection}\,a,c,e) and mature \acrshort{dcc} (fig.~\ref{fig:core_detection}\,b,d,f)
 Both 10.4\,\unit{\mu m} \acrshort{bt} and \acrshort{wvd} growth rates show growth detected in the same locations as the high column radar reflectivity from \acrshort{nexrad}.
+As predicted by the results in section~\ref{sec:theory_core}, the observed growth rates in the \acrshort{wvd} are about half of those in the 10.4\,\unit{\mu m} \acrshort{bt}.
 
-However, during the mature stage of the \acrshort{dcc}, discrepancies develop between the observed cooling rate (fig.\ref{fig:core_detection}\,b) and the radar reflectivity (fig.~\ref{fig:core_detection}\,d) due to the development of the anvil cloud blocking satellite observations of the core underneath.
+Both 10.4\,\unit{\mu m} and \acrshort{wvd} growth rates in the growing phase (fig.~\ref{fig:core_detection}\,c,e) show good agreement with column radar reflectivity (fig.~\ref{fig:core_detection}\,a).
+However, during the mature stage of the \acrshort{dcc}, discrepancies develop between the observed growth rates (fig.\ref{fig:core_detection}\,d,f) and the radar reflectivity (fig.~\ref{fig:core_detection}\,b) due to the development of the anvil cloud blocking satellite observations of the core underneath.
 
 \subsection{Detection of Anvil Clouds}
 
@@ -659,7 +661,7 @@ However, during the mature stage of the \acrshort{dcc}, discrepancies develop be
     \label{fig:detected_anvils}
 \end{figure}
 
-The region of anvil cloud associated with the growing convective clouds detected in the previous section is detected and tracked using an edge-based watershed segmentation approach.
+The region of anvil cloud associated with the growing convective clouds detected in section \ref{sec:core_detection} is detected and tracked using an edge-based watershed segmentation approach.
 The edge-based approach to cloud detection avoids the use of a fixed threshold for anvil temperature, and so can detect a more accurate extent of the anvil cloud \citep{dim_alternative_2013}.
 We define an upper threshold for the \acrshort{wvd} field of -5\,\unit{K}, as used by \citet{muller_role_2018}, and a lower threshold of -12.5\,\unit{K}, which we define as definite non-anvil cloud.
 Because the presence of thin cirrus outflow from the anvil clouds can make it difficult to determine the extent of the anvil cloud, we use the \acrshort{swd} field as described in section 2.1 to either remove or include the region of cirrus outflow in the detected anvil region.
