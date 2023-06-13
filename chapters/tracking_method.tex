@@ -453,9 +453,9 @@ We present here a novel method for detecting and tracking both the growing cores
 \begin{figure}[t]
     \includegraphics[width=\textwidth]{figures/chapter1_14.png}
     \caption[
-    Relative residual error for optical flow motion vectors generated using the Farnebäck method
+    An example of the motion vectors and their residual errors calculated using the Farnebäck algorithm
     ]{
-    
+    An example of the motion vectors and their residual errors calculated using the Farnebäck algorithm. a: the 10.4\,\unit{\mu m} \acrshort{bt} field at 19:00:00~\acrshort{utc} for which the motion vectors are shown. b: the calculated motion vectors. c: the residual motion vectors, indicating the uncertainty in the optical flow. d: the magnitude of the residual motion vectors as a proportion of the magnitude of the optical flow vectors for cold pixels (less than 273\,\unit{K})
     }
     \label{fig:optical_flow}
 \end{figure}
@@ -613,9 +613,9 @@ Labelling algorithms assign unique identifiers to each segmented region provided
 \begin{figure}[t]
     \includegraphics[width=\textwidth]{figures/chapter1_16.png}
     \caption[
-    Detection of growing \acrshort{dcc} regions for the \acrshort{dcc} cluster in figure~\ref{fig:compare_sat_radar_glm}
+    Detection of growing \acrshort{dcc} using \acrshort{nexrad} column radar reflectivity, 10.4\,\unit{\mu m} \acrshort{bt} and \acrshort{wvd} growth rates
     ]{
-    Detection of growing \acrshort{dcc} regions for the \acrshort{dcc} cluster in figure~\ref{fig:compare_sat_radar_glm}. 15 minute average cooling rate in the \acrshort{goes}-16 \acrshort{abi} \acrshort{wvd} field is used to detect growing cores. This is effective in the growing phases of convection (a.), but becomes less effective during the mature phase (b.). Comparison with \acrshort{nexrad} column mean radar reflectivity remapped to the \acrshort{abi} grid(c., d.). An average cooling rate of greater than 0.5\,\unit{K min\textsuperscript{-1}} is indicative of a growing convective core.
+    Detection of growing \acrshort{dcc} regions for the \acrshort{dcc} cluster in figure~\ref{fig:compare_sat_radar_glm}. a,b: \acrshort{nexrad} column mean radar reflectivity remapped to the \acrshort{abi} grid. c,d: cooling rate of the 10.4\,\unit{\mu m} \acrshort{bt} field. e,f: warming rate of the \acrshort{wvd} field.
     }
     \label{fig:core_detection}
 \end{figure}
@@ -637,7 +637,7 @@ As predicted by the results in section~\ref{sec:theory_core}, the observed growt
 Both 10.4\,\unit{\mu m} and \acrshort{wvd} growth rates in the growing phase (fig.~\ref{fig:core_detection}\,c,e) show good agreement with column radar reflectivity (fig.~\ref{fig:core_detection}\,a).
 However, during the mature stage of the \acrshort{dcc}, discrepancies develop between the observed growth rates (fig.\ref{fig:core_detection}\,d,f) and the radar reflectivity (fig.~\ref{fig:core_detection}\,b) due to the development of the anvil cloud blocking satellite observations of the core underneath.
 
-\subsection{Detection of Anvil Clouds}
+\subsection{Detection of Anvil Clouds} \label{sec:anvil_detection}
 
 %f
 \begin{figure}[t]
@@ -654,9 +654,9 @@ However, during the mature stage of the \acrshort{dcc}, discrepancies develop be
 \begin{figure}[t]
     \centering\includegraphics[width=0.8\textwidth]{figures/chapter1_18.png}
     \caption[
-    Detected regions of thin anvil cloud (blue), thick anvil cloud (orange), and developing cores (red) overlaid on the \acrshort{goes}-16 \acrshort{abi} 10.4\,\unit{\mu m} \acrshort{bt} field for the \acrshort{dcc} cluster from figure~\ref{fig:compare_sat_radar_glm}
+    Detected regions of thin anvil cloud, thick anvil cloud , and developing cores through the growing, mature and dissipating phases of the \acrshort{dcc} lifecycle
     ]{
-    Detected regions of thin anvil cloud (blue), thick anvil cloud (orange), and developing cores (red) overlaid on the \acrshort{goes}-16 \acrshort{abi} 10.4\,\unit{\mu m} \acrshort{bt} field for the \acrshort{dcc} cluster from figure~\ref{fig:compare_sat_radar_glm}. The three stages of the \acrshort{dcc} lifecycle are shown; the growth phase (a.), the mature phase (b.), and the dissipating phase (c.). Note that the anvil region continues to be detected in c. after growing cores are no longer detected.
+    Detected regions of thin anvil cloud (blue), thick anvil cloud (orange), and developing cores (red) overlaid on the \acrshort{goes}-16 \acrshort{abi} 10.4\,\unit{\mu m} \acrshort{bt} field for the \acrshort{dcc} cluster from figure~\ref{fig:compare_sat_radar_glm}. The three stages of the \acrshort{dcc} lifecycle are shown; the growth phase (a,b), the mature phase (c--e), and the dissipating phase (f--g).
     }
     \label{fig:detected_anvils}
 \end{figure}
@@ -676,11 +676,14 @@ By applying a Sobel filter to detect the local gradient magnitude of the combine
 When applied to the detected edges of the anvil clouds using the Sobel filter, with the growth regions detected previously as markers, the watershed method allows us to detect those anvil regions associated with detected regions of growing \acrshort{dcc}s, while avoiding the detection of non-convective regions of high, cold clouds.
 Furthermore, due to the application of the watershed algorithm to both the spatial and temporal dimensions of the sequence of images through the semi-Lagrangian framework, we are able to detect the associated anvil clouds after the growth of the \acrshort{dcc} is no longer observed (see fig.~\ref{fig:detected_anvils}).
 
-Figure~\ref{fig:detected_anvils} shows an example of the results of detecting and tracking \acrshort{dcc} cores and their associated anvils.
-Detection of the cores (outlined in red) and the initial development of the associated anvils (outlined in orange and blue for the thick and thin anvil regions respectively) can be seen in fig.~\ref{fig:detected_anvils}\,a.
-In fig.~\ref{fig:detected_anvils}\,b we see the development of the mature anvil, which primarily consists of thick anvil, and secondary core detections as new convection develops at the edge of the \acrshort{dcc}.
-In fig.~\ref{fig:detected_anvils}\,c, we see the detected anvil cloud beginning to dissipate, and a larger proportion of the anvil cloud detected as thin anvil.
-At this point in the lifetime of the tracked \acrshort{dcc} we no longer observe any growing core, however the "3D" approach allows the continued tracking of the anvil cloud until it dissipates.
+Figure~\ref{fig:detected_anvils} shows an example of the results of detecting and tracking \acrshort{dcc} cores (outlined in red) and the associated anvils (outlined in orange and blue for the thick and thin anvil regions respectively).
+During the growing phase (fig.~\ref{fig:detected_anvils}\,a,b) we see a number of developing cores, as well as the initial growth of primarily thick anvil cloud.
+In fig.~\ref{fig:detected_anvils}\,c--e we see the mature phase of the \acrshort{dcc}, where we see the thick anvil expand and the thin anvil cirrus start to detrain towards the top-left side of the figure.
+Due to the anvil cloud reaching its maximum height, we no longer observed the initial developing cores seen in fig.~\ref{fig:detected_anvils}\,a,b as we can no longer observed the cloud-top cooling.
+Instead, we observe new cores developing on the edges of the anvil cloud.
+In fig.~\ref{fig:detected_anvils}\,f--h, we see the detected anvil cloud beginning to dissipate.
+The thick anvil area decreases, however the thin anvil area continues to increase as the anvil dissipates and detrains.
+At this point in the lifetime of the tracked \acrshort{dcc} we stop observing new growing core, however the "3D" approach allows the continued tracking of the anvil cloud until it dissipates.
 
 % To detect the regions of \acrshort{dcc} and their associated anvils from the observations of growing cores outlined in the previous section, a watershedding approach over both space and time is applied in a similar to that used by Fiolleau and Roca [cite].
 % Watershed algorithms are a class of techniques commonly used for image segmentation.
@@ -745,16 +748,17 @@ The \acrshort{pod} is defined as the number of correct detections divided by the
 This provides a measure of how likely the algorithm is to detect a \acrshort{dcc} that exists in the ground truth.
 The \acrshort{far} is defined as the number of false detections divided by the total number of correct and false detections.
 This provides a measure of how likely a \acrshort{dcc} detected by the algorithm is not present in the ground truth.
+The F\textsubscript{1}-score is calculated as the harmonic mean of the \acrshort{pod} and the recall (where the recall in is 1~\textminus~\acrshort{far}), and provides an overall measure of accuracy between 0 and 1.
 
 When evaluating whether detected \acrshort{dcc} regions and lightning observations were collocated \citet{muller_novel_2019} considered events within 32\,\unit{km} and 15 minutes to be collocated.
 This margin of uncertainty was separated into two section, half from the physical separation between observed lightning strikes, and the remaining half from uncertainty in the collocation and geolocation of the satellite and lightning observations.
-For a typical \acrshort{abi} pixel length over the \acrshort{conus} of 3\,\unit{km}, this margin of error translates into 10 pixels in the \acrshort{abi} view.
+For a typical \acrshort{abi} pixel length over the \acrshort{conus} of 2-2.5\,\unit{km}, this margin of error translates into 15 pixels in the \acrshort{abi} view.
 The distance between a \acrshort{glm} lightning flash and detected cloud region is defined as the distance between the flash and the nearest \acrshort{abi} pixel within that region, with \acrshort{glm} flashes that fall within a detected \acrshort{dcc} given a distance of 0.
 When considering that the resolution of \acrshort{glm} is a factor of four less than that of \acrshort{abi}, we consider that the same justification for the margin of error used by \citet{muller_novel_2019} is also applicable to collocated observations from \acrshort{abi} and \acrshort{glm}.
 
 Validation was performed using \acrshort{goes}-16 \acrshort{abi} data from the \acrshort{conus} scan region for the entirety of 2018, which was processed using the method described in this article.
-In total validation was performed for 290 days of \acrshort{abi} data, the remaining 75 days being excluded due to missing observations from either the \acrshort{abi} or \acrshort{glm} instruments aboard \acrshort{goes}-16, or artifacts present in the \acrshort{abi} data.
-Detection and tracking of \acrshort{dcc}s was performed on a subset of the \acrshort{conus} scan region for each 24-hour period consisting of the array locations of 500-1750 in the x dimension and 250-1000 in the y dimension, corresponding to a bounding box of 113.6~\degree W to 76.2~\degree W and 24.5~\degree N to 44.2~\degree N respectively.
+In total validation was performed for 319 days of \acrshort{abi} data, the remaining 46 days being excluded due to missing observations from either the \acrshort{abi} (1 day) or \acrshort{glm} (45 days) instruments aboard \acrshort{goes}-16..
+Detection and tracking of \acrshort{dcc}s was performed the \acrshort{conus} scan region of \acrshort{abi} for each 24-hour period. 
 By performing validation over both a large region, including a range of both land and ocean domains, and a full year time period, we aim to avoid any bias in the validation associated with the variability of the accuracy of the method with location and season.
 
 %t
@@ -762,32 +766,35 @@ By performing validation over both a large region, including a range of both lan
 \centering
 \begin{tabular}{lcrrr}
 \tophline
-Detection Method            & n         & \acrshort{pod}    & \acrshort{far}    & f1-score \\ 
+Detection Method            & n         & \acrshort{pod}    & \acrshort{far}    & F\textsubscript{1}-score \\ 
 \middlehline
-Growth-based                & 271,507   & 0.3314            & 0.1965            & 0.4693  \\
-\acrshort{wvd} threshold    & 332,419   & 0.9680            & 0.6776            & 0.4837  \\
-Semi-Lagrangian             & 62,443    & 0.9815            & 0.1440            & 0.9144 \\
+Growth-based                & 598,038   & 0.4017            & 0.2136            & 0.5318  \\
+\acrshort{wvd} threshold    & 678,854   & 0.9727            & 0.6457            & 0.5194  \\
+Semi-Lagrangian             & 145,969   & 0.9837            & 0.1611            & 0.9056 \\
 \bottomhline
 \end{tabular}
 \caption[
-\acrshort{pod}, \acrshort{far} and f1-score for three different detection methods validated against observed \acrshort{glm} flashes
+\acrshort{pod}, \acrshort{far} and F\textsubscript{1}-score for three different detection methods validated against observed \acrshort{glm} flashes
 ]{
-\acrshort{pod}, \acrshort{far} and f1-score for three different detection methods validated against observed \acrshort{glm} flashes (n=69,228,768). Growth based refers to the detection of growing \acrshort{dcc}s using the method described in section 3.3. \acrshort{wvd} threshold uses the threshold method developed by \citet{muller_role_2018}. Semi-Lagrangian refers to the detection of anvils clouds connected to growing cores using the edge-based watershedding method described in section 3.4.
+\acrshort{pod}, \acrshort{far} and F\textsubscript{1}-score for three different detection methods validated against observed \acrshort{glm} flashes (n=116,671,289). Growth based refers to the detection of growing \acrshort{dcc}s using the method described in section \ref{sec:core_detection} \acrshort{wvd} threshold uses the threshold method developed by \citet{muller_role_2018}. Semi-Lagrangian refers to the detection of anvils clouds connected to growing cores using the edge-based watershedding method described in section \ref{sec:anvil_detection}.
 } % Table Footnotes
 \label{table:validation}
 \end{table}
 
 
 Results of the validation of the detected anvil region, as well as those for the detection of growing deep convection and the \acrshort{wvd} filter are shown in table \ref{table:validation}.
-The regions of growing \acrshort{dcc}s detected using the method described in section 3.3 shows low scores for both the \acrshort{far} and \acrshort{pod} metrics.
-While the detection of growing \acrshort{dcc}s shows a low \acrshort{far} of 0.27, the short time frame in which growth can be observed leads to a high rate of missed detections of lightning flashes, which results in a \acrshort{pod} of 0.23.
+The regions of growing \acrshort{dcc}s detected using the method described in section \ref{sec:core_detection} shows low scores for both the \acrshort{far} and \acrshort{pod} metrics.
+While the detection of growing \acrshort{dcc}s shows a low \acrshort{far} of 0.21, the short time frame in which growth can be observed leads to a high rate of missed detections of lightning flashes, which results in a \acrshort{pod} of 0.40.
+This is not necessarily because we are failing to detect cores, but because many lighting observations occur during the mature phase of convection (see fig.~\ref{fig:compare_sat_radar_glm}\,h, \ref{fig:dcc_over_time}\,d) we fail to detect these lightning flashes as we can only observed the core during the growing phase.
 
 For comparison, we also evaluate the accuracy of detecting anvils only by a fixed threshold of the \acrshort{wvd} without detecting growing cores, as used by \citet{muller_role_2018}.
-Compared to the detection of growing \acrshort{dcc} regions, the \acrshort{wvd} threshold shows a much higher \acrshort{pod} of 0.99, but also has a high \acrshort{far} of 0.73, repeating the findings of \citet{muller_novel_2019} which show that although the \acrshort{wvd} threshold method is capable of detecting the majority of \acrshort{dcc}s, in is incapable of distinguishing between anvil clouds and other thick, high altitude clouds.
-Furthermore, the \acrshort{wvd} threshold detection detects a much larger number of clouds (n=312,591) compared to either of the other detection methods, further indicating that a large number of non-convective clouds are detected using the threshold method on its own.
+Compared to the detection of growing \acrshort{dcc} regions, the \acrshort{wvd} threshold shows a much higher \acrshort{pod} of 0.97, but also has a high \acrshort{far} of 0.64, repeating the findings of \citet{muller_novel_2019} which show that although the \acrshort{wvd} threshold method is capable of detecting the majority of \acrshort{dcc}s, in is incapable of distinguishing between anvil clouds and other thick, high altitude clouds.
+Furthermore, the \acrshort{wvd} threshold detection detects a larger number of objects (n=678,854) compared to either of the other detection methods, further indicating that a large number of non-convective clouds are detected using the threshold method on its own.
+Note that both the core detection and \acrshort{wvd} threshold approach have similar F\textsubscript{1}-scores (0.53 and 0.51 respectively) as the both prioritise one measure of accuracy over the other.
 
-Finally, the anvil regions detected using a combination of the detected growth regions and the \acrshort{wvd} field using the semi-Lagrangian framework described in section 3.4 is validated.
-The novel method has a high \acrshort{pod} of 0.93 similar to that of the \acrshort{wvd} threshold, while also maintaining much of the low \acrshort{far} of the detection of growing \acrshort{dcc}s (\acrshort{far}=0.35).
+Finally, the anvil regions detected using a combination of the detected growth regions and the \acrshort{wvd} field using the semi-Lagrangian framework described in section \ref{sec:anvil_detection} is validated.
+The novel method has a high \acrshort{pod} of 0.98 similar to that of the \acrshort{wvd} threshold, while also maintaining much of the low \acrshort{far} of the detection of growing \acrshort{dcc}s (\acrshort{far}=0.16).
+As a result, the Semi-Lagrangian method displays a high overall F\textsubscript{1}-score of 0.91.
 This result highlights the capability of the semi-Lagrangian detection framework to use growth-based detection methods to substantially reduce the compromise between \acrshort{pod} and \acrshort{far} error rates by combining multiple methods for the detection of \acrshort{dcc}s.
 
 
@@ -802,6 +809,8 @@ By developing and implementing a novel semi-Lagrangian framework for the detecti
 The novel methods developed here for the Semi-Lagrangian computer vision framework, along with implementations of multiple image processing operations commonly used for object detection, allow the accurate detection and tracking of moving objects utilising both spatial and temporal information.
 These methods may have impacts on applications of computer vision beyond the detection and tracking of \acrshort{dcc}s.
 Furthermore, the novel framework is able to achieve higher levels of accuracy without compromising on the number of \acrshort{dcc}s detected, as with previous algorithms \citep{muller_novel_2019}.
+
+
 
 By using this novel methodology, we are able to detect and track both small, isolated \acrshort{dcc}s and large, mesoscale convective systems with a high degree of accuracy, high spatial and temporal resolution and across large domains such as the \acrshort{conus}.
 The data provided about the behaviour of \acrshort{dcc}s over their entire lifetime will allow new research into vital topics such as the response of deep convection and climate change, and the interactions and feedbacks between \acrshort{dcc}s and large scale atmospheric thermodynamics \citep{varble_erroneous_2018}.
