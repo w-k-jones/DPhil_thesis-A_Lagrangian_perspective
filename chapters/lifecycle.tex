@@ -22,6 +22,26 @@
 \section{Introduction}  %% \introduction[modified heading if necessary]
 
 
+
+\section{Data}
+
+To detect and track \acrshort{dcc}s across North America, we use \acrshort{abi} \acrshort{mcmip} data from the 6.2, 7.3, 10.4 and 12.4\,\unit{\mu m} channels observed in the \acrshort{conus} region, as described in section \ref{sec:abi_data}.
+We use the full extent of the \acrshort{abi} \acrshort{conus} domain of 2,500~pixels E--W by 1,500~pixels N--S.
+This domain covers a region of around 60--120\,\textdegree W in longitude and 15--60\,\textdegree N in latitude, covering an area of approximately 5,700 by 3,900\,\unit{km}.
+
+
+
+Five full years of data---from the start of 2018 to the end of 2022---are used to produce a dataset of detected \acrshort{dcc}s and their properties.
+This period spans all complete years of operational data from \acrshort{goes}-16 \acrshort{abi}.
+
+
+% \begin{figure*}[t]
+%     \centering
+%     \includegraphics[width=\textwidth]{figure01.pdf}
+%     \caption{Observations of a cluster of deep convective clouds over North-West Florida throughout three stages of their lifecycle. This cluster of DCCs occurred on the afternoon of 19\textsuperscript{th} June 2018. The "growing" column were observed at 17:00 UTC, the "mature" column at 19:00 UTC, and the dissipating column at 21:00 UTC. Note that, unless otherwise specified, this case study is used for all subsequent figures in this article.}
+%     \label{fig:compare_sat_radar_glm}
+% \end{figure*}
+
 \section{A novel method for detecting deep convective cloud cores and their associated anvils in geostationary satellite imagery}
 
 Numerous algorithms have been developed for the purpose of automatically detecting and tracking DCCs, and are widely used for both forecasting and research purposes \citep[e.g.][]{mecikalski_use_2011, senf_characterization_2015, senf_satellite-based_2017, feng_life_2012, feng_spatiotemporal_2019, zinner_cb-tram:_2008}.
@@ -29,12 +49,12 @@ Development of these algorithms has seen constant and continuous efforts.
 However a number of difficulties must be taken into account when utilising geostationary satellite imagery to detect and track DCCs compared to the use of radar or lightning observations.
 
 %f
-\begin{figure*}[t]
-    \centering
-    \includegraphics[width=12cm]{figure01.pdf}
-    \caption{Observations of a cluster of deep convective clouds over North-West Florida throughout three stages of their lifecycle. This cluster of DCCs occurred on the afternoon of 19\textsuperscript{th} June 2018. The "growing" column were observed at 17:00 UTC, the "mature" column at 19:00 UTC, and the dissipating column at 21:00 UTC. Note that, unless otherwise specified, this case study is used for all subsequent figures in this article.}
-    \label{fig:compare_sat_radar_glm}
-\end{figure*}
+% \begin{figure*}[t]
+%     \centering
+%     \includegraphics[width=12cm]{figure01.pdf}
+%     \caption{Observations of a cluster of deep convective clouds over North-West Florida throughout three stages of their lifecycle. This cluster of DCCs occurred on the afternoon of 19\textsuperscript{th} June 2018. The "growing" column were observed at 17:00 UTC, the "mature" column at 19:00 UTC, and the dissipating column at 21:00 UTC. Note that, unless otherwise specified, this case study is used for all subsequent figures in this article.}
+%     \label{fig:compare_sat_radar_glm}
+% \end{figure*}
 
 Figure \ref{fig:compare_sat_radar_glm} provides an example of how geostationary satellite imagery compares to observations of DCCs using ground-based cloud radar and lightning observations.
 In fig. \ref{fig:compare_sat_radar_glm}a, \ref{fig:compare_sat_radar_glm}d, \ref{fig:compare_sat_radar_glm}g and \ref{fig:compare_sat_radar_glm}e, we see how a growing DCC is observed by visible/near infrared (NIR) satellite imagery, 10.4\,\unit{\mu m} longwave (LW) infrared (IR) satellite imagery, lightning flash observations from a satellite instrument and column radar reflectivity respectively.
@@ -76,12 +96,12 @@ This method can be outlined in the following steps:
 \subsection{Data}
 
 %f
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=8.3cm]{figure03.pdf}
-    \caption{ABI channels and channel differences used with the detection and tracking algorithm. a.: The 10.4\,\unit{\mu m} brightness temperature, also known as the clean longwave window channel. b.: the water vapour difference (WVD) combination, of the 6.2\,\unit{\mu m} upper troposphere water vapour channel minus the 7.3\,\unit{\mu m} lower troposphere water vapour channel. c.: the split window difference (SWD) combination of the 10.4\,\unit{\mu m} clean longwave window channel minus the 12.4\,\unit{\mu m} dirty longwave window channel.}
-    \label{fig:abi_channels}
-\end{figure}
+% \begin{figure}[t]
+%     \centering
+%     \includegraphics[width=8.3cm]{figure03.pdf}
+%     \caption{ABI channels and channel differences used with the detection and tracking algorithm. a.: The 10.4\,\unit{\mu m} brightness temperature, also known as the clean longwave window channel. b.: the water vapour difference (WVD) combination, of the 6.2\,\unit{\mu m} upper troposphere water vapour channel minus the 7.3\,\unit{\mu m} lower troposphere water vapour channel. c.: the split window difference (SWD) combination of the 10.4\,\unit{\mu m} clean longwave window channel minus the 12.4\,\unit{\mu m} dirty longwave window channel.}
+%     \label{fig:abi_channels}
+% \end{figure}
 
 The Advanced Baseline Imager (ABI), a radiometer aboard the Geostationary Operational Environmental Satellite (GOES)-16 weather satellite \citep{schmit_closer_2016}, provides visible and IR imagery at a nadir resolution of 2\,\unit{km} or better, at intervals between 10 minutes to 30 seconds \citep{schmit_chapter_2020}.
 Situated in a geostationary orbit at 75.2°W above the equator, GOES-16 observes all of South America and most of North America.
@@ -130,12 +150,12 @@ Furthermore, a curvature filter is used to isolate growth only in regions that d
 When calculating the BT cooling rate, the WVD field, rather than LW IR window BT, is used as this is only sensitive to mid- and upper-level growth associated with deep convection.
 
 %f
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=8.3cm]{figure08.pdf}
-    \caption{Detected regions of thin anvil cloud (blue), thick anvil cloud (orange), and developing cores (red) overlaid on the GOES-16 ABI 10.4\,\unit{\mu m} brightness temperature field for the DCC cluster from figure \ref{fig:compare_sat_radar_glm}. The three stages of the DCC lifecycle are shown; the growth phase (a.), the mature phase (b.), and the dissipating phase (c.). Note that the anvil region continues to be detected in c. after growing cores are no longer detected.}
-    \label{fig:detected_anvils}
-\end{figure}
+% \begin{figure}[t]
+%     \centering
+%     \includegraphics[width=8.3cm]{figure08.pdf}
+%     \caption{Detected regions of thin anvil cloud (blue), thick anvil cloud (orange), and developing cores (red) overlaid on the GOES-16 ABI 10.4\,\unit{\mu m} brightness temperature field for the DCC cluster from figure \ref{fig:compare_sat_radar_glm}. The three stages of the DCC lifecycle are shown; the growth phase (a.), the mature phase (b.), and the dissipating phase (c.). Note that the anvil region continues to be detected in c. after growing cores are no longer detected.}
+%     \label{fig:detected_anvils}
+% \end{figure}
 
 Following core detection, the associated anvil cloud is detected using a "3d" watershed approach in the same manner as \citet{fiolleau_algorithm_2013}.
 Rather than use BT thresholds for detecting the anvil cloud, we use the detected core regions as the seed for the watershedding, and use an edge detection method to detect the extent of the anvil cloud as used by \citet{dim_alternative_2013}.
@@ -167,12 +187,12 @@ We plan in future to address this issue in order to detect long lived DCCs.
 \section{Temporal and spatial distributions of detected DCC cores over North America}
 
 %f
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=8.3cm]{seasonal_all.png}
-    \caption{A histogram of the frequency of core detections per month throughout 2018. The distribution shows a strong peak around July-August, corresponding to Northern hemisphere summertime.}
-    \label{fig:seasonal_dist}
-\end{figure}
+% \begin{figure}[t]
+%     \centering
+%     \includegraphics[width=8.3cm]{seasonal_all.png}
+%     \caption{A histogram of the frequency of core detections per month throughout 2018. The distribution shows a strong peak around July-August, corresponding to Northern hemisphere summertime.}
+%     \label{fig:seasonal_dist}
+% \end{figure}
 
 To begin, we investigate the distribution of cores across our dataset.
 Figure \ref{fig:seasonal_dist} displays the frequency of observations of developing cores by month of the year.
