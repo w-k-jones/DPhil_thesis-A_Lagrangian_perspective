@@ -21,7 +21,16 @@
 
 \section{Introduction}  %% \introduction[modified heading if necessary]
 
+Deep convective storms play an important role in both the weather and climate of North America.
+\acrshort{dcc}s are responsible for a wide range of extreme weather events, including heavy rainfall and flooding, hail, derechos, hurricanes and tornadoes.
+Additionally, \acrshort{dcc}s---in particular \acrshort{mcs}s---provide the majority of precipitation across many regions of North America.
+As a result, a wide array of observational networks have been deployed to study deep convection over North America, including satellite observations and cloud radar.
 
+Previous studies using satellites to track and study \acrshort{dcc}s over North America have primarily focused on \acrshort{mcs}s.
+Although more recent research has combined satellite observations with radar and precipitation measurements to study both \acrshort{mcs} and isolated convection (e.g. Feng), prior datasets have not studied both core and anvil properties of \acrshort{dcc}s.
+
+By leveraging the full temporal and spatial resolution of \acrshort{goes} \acrshort{abi} observations over the \acrshort{conus}, we have created a 5-year dataset of observed \acrshort{dcc}s, tracking both cores and anvils.
+By analysing this dataset, we are able to show new discoveries about the lifecycle of \acrshort{dcc}s, and how their properties correspond to those of their cores.
 
 \section{Data}
 
@@ -153,7 +162,6 @@ Cores and anvils which are removed from the aggregated dataset are outlined with
 
 Over the five-year observing period we detect a total of 3,877,130 cores, of which 3,817,286 are valid, and 648,345 anvils, of which 576,555 are valid.
 
-\section{Results}
 
 % \section{A novel method for detecting deep convective cloud cores and their associated anvils in geostationary satellite imagery}
 
@@ -296,24 +304,17 @@ Over the five-year observing period we detect a total of 3,877,130 cores, of whi
 % Due to technical limitations for processing the long time series of data, no anvils are detected with a lifetime of over 24~hours.
 % We plan in future to address this issue in order to detect long lived \acrshort{dcc}s.
 
+\section{Results}
 
-\subsection{Temporal and spatial distributions of detected \acrshort{dcc} cores over North America}
 
-%f
-% \begin{figure}[tp]
-%     \centering
-%     \includegraphics[width=\textwidth]{seasonal_all.png}
-%     \caption{A histogram of the frequency of core detections per month throughout 2018. The distribution shows a strong peak around July-August, corresponding to Northern hemisphere summertime.}
-%     \label{fig:seasonal_dist}
-% \end{figure}
+\subsection{Temporal and spatial distributions of detected cores over North America}
 
-To begin, we investigate the distribution of cores across our dataset.
-Figure \ref{fig:seasonal_dist} displays the frequency of observations of developing cores by month of the year.
-As expected for the Northern hemisphere, we see a strong peak in the frequency of convection during the summer, and lower rates over the winter.
-In fig. \ref{fig:core_density_by_season} we plot the distribution of observed cores over North America, further broken down by season.
+
+To begin, we investigate the distribution of detected \acrshort{dcc} cores throughout the dataset.
+In fig. \ref{fig:core_density_by_season} we plot the distribution of observed cores over North America separated by season.
 Large variations in the spatial distribution of cores can be observed across the different seasons.
-Firstly, in winter and spring (December to February and March to May), we see generally low rates of the observed \acrshort{dcc}s (corresponding the low rates shown in fig. \ref{fig:seasonal_dist}.
-There is an increased rate of occurrence to the Western edge of the observations over the Rocky Mountains, which is likely due to Winter storms associated with the topography.
+Firstly, in winter and spring (fig.~\ref{fig:core_density_by_season}\,a,b), we see generally low rates of the observed \acrshort{dcc}s than in the summer and autumn (fig.~\ref{fig:core_density_by_season}\,c,d).
+
 In summer (June - August) we see an increase in the frequency of observed cores over the Southern United States and the adjacent ocean regions of the Gulf of Mexico.
 In Autumn, we see continued raised rates of core detections over the Gulf of Mexico, but not over the adjacent land regions, likely indicating an impact of the time-lag in surface temperature throughout the seasonal cycle on convective activity.
 
@@ -325,8 +326,8 @@ In Autumn, we see continued raised rates of core detections over the Gulf of Mex
     \label{fig:core_density_by_season}
 \end{figure}
 
-Figure \ref{fig:core_lifetime_map} displays the mean lifetime of observed core over each 1-degree box of latitude and longitude.
-Most notably, we see an increase in the average core duration over the Great Plains region.
+Figure~\ref{fig:cores_with_anvils_map} shows the proportion of cores associated with anvil clouds.
+We see a clear land--sea contrast, with a much larger number of cores occuring without associated anvil clouds over the ocean than over land.
 
 %f
 \begin{figure}[tp]
@@ -335,6 +336,10 @@ Most notably, we see an increase in the average core duration over the Great Pla
     \caption{Proportion of cores with anvils}
     \label{fig:cores_with_anvils_map}
 \end{figure}
+
+In fig.~\ref{fig:core_detection_time_map}, we show the mean time of detection for cores detected within each 1-degree grid square.
+The most notable feature in fig.~\ref{fig:core_detection_time_map} is the strong land-sea contrast, with the majority of land regions showing convective activity occurring during the afternoon, and the majority of ocean regions showing activity before midday.
+In addition, we see a few major features of the detected time of initiation across both land and sea regions.
 
 %f
 \begin{figure}[tp]
@@ -348,6 +353,14 @@ Most notably, we see an increase in the average core duration over the Great Pla
     \label{fig:core_detection_time_map}
 \end{figure}
 
+In coastal regions in the Gulf of Mexico and the Caribbean Sea, we see earlier initiation times closer to coastlines, while regions further from land have average time of detection closer to midday.
+
+
+Over the land, we see a later time of initiation over the Northern Great Plains (90--100\,\textdegree W, 37--47\,\textdegree N).
+
+Figure~\ref{fig:core_propagation_map} shows the average speed of propagation for cores observed in each 1 degree grid box, with the average direction of propagation shown by arrows for each 2 degree grid box.
+We see a clear change in the direction of propagation from an easterly motion in the tropics (below 25\,\textdegree N) to a westerly motion in the mid-latitudes.
+
 %f
 \begin{figure}[tp]
     \centering
@@ -355,6 +368,13 @@ Most notably, we see an increase in the average core duration over the Great Pla
     \caption{Core propagation direction}
     \label{fig:core_propagation_map}
 \end{figure}
+
+In the following two figures (fig.~\ref{fig:core_lifetime_map} and \ref{fig:core_cooling_rate_map} we only map the properties of cores which initiate with an average brightness temperature of greater than 273\,\unit{K}.
+This is done to show the average properties of cores which we observe developing in clear sky or low cloud conditions, and exclude those which form within existing anvil clouds.
+This shows where we expect to observe the full lifetime of the observed core.
+
+Figure \ref{fig:core_lifetime_map} displays the mean lifetime of observed cores over each 1-degree box of latitude and longitude.
+We see a contrast between land and sea, with cores occurring over the ocean having a shorter lifetime, and an increase in the average core duration over the Great Plains region.
 
 %f
 \begin{figure}[tp]
@@ -364,6 +384,9 @@ Most notably, we see an increase in the average core duration over the Great Pla
     \label{fig:core_lifetime_map}
 \end{figure}
 
+Figure~\ref{fig:core_cooling_rate_map} shows the average cooling rate of observed cores.
+Some contrast is seen again between land and sea, particularly in the Caribbean, but this is less pronounced than the difference in lifetime shown in fig.~\ref{fig:core_lifetime_map}.
+
 %f
 \begin{figure}[tp]
     \centering
@@ -371,6 +394,11 @@ Most notably, we see an increase in the average core duration over the Great Pla
     \caption{Core maximum cooling rate}
     \label{fig:core_cooling_rate_map}
 \end{figure}
+
+Figure~\ref{sec:core_properties} shows the distributions of lifetime (fig.~\ref{fig:core_properties}\,a), maximum area (fig.~\ref{fig:core_properties}\,b), cooling rate ((fig.~\ref{fig:core_properties}\,c) and minimum \acrshort{bt} (fig.~\ref{fig:core_properties}\,d).
+The hatched areas show the distributions of cores with warm initial \acrshort{bt}.
+In general, cores observed with warm initial \acrshort{bt} tend to have longer lifetimes and greater cooling rates.
+However, they also tend to have smaller maximum areas and warmer minimum \acrshort{bt}, indicating that cores observed forming within existing anvil clouds tend to have both larger area and colder \acrshort{bt}.
 
 %f
 \begin{figure}[tp]
@@ -380,46 +408,33 @@ Most notably, we see an increase in the average core duration over the Great Pla
     \label{fig:core_properties}
 \end{figure}
 
+Figure~\ref{fig:core_cooling_rate_relations}\,a compares how the average lifetime of detected cores changes with their maximum observed cooling rate.
+For low values of core cooling rate, we see a similar, positive linear relationship between cooling rate and lifetime between all regions, indicating that more intense convection leads to longer periods of cores being observed.
+However, beyond cooling rates of around 1.5\,\unit{K minute\textsuperscript{-1}} we see an inflexion in the relationship, with larger cooling rates leading to shorter lifetimes.
+This may be explained by the cores with faster cooling rates reaching their level of neutral buoyancy faster, and therefore showing cooling cloud tops for a shorter period of time.
+
 %f
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=\textwidth]{figures/ch2_10.png}
+    \includegraphics[width=0.75\textwidth]{figures/ch2_10.png}
     \caption{Core cooling rate relations}
     \label{fig:core_cooling_rate_relations}
 \end{figure}
 
+Figure~\ref{fig:core_cooling_rate_relations}\,b shows how the minimum \acrshort{bt} changes with the maximum cooling rate of the core.
+Unlike fig.~\ref{fig:core_cooling_rate_relations}\,a, we see a 
 
 %f
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=\textwidth]{figures/ch2_11.png}
+    \includegraphics[width=0.75\textwidth]{figures/ch2_11.png}
     \caption{Core area relations}
     \label{fig:core_area_relations}
 \end{figure}
 
-In fig. \ref{fig:core_detection_time_map}, we show the mean time of detection for cores detected within each 1-degree lat/lon grid square.
-The most notable feature in fig. \ref{fig:core_detection_time_map} is the strong land-sea contrast shown between the Gulf of Mexico and adjacent coastal regions.
-Over the Gulf of Mexico, we observe convection to typically occur in the morning, whereas over land we observe most cores in the afternoon.
-Over land convective initiation typically occurs due to surface heating from solar radiation, and therefore during the daytime.
-In contrast, convective initiation over the ocean is more often due to longwave cooling of the upper atmosphere which is greater at night due to a lack of shortwave heating.
-In addition, we see a few major features of detected time of initiation across both land and sea regions.
-
-% %f
-% \begin{figure}[tp]
-%     \centering
-%     \includegraphics[width=\textwidth]{core_detection_time_map.png}
-%     \caption{The mean time of day of initiation of cores observed within each 1 degree grid box. Time of initiation is calculated as the local solar time based on longitude, and the mean is calculated as the circular mean to account for the cyclical aspect of the hour of day.}
-%     \label{fig:core_detection_time_map}
-% \end{figure}
-
-Over the land, we see a later time of initiation over the Northern Great Plains.
-Greater CIN in this region leads to a greater requirement for surface heating before convective initiation.
-The larger barrier to initiation presented by the increased CIN also leads to greater convective available potential energy (CAPE) production prior to initiation, and hence more vigorous convection, which agrees with the findings in fig. \ref{fig:core_lifetime_map}.
-
-In coastal regions, we also see a change in the time of initiation near to the sea, likely due to sea breeze triggering of convection.
-In fig. \ref{fig:sea_breeze_effect} we explicitly show this relationship by plotting the mean time of core detection against distance from the coast.
-We see a clear trend towards an earlier time of detection as the distance to the coast reduces, indicative of a sea breeze effect.
-The maximum extent of the sea breeze effect extends to between approximately 200\,\unit{km}, similar to the extent of the sea breeze effect quantified using models over the Congo \citep{park_environmental_2020}.
+% In fig. \ref{fig:sea_breeze_effect} we explicitly show this relationship by plotting the mean time of core detection against distance from the coast.
+% We see a clear trend towards an earlier time of detection as the distance to the coast reduces, indicative of a sea breeze effect.
+% The maximum extent of the sea breeze effect extends to between approximately 200\,\unit{km}, similar to the extent of the sea breeze effect quantified using models over the Congo \citep{park_environmental_2020}.
 
 % %f
 % \begin{figure}[tp]
@@ -429,13 +444,13 @@ The maximum extent of the sea breeze effect extends to between approximately 200
 %     \label{fig:sea_breeze_effect}
 % \end{figure}
 
-To further investigate the differences in observed core properties across North America, we classify observed cores into four regions shown in fig. \ref{fig:regions}.
-These four regions were selected due to the observed behaviours of cores seen in previous figures.
-The ocean region contains all cores detected over the Gulf of Mexico, the Caribbean and the Western Atlantic.
-The coastal region is defined as the areas within 250~km of the ocean region, chosen to investigate the sea-breeze affected areas demonstrated by fig. \ref{fig:sea_breeze_effect}.
-The inland areas are further divided into two regions.
-Firstly, the Great Plains, to investigate the areas with increased anvil lifetime and later time of detection as seen in figures \ref{fig:core_lifetime_map} and \ref{fig:core_detection_time_map} respectively.
-Secondly, the Midwest, in contrast to the Great Plains region, represents more typical over-land convection seen in the dataset.
+% To further investigate the differences in observed core properties across North America, we classify observed cores into four regions shown in fig. \ref{fig:regions}.
+% These four regions were selected due to the observed behaviours of cores seen in previous figures.
+% The ocean region contains all cores detected over the Gulf of Mexico, the Caribbean and the Western Atlantic.
+% The coastal region is defined as the areas within 250~km of the ocean region, chosen to investigate the sea-breeze affected areas demonstrated by fig. \ref{fig:sea_breeze_effect}.
+% The inland areas are further divided into two regions.
+% Firstly, the Great Plains, to investigate the areas with increased anvil lifetime and later time of detection as seen in figures \ref{fig:core_lifetime_map} and \ref{fig:core_detection_time_map} respectively.
+% Secondly, the Midwest, in contrast to the Great Plains region, represents more typical over-land convection seen in the dataset.
 
 % %f
 % \begin{figure}[tp]
@@ -453,16 +468,16 @@ Secondly, the Midwest, in contrast to the Great Plains region, represents more t
 %     \label{fig:regional_tod}
 % \end{figure}
 
-Figure \ref{fig:regional_tod} shows the distributions of time of day of detection for cores observed within each of the regions shown in fig. \ref{fig:regions}.
-The distributions of initiation time for cores over the ocean show a noticeably different distribution to those over land.
-The diurnal variation over the ocean is much weaker, however there is still a peak in the morning (and a corresponding low point in the evening) as seen by the average time of initiation in fig. \ref{fig:regional_tod}, which is again explained due to convective initiation being triggered by night-time cooling of the upper atmosphere through longwave emissions.
+% Figure \ref{fig:regional_tod} shows the distributions of time of day of detection for cores observed within each of the regions shown in fig. \ref{fig:regions}.
+% The distributions of initiation time for cores over the ocean show a noticeably different distribution to those over land.
+% The diurnal variation over the ocean is much weaker, however there is still a peak in the morning (and a corresponding low point in the evening) as seen by the average time of initiation in fig. \ref{fig:regional_tod}, which is again explained due to convective initiation being triggered by night-time cooling of the upper atmosphere through longwave emissions.
 
-Over land, we see the highest frequency of cores detected in the coastal region, agreeing with the distributions shown in fig. \ref{fig:core_density_by_season}.
-In addition, we see an earlier maximum in the diurnal cycle of 13:00-14:00, compared to that of the Midwest and Great Plains regions of 14:00-15:00.
-This agrees with the impact of the sea breeze shown in fig. \ref{fig:sea_breeze_effect}.
+% Over land, we see the highest frequency of cores detected in the coastal region, agreeing with the distributions shown in fig. \ref{fig:core_density_by_season}.
+% In addition, we see an earlier maximum in the diurnal cycle of 13:00-14:00, compared to that of the Midwest and Great Plains regions of 14:00-15:00.
+% This agrees with the impact of the sea breeze shown in fig. \ref{fig:sea_breeze_effect}.
 
-Comparing the diurnal cycle of core detection between the Midwest and Great Plains region, we see that the Great Plains region shows a greater frequency of detected cores outside of the peak time period in the afternoon.
-In particular, we see increased rates of core detection in the early evening compared to the Midwest region, which is possibly indicative of the bimodal diurnal cycle of deep convection seen previously over the northern great plains \citep{feng_spatiotemporal_2019, li_high-resolution_2021}.
+% Comparing the diurnal cycle of core detection between the Midwest and Great Plains region, we see that the Great Plains region shows a greater frequency of detected cores outside of the peak time period in the afternoon.
+% In particular, we see increased rates of core detection in the early evening compared to the Midwest region, which is possibly indicative of the bimodal diurnal cycle of deep convection seen previously over the northern great plains \citep{feng_spatiotemporal_2019, li_high-resolution_2021}.
 
 % %f
 % \begin{figure}[tp]
@@ -480,9 +495,9 @@ In particular, we see increased rates of core detection in the early evening com
 %     \label{fig:region_cooling_rate}
 % \end{figure}
 
-In fig. \ref{fig:region_core_lifetimes} and fig. \ref{fig:region_cooling_rate} we see the distributions of core lifetime and maximum core cooling rate respectively for each of the regions.
-The distribution of core lifetimes shows little difference between each region, with the Great Plains having a marginally longer tail.
-The distribution of core cooling rates again shows little difference between each region, however there is a more noticeable increase in the frequency of higher cooling rates over the Great Plains, indicative of more intense convection in the region.
+% In fig. \ref{fig:region_core_lifetimes} and fig. \ref{fig:region_cooling_rate} we see the distributions of core lifetime and maximum core cooling rate respectively for each of the regions.
+% The distribution of core lifetimes shows little difference between each region, with the Great Plains having a marginally longer tail.
+% The distribution of core cooling rates again shows little difference between each region, however there is a more noticeable increase in the frequency of higher cooling rates over the Great Plains, indicative of more intense convection in the region.
 
 
 % \section{Observed trends in core behaviour}
@@ -506,29 +521,7 @@ The distribution of core cooling rates again shows little difference between eac
 %     \label{fig:lifetime_vs_tod}
 % \end{figure}
 
-Figure \ref{fig:lifetime_vs_tod} compares how the average lifetime of detected cores changes with their maximum observed cooling rate.
-For low values of core cooling rate, we see a similar, positive linear relationship between cooling rate and lifetime between all regions, indicating that more intense convection leads to longer periods of cores being observed.
-However, for values beyond cooling rates of 1.0-1.2\,\unit{K minute\textsuperscript{-1}} we see an inflection in the relationship, with larger cooling rates leading to shorter lifetimes.
-This may be explained by the influence of the tropopause on the detection period of growing convection.
-For convective cores that reach the tropopause, this sets a hard limit on the maximum period over which convective growth is detected by cloud-top cooling.
-As a result, deep convective cores which display larger cloud-top cooling rates will reach the tropopause faster and hence have a shorter detected lifetime.
-However, the reduced number of observations for cores with large cooling rates (>1\,\unit{K minute\textsuperscript{-1}}) means that these values should be treated with caution as they may be a result of uncertainty.
 
-% %f
-% \begin{figure}[tp]
-%     \centering
-%     \includegraphics[width=\textwidth]{phase_development.png}
-%     \caption{}
-%     % \label{fig:detected_anvils}
-% \end{figure}
-
-% %f
-% \begin{figure}[tp]
-%     \centering
-%     \includegraphics[width=\textwidth]{phase_vs_temperature.png}
-%     \caption{}
-%     % \label{fig:detected_anvils}
-% \end{figure}
 
 \subsection{Distributions and properties of observed anvil clouds}
 
