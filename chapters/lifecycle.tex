@@ -34,14 +34,6 @@ By analysing this dataset, we are able to show new discoveries about the lifecyc
 
 \section{Data}
 
-To detect and track \acrshort{dcc}s across North America, we use \acrshort{abi} \acrshort{mcmip} data from the 6.2, 7.3, 10.4 and 12.4\,\unit{\mu m} channels observed in the \acrshort{conus} region, as described in section \ref{sec:abi_data}.
-We use the full extent of the \acrshort{abi} \acrshort{conus} domain of 2,500~pixels E--W by 1,500~pixels N--S.
-This domain covers a region of around 60--120\,\textdegree W in longitude and 15--60\,\textdegree N in latitude, covering an area of approximately 5,700 by 3,900\,\unit{km}.
-Figure~\ref{fig:abi_zenith_angles} shows the satellite zenith angle of \acrshort{abi} observations across the \acrshort{conus} domain.
-The large sensor zenith angles in the North-West of the domain may introduce large errors in the detection and tracking algorithm, so for the rest of this chapter we will only consider \acrshort{dcc}s detected east of 120\,\textdegree W and south of 50\,\textdegree N.
-As the viewing angle increases detection and tracking become more difficult.
-This is due to the confounding between vertical and horizontal motion, and also due to the area of each pixel increasing with the zenith angle.
-
 \begin{figure}[tp]
     \centering
     \includegraphics[width=\textwidth]{figures/ch2_01.png}
@@ -52,6 +44,14 @@ This is due to the confounding between vertical and horizontal motion, and also 
     }
     \label{fig:abi_zenith_angles}
 \end{figure}
+
+To detect and track \acrshort{dcc}s across North America, we use \acrshort{abi} \acrshort{mcmip} data from the 6.2, 7.3, 10.4 and 12.4\,\unit{\mu m} channels observed in the \acrshort{conus} region, as described in section \ref{sec:abi_data}.
+We use the full extent of the \acrshort{abi} \acrshort{conus} domain of 2,500~pixels E--W by 1,500~pixels N--S.
+This domain covers a region of around 60--120\,\textdegree W in longitude and 15--60\,\textdegree N in latitude, covering an area of approximately 5,700 by 3,900\,\unit{km}.
+Figure~\ref{fig:abi_zenith_angles} shows the satellite zenith angle of \acrshort{abi} observations across the \acrshort{conus} domain.
+The large sensor zenith angles in the North-West of the domain may introduce large errors in the detection and tracking algorithm, so for the rest of this chapter we will only consider \acrshort{dcc}s detected east of 120\,\textdegree W and south of 50\,\textdegree N.
+As the viewing angle increases detection and tracking become more difficult.
+This is due to the confounding between vertical and horizontal motion, and also due to the area of each pixel increasing with the zenith angle.
 
 Five full years of data---from the start of 2018 to the end of 2022---are used to produce a dataset of detected \acrshort{dcc}s and their properties.
 This period spans all complete years of operational data from \acrshort{goes}-16 \acrshort{abi}.
@@ -146,9 +146,6 @@ The complete processing pathway is outlined by the following steps:
 Two datasets are produced. The first consists of daily core and anvil spatial maps, with step properties, produced by processing step 3. 
 The second, consisting of aggregated monthly core and anvil properties, is produced by step 4.
 
-Figure~\ref{fig:conus_detected_dccs} shows an example of detected cores and anvils over the \acrshort{conus} region, against backgrounds of composite visible imagery (fig.~\ref{fig:conus_detected_dccs}\,a) and 10.4\,\unit{\mu m} \acrshort{bt} (fig.~\ref{fig:conus_detected_dccs}\,b).
-Cores and anvils which are removed from the aggregated dataset are outlined with dotted lines, and those which are marker invalid are shown with dashed outlines.
-
 \begin{figure}[tp]
     \centering
     \includegraphics[width=\textwidth]{figures/ch2_02.png}
@@ -160,6 +157,9 @@ Cores and anvils which are removed from the aggregated dataset are outlined with
     \label{fig:conus_detected_dccs}
 \end{figure}
 
+Figure~\ref{fig:conus_detected_dccs} shows an example of detected cores and anvils over the \acrshort{conus} region, against backgrounds of composite visible imagery (fig.~\ref{fig:conus_detected_dccs}\,a) and 10.4\,\unit{\mu m} \acrshort{bt} (fig.~\ref{fig:conus_detected_dccs}\,b).
+Cores and anvils which are removed from the aggregated dataset are outlined with dotted lines, and those which are marker invalid are shown with dashed outlines.
+
 Over the five-year observing period we detect a total of 3,877,130 cores, of which 3,817,286 are valid, and 648,345 anvils, of which 576,555 are valid.
 
 
@@ -169,13 +169,6 @@ Over the five-year observing period we detect a total of 3,877,130 cores, of whi
 % Development of these algorithms has seen constant and continuous efforts.
 % However a number of difficulties must be taken into account when utilising geostationary satellite imagery to detect and track \acrshort{dcc}s compared to the use of radar or lightning observations.
 
-%f
-% \begin{figure*}[t]
-%     \centering
-%     \includegraphics[width=12cm]{figure01.pdf}
-%     \caption{Observations of a cluster of deep convective clouds over North-West Florida throughout three stages of their lifecycle. This cluster of \acrshort{dcc}s occurred on the afternoon of 19\textsuperscript{th} June 2018. The "growing" column were observed at 17:00 UTC, the "mature" column at 19:00 UTC, and the dissipating column at 21:00 UTC. Note that, unless otherwise specified, this case study is used for all subsequent figures in this article.}
-%     \label{fig:compare_sat_radar_glm}
-% \end{figure*}
 
 % Figure \ref{fig:compare_sat_radar_glm} provides an example of how geostationary satellite imagery compares to observations of \acrshort{dcc}s using ground-based cloud radar and lightning observations.
 % In fig. \ref{fig:compare_sat_radar_glm}a, \ref{fig:compare_sat_radar_glm}d, \ref{fig:compare_sat_radar_glm}g and \ref{fig:compare_sat_radar_glm}e, we see how a growing \acrshort{dcc} is observed by visible/near infrared (NIR) satellite imagery, 10.4\,\unit{\mu m} longwave (LW) infrared (IR) satellite imagery, lightning flash observations from a satellite instrument and column radar reflectivity respectively.
@@ -215,14 +208,6 @@ Over the five-year observing period we detect a total of 3,877,130 cores, of whi
 % \end{itemize}
 
 % \subsection{Data}
-
-%f
-% \begin{figure}[tp]
-%     \centering
-%     \includegraphics[width=\textwidth]{figure03.pdf}
-%     \caption{ABI channels and channel differences used with the detection and tracking algorithm. a.: The 10.4\,\unit{\mu m} brightness temperature, also known as the clean longwave window channel. b.: the water vapour difference (WVD) combination, of the 6.2\,\unit{\mu m} upper troposphere water vapour channel minus the 7.3\,\unit{\mu m} lower troposphere water vapour channel. c.: the split window difference (SWD) combination of the 10.4\,\unit{\mu m} clean longwave window channel minus the 12.4\,\unit{\mu m} dirty longwave window channel.}
-%     \label{fig:abi_channels}
-% \end{figure}
 
 % The Advanced Baseline Imager (ABI), a radiometer aboard the Geostationary Operational Environmental Satellite (GOES)-16 weather satellite \citep{schmit_closer_2016}, provides visible and IR imagery at a nadir resolution of 2\,\unit{km} or better, at intervals between 10 minutes to 30 seconds \citep{schmit_chapter_2020}.
 % Situated in a geostationary orbit at 75.2°W above the equator, GOES-16 observes all of South America and most of North America.
@@ -270,14 +255,6 @@ Over the five-year observing period we detect a total of 3,877,130 cores, of whi
 % Furthermore, a curvature filter is used to isolate growth only in regions that display a peak of cold BT, in order to prevent erroneous detections of cloud growth in regions where multiple clouds and merging together.
 % When calculating the BT cooling rate, the WVD field, rather than LW IR window BT, is used as this is only sensitive to mid- and upper-level growth associated with deep convection.
 
-%f
-% \begin{figure}[tp]
-%     \centering
-%     \includegraphics[width=\textwidth]{figure08.pdf}
-%     \caption{Detected regions of thin anvil cloud (blue), thick anvil cloud (orange), and developing cores (red) overlaid on the GOES-16 ABI 10.4\,\unit{\mu m} brightness temperature field for the \acrshort{dcc} cluster from figure \ref{fig:compare_sat_radar_glm}. The three stages of the \acrshort{dcc} lifecycle are shown; the growth phase (a.), the mature phase (b.), and the dissipating phase (c.). Note that the anvil region continues to be detected in c. after growing cores are no longer detected.}
-%     \label{fig:detected_anvils}
-% \end{figure}
-
 % Following core detection, the associated anvil cloud is detected using a "3d" watershed approach in the same manner as \citet{fiolleau_algorithm_2013}.
 % Rather than use BT thresholds for detecting the anvil cloud, we use the detected core regions as the seed for the watershedding, and use an edge detection method to detect the extent of the anvil cloud as used by \citet{dim_alternative_2013}.
 % By using the detected core regions as the initial seed for the watershed segmentation, we only detect anvil clouds that are associated with detected regions of convective growth.
@@ -310,68 +287,97 @@ Over the five-year observing period we detect a total of 3,877,130 cores, of whi
 \subsection{Temporal and spatial distributions of detected cores over North America}
 
 
-To begin, we investigate the distribution of detected \acrshort{dcc} cores throughout the dataset.
-In fig. \ref{fig:core_density_by_season} we plot the distribution of observed cores over North America separated by season.
-Large variations in the spatial distribution of cores can be observed across the different seasons.
-Firstly, in winter and spring (fig.~\ref{fig:core_density_by_season}\,a,b), we see generally low rates of the observed \acrshort{dcc}s than in the summer and autumn (fig.~\ref{fig:core_density_by_season}\,c,d).
-
-In summer (June - August) we see an increase in the frequency of observed cores over the Southern United States and the adjacent ocean regions of the Gulf of Mexico.
-In Autumn, we see continued raised rates of core detections over the Gulf of Mexico, but not over the adjacent land regions, likely indicating an impact of the time-lag in surface temperature throughout the seasonal cycle on convective activity.
-
 %f
 \begin{figure}[tp]
     \centering
     \includegraphics[width=\textwidth]{figures/ch2_03.png}
-    \caption{The spatial distribution of observed cores, broken down by season and accumulated into a 1x1 degree grid of latitude and longitude. In winter and spring we see convection mostly over the Rocky Mountains, likely corresponding to winter storms triggered by the orography. In Summer we see the highest frequency of cores, occurring primarily over the Ocean and coastal regions. In Autumn we see increased rates of convection over the Ocean, but not land. }
+    \caption[
+    The spatial distribution of observed cores by season
+    ]{
+    The spatial distribution of observed cores, broken down by season and accumulated into 1\texttimes1\textdegree\ grid boxes of latitude and longitude. The density of observed cores is greatest during summer (c) and smallest during winter (a).
+    }
     \label{fig:core_density_by_season}
 \end{figure}
 
-Figure~\ref{fig:cores_with_anvils_map} shows the proportion of cores associated with anvil clouds.
-We see a clear land--sea contrast, with a much larger number of cores occuring without associated anvil clouds over the ocean than over land.
+To begin, we investigate the distribution of detected \acrshort{dcc} cores throughout the dataset.
+In fig.~\ref{fig:core_density_by_season} we plot the distribution of observed cores over North America separated by season.
+Large variations in the spatial distribution of cores can be observed across the different seasons.
+Overall, in winter and spring (fig.~\ref{fig:core_density_by_season}\,a,b) we see lower rates of the observed \acrshort{dcc}s than in the summer and autumn (fig.~\ref{fig:core_density_by_season}\,c,d).
+
+In winter (fig.~\ref{fig:core_density_by_season}\,a) the majority of convection observed occurs over the ocean, particularly in the areas of the Gulf of Mexico and West Atlantic associated with warm currents.
+In spring (fig.~\ref{fig:core_density_by_season}\,b) we see a similar pattern over ocean, however there is also an increase in convection detected over land in the Caribbean, Mexico and the central and southern United States.
+In summer (fig.~\ref{fig:core_density_by_season}\,c) we a large increase in convection over land and ocean, with the highest rates of convection of any season.
+In particular we see high rates of convection over Mexico, the Caribbean, the southern United States (Florida in particular) and adjacent ocean regions.
+In Autumn (fig.~\ref{fig:core_density_by_season}\,d), we see a large reduction in the number of convective cores detected over land regions.
+The number of detections over the ocean remains high however, indicating a possible lag in the seasonal cycle of convection over oceans compared to that over land.
 
 %f
 \begin{figure}[tp]
     \centering
     \includegraphics[width=\textwidth]{figures/ch2_04.png}
-    \caption{Proportion of cores with anvils}
+    \caption[
+    The proportion of detection cores associated with anvils
+    ]{
+    The proportion of detection cores associated with anvils in each 1\texttimes1\textdegree\ grid box. In general, we see that the majority of cores over land are associated with anvils, while over the ocean a larger number are detected without anvils.
+    }
     \label{fig:cores_with_anvils_map}
 \end{figure}
 
-In fig.~\ref{fig:core_detection_time_map}, we show the mean time of detection for cores detected within each 1-degree grid square.
-The most notable feature in fig.~\ref{fig:core_detection_time_map} is the strong land-sea contrast, with the majority of land regions showing convective activity occurring during the afternoon, and the majority of ocean regions showing activity before midday.
-In addition, we see a few major features of the detected time of initiation across both land and sea regions.
+Figure~\ref{fig:cores_with_anvils_map} shows the proportion of cores associated with anvil clouds.
+We see a clear land--sea contrast, with a much larger number of cores occurring without associated anvil clouds over the ocean than over land.
 
 %f
 \begin{figure}[tp]
     \centering
     \includegraphics[width=\textwidth]{figures/ch2_05.png}
     \caption[
-    The mean time of day of initiation of cores observed within each 1 degree grid box
+    The average time of initiation of observed cores
     ]{
-    The mean time of day of initiation of cores observed within each 1 degree grid box. Time of initiation is calculated as the local solar time based on longitude, and the mean is calculated as the circular mean to account for the cyclical aspect of the hour of day.
+    The average time of day of initiation of cores observed within each 1\texttimes1\textdegree\ grid box. The time of initiation is calculated as the local solar time based on longitude, and the mean is calculated as the circular mean to account for the cyclical aspect of the hour of day.
     }
     \label{fig:core_detection_time_map}
 \end{figure}
 
-In coastal regions in the Gulf of Mexico and the Caribbean Sea, we see earlier initiation times closer to coastlines, while regions further from land have average time of detection closer to midday.
+In fig.~\ref{fig:core_detection_time_map}, we show the mean time of detection for cores detected within each 1-degree grid square.
+The most notable feature in fig.~\ref{fig:core_detection_time_map} is the strong land-sea contrast, with the majority of land regions showing convective activity occurring during the afternoon, and the majority of ocean regions showing activity before midday.
+In addition, we see a few major features of the detected time of initiation across both land and sea regions.
+
+In coastal regions in the Gulf of Mexico and the Caribbean Sea, we see earlier initiation times closer to coastlines, while regions further from land have average times of detection closer to midday.
 
 
 Over the land, we see a later time of initiation over the Northern Great Plains (90--100\,\textdegree W, 37--47\,\textdegree N).
-
-Figure~\ref{fig:core_propagation_map} shows the average speed of propagation for cores observed in each 1 degree grid box, with the average direction of propagation shown by arrows for each 2 degree grid box.
-We see a clear change in the direction of propagation from an easterly motion in the tropics (below 25\,\textdegree N) to a westerly motion in the mid-latitudes.
 
 %f
 \begin{figure}[tp]
     \centering
     \includegraphics[width=\textwidth]{figures/ch2_06.png}
-    \caption{Core propagation direction}
+    \caption[
+    The average speed and direction of propagation of cores
+    ]{
+    The average speed and direction of propagation of cores observed within each 1\texttimes1\textdegree\ grid box. The colouring shows the average speed of propagation, and the red arrows show the average direction for each 2\texttimes2\textdegree\ grid box}
     \label{fig:core_propagation_map}
 \end{figure}
+
+Figure~\ref{fig:core_propagation_map} shows the average speed of propagation for cores observed in each 1-degree grid box, with the average direction of propagation shown by arrows for each 2-degree grid box.
+We see a clear change in the direction of propagation from an easterly motion in the tropics (below 25\,\textdegree N) to a westerly motion in the mid-latitudes.
+
 
 In the following two figures (fig.~\ref{fig:core_lifetime_map} and \ref{fig:core_cooling_rate_map} we only map the properties of cores which initiate with an average brightness temperature of greater than 273\,\unit{K}.
 This is done to show the average properties of cores which we observe developing in clear sky or low cloud conditions, and exclude those which form within existing anvil clouds.
 This shows where we expect to observe the full lifetime of the observed core.
+
+%f
+\begin{figure}[tp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/ch2_07.png}
+    \caption[
+    The mean lifetime in minutes of cores
+    ]{
+    The mean lifetime in minutes of cores within each 1\texttimes1
+    \textdegree\ grid box.
+    }
+    \label{fig:core_lifetime_map}
+\end{figure}
 
 Figure \ref{fig:core_lifetime_map} displays the mean lifetime of observed cores over each 1-degree box of latitude and longitude.
 We see a contrast between land and sea, with cores occurring over the ocean having a shorter lifetime, and an increase in the average core duration over the Great Plains region.
@@ -379,32 +385,35 @@ We see a contrast between land and sea, with cores occurring over the ocean havi
 %f
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=\textwidth]{figures/ch2_07.png}
-    \caption{The mean lifetime in minutes of cores within each 1 degree grid box. Increased lifetime is seen over the Great Plains region, corresponding to the more intense convection observed there.}
-    \label{fig:core_lifetime_map}
+    \includegraphics[width=\textwidth]{figures/ch2_08.png}
+    \caption[
+    The average maximum core cooling rate
+    ]{
+    The average maximum core cooling rate for each 1\texttimes1
+    \textdegree\ grid box.
+    }
+    \label{fig:core_cooling_rate_map}
 \end{figure}
 
 Figure~\ref{fig:core_cooling_rate_map} shows the average cooling rate of observed cores.
 Some contrast is seen again between land and sea, particularly in the Caribbean, but this is less pronounced than the difference in lifetime shown in fig.~\ref{fig:core_lifetime_map}.
 
-%f
-\begin{figure}[tp]
-    \centering
-    \includegraphics[width=\textwidth]{figures/ch2_08.png}
-    \caption{Core maximum cooling rate}
-    \label{fig:core_cooling_rate_map}
-\end{figure}
 
-Figure~\ref{sec:core_properties} shows the distributions of lifetime (fig.~\ref{fig:core_properties}\,a), maximum area (fig.~\ref{fig:core_properties}\,b), cooling rate ((fig.~\ref{fig:core_properties}\,c) and minimum \acrshort{bt} (fig.~\ref{fig:core_properties}\,d).
+
+Figure~\ref{fig:core_properties} shows the distributions of lifetime (fig.~\ref{fig:core_properties}\,a), maximum area (fig.~\ref{fig:core_properties}\,b), cooling rate (fig.~\ref{fig:core_properties}\,c) and minimum \acrshort{bt} (fig.~\ref{fig:core_properties}\,d).
 The hatched areas show the distributions of cores with warm initial \acrshort{bt}.
 In general, cores observed with warm initial \acrshort{bt} tend to have longer lifetimes and greater cooling rates.
-However, they also tend to have smaller maximum areas and warmer minimum \acrshort{bt}, indicating that cores observed forming within existing anvil clouds tend to have both larger area and colder \acrshort{bt}.
+However, they also tend to have smaller maximum areas and warmer minimum \acrshort{bt}, indicating that cores observed forming within existing anvil clouds tend to have both larger areas and colder \acrshort{bt}.
 
 %f
 \begin{figure}[tp]
     \centering
     \includegraphics[width=\textwidth]{figures/ch2_09.png}
-    \caption{Core properties}
+    \caption[
+    Histograms showing the distributions of observed core properties
+    ]{
+    Histograms showing the distributions of observed core lifetime (a), maximum area (b), maximum cooling rate (c) and minimum \acrshort{bt} (d). The hatched areas show the proportion of each distribution consisting of cores which were detected with an initial average \acrshort{bt} less than 273\,\unit{K}.
+    }
     \label{fig:core_properties}
 \end{figure}
 
@@ -417,21 +426,39 @@ This may be explained by the cores with faster cooling rates reaching their leve
 \begin{figure}[tp]
     \centering
     \includegraphics[width=0.75\textwidth]{figures/ch2_10.png}
-    \caption{Core cooling rate relations}
+    \caption[
+    Average core lifetime and minimum \acrshort{bt} with increasing core cooling rate
+    ]{
+    Average core lifetime (a) and minimum \acrshort{bt} (b) with increasing core cooling rate. Error bars show the variance of the data, while the shaded area shows the standard error of the mean.
+    }
     \label{fig:core_cooling_rate_relations}
 \end{figure}
 
 Figure~\ref{fig:core_cooling_rate_relations}\,b shows how the minimum \acrshort{bt} changes with the maximum cooling rate of the core.
-Unlike fig.~\ref{fig:core_cooling_rate_relations}\,a, we see a 
+Unlike fig.~\ref{fig:core_cooling_rate_relations}\,a, we see a continuous decrease in \acrshort{bt} with core cooling rate, indicating that faster cooling rates tend to result in cores with colder \acrshort{ctt} and hence higher \acrshort{cth}.
+Figure~\ref{fig:core_cooling_rate_relations}\,b also provides context for the results seen in fig.~\ref{fig:core_cooling_rate_relations}\,a.
+If we assume that cores are detected around the freezing level (273\,\unit{K}), then we see that the overall temperature change over the core lifetime ranges from $\sim$45\,\unit{K} for the least intense cores to $\sim$65\,\unit{K} for the most intense cores.
+Although this continues to increase with cooling rate, the proportional change is less than that of the core cooling rate itself.
+As we can approximate the core lifetime as the core \acrshort{bt} change divided by the cooling rate, the larger proportional change in cooling rate will result in a shorter lifetime for more rapidly cooling cores.
 
 %f
 \begin{figure}[tp]
     \centering
     \includegraphics[width=0.75\textwidth]{figures/ch2_11.png}
-    \caption{Core area relations}
+    \caption[
+    Average core cooling rate and minimum \acrshort{bt} with increasing maximum area
+    ]{
+    Average core cooling rate (a) and minimum \acrshort{bt} (b) with increasing maximum area. Error bars show the variance of the data, while the shaded area shows the standard error of the mean.
+    }
     \label{fig:core_area_relations}
 \end{figure}
 
+Figure~\ref{fig:core_area_relations} shows how core properties change with the maximum area of the core.
+Core area is important for core development, as it influences the amount of entrainment of surrounding air during the growth of the core.
+This entrainment has a greater effect on cores with smaller area, and may reduce the maximum height of the core.
+We see an increase in average core cooling rate (fig.~\ref{fig:core_area_relations}\,a) and a decrease in minimum \acrshort{bt} (fig.~\ref{fig:core_area_relations}\,b) with core maximum area up to areas of around 250\,\unit{km}, indicating an increase in core growth with increasing area.
+Beyond this, however, we see a decrease in cooling rates and an increase in minimum \acrshort{bt} with increasing area, indicating a weakening of convective growth.
+It is possible that for these very large regions of growing \acrshort{dcc}, we see a dilution in the vertical ascent due to it being spread over such a large area.
 % In fig. \ref{fig:sea_breeze_effect} we explicitly show this relationship by plotting the mean time of core detection against distance from the coast.
 % We see a clear trend towards an earlier time of detection as the distance to the coast reduces, indicative of a sea breeze effect.
 % The maximum extent of the sea breeze effect extends to between approximately 200\,\unit{km}, similar to the extent of the sea breeze effect quantified using models over the Congo \citep{park_environmental_2020}.
