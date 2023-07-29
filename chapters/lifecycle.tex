@@ -758,14 +758,14 @@ However, given the small number of cores and anvils detected in these regions, w
 \end{figure}
 
 In fig.~\ref{fig:anvil_properties}, we show the distributions of anvil properties, with the proportion consisting of multiple-core anvils shown by the hatched area.
-The anvil maximum area distribution has a similar shape for both thick anvil (fig.~\ref{fig:anvil_properties}\,a) and thin anvil (fig.~\ref{fig:anvil_properties}\,b), with the mean shifted to large values for the thin anvil.
+The anvil maximum area distribution has a similar shape for both thick anvils (fig.~\ref{fig:anvil_properties}\,a) and thin anvils (fig.~\ref{fig:anvil_properties}\,b), with the mean shifted to large values for the thin anvil.
 It should be noted that the thin anvil area includes that of both thick and thin anvil regions, so will always be larger than that of the thick anvil alone.
 The anvil lifetime distributions for the thick (fig.~\ref{fig:anvil_properties}\,c) and thin (fig.~\ref{fig:anvil_properties}\,d) anvils show a similar relationship, with a shift of the distribution to longer lifetimes for the thin anvil.
 In both cases, despite the log scaling on the x-axis, we see a longer tail towards larger area values and longer lifetimes.
 Furthermore, this large tail consists primarily of multiple-core systems, as shown by the hatched area, indicating the impact of organisation on the area and lifetime of \acrshort{dcc}s.
 
 Figure~\ref{fig:anvil_properties}\,e and fig.~\ref{fig:anvil_properties}\,f show the average and minimum anvil \acrshort{bt} over each detected anvil.
-The minimum anvil \acrshort{bt} have broader distribution than that of the average anvil \acrshort{bt}.
+The minimum anvil \acrshort{bt} has a broader distribution than that of the average anvil \acrshort{bt}.
 Multiple core anvils generally have colder anvil \acrshort{bt}, particularly so for the minimum \acrshort{bt}.
 The cold tail of the minimum \acrshort{bt}, with values less than 200\,\unit{K}, indicates that we may be detecting the presence of overshooting tops within these organised systems.
 
@@ -787,6 +787,8 @@ The large area and lifetime of these systems---seen in the long tails of those d
 
 \subsection{Effects of core intensity and organisation on the lifecycle and thin anvil extent of \acrshort{dcc}s}
 
+
+
 %f
 \begin{figure}[tp]
     \centering
@@ -795,13 +797,35 @@ The large area and lifetime of these systems---seen in the long tails of those d
     \label{fig:thin_anvil_proportion}
 \end{figure}
 
+Figure~\ref{fig:thin_anvil_proportion} shows how the observed thin area proportion of observed anvils changes in regard to observed \acrshort{dcc} properties.
+In fig.~\ref{fig:thin_anvil_proportion}\,a we show how the thin anvil proportion changes with the average thick anvil \acrshort{bt} (note here that we only consider the thick anvil \acrshort{bt} to avoid a dependence between the anvil \acrshort{bt} and the thin anvil area).
+We see an increase of thin anvil proportion with the average anvil \acrshort{bt}, agreeing with the results of Protopapadaki et al. \cite{missing_Protopapadaki}.
+We see a larger thin anvil fraction compared to Protopapadaki et al. due to observing the lifetime effects on the thin anvil, rather than comparing a single snapshot of anvil area.
+
+Figure~\ref{fig:thin_anvil_proportion}\,b compares how the thin anvil fraction changes with the maximum cooling rate of the initial core associated with the anvil.
+Here we see again that there is a positive relation between the strength of convection and the thin anvil fraction.
+This also agrees with the results of Takahashi \cite{takahashi_comms}, who used radar measurements of convective cores to assess the convective strength and its relationship with thin anvil area.
+
+In fig.~\ref{fig:thin_anvil_proportion}\,c, we compare the thin anvil fraction to the number of cores associated with each anvil.
+In contrast to fig.~\ref{fig:thin_anvil_proportion}\,b and c, we see a decrease in the thin anvil fraction with an increase in the number of cores.
+As this occurs despite the tendency for multiple-core anvils to have colder average \acrshort{bt}, this indicates that further factors are involved in the thin anvil fraction.
+
+In the rest of this section, we will investigate how both the core intensity and organisation impact the lifecycle anvil clouds, and how these changes influence the thin anvil fraction.
+
 %f
 \begin{figure}[tp]
     \centering
     \includegraphics[width=0.75\textwidth]{figures/ch2_21.png}
     \caption{Anvil properties by initial cooling rate}
-    \label{fig:anvil_cooling_rate_propeties}
+    \label{fig:anvil_cooling_rate_properties}
 \end{figure}
+
+We begin by investigating how the properties of observed anvil clouds change with the maximum cooling rate of their initiating core (that is, the first core observed associated with each anvil).
+Figure~\ref{fig:anvil_cooling_rate_properties}\,a shows that the average thick and thin anvil maximum areas vary very little with cooling rate, except for at the highest observed values of cooling rate.
+There is however a slight widening in the gap between thick and thin anvil maximum area with increasing core cooling rate.
+Figure~\ref{fig:anvil_cooling_rate_properties}\,b shows that while the average thick anvil lifetime remains constant with increasing core cooling rate, the thin anvil lifetime increases.
+We also see a consistent decrease in both average and minimum thick anvil \acrshort{bt} with cooling rate, shown in fig.~\ref{fig:anvil_cooling_rate_properties}\,c.
+
 
 %f
 \begin{figure}[tp]
@@ -811,6 +835,11 @@ The large area and lifetime of these systems---seen in the long tails of those d
     \label{fig:anvil_cooling_rate_lifecycle}
 \end{figure}
 
+Figure~\ref{fig:anvil_cooling_rate_lifecycle} shows the distribution of the different stages of anvil lifecycle for different bins of initial core cooling rate.
+With increasing cooling rate the time of coldest mean \acrshort{bt} becomes earlier, mirroring the findings regarding the relationship between core lifetime and cooling rate found in fig.~\ref{fig:core_cooling_rate_relations}.
+While the timing of the maximum thick anvil area and thick anvil dissipation show little change with cooling rate, the time of thin anvil maximum area and dissipation increase.
+
+
 %f
 \begin{figure}[tp]
     \centering
@@ -819,13 +848,27 @@ The large area and lifetime of these systems---seen in the long tails of those d
     \label{fig:anvil_cooling_rate_proportional_lifecycle}
 \end{figure}
 
+Figure~\ref{fig:anvil_cooling_rate_proportional_lifecycle} displays the average proportion of anvil lifecycle spent in each of the stages shown in fig.~\ref{fig:anvil_cooling_rate_lifecycle}.
+We see again that the primary effect of core cooling rate is to reduce the growing phase and increase the thin anvil dissipation stage.
+The thick anvil mature stage remains similar across cooling rate, as does the time between the thick anvil maximum area and thick anvil dissipation.
+Overall, this indicates that core cooling rate primarily affects the thin anvil properties, and that the increase in the proportion of thin anvil with cooling rate  is mostly due to an increase in the thin anvil lifetime.
+
 %f
 \begin{figure}[tp]
     \centering
     \includegraphics[width=0.75\textwidth]{figures/ch2_24.png}
     \caption{Anvil properties by number of cores}
-    \label{fig:anvil_number_of_cores_propeties}
+    \label{fig:anvil_number_of_cores_properties}
 \end{figure}
+
+In fig.~\ref{fig:anvil_number_of_cores_properties} we examine how the anvil properties change with the number of cores associated with each anvil cloud.
+Figure~\ref{fig:anvil_number_of_cores_properties}\,a shows that both the thick and thin anvil maximum area increase substantially with an increasing number of cores.
+However, the thin anvil area increases at a slower rate proportional to the thick anvil.
+We see a similar increase in the thick and thin anvil lifetime with increasing number of cores in fig.~\ref{fig:anvil_number_of_cores_properties}\,b.
+
+We see a similar rate of the decrease of average anvil \acrshort{bt} with the number of cores in fig.~\ref{fig:anvil_number_of_cores_properties}\,c as we did in relation to core cooling rate in fig.~\ref{fig:anvil_cooling_rate_properties}\,c.
+The minimum anvil \acrshort{bt} decreases at a notably faster rate with increasing number of cores however.
+Although this is indicative of an increased likelihood of overshooting cores in more organised \acrshort{dcc}s, we must also note that the larger area of these systems also makes it more likely to observe colder pixels.
 
 %f
 \begin{figure}[tp]
@@ -835,6 +878,10 @@ The large area and lifetime of these systems---seen in the long tails of those d
     \label{fig:anvil_number_of_cores_lifecycle}
 \end{figure}
 
+Figure~\ref{fig:anvil_number_of_cores_lifecycle} shows how the timing of the different anvil stages changes with increasing number of cores.
+In general, the lifetime of every stage of the \acrshort{dcc} lifecycle increases with the number of cores.
+However, the time between the thick and thin anvil maximum area and the thick and thin anvil dissipation increase at a slower rate proportion to the lifetimes of those stages.
+
 %f
 \begin{figure}[tp]
     \centering
@@ -842,6 +889,16 @@ The large area and lifetime of these systems---seen in the long tails of those d
     \caption{Anvil proportional lifecycle by number of cores}
     \label{fig:anvil_number_of_cores_proportional_lifecycle}
 \end{figure}
+
+Figure~\ref{fig:anvil_number_of_cores_proportional_lifecycle} shows the proportion of the overall anvil lifetime spent in the different stages for increasing number of cores, similar to that in fig.~\ref{fig:anvil_cooling_rate_proportional_lifecycle}.
+Unlike fig.~\ref{fig:anvil_cooling_rate_proportional_lifecycle}, we see an increase in the growing phase with increasing number of cores, and a decrease in the thin anvil dissipation phase.
+In addition, while the thick anvil maturing phase changes little with the number of cores, the time for the thin anvil to reach its maximum area is substantially shorter for \acrshort{dcc}s with the most cores.
+It is a combination of the smaller proportional increase in area for the thin anvil, seen in fig.~\ref{fig:anvil_number_of_cores_properties}, and smaller proportion of the \acrshort{dcc} lifecycle spent in the thin anvil dissipating phase which account for the reduction in the thin anvil proportion for increasing number of cores seen in fig.~\ref{fig:thin_anvil_proportion}\,c.
+
+The most interesting result from this comparison is that while the core intensity and \acrshort{dcc} organisation have similar relations to anvil \acrshort{dcc}---the most common proxy used for convective intensity in satellite studies of \acrshort{dcc}s---the have opposite effects on the anvil lifecycle in relation to the thin anvil cirrus.
+While \acrshort{dcc}s with individually stronger cores tend to enhance the production and especiall the lifetime of thin anvil cirrus, more organised \acrshort{dcc}s, despite their overall larger area and lifetime, tend to produce a smaller amount of thin anvil in proportion to their thick anvil area.
+These two competing effects on thin anvil proportion between two modes of convective intensity may act to control the overall amount of thin anvil cirrus produced by \acrshort{dcc}s.
+
 
 % %f
 % \begin{figure}[tp]
