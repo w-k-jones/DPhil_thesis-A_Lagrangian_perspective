@@ -1,4 +1,4 @@
-\chapter{Introduction}
+\chapter{Introduction} \label{chp:introduction}
 
 \section{Motivation}
 
@@ -38,11 +38,39 @@ Finally, we will describe the development and applications of detection and trac
 We will also provide an overview of the structure of this thesis, in which we lay out how, through the use of novel cloud tracking methodology applied to geostationary satellite imagery, it aims to better characterise the lifecycle and \acrshort{cre} of \acrshort{dcc}s.
 
 
-% \acrshort{dcc}s are responsible for the majority of extreme weather and climate disasters across the United States and Europe.
-
 \section{Physical properties of \acrshort{dcc}s}
 
+\subsection{Cloud microphysical properties}
+
+\acrshort{dcc}s, like any cloud, are formed from a great number of water and ice particles suspended in the atmosphere.
+What separates \acrshort{dcc}s from other types of cloud are their larger vertical development---spanning from the \acrshort{pbl} to near the tropopause, a distance often exceeding 10\,\unit{km}---and the vertical velocity of their updraughts which exceeds those seen elsewhere in the atmosphere by several orders of magnitude.
 \acrshort{dcc}s consist of a vertically growing core with a diameter of ~10\,\unit{km} and updraught velocities of around 10\,\unit{ms\textsuperscript{-1}} \citep{weisman_mesoscale_2015}, and a surrounding anvil cloud formed due to horizontal divergence of cloud droplets lifted to the level of neutral buoyancy \citep{houze_chapter_2014}.
+While the anvil cirrus of a \acrshort{dcc} consists of ice particles, many of these particles form in the liquid phase within the core, before freezing as they are lifted vertically and then being detrainined horizontally.
+As a result, unlike cirrus clouds which form at high altitude, liquid-phase microphysics is important to the properties of \acrshort{dcc} anvils.
+
+When an airmass containing water vapour is lifted it expands and cools.
+In doing so, the relative humidity increases as the saturation vapour pressure reduces---in accordance with the Clausius-Clapeyron relation---but the specific humidity remains constant. 
+If the relative humidity becomes greater than 100\% the result is a supersaturated airmass, which can condense to from cloud droplets.
+
+Aerosol particles  in the supersaturated airmass become the surface on which cloud droplets form, a process known as Cloud Condensation Nuclei (CCN) activation \citep{acci}.
+The conditions under which aerosols can be activated as CCN are given by the K{\"o}hler curves, which combine the competing effects of Kelvin's equation and Raoult's law on the equilibrium vapour pressure above a droplets surface. 
+Kelvin's equation defines how the equilibrium vapour pressure increases as the radius of curvature decreases, therefore requiring a higher supersaturation for the activation smaller droplets. 
+Raoult's law regards the effect of soluble ions on the equilibrium vapour pressure: a larger amount of solute within the droplet reduces the required supersaturation. The resulting curve has a peak supersaturation requirement at a certain droplet radius. 
+For an aerosol particle to be activate and grow into a cloud droplet it must either be larger than this radius and large enough that water can condense on it at the current supersaturation, or contain enough soluble ions that the peak supersaturation of the K{\"o}hler curve is less than the airmass supersaturation.
+
+Activated cloud droplets grow through two processes: condensation and coalescence. 
+Condensation growth is most effective on small droplets as they have the largest surface area to volume ratio, and is responsible for the growth of cloud droplets from the radius of CCN --- on the order of 0.1\,\unit{\mu m} --- to that of a typical cloud droplet of around 10\,\unit{\mu m} \citep{cloud_physics}. 
+This process also results in a narrowing of the cloud droplet size distribution. 
+Coalescence growth occurs through either the merging of cloud droplets (autoconverion) or the collection of cloud droplets by rain droplets as the fall (accretion).
+It becomes effective for larger cloud droplets beginning with radii of around 20\,\unit{\mu m} and is responsible for their growth into rain droplets \citep{cloud_physics}.
+However, growth through condensation is very slow to reach the droplet sizes required for coalescence growth, and instead stochastic variability and the activation of giant CCN \citep{feingold_impact_1999} are required for rain droplets to form. 
+Overall, only about 30\% of the condensed water within a cloud will become rain droplets \citep{trenberth_changing_2003}.
+
+
+
+
+
+
 The lifecycle of \acrshort{dcc}s can be separated into three sections: a growing phase, where the core develops vertically; a mature phase in which the anvil cloud develops horizontally while convection continues within the core, and a dissipating phase in which the anvil cloud dissipates after convective activity ceases within the core \citep{wall_life_2018}.
 For isolated \acrshort{dcc}s -- consisting of a single core -- the overall lifecycle typically spans 1-3~hours \citep{chen_diurnal_1997}.
 However, \acrshort{dcc}s may also form with multiple cores feeding a single anvil cloud \citep{roca_simple_2017}, and in these cases may span areas several orders of magnitude larger \citep{houze_mesoscale_2004}, and exist for 10-20~hours or longer \citep{chen_diurnal_1997}.
@@ -154,21 +182,6 @@ Novel cloud tracking techniques will be used to investigate how the spatial and 
 
 \subsection{Deep convective clouds and convective organisation}
 
-When an airmass containing water vapour is lifted it cools and so the relative humidity increases as the saturation vapour pressure reduces --- in accordance with the Clausius-Clapeyron relation --- but the specific humidity remains constant. 
-If the relative humidity becomes greater than 100\% this results in a supersaturated airmass, which can condense to from cloud droplets.
-Aerosol particles  in the supersaturated airmass become the surface on which cloud droplets form, a process known as Cloud Condensation Nuclei (CCN) activation \citep{acci}.
-The conditions under which aerosols can be activated as CCN are given by the K{\"o}hler curves, which combine the competing effects of Kelvin's equation and Raoult's law on the equilibrium vapour pressure above a droplets surface. 
-Kelvin's equation defines how the equilibrium vapour pressure increases as the radius of curvature decreases, therefore requiring a higher supersaturation for the activation smaller droplets. 
-Raoult's law regards the effect of soluble ions on the equilibrium vapour pressure: a larger amount of solute within the droplet reduces the required supersaturation. The resulting curve has a peak supersaturation requirement at a certain droplet radius. 
-For an aerosol particle to be activate and grow into a cloud droplet it must either be larger than this radius and large enough that water can condense on it at the current supersaturation, or contain enough soluble ions that the peak supersaturation of the K{\"o}hler curve is less than the airmass supersaturation.
-
-Activated cloud droplets grow through two processes: condensation and coalescence. 
-Condensation growth is most effective on small droplets as they have the largest surface area to volume ratio, and is responsible for the growth of cloud droplets from the radius of CCN --- on the order of 0.1\,\unit{\mu m} --- to that of a typical cloud droplet of around 10\,\unit{\mu m} \citep{cloud_physics}. 
-This process also results in a narrowing of the cloud droplet size distribution. 
-Coalescence growth occurs through either the merging of cloud droplets (autoconverion) or the collection of cloud droplets by rain droplets as the fall (accretion).
-It becomes effective for larger cloud droplets beginning with radii of around 20\,\unit{\mu m} and is responsible for their growth into rain droplets \citep{cloud_physics}.
-However, growth through condensation is very slow to reach the droplet sizes required for coalescence growth, and instead stochastic variability and the activation of giant CCN \citep{feingold_impact_1999} are required for rain droplets to form. 
-Overall, only about 30\% of the condensed water within a cloud will become rain droplets \citep{trenberth_changing_2003}.
 
 When a moist air parcel rises above the lifting condensation level in an atmospheric column with a lapse rate steeper than the moist pseudo-adiabatic lapse rate it will experience positive buoyancy.
 The upward motion results in a strong updraft and the formation of a \acrshort{dcc} with a large vertical extent.
