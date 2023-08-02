@@ -266,7 +266,7 @@ Cloud radar reflectivity is proportional to the droplet number density and the d
 As a result, cloud radar observations are ideal for showing the locations of convective cores \citep{austin_relation_1987, rosenfeld_general_1993, zipser_vertical_1994}, and in this chapter it is used to qualitatively assess our ability to detect developing convective cores using \acrshort{abi}.
 Level 2 \acrshort{nexrad} radar reflectivity observations from multiple sites are gridded to the same resolution as \acrshort{abi}, and column mean reflectivity is calculated between the altitudes of 2.5 and 15\,\unit{k m}.
 
-\section{Theory}
+\section{Theory} \label{sec:detection_theory}
 
 To better understand how \acrshort{dcc}s appear in \acrshort{goes} \acrshort{abi} observations, a series of experiments were performed using a radiative transfer model.
 These experiments were performed using libRadTran v2.0.4 \citep{emde_libradtran_2016}, utilising the DISORT radiative transfer solver \citep{buras_new_2011} and the REPTRAN absorbtion parameterisation \citep{gasteiger_representative_2014}.
@@ -425,7 +425,7 @@ We present here a novel method for detecting and tracking both the growing cores
 
 
 
-\subsection{Estimation of cloud motion vectors using optical flow}
+\subsection{Estimation of cloud motion vectors using optical flow} \label{sec:optical_flow}
 
 The retrieval of \acrshort{amv}s has been performed since the earliest geostationary satellite observations \citep{menzel_cloud_2001}.
 \acrshort{amv}s provide information about the motion of clouds in the atmosphere, including \acrshort{dcc}s \citep{bedka_application_2005}, and are routinely generated for the majority of operational geostationary earth observation satellites, including \acrshort{goes}-16 \citep{daniels_algorithm_nodate}. 
