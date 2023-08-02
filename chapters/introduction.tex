@@ -379,8 +379,24 @@ The body of this thesis consists of three major chapters, through which we aim t
 
 \subsection{Developing a novel method to detect and track \acrshort{dcc}s in geostationary satellite applications}
 
+In chapter~\ref{chp:tracking_method}, we focus on the the development of a novel \acrshort{dcc} detection and tracking algorithm that make use of the capabilities of modern geostationary satellite instruments to better track \acrshort{dcc}s across a wide range of scales.
+Two key challenges are addressed to avoid the limitations of prior algrithms.
+The first is the scale dependence of \acrshort{dcc} tracking approaches due to the interaction between the size and motion of \acrshort{dcc}s.
+To address this, we develop a semi-Lagrangian scheme using optical-flow to estimate cloud motion vectors.
+Using this framework, we are able to remove the motion dependence and so track \acrshort{dcc}s across a wide range of scales.
+The second challenge is to track the full lifecycle of \acrshort{dcc}s.
+By using a variety of the channels provided by modern geostationary imagers, their differences and changes over time, we are able to identify the growing core, thick anvil and thin anvil cirrus of \acrshort{dcc}s, and by combining these track the full evolution of the cloud.
+
+Validation of the algorithm against lightning observations shows that by combining the detection and tracking of \acrshort{dcc} cores and anvils, we attain a substantially higher level of accuracy than through tracking either part of the \acrshort{dcc} separately.
+Furthermore, the tracking of both growing cores and anvil clouds allows for a number of unique capabilities, such as the ability to explicitly investigate organised convective events with multiple cores associated with a single anvil cloud.
+The algorithm developed in this chapter is utilised to detect and track \acrshort{dcc}s in the subsequent chapters in this thesis.
+
+
 \subsection{Investigating the lifecycle and structure of \acrshort{dcc}s and the relation between \acrshort{dcc} cores and anvils}
+
 
 \subsection{Examining the distribution of tropical \acrshort{dcc} \acrshort{cre} and the manner in which this interacts with the diurnal cycle and lifecycle of \acrshort{dcc}s}
 
+
 \subsection{Summary and future work}
+
