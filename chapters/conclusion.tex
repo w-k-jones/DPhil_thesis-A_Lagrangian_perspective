@@ -2,22 +2,22 @@
 
 \section{Summary of chapter \ref{chp:tracking_method}}
 
-in chapter~\ref{chp:tracking_method} we demonstrated the development of a novel tracking method capable of tracking deep convective cores and anvils clouds across a wide range of scales by make use of the capabilities of the latest generation of geostationary weather satellites.
+In chapter~\ref{chp:tracking_method} we demonstrated the development of a novel tracking method capable of tracking deep convective cores and anvils clouds across a wide range of scales by making use of the capabilities of the latest generation of geostationary weather satellites.
 Traditionally, \acrshort{dcc} tracking algorithms have focused either on the tracking of cells (primarily developed for forecasting \acrshort{dcc}s using weather radars) or \acrshort{mcs} anvils, primarily using geostationary satellite imagery.
-These domains occupy opposite ends of the scales of deep convection, and so while both sets of techniques work well for the cases they are designed for, neither are capable of tracking across th full range of \acrshort{dcc}s.
+These domains occupy opposite ends of the scales of deep convection, and so while both sets of techniques work well for the cases they are designed for, neither is capable of tracking across the full range of \acrshort{dcc}s.
 
 The first area of improvement focused on in section~\ref{sec:detection_theory} was how to best utilise the wide range of channels observed by modern satellite instruments.
 The majority of existing \acrshort{dcc} detection algorithms use only the \acrshort{lw} window channel of around 11--12\,\unit{\mu m}.
-While this allows compatibility with a wide range of legacy intruments, it fails to make use of the information contained within the range of channels provided by modern instruments.
+While this allows compatibility with a wide range of legacy instruments, it fails to make use of the information contained within the range of channels provided by modern instruments.
 We found that while changes in the clean \acrshort{lw} window \acrshort{bt} over time provide the best indication of growing \acrshort{dcc}s, use of the \acrshort{wvd} and \acrshort{swd} channel combinations provide greater insight into the detection of anvil clouds.
-Note however that these channel combinations depend upon the narrower bandwidths and higher accuracy provided by moderrn geostationary satellite instruments such as \acrshort{abi}.
+Note however that these channel combinations depend upon the narrower bandwidths and higher accuracy provided by modern geostationary satellite instruments such as \acrshort{abi}.
 In older sensors, such as \acrshort{seviri}, the wider bands for each channel, along with the lower signal-to-noise, mean that these channel combinations---particularly the \acrshort{swd}---become less useful for detecting anvil clouds.
 
-In section~\ref{chp:optical_flow}, we examined the use of optical flow algorithms for estimating cloud motion.
-We found that the Farnebäck algorithm provided the best balance between accuracy and performance, despite some of the more sophisticated methods providing better accruacy overall.
+In section~\ref{sec:optical_flow}, we examined the use of optical flow algorithms for estimating cloud motion.
+We found that the Farnebäck algorithm provided the best balance between accuracy and performance, despite some of the more sophisticated methods providing better accuracy overall.
 While the motion vector estimate provided by optical flow is not perfectly accurate, we found that in the majority of cases it provides at the very least accuracy to the nearest pixel.
 
-In the remainder of section~\ref{sec:tracking_method}, we use the estimated cloud motion vectors to constuct a semi-Lagrangian scheme for the detection and tracking of clouds.
+In the remainder of section~\ref{sec:tracking_method}, we use the estimated cloud motion vectors to construct a semi-Lagrangian scheme for the detection and tracking of clouds.
 This semi-Lagrangian approach allows us to view the clouds we observe in geostationary satellite images as approximately stationary.
 By removing the cloud motion, we remove the scale dependence from the problem of detecting and tracking \acrshort{dcc}s.
 Using the channel information discussed earlier, we are able to detect both developing \acrshort{dcc} cores and anvil clouds across a wide range of scales, from small isolated systems to large, long-lived, multiple-core \acrshort{mcs}s.
