@@ -228,50 +228,160 @@ The radiative stabilisation of the atmosphere by absorbing aerosols suppresses c
 The total effect of aerosols on deep convection through both radiative and microphysical processes is therefore strongly dependent on the type of aerosol being considered. \citep{jiang_contrasting_2018}.
 Furthermore, observed evidence of aerosol invigoration of deep convection can also be attributed to precipitation feedbacks \citep{varble_erroneous_2018}, as earlier precipitation both stabilises the troposphere --- weakening convection --- and reduces AOD through wet deposition. 
 
+
 \section{Satellite observations of \acrshort{dcc}s}
 
+Satellite observations have long provided a vital source of observations for studying the processes of \acrshort{dcc}s.
+A wide variety of satellite instruments and analysis methods have been applied to this task.
+These can be summarised into three periods of satellite observations.
+
+Passive instruments, large, gridded datasets (e.g. ISCCP)
+
+Active instruments, collocated observations e.g. A-Train providing in depth observations of in-cloud processes
+Can observe internal processes within the cloud, unlike passive instruments which only observe cloud top properties
+Collocation of multiple instruments can provide further information about processes including precipitation and anvil development.
+But, sun-synchronous polar orbit means that the diurnal cycle is not well sampled as the equator crossing time is fixed and so regions typically are only measured at two times during the day.
+
+There is substantial interest in new satellite observations with an aim to both gain a deeper understanding of convective processes while also gaining a better understanding of the lifecycle and diurnal cycle of convection.
+More modern missions typically combine the use of more advanced instruments with new observing strategies, such as satellite constellations and collocating overpasses with geostationary satellite observations.
+
+A number of satellite missions set to launch in the coming decade look set to greatly improve our studies of \acrshort{dcc}s.
+The \acrshort{esa} EarthCARE satellite, planned to launch in 2024, looks set to build upon the successes of the A-train by combining multiple active instruments aboard a single platform.
+The W-band CPR is similar to that aboard CloudSat, will provide measurements of cloud properties from cloud top to cloud base.
+EarthCARE's HSRL provides a substantial improvements over previous observations made by the CALIOP lidar aboard CALIPSO.
+Traditional doppler lidars require assumptions to be made about the particles being observed due to their inability to separate the effects of backscatter cross section from extinction.
+However, these assumptions about particle distributions are known sources of uncertainty, both in observations and in the parameterisations used in models.
+The HSRL, however, is able to explicitly characterise the properties of ice and aerosol particles.
+For \acrshort{dcc}s, this is particularly important for the study of anvil cirrus, and HSRL may help provide a better understanding of the ice particle properties of these clouds.
+
+NASA's upcoming AOS mission will similarly focus on the use of active sensors to observe aerosol, cloud and convective and precipitation processes.
+Unlike EarthCARE, however, AOS will consist of a constellation of multiple satellites operating in two different orbit configurations.
+As well as a traditional sun-synchronous 
 
 
 \section{Detection and tracking of deep convection}
 
+Detection and tracking of clouds has been performed since the earliest sequences of remote sensing imagery from weather radar and geostationary satellites \citep{menzel_cloud_2001}.
+\citet{fujita_study_1968} compared sequences of images observed by the first geostationary weather satellite to those taken using an all-sky camera, and found that by comparing subsequent observations from the satellite one could calculate \acrshort{amv}s similar to those observed on the ground.
+This tracking of cloud position was performed by hand, and subsequently a plastic stencil `computer' was designed to calculate cloud velocities taking into account the satellite viewing geometry \citep{fujita_present_1969}.
+While these early methods compared print-outs of satellite imagery by hand, shortly after a digital computer system was developed to show sequences of images \citep{chang_metracom_1973}.
+Although detection and tracking was still performed manually (albeit with the user selecting cloud positions in subsequent images using the cursor), velocity calculation was performed automatically.
+Wider adoption of this technology was applied to produce \acrshort{amv}s during field campaigns in the mid- to late-1970s \citep{tecson_cloud-motion_1975}.
+
+There was, however, concern regarding the manual tracking of cloud velocity.
+This task was both time consuming and also open to subjective judgement which made uncertainties hard to estimate.
+\citet{fujita_satellite-tracked_1975} found large variations in \acrshort{amv}s produced using these methods.
+Early efforts at automation applied cross-correlation techniques, previously used with weather radar, to estimate \acrshort{amv}s in geostationary satellite imagery \citep{leese_determination_1970}.
+\citet{endlich_use_1971} applied a pattern matching technique to `brightness centres' in visible satellite imagery to estimate cloud motion.
+While these automated methods provided more accurate motion estimate than humans, they were less capable of detecting independent cloud motions both due to errors introduced by noise, and also due to the visible imagery provided by early geostationary satellites meaning it was difficult to distinguish clouds at different altitudes.
+\citet{rinehart_three-dimensional_1978} produced a cross-correlation algorithm for the estimation of convective cell motion in 3-d weather radar observations.
+
+Automatic methods for the detection and tracking of \acrshort{dcc}s were developed for both radar reflectivity \citep{crane_automatic_1979} and geostationary satellite \acrshort{lw} \acrshort{ir} \acrshort{bt} \citep{endlich_automatic_1981}.
+Both of these methods detected \acrshort{dcc} features by labelling the area surrounding local extrema (maxima for radar reflectivity, minima for \acrshort{bt}) in individual images.
+The addition of 11\,\unit{\mu m} \acrshort{ir}-window \acrshort{bt} channels to the first operational \acrshort{goes} and Meteosat weather satellites allowed \acrshort{dcc}s to be distinguished from low clouds.
+The centroids (the location of the feature represented as a single point) of these detected features were then linked to create \acrshort{dcc} tracks through the use of cost-minimisation algorithms with sought to find the best match between pairs of features detected at subsequent time steps.
+By explicitly detecting features to track, these algorithms both improved upon the weakness of previous algorithms, but also allowed the properties of tracked objects to be studied beyond their motion vectors.
+
+The development of \acrshort{dcc} detection and tracking algorithms continued in parallel for both radar and satellite observations.
+\citet{rosenfeld_objective_1987} and \citet{williams_satellite-observed_1987} both developed overlap tracking techniques for radar reflectivity and satellite \acrshort{bt} observations respectively.
+Unlike the prior centroid-based tracking methods, these overlap methods took into account the spatial extent of detected features by linking subsequent pairs of features based on those which shared the largest overlapping area.
+By removing the approximation of a point-like feature, the overlap techniques better handled cases of \acrshort{dcc}s with larger, more complex shapes.
+The downside to this approach, however, is that, unless the spatial extent of the \acrshort{dcc} is propagated using an estimate of the storm motion, it requires that the detected features do not move further than their diameter between subsequent observations.
+As a result, for small, fast-moving objects (such as convective cells), or observations that are more widely spaces, overlap methods perform poorly.
+
+Subsequent development produced trends in both those algorithms used to track \acrshort{dcc}s in satellite imagery, and those using weather radar.
+Algorithms using geostationary satellite imagery focused on the study of \acrshort{mcs}s, and tended to use overlap-based tracking methods \citep{arnaud_automatic_1992, evans_procedure_1996, carvalho_satellite_2001, morel_climatology_2002}.
+On the other hand, tracking algorithms using radar reflectivity tended to focus on the tracking of convective cells, and favoured centroid-based tracking approaches \citep{dixon_titan_1993, johnson_storm_1998, handwerker_cell_2002}.
+Across both sets of algorithms, the use of fixed thresholds rather than extrema for locating features became favoured both due to the low computational cost, ease of customisation and resilience to noise \citep{augustine_mesoscale_1988}.
+While the majority of approaches used a single threshold, a number of algorithms introduced the use of multiple threshold to better characterise the detected features of \acrshort{dcc}s.
+\citet{johnson_storm_1998} used a sequence of increasingly larger thresholds to better distinguish individual convective cells, and classify them according the intensity.
+For \acrshort{mcs} detection, the `detect-and-spread' approach was used by \citet{evans_procedure_1996} and \citet{boer_lagrangian_1997} to better measure the area of \acrshort{mcs}s by first detecting the `core' using a cold \acrshort{bt} threshold and then detecting the surrounding cloud area using a warmer threshold.
+It should be noted however that \citet{augustine_mesoscale_1988} argued that the are estimated by the approach is highly subjective.
+
+\citet{hodges_general_1994} developed a more general algorithm for use with multiple gridded datasets, including model data, and subsequently expanded this approach to consider detection and tracking on a sphere for use with \acrshort{gcm}s \citep{hodges_feature_1995}.
+The low spatial and temporal resolution of \acrshort{gcm}s of the time however meant that detection and tracking of individual \acrshort{dcc}s was not possible.
+Other data, such as rainfall measurements and lightning flash observations, were also used to develop detection and tracking algorithms \citep{steinacker_automatic_2000}, however the vast majority of algorithms continued to use either radar reflectivity or geostationary satellite \acrshort{bt} observations.
+
+The development of radar detection and tracking algorithms was strongly driven by the needs for nowcasting (short-term, 30- to 60-minute forecasts) of convective activity \citep{wilson_nowcasting_1998}.
+As these algorithms are required to predict the future motion of observed \acrshort{dcc}s, good estimates of the storm motion, including growth and decay, are required.
+Development of these algorithms, therefore, focused primarily on the tracking aspect rather than the detection of \acrshort{dcc}s \citep{lakshmanan_objective_2010}.
+The Sydney 2000 Olympics provided both a demonstration of, and comparison between, the capabilities of multiple tracking algorithms \citep{keenan_sydney_2003}.
+The study into the performance of these algorithms found that no particular tracking approach worked best overall, and that each had strengths and weaknesses in different situations \citep{wilson_sydney_2004}.
+In response, subsequent algorithms used hybrid approaches which combined multiple tracking methods to provide better performance over a range of scenarios \citep{lakshmanan_warning_2007, han_3d_2009}.
+
+The second generation of geostationary weather satellites provided greater capability to track individual \acrshort{dcc}s due to both their higher spatial and temporal resolutions and increased number of channels across the visible and \acrshort{ir} spectrum.
+\citet{roberts_nowcasting_2003} showed that these observations could be use to detect initiating \acrshort{dcc}s up to 30 minutes before they appearing in weather radar observations.
+Because of their use of a single \acrshort{bt} threshold, existing methods could only track \acrshort{dcc}s once they had matured.
+While this was generally acceptable for tracking \acrshort{mcs}s, this limited their capability for tracking isolated \acrshort{dcc}s.
+\citet{mecikalski_forecasting_2006} developed an algorithm which combined visible imagery, estimates of \acrshort{bt} cooling rate over multiple observations and \acrshort{amv}s to indicate convective initiation.
+\citet{zinner_cb-tram_2008} used multiple \acrshort{ir} \acrshort{bt} channels from the Meteosat \acrshort{seviri} imager, along with the high resolution visible channel and motion vectors derived using a pyramidal matching algorithm to detect and track developing \acrshort{dcc}s over multiple stages from initiation to maturity.
+
+A common theme throughout all the algorithms described so far is the separation of feature detection and tracking into separate procedures, with features detected independently as each time step.
+While this allows for simplification of the overall process, the independent detection of features at each time step introduces a large degree of inconsistency in the area and location of features detected over time.
+Furthermore, when using a fixed threshold, this also prevents the detection of features before or after they reach the threshold, limiting the detection of growing or decaying \acrshort{dcc}s.
+A number of recent algorithms have sought to address this by combining both feature detection and tracking into a single process.
+\citet{fiolleau_algorithm_2013} applied the `detect-and-spread' approach to a `3-D' stack of images over time.
+By first detecting the core region using a cold \acrshort{bt} threshold, and then detecting the surrounding cloud volume using a warmer threshold, the algorithm is better able to detect the growing and decaying phases of \acrshort{dcc}s without erroneously detecting warmer clouds.
+However, the algorithm does not consider the motion of the tracked objects in any manner, and so is only suitable for detecting \acrshort{mcs}s whose areas are large compared to the distance moved between observations.
+\citet{thomas_data_2010} used a variational-data-assimilation model to both detect and track \acrshort{dcc}s in geostationary satellite images.
+This approach not only allowed detection and tracking in a single step, but was also resilient to cases of noisy or missing data.
+
+The development of convective resolving models has lead to increased interest in the use of cloud detection and tracking algorithms to both evaluate and study model data \citep{clark_application_2014}.
+A wide range of modern algorithms have been developed specifically for general application to radar, satellite and model data \citep{heikenfeld_tobac_2019, ullrich_tempestextremes_2017, ullrich_tempestextremes_2021, raut_adaptive_2021, feng_pyflextrkr_2023}.
+These new methods have allowed studies into the differences in \acrshort{dcc}s between observations and models, as well as the response of \acrshort{dcc}s to perturbations across multiple models \citep{marinescu_impacts_2021, feng_mesoscale_2023}.
+Furthermore, the flexibility of these general purpose approaches has allowed their application for the detection and tracking of atmospheric phenomena beyond \acrshort{dcc}s \citep{bukowski_direct_2021, zhang_spaceborne_2023}.
+
+A further focus of modern algorithm development has been for studying trends in the behaviour of \acrshort{dcc}s observed in long time series of observations \citep{ocasio_tracking_2020, hayden_properties_2021}.
+Despite the vast increase in computational power available compared to the early days of tracking algorithms, the vast quantities of data required for these analyses constrains the methods used.
+As a result, these algorithms have developed simplified but robust approaches for detecting and tracking \acrshort{dcc}s.
+
+\acrshort{dcc} detection and algorithms have made vast advances since the earliest approaches that supplanted human tracking.
+Through this development process, the requirements for a successful algorithm have become apparent.
+The detection process needs to accurately distinguish between \acrshort{dcc}s and other clouds, while also detecting the largest possible extent and proportion of the \acrshort{dcc} lifetime, while being consistent between time steps and resilient to noise.
+The first two aspects pose a challenge, as in general improving one of these sensitivities means worsening the other.
+The tracking approach needs to then accurately connect these features without mistakenly connecting or failing to track storms, taking into account the motion of each \acrshort{dcc} as well as splits and merges.
+Many modern algorithm developments have only focused on addressing a few of these concerns, without taking into account developments made by other algorithms.
+Many of the same issues from older algorithms still exist.
+For example, many modern detection approaches using satellite \acrshort{bt} only use a single 11\,\unit{\mu m} channel, despite the availability of many different channels providing additional information about \acrshort{dcc} properties from modern imagers.
+
+One of the key remaining challenges is the split in algorithms designed to track \acrshort{mcs}s and those designed to track individual \acrshort{dcc}s.
+The gap in capabilities between these two approaches makes it challenging, if not impossible, to study the behaviour of \acrshort{dcc}s across a wide range of scales.
+Investigating these properties, therefore, will require further developments on top of those already made on \acrshort{dcc} detection and tracking.
+
+% \acrshort{dcc}s are strongly linked with extreme  
+% \acrshort{dcc}s are also strongly linked to global climate circulation and the global energy budget \citep{houze_mesoscale_2004, fritsch_mesoscale_2001, johnson_mesoscale_2001}.
+% Furthermore, 
+
+% \section{From confirmation report}
+
+% \acrshort{dcc}s have a key role in both the large-scale climate system and in a number of extreme weather events including heavy precipitation, lightning and hail \citep[e.g.][]{westra_future_2014, houze_chapter_2014, williams_radar_1992, bruning_theory_2013, punge_hail_2016, matsudo_severe_2011}.
+
+% Observational studies of \acrshort{dcc}s are vital to understanding how \acrshort{dcc}s are changing and how they are expected to change with future climate change.
+% However, our ability to observe anthropogenic impacts on \acrshort{dcc}s is difficult due to the complex nature of the interactions between \acrshort{dcc}s and the environment.
+% As a result, it is vital that we gain a better understanding of the behaviour of \acrshort{dcc}s and the environment.
 
 
 
 
-\acrshort{dcc}s are strongly linked with extreme  
-\acrshort{dcc}s are also strongly linked to global climate circulation and the global energy budget \citep{houze_mesoscale_2004, fritsch_mesoscale_2001, johnson_mesoscale_2001}.
-Furthermore, 
-
-\section{From confirmation report}
-
-\acrshort{dcc}s have a key role in both the large-scale climate system and in a number of extreme weather events including heavy precipitation, lightning and hail \citep[e.g.][]{westra_future_2014, houze_chapter_2014, williams_radar_1992, bruning_theory_2013, punge_hail_2016, matsudo_severe_2011}.
-
-Observational studies of \acrshort{dcc}s are vital to understanding how \acrshort{dcc}s are changing and how they are expected to change with future climate change.
-However, our ability to observe anthropogenic impacts on \acrshort{dcc}s is difficult due to the complex nature of the interactions between \acrshort{dcc}s and the environment.
-As a result, it is vital that we gain a better understanding of the behaviour of \acrshort{dcc}s and the environment.
 
 
 
 
+% \section{From Transfer Report}
 
+% Aerosols (microscopic solid or liquid particles suspended in the atmosphere) have both a large radiative  impact on the climate, and also affect clouds and precipitation through microphysical cloud processes. 
+% Although aerosols are thought to have significant interactions with \acrshort{dcc}s and precipitation, our understanding of these effects remains `ambiguous' \citep{IPCCCloudsAeorosolsBoucher2013} despite widespread study of these processes (e.g.\ the reviews by \citet{levin_aerosol_2008, tao_impact_2012, fan_review_2016}).
 
+% \acrshort{dcc}s are responsible for extreme weather events including heavy precipitation, hail and lightning \citep{westra_future_2014}. Furthermore, deep convection has an important role in the wider climate system as part of the thermodynamic and general circulation systems of the atmosphere \citep{weisman_mesoscale_2015}. Understanding how \acrshort{dcc}s will respond to anthropogenic pollutants and climate change is vital for predicting how precipitation patterns will change in the future --- particularly in the tropics – and how this will impact society. 
+% Changes in the frequency of \acrshort{mcs} – a form of organised convection – have been shown to be responsible for the majority of observed precipitation change in the tropics \citep{tan_increases_2015}. 
+% These cloud systems are not accurately represented in General Circulation Models (GCMs) due to the parameterisation of convection, and so responses of these systems over longer time periods remain uncertain \citep{ogorman_precipitation_2015}.
 
-
-\section{From Transfer Report}
-
-Aerosols (microscopic solid or liquid particles suspended in the atmosphere) have both a large radiative  impact on the climate, and also affect clouds and precipitation through microphysical cloud processes. 
-Although aerosols are thought to have significant interactions with \acrshort{dcc}s and precipitation, our understanding of these effects remains `ambiguous' \citep{IPCCCloudsAeorosolsBoucher2013} despite widespread study of these processes (e.g.\ the reviews by \citet{levin_aerosol_2008, tao_impact_2012, fan_review_2016}).
-
-\acrshort{dcc}s are responsible for extreme weather events including heavy precipitation, hail and lightning \citep{westra_future_2014}. Furthermore, deep convection has an important role in the wider climate system as part of the thermodynamic and general circulation systems of the atmosphere \citep{weisman_mesoscale_2015}. Understanding how \acrshort{dcc}s will respond to anthropogenic pollutants and climate change is vital for predicting how precipitation patterns will change in the future --- particularly in the tropics – and how this will impact society. 
-Changes in the frequency of \acrshort{mcs} – a form of organised convection – have been shown to be responsible for the majority of observed precipitation change in the tropics \citep{tan_increases_2015}. 
-These cloud systems are not accurately represented in General Circulation Models (GCMs) due to the parameterisation of convection, and so responses of these systems over longer time periods remain uncertain \citep{ogorman_precipitation_2015}.
-
-Research into the effects of aerosols on \acrshort{dcc}s has generally focused on two approaches. Aerosol effects on individual cloud properties can be investigated through the use of in-situ measurements, observations from remote sensing and results of cloud-resolving models of the microphysical adjustments to cloud droplets by aerosols \citep{khain2005aerosol}. 
-On global and regional scales, energetic and hydrological balance approaches can be used to investigate changes in precipitation over inter-annual or interdecadal periods in GCMs or long-term satellite remote sensing records (e.g.\ \citet{allen_constraints_2002, held_robust_2006, muller_energetic_2011, richardson_drivers_2018}). 
-Both approaches do not however investigate aerosol, cloud and precipitation interactions at the meso-scale, where the impacts of \acrshort{mcs} s on precipitation have been observed. 
-The large uncertainties in aerosol microphysical effects on cloud properties prevent these results from being scaled up to larger environments, and the energy balance approach breaks down at yearly time scales. 
-New techniques are needed to investigate aerosol, cloud and precipitation interactions at the mesoscale. 
-Novel cloud tracking techniques will be used to investigate how the spatial and temporal patterns of \acrshort{dcc}s respond to aerosols, and attempt to connect our understanding of aerosol microphysical effects with the response of the wider climate system.
+% Research into the effects of aerosols on \acrshort{dcc}s has generally focused on two approaches. Aerosol effects on individual cloud properties can be investigated through the use of in-situ measurements, observations from remote sensing and results of cloud-resolving models of the microphysical adjustments to cloud droplets by aerosols \citep{khain2005aerosol}. 
+% On global and regional scales, energetic and hydrological balance approaches can be used to investigate changes in precipitation over inter-annual or interdecadal periods in GCMs or long-term satellite remote sensing records (e.g.\ \citet{allen_constraints_2002, held_robust_2006, muller_energetic_2011, richardson_drivers_2018}). 
+% Both approaches do not however investigate aerosol, cloud and precipitation interactions at the meso-scale, where the impacts of \acrshort{mcs} s on precipitation have been observed. 
+% The large uncertainties in aerosol microphysical effects on cloud properties prevent these results from being scaled up to larger environments, and the energy balance approach breaks down at yearly time scales. 
+% New techniques are needed to investigate aerosol, cloud and precipitation interactions at the mesoscale. 
+% Novel cloud tracking techniques will be used to investigate how the spatial and temporal patterns of \acrshort{dcc}s respond to aerosols, and attempt to connect our understanding of aerosol microphysical effects with the response of the wider climate system.
 
 % \subsection{Aerosol Radiative Effects}
 
