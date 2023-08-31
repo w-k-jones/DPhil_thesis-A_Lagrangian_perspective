@@ -68,35 +68,83 @@ Overall, only about 30\% of the condensed water within a cloud will become rain 
 
 
 
-\subsection{Dynamics of deep convection}
+\subsection{Thermodynamics of deep convection}
 
-Atmospheric deep convection occurs as a result of unstable atmospheric temperature and humidity profiles; a condition which occurs when the lapse rate of a dry atmospheric column becomes greater than that of the moist pseudo-adiabat.
-This unstable condition occurs due to either or a combination of \acrshort{lw}  cooling of the upper troposphere, and radiative heating of the surface and lower troposphere.
-The potential energy available to a convected air parcel -- \acrshort{cape} -- is dependent on the strength of the lapse rate instability and is strongly correlated with the intensity of \acrshort{dcc}s and associated extreme weather.
-For a \acrshort{dcc} to form in an unstable atmospheric column, however, a moist air parcel in the planetary boundary layer must be lifted above its dew point and the level of free convection, a process referred to as convective initiation.
-The work required to lift the moist air parcel is referred to as the \acrshort{cin}.
-This work may either be provided thermodynamically, by radiative heating triggering dry convection in the planetary boundary; or by dynamical processes such as winds lifting an air parcel over orographic features or a warm air mass being lifted over a colder air mass.
-The different mechanisms through which \acrshort{cape} is generated and convective initiation occurs results in significant differences in both the temporal and spatial patterns of \acrshort{dcc}s, with the former including notable diurnal and seasonal patterns \citep{chen_diurnal_1997}, and the latter a marked land-sea contrast \citep{taylor_evaluating_2017}.
+Deep convection, like fire, requires three ingredients \citep{brooks_century_2019}. 
+Firstly, a build-up of conditional instability throughout the troposphere. 
+Second, a source of moisture in the lower troposphere. 
+Third, a vertical motion that lifts a parcel of moist, low-level air above the \acrshort{lcl} and the \acrshort{lfc}.
 
-\acrshort{dcc}s are characterised by both their extreme updraft velocities (of the order 1 to 10~ms\textsuperscript{-1}) and great height, often reaching to the tropopause \citep{weisman_mesoscale_2015}.
-The large updraughts produced by \acrshort{dcc}s cause large convergence at the cloud base and draw in moist air from an area 10 to 25 times the area of the convective updraught itself \citep{trenberth_changing_2003}.
-Furthermore, the latent heating caused by droplet formation and precipitation, and the subsequent cooling caused by evaporation of rain droplets near the surface act together to stabilise the atmosphere.
-As a result, \acrshort{dcc}s have significant feedbacks on both the dynamical and thermodynamic environment that they form in.
+Conditional instability refers to a situation in which the decrease in temperature with height in an atmospheric column is greater than the moist pseudo-adiabatic lapse rate, but less than that of the dry adiabatic lapse rate. 
+Whereas unconditional instability (where the temperature lapse rate is greater than the dry adiabatic lapse rate) is quickly stabilised through dry convection, conditional instability can continue to build until a convective cloud is formed. 
+The build-up of instability is measured as the \acrshort{cape} of an air parcel, and high values of \acrshort{cape} are connected with more intense convection.
+
+The properties of a convective airmass are commonly derived using parcel theory \citep{stull_practical_2016}. 
+This approach approximates the air parcel as undergoing adiabatic processes while it is lifted from the lower to the upper troposphere. 
+The buoyancy of the air parcel along this trajectory is dependent on the initial height and moisture content of the parcel as well as the temperature profile of the environment it exists in. 
+Analysis of these trajectories can be performed by plotting them on a diagram of temperature against height, or more commonly temperature against log pressure, as shown for an idealised case in fig. [ADD FIGURE].
+
+From its initial position, the parcel is assumed to undergo adiabatic cooling as it is lifted until its temperature reaches that of the dew point of the initial airmass. 
+At this point---referred to as the \acrshort{lcl}---the saturation of the airmass reaches 100\%, condensation occurs and the cloud begins to form. 
+Beyond this point, the temperature of the parcel is assumed to follow the moist pseudo-adiabatic lapse rate. 
+As this lapse rate is less than that of an environment with conditional instability, as the parcel continues to rise it will reach a point where its temperature is greater than that of the surrounding environment referred to as the \acrshort{lfc}. 
+Above the \acrshort{lfc} the parcel will experience positive buoyancy until it reaches a more stable layer of the atmosphere. 
+As the moist adiabatic lapse rate approaches that of the dry adiabatic lapse rate at low temperature and humidity (and hence at higher altitudes), and the environmental lapse rate reduces as it approaches the tropopause layer \citep{fueglistaler_tropical_2009}, the parcel will cool below the temperature of the surrounding environment. 
+The point at which the temperature profile of the parcel again crosses that of the environment is called the \acrshort{lnb}. 
+Although the air parcel may continue to rise above this point due to its momentum, negative buoyancy will act to halt its ascent.
+
+Two further properties related to convection are also shown on the T-logP diagram. 
+\acrshort{cape} can be calculated as the area between the parcel temperature profile and the environment profile between the \acrshort{lfc} and the \acrshort{lnb}, showing clearly how \acrshort{cape} is the total work exerted by positive buoyancy forces between these two levels. 
+From this, \acrshort{cape} can be used to calculate the theoretical maximum updraft velocity if all \acrshort{cape} is converted to kinetic energy, although typical observed maximum updraft velocities are half of this amount. 
+Similarly, \acrshort{cin} can be calculated as the area between the temperature profiles between the initial parcel location and the \acrshort{lfc}. 
+\acrshort{cin} measures the work required to lift the parcel, overcoming negative buoyancy forces, in order to reach the \acrshort{lfc}.
+
+There are a number of caveats with the parcel approach for deep convection that must be considered. 
+The convective profile of a parcel depends upon its starting conditions including initial height, temperature and humidity. 
+As a result, for even a single atmospheric column, a whole ensemble of parcels initialised at different locations within the PBL can be considered, each with different values of \acrshort{lcl}, \acrshort{lfc}, \acrshort{lnb}, \acrshort{cape} and \acrshort{cin}. 
+To account for this, the mixed-layer \acrshort{cape} is often calculated from the average for parcels initiated in the \acrshort{pbl} \citep{stull_practical_2016}. 
+In addition, the properties of the most unstable parcel may also be found in the same manner, which may provide useful information for predicting convective initiation.
+
+Secondly, it is generally assumed that above the \acrshort{lcl} the parcel follows the moist pseudo-adiabat \citep{peters_generalized_2022}, which approximates that all condensed water is removed from the parcel immediately via precipitation \citep{emanuel_atmospheric_1994}. 
+Although this approximation may seem to agree with the high precipitation rates of DCCs, observed profiles of convective updrafts more closely match the moist adiabatic lapse rate (which assumes that all condensed water remains within the parcel) \citep{xu_is_1989}. 
+In addition, it is often considered that MSE is conserved in convective processes, however this is only correct in the case of environments in hydrostatic balance \citep{peters_evaluating_2021}. 
+In deep convection, where this is not the case, it is a better approximation that MSE minus \acrshort{cape} is conserved \citep{romps_mse_2015}.
+
+Finally, and arguably most importantly, is that the parcel model assumes that there is no mixing between the air parcel and the surrounding environment, a state that is referred to as undiluted. 
+In the dynamic and turbulent environment of deep convection mixing does occur, however, and it is very rare for an undiluted state to occur \citep{romps_undiluted_2010}. 
+The entrainment of dry air into convective updrafts reduces both \acrshort{cape} \citep{zhang_effects_2009} and the \acrshort{lnb} \citep{masunaga_convective_2016}. 
+Observations of DCCs have shown that while the highest cloud tops of DCCs reach or even exceed the \acrshort{lnb}, the majority of the anvil cloud is detrained at a level substantially below the \acrshort{lnb} \citep{takahashi_where_2012, takahashi_level_2017}.
 
 
 
-When a moist air parcel rises above the lifting condensation level in an atmospheric column with a lapse rate steeper than the moist pseudo-adiabatic lapse rate it will experience positive buoyancy.
-The upward motion results in a strong updraft and the formation of a \acrshort{dcc} with a large vertical extent.
-The updraft causes a convergence of water vapour at the base of the \acrshort{dcc} from an area estimated to be around 10-25 times the area of the convective storm \citep{trenberth_changing_2003}.
 
-The convective cores of \acrshort{dcc}s have diameters on the order of 1\,\unit{km} to 10\,\unit{km}, and updraft velocities on the order of 10\,\unit{ms\textsuperscript{-1}} \citep{weisman_mesoscale_2015}.
-The life cycle of a \acrshort{dcc} can be split into five phases: two initiation phases (before and after the onset of freezing), a mature phase and two dissipating phases (before and after the end of stratiform precipitation) \citep{wall_life_2018}.
-The large convergence of water vapour and the strong updraft lead to a high supersaturation and rapid droplet growth, resulting in heavy convective precipitation within or near the core.
-Cloud droplets lifted to the level of neutral buoyancy will spread out laterally, forming a cloud anvil \citep{houze_chapter_2014}. 
-The melting of falling ice particles from this anvil cloud produces stratiform precipitation, which is less intense than convective precipitation but occurs over a larger area \citep{houze_stratiform_1997}.
-In cases of isolated \acrshort{dcc}s, the onset of convective precipitation both triggers downdrafts and stabilises the atmosphere --- due to a combination of high-level latent heating and low-level cooling through rain droplet evaporation --- weakening and eventually dissipating the convective core of the \acrshort{dcc}.
-The lifetime of an isolated \acrshort{dcc} is typically 1-3 hours \citep{chen_diurnal_1997}, and display markedly different diurnal cycles over land and oceans. 
-As convection is triggered by \acrshort{lw}  cooling of the upper troposphere over the ocean the occurrence of \acrshort{dcc}s shows little variance throughout the diurnal cycle, however over land --- where triggering occurs due to \acrshort{sw}  heating of the surface during the day --- there is a large concentration of observed \acrshort{dcc}s towards the end of the day \citep{taylor_evaluating_2017}.
+% Atmospheric deep convection occurs as a result of unstable atmospheric temperature and humidity profiles; a condition which occurs when the lapse rate of a dry atmospheric column becomes greater than that of the moist pseudo-adiabat.
+% This unstable condition occurs due to either or a combination of \acrshort{lw}  cooling of the upper troposphere, and radiative heating of the surface and lower troposphere.
+% The potential energy available to a convected air parcel -- \acrshort{cape} -- is dependent on the strength of the lapse rate instability and is strongly correlated with the intensity of \acrshort{dcc}s and associated extreme weather.
+% For a \acrshort{dcc} to form in an unstable atmospheric column, however, a moist air parcel in the planetary boundary layer must be lifted above its dew point and the level of free convection, a process referred to as convective initiation.
+% The work required to lift the moist air parcel is referred to as the \acrshort{cin}.
+% This work may either be provided thermodynamically, by radiative heating triggering dry convection in the planetary boundary; or by dynamical processes such as winds lifting an air parcel over orographic features or a warm air mass being lifted over a colder air mass.
+% The different mechanisms through which \acrshort{cape} is generated and convective initiation occurs results in significant differences in both the temporal and spatial patterns of \acrshort{dcc}s, with the former including notable diurnal and seasonal patterns \citep{chen_diurnal_1997}, and the latter a marked land-sea contrast \citep{taylor_evaluating_2017}.
+
+% \acrshort{dcc}s are characterised by both their extreme updraft velocities (of the order 1 to 10~ms\textsuperscript{-1}) and great height, often reaching to the tropopause \citep{weisman_mesoscale_2015}.
+% The large updraughts produced by \acrshort{dcc}s cause large convergence at the cloud base and draw in moist air from an area 10 to 25 times the area of the convective updraught itself \citep{trenberth_changing_2003}.
+% Furthermore, the latent heating caused by droplet formation and precipitation, and the subsequent cooling caused by evaporation of rain droplets near the surface act together to stabilise the atmosphere.
+% As a result, \acrshort{dcc}s have significant feedbacks on both the dynamical and thermodynamic environment that they form in.
+
+
+
+% When a moist air parcel rises above the lifting condensation level in an atmospheric column with a lapse rate steeper than the moist pseudo-adiabatic lapse rate it will experience positive buoyancy.
+% The upward motion results in a strong updraft and the formation of a \acrshort{dcc} with a large vertical extent.
+% The updraft causes a convergence of water vapour at the base of the \acrshort{dcc} from an area estimated to be around 10-25 times the area of the convective storm \citep{trenberth_changing_2003}.
+
+% The convective cores of \acrshort{dcc}s have diameters on the order of 1\,\unit{km} to 10\,\unit{km}, and updraft velocities on the order of 10\,\unit{ms\textsuperscript{-1}} \citep{weisman_mesoscale_2015}.
+% The life cycle of a \acrshort{dcc} can be split into five phases: two initiation phases (before and after the onset of freezing), a mature phase and two dissipating phases (before and after the end of stratiform precipitation) \citep{wall_life_2018}.
+% The large convergence of water vapour and the strong updraft lead to a high supersaturation and rapid droplet growth, resulting in heavy convective precipitation within or near the core.
+% Cloud droplets lifted to the level of neutral buoyancy will spread out laterally, forming a cloud anvil \citep{houze_chapter_2014}. 
+% The melting of falling ice particles from this anvil cloud produces stratiform precipitation, which is less intense than convective precipitation but occurs over a larger area \citep{houze_stratiform_1997}.
+% In cases of isolated \acrshort{dcc}s, the onset of convective precipitation both triggers downdrafts and stabilises the atmosphere --- due to a combination of high-level latent heating and low-level cooling through rain droplet evaporation --- weakening and eventually dissipating the convective core of the \acrshort{dcc}.
+% The lifetime of an isolated \acrshort{dcc} is typically 1-3 hours \citep{chen_diurnal_1997}, and display markedly different diurnal cycles over land and oceans. 
+% As convection is triggered by \acrshort{lw}  cooling of the upper troposphere over the ocean the occurrence of \acrshort{dcc}s shows little variance throughout the diurnal cycle, however over land --- where triggering occurs due to \acrshort{sw}  heating of the surface during the day --- there is a large concentration of observed \acrshort{dcc}s towards the end of the day \citep{taylor_evaluating_2017}.
 
 
 \subsection{Lifecycle and structure of \acrshort{dcc}s}
@@ -153,7 +201,7 @@ Recent idealised simulations have proposed that the extent of mesoscale systems 
 Deep convection plays a key role in many atmospheric processes.
 Precipitation from \acrshort{dcc}s and \acrshort{mcs}s form a majority of precipitation in the tropics, and are also the source of extreme precipitation events.
 The convective motion of deep convection drives the Hadley circulation, and the latent heat release in \acrshort{dcc}s is key to the divergence of atmospheric heat in the tropics, where otherwise energy gradients are small.
-Furthermore, the high altitude anvil and cirrus clouds produced by deep convection have significant effects on both the\acrshort{sw}  and \acrshort{lw} atmospheric radiation budgets.
+Furthermore, the high altitude anvil and cirrus clouds produced by deep convection have significant effects on both the \acrshort{sw}  and \acrshort{lw} atmospheric radiation budgets.
 \acrshort{dcc}s are susceptible to a number of climate forcings, and the changes induced have the potential for wide-ranging effects upon the climate both in the near and long term.
 In particular, the interactions of aerosols with \acrshort{dcc}s is poorly understood, with even the sign of the forcing being uncertain. 
 Better understanding the effects of aerosols upon deep convection may help improve both our understanding of future climate change, and our predictions of the impacts of climate change itself.
