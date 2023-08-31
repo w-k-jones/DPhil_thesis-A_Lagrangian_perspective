@@ -22,9 +22,34 @@
 \section{Introduction}  %% \introduction[modified heading if necessary]
 
 Deep convective storms play an important role in both the weather and climate of North America.
-\acrshort{dcc}s are responsible for a wide range of extreme weather events, including heavy rainfall and flooding, hail, derechos, hurricanes and tornadoes.
+The continent experiences tropical, subtropical and extra-tropical convection across a range of modes, including isolated \acrshort{dcc}s, \acrshort{mcs}s and supercell convection \citep{brooks_century_2019}.
+The North American Monsoon, which transports warm, moist air from the south-east pacific and the Gulf of Mexico into the continent, strongly influences the seasonal cycle of these convective events \citep{adams_north_1997, higgins_intercomparison_2001}.
+\acrshort{dcc}s are responsible for a wide range of extreme weather events, including heavy rainfall and flooding, hail, derechos, lightning and tornadoes \citep{westra_future_2014, houze_chapter_2014, williams_radar_1992, bruning_theory_2013, punge_hail_2016, matsudo_severe_2011}.
 Additionally, \acrshort{dcc}s---in particular \acrshort{mcs}s---provide the majority of precipitation across many regions of North America.
 As a result, a wide array of observational networks have been deployed to study deep convection over North America, including satellite observations and cloud radar.
+
+The \acrshort{usa} East of the Rocky Mountains experiences a wide variety of convection.
+The Rocky Mountains block the Westerly zonal winds except at higher altitudes.
+At lower altitudes, instead, there is a Southerly low-level jet transporting warm, moist air from the Gulf of Mexico.
+The combination of these two air masses provides both a high shear environment and a high atmospheric lapse rate and hence high instability which provides the conditions for intense convection---including both \acrshort{mcs}s and supercells---to initiate over the Great Plains and Midwest regions of the \acrshort{usa} \citep{coniglio_environmental_2010, song_contrasting_2019}.
+These \acrshort{mcs}s propagate eastward and provide the majority of precipitation across these regions.
+In the southeastern \acrshort{usa} the lapse rates, and hence instability, tend to be lower, but the water vapour mixing ratio is higher which produces a tendency towards more frequent but less intense convection.
+
+Mexico also experiences frequent \acrshort{mcs}s, which produce heavy rainfall and risks from flooding.
+Topographic interactions play an important role in the development of these systems.
+Warm, moist air from the Eastern Pacific and Gulf of Mexico is lifted and converges as it meets the mountainous terrain of Mexico, driving the development of \acrshort{mcs}s.
+Unlike in the \acrshort{usa}, there is typically less shear in this environment, and so there is a lower tendency for the production of supercell convection (and the associated risks) except in the North of Mexico.
+
+Strong interest in understanding these systems due to the impacts of extreme weather.
+Conditions for convection, including \acrshort{cape}, expected to increase with climate change.
+However, models generally do a poor job of representing convective storms, particularly \acrshort{mcs}s, over much of North America.
+Although convective resolving models have improved this, there are still shortcomings, particularly with land-atmosphere interactions, which limit their capabilities.
+As a result ingredients-based forecasting remains important, and with it studies into the distribution of convective systems.
+
+Satellite studies focus on \acrshort{mcs}, Maddox onwards.
+More recent studies e.g. Feng provide better characterisation of spatial properties
+Li et al. use a combination of satellite, radar and rainfall to create a dataset of both \acrshort{mcs} and isolated convection at a relatively high resolution, but the low temporal evolution limits resolving the properties of individual cores.
+
 
 Previous studies using satellites to track and study \acrshort{dcc}s over North America have primarily focused on \acrshort{mcs}s.
 Although more recent research has combined satellite observations with radar and precipitation measurements to study both \acrshort{mcs} and isolated convection (e.g. Feng), prior datasets have not studied both core and anvil properties of \acrshort{dcc}s.
@@ -86,7 +111,7 @@ This step in particular removes anvils which have no cores associated with them,
 The second set of criteria is used to identify detected cores or anvils for which we do not observe their entire extent or lifecycle.
 Cores and anvils which flag are of these criteria are still included within the aggregated properties dataset, but are not used when investigating \acrshort{dcc} properties throughout this chapter.
 
-Quality criteria for cores are listed in table \ref{table:core_validity_criteria}, and those for anvils in tabel \ref{table:anvil_validity_criteria}.
+Quality criteria for cores are listed in table \ref{table:core_validity_criteria}, and those for anvils in table \ref{table:anvil_validity_criteria}.
 
 %t
 \begin{table}[tb]
@@ -188,7 +213,7 @@ Over the five-year observing period we detect a total of 3,877,130 cores, of whi
 % Furthermore, the choice of threshold value presents a limitation to the accuracy of threshold based detection methods.
 % A choice of a warmer BT threshold results in false detections of non-convective clouds, whereas a colder threshold results in missed detections of \acrshort{dcc}s which do not meet the threshold, and further reduces the period over which \acrshort{dcc}s are detected.
 % As the distributions of cloud top temperature for \acrshort{dcc}s and non-convective clouds overlap \citep{so_classification_2018}, there is no ideal threshold value that avoids this issue.
-% \citet{fiolleau_algorithm_2013} implemented a single-step framework for detecting and tracking MCSs that aims to address the compromise in detection accuracy by allowing a \acrshort{dcc} that is detected above a cold threshold BT at any time-step to be detected and tracked across the rest of its lifetime using a warmer threshold.
+% \citet{fiolleau_algorithm_2013} implemented a single-step framework for detecting and tracking \acrshort{mcs}s that aims to address the compromise in detection accuracy by allowing a \acrshort{dcc} that is detected above a cold threshold BT at any time-step to be detected and tracked across the rest of its lifetime using a warmer threshold.
 % Whereas this approach is successful for large, mesoscale systems, where the advection of the anvil is small compared to the over anvil area, it is less suitable for tracking small, rapidly moving convective cores due to the overlap between the spacing of neighbouring \acrshort{dcc} cores and the typical distance moved by cores between time steps \citep{heikenfeld_tobac_2019}.
 % To improve the tracking of small \acrshort{dcc}s, we have developed a novel method which uses semi-Lagrangian framework for single-step detection and tracking which accounts for the motion of \acrshort{dcc}s using optical flow.
 % This method allows us to first detect growing \acrshort{dcc} cores using a growth-based detection method, and then detect their associated anvil clouds even after growth is no longer detected.
@@ -305,9 +330,9 @@ Large variations in the spatial distribution of cores can be observed across the
 Overall, in winter and spring (fig.~\ref{fig:core_density_by_season}\,a,b) we see lower rates of the observed \acrshort{dcc}s than in the summer and autumn (fig.~\ref{fig:core_density_by_season}\,c,d).
 
 In winter (fig.~\ref{fig:core_density_by_season}\,a) the majority of convection observed occurs over the ocean, particularly in the areas of the Gulf of Mexico and West Atlantic associated with warm currents.
-In spring (fig.~\ref{fig:core_density_by_season}\,b) we see a similar pattern over ocean, however there is also an increase in convection detected over land in the Caribbean, Mexico and the central and southern United States.
+In spring (fig.~\ref{fig:core_density_by_season}\,b) we see a similar pattern over ocean, however there is also an increase in convection detected over land in the Caribbean, Mexico and the central and southern \acrshort{usa}.
 In summer (fig.~\ref{fig:core_density_by_season}\,c) we a large increase in convection over land and ocean, with the highest rates of convection of any season.
-In particular we see high rates of convection over Mexico, the Caribbean, the southern United States (Florida in particular) and adjacent ocean regions.
+In particular we see high rates of convection over Mexico, the Caribbean, the southern \acrshort{usa} (Florida in particular) and adjacent ocean regions.
 In Autumn (fig.~\ref{fig:core_density_by_season}\,d), we see a large reduction in the number of convective cores detected over land regions.
 The number of detections over the ocean remains high however, indicating a possible lag in the seasonal cycle of convection over oceans compared to that over land.
 
@@ -787,7 +812,26 @@ The large area and lifetime of these systems---seen in the long tails of those d
 
 \subsection{Effects of core intensity and organisation on the lifecycle and thin anvil extent of \acrshort{dcc}s}
 
+Understanding how the structure of anvil clouds change in response to changes in convective behaviour is vital to understanding climate feedbacks of \acrshort{dcc}s.
+Around 50\% of cirrus clouds in the tropics originate from deep convection.
+While the optically thick portion of anvil clouds generally has a neutral effect on the \acrshort{toa} radiative balance, thin cirrus clouds have a strong warming effect.
+As a result, changes in convective activity that result in a change in the size of the thin anvil coverage may have large climate feedbacks.
 
+Assessing the extent of thin anvil cirrus is challenging due to the difficulties in observing these clouds using \acrshort{ir} radiometers.
+The low emissivity of thin cirrus clouds means that the observed signal is dominated by radiances from the lower atmosphere and surface below.
+Protopapadaki et al. used cloud emissivity and cloud top pressure, rather than \acrshort{bt}, to detect convective cores, thick and thin anvil cirrus clouds.
+Data from the AIRS instrument was used to retrieve these emissivity values, as the hyperspectral sounder is more sensitive to thin cirrus than \acrshort{ir} radiometers.
+They then compared the proportion of each anvil cloud consisting of thin anvil to the minimum observed cloud top temperature within the convective core, a proxy for the convective depth which is, in turn, a proxy for convective intensity.
+It was found that the thin cirrus anvil proportion increased with colder cloud top temperatures, indicating that stronger convection increases the detrainment of thin cirrus.
+
+Takahashi et al. built upon this study using collocated measurements from the cloud profiling radar aboard CloudSAT.
+The CPR measurements provide the echo top distance, measuring the convective depth directly, and also provide another proxy for convective intensity, the echo top distance, which is independent from convective depth.
+It was again found that the proportion of thin cirrus increased with the echo top height, and also increased with decreasing echo top distance (indicating stronger convection).
+
+It should be noted that both of these studies were performed using observations from polar orbiting satellites in the A-train, and so do not fully sample the diurnal cycle.
+In addition, while both studies consider the maturity of the \acrshort{dcc}s observed, the thin anvil proportion is measured at a single point in time and so differences in the lifetime of the thick and thin anvil cirrus are not considered.
+While observing the thin cirrus anvil is difficult using \acrshort{ir} \acrshort{bt}, we have shown in section \ref{sec:anvil_detection} that by using combination of \acrshort{bt} differences we are capable of detecting thin cirrus.
+Using the dataset of tracked anvils, we can investigate changes in the proportion of thick and thin anvil coverage considering both spatial extent and the lifecycle of the anvil cloud.
 
 %f
 \begin{figure}[tp]
@@ -956,8 +1000,8 @@ These two competing effects on thin anvil proportion between two modes of convec
 \section{Summary}  %% \conclusions[modified heading if necessary]
 
 By producing the first continental scale dataset of both \acrshort{dcc} cores and anvils, we are able to analyse a large number of detected deep convective systems.
-We have been able to show a number of key differences in the seasonal, diurnal and regional patterns of \acrshort{dcc}s across the continental US.
-The spatial distribution of \acrshort{dcc} cores across the continental US depends strongly on the seasonal cycle.
+We have been able to show a number of key differences in the seasonal, diurnal and regional patterns of \acrshort{dcc}s across the continental \acrshort{usa}.
+The spatial distribution of \acrshort{dcc} cores across the continental \acrshort{usa} depends strongly on the seasonal cycle.
 The properties of cores themselves, including the lifetime, cooling rate, and time of initiation, have regional dependencies.
 We see a large land/sea contrast in time of initiation, and a sea breeze effect which extends for approximately 200\,\unit{km} inland.
 In addition, we see differences in the distribution of core time of detection between the two inland regions -- the Midwest and the Great Plains -- with the Great Plains showing a greater spread of convection throughout the night time.
@@ -972,6 +1016,6 @@ In addition, the extended lifetime of the thin anvil cloud compared to that of t
 
 Overall, a number of competing factors influence the properties of both \acrshort{dcc} cores and anvils, including the seasonal and diurnal cycles, region, and the number of cores associated with each anvil.
 These factors require careful consideration when investigating the response of deep convection to external influences.
-Future work will focus on connecting the behaviour of observed \acrshort{dcc}s to meteorological changes including surface temperature, humidity, CAPE and CIN, as well as the impact of aerosols on \acrshort{dcc}s.
+Future work will focus on connecting the behaviour of observed \acrshort{dcc}s to meteorological changes including surface temperature, humidity, \acrshort{cape} and \acrshort{cin}, as well as the impact of aerosols on \acrshort{dcc}s.
 Furthermore, we will quantify to radiative impacts of anvil clouds across their lifecycle, and aim to investigate the feedbacks of these radiative effects on subsequent convection.
 
