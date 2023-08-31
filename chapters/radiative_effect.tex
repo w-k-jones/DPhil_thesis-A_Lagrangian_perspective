@@ -4,7 +4,7 @@
 \section{Introduction}
 
 \acrshort{dcc}s play a key role in the tropical atmosphere. 
-Forming the ascending branch of the Hadley cells near the equator, \acrshort{dcc}s are critical to the circulation and heat transfer of the tropics (Riehl and Malkus 1958),\citep{weisman_mesoscale_2015}. 
+Forming the ascending branch of the Hadley cells near the equator, \acrshort{dcc}s are critical to the circulation and heat transfer of the tropics \citep{riehl_heat_1958, weisman_mesoscale_2015}. 
 \acrshort{dcc}s are also a cause of extreme weather events including floods, lightning and hail \citep{westra_future_2014}. 
 \acrshort{mcs}s---large, long-lived convective systems in which the anvils of multiple convective cores combine into a single, large `cloud shield' \citep{chen_diurnal_1997, houze_mesoscale_2004, roca_simple_2017}---are responsible for the majority of precipitation in the tropics \citep{tan_increases_2015}. 
 Changes in the behaviour of \acrshort{dcc}s with climate change have the potential for major impacts on the atmosphere, weather and society.
@@ -22,7 +22,7 @@ However, \acrshort{sw} heating of the anvil cloud top during daytime acts to sta
 There are a number of hypotheses regarding the \acrshort{cre} of tropical anvil clouds that consider whether the neutral \acrshort{cre} of tropical anvils is the result of a feedback mechanism. 
 The thermostat hypothesis proposes that in a warmer environment anvil clouds produce thicker cirrus which acts to cool the tropics through increased \acrshort{sw} reflectance \citep{ramanathan_thermodynamic_1991}. 
 The Iris hypothesis proposes an alternate negative feedback mechanism in which anvil clouds reduce in area in response to warming surface temperature (due to an increase in precipitation efficiency), resulting in greater \acrshort{lw} emission from the surrounding clear regions \citep{lindzen_does_2001}, however support for this effect is disputed \citep{genio_climatic_2002, lin_examination_2004}. 
-On the other hand, the \acrshort{fat} hypothesis argues that the anvil \acrshort{ctt} remains constant in a warming climate due to the tendency of tropical anvil clouds to detrain at the level at which water vapour cooling becomes inefficient (around 200\,\unit{K}). This would result in a positive feedback mechanism whereby anvil clouds become higher to maintain the same \acrshort{ctt} and so have a larger \acrshort{lw} \acrshort{cre} due to the warmer surface temperatures \citep{hartmann_important_2002}. 
+On the other hand, the \acrshort{fat} hypothesis argues that the anvil \acrshort{ctt} remains constant in a warming climate due to the tendency of tropical anvil clouds to detrain at the level at which water vapour cooling becomes inefficient (around 220\,\unit{K}). This would result in a positive feedback mechanism whereby anvil clouds become higher to maintain the same \acrshort{ctt} and so have a larger \acrshort{lw} \acrshort{cre} due to the warmer surface temperatures \citep{hartmann_important_2002}. 
 While there is evidence that this is the case for the largest \acrshort{dcc} anvils, it is debated whether these observations are due to \acrshort{fat} or due to fixed tropopause temperature (FiTT) \citep{seeley_fat_2019}. 
 The \acrshort{phat} hypothesis argues instead that while anvil clouds will become higher with warming temperatures, an associated increase in static stability results in warmer anvil temperatures and a reduced \acrshort{lw} response compared to \acrshort{fat} \citep{zelinka_why_2010}. 
 This reduced response more closely matches the \acrshort{lw} response of tropical clouds in global climate models. 
@@ -34,17 +34,21 @@ Deep convection over land may be perturbed in particular by factors which influe
 Observations have shown that the increase in tropical precipitation can be attributed to an increase in the frequency of deep convection, rather than an intensification of individual \acrshort{dcc}s \citep{tan_increases_2015}.
 
 In this article, we investigate how the lifecycle of deep convection impacts the \acrshort{cre} of anvil clouds. 
+\citet{nowicki_observations_2004} used estimates of \acrshort{toa} \acrshort{lw} and \acrshort{sw} radiative fluxes from \acrshort{seviri} observations to estimate the diurnal cycle of anvil \acrshort{cre} over equatorial Africa and the equatorial Atlantic. 
+They found that shifting the diurnal cycle of deep convection in these regions could change the \acrshort{cre} by \textpm 10\,\unit{Wm\textsuperscript{-2}}, but did not track the properties of individual \acrshort{dcc}s.
+\citet{bouniol_macrophysical_2016} compared \acrshort{cre} and cloud radiative heating rates to anvil cloud properties to investigate how radiative heating affects the anvil cloud evolution.
+These observations were made with polar orbiting instruments however, and they highlighted the need for geostationary observations to characterise the evolution of individual anvil clouds.
+Subsequent research used \acrshort{dcc} tracking methods to better characterise the lifecycle of observed anvil clouds \citep{bouniol_life_2021}, but as the radiative flux data was provided by polar-orbiting satellites the \acrshort{cre} could not be measured over the lifetime of the \acrshort{dcc}.
 
-
-To do so, we use a novel cloud tracking methodology in conjunction with derived all-sky and clear-sky radiative fluxes to characterise the \acrshort{cre} over the lifecycles of individual anvil clouds. 
+Here, we use a novel cloud tracking methodology in conjunction with derived all-sky and clear-sky radiative fluxes to characterise the \acrshort{cre} over the lifecycles of individual anvil clouds. 
 This methodology is applied to 4 months of data produced for the \acrshort{esa} Cloud-\acrshort{cci}+ project over sub-Saharan Africa. 
 This dataset allows us to investigate both the \acrshort{cre} of individual \acrshort{cre}s, as well as the net anvil \acrshort{cre} over the entire region. 
 We find that the overall distribution of anvil \acrshort{cre} is determined by the relationship between \acrshort{dcc} lifecycle and the diurnal cycle of the \acrshort{sw} \acrshort{cre}, and discuss the implications of this for the response of \acrshort{dcc}s to a changing climate.
 
 \section{Data}
 
-For this case study, we used data from the \acrshort{seviri} (Schmid 2000) aboard the \acrshort{msg} Meteosat-11 satellite, which is in a geostationary orbit above the equator at 0\textdegree W. 
-We use data from 4 months (May-August 2016) over sub-Saharan Africa (approximately 18\textdegree W-46\textdegree E, 31\textdegree S-15\textdegree N) at the full resolution of \acrshort{seviri}, as well as retrieved cloud properties and derived broadband fluxes produced by the \acrshort{esa} Cloud-\acrshort{cci}+ project.
+For this case study, we used data from \acrshort{seviri} \citep{aminou_msgs_2002} aboard the \acrshort{msg} Meteosat-11 satellite, which is in a geostationary orbit above the equator at 0\textdegree W. 
+We use data from 4 months (May--August 2016) over sub-Saharan Africa (approximately 18\textdegree W-46\textdegree E, 31\textdegree S-15\textdegree N) at the full resolution of \acrshort{seviri}, as well as retrieved cloud properties and derived broadband fluxes produced by the \acrshort{esa} Cloud-\acrshort{cci}+ project.
 Calibrated \acrshort{bt} from \acrshort{seviri} is used by the tracking algorithm, and calibrated reflectances and \acrshort{bt} are used by the cloud retrieval.
 
 \acrshort{seviri} is a visible and \acrshort{ir} radiometer with a nadir spatial resolution of 3km and a temporal sampling time of 15 minutes for the full earth disc. 
