@@ -48,11 +48,11 @@ We find that the overall distribution of anvil \acrshort{cre} is determined by t
 \section{Data}
 
 For this case study, we used data from \acrshort{seviri} \citep{aminou_msgs_2002} aboard the \acrshort{msg} Meteosat-11 satellite, which is in a geostationary orbit above the equator at 0\textdegree W. 
-We use data from 4 months (May--August 2016) over sub-Saharan Africa (approximately 18\textdegree W-46\textdegree E, 31\textdegree S-15\textdegree N) at the full resolution of \acrshort{seviri}, as well as retrieved cloud properties and derived broadband fluxes produced by the \acrshort{esa} Cloud-\acrshort{cci}+ project.
+We use data from 4 months (May--August 2016) over sub-Saharan Africa (approximately 18\,\textdegree W--46\,\textdegree E, 31\,\textdegree S--15\,\textdegree N) at the full resolution of \acrshort{seviri}, as well as retrieved cloud properties and derived broadband fluxes produced by the \acrshort{esa} Cloud-\acrshort{cci}+ project.
 Calibrated \acrshort{bt} from \acrshort{seviri} is used by the tracking algorithm, and calibrated reflectances and \acrshort{bt} are used by the cloud retrieval.
 
-\acrshort{seviri} is a visible and \acrshort{ir} radiometer with a nadir spatial resolution of 3km and a temporal sampling time of 15 minutes for the full earth disc. 
-\acrshort{seviri} has 12 channels across the visible, \acrshort{nir} and thermal-IR spectrum, with one being a high-resolution visible channel with a nadir resolution of 1km. 
+\acrshort{seviri} is a visible and \acrshort{ir} radiometer with a nadir spatial resolution of 3\,\unit{km} and a temporal sampling time of 15 minutes for the full earth disc. 
+\acrshort{seviri} has 12 channels across the visible, \acrshort{nir} and thermal-IR spectrum, with one being a high-resolution visible channel with a nadir resolution of 1\,\unit{km}. 
 A brief overview of these channels, along with which are used for tracking \acrshort{dcc}s and the cloud properties retrieval, is provided in table~\ref{table:seviri_channels}.
 
 
@@ -73,7 +73,7 @@ Channel & Wavelength (\unit{\mu m}) & Description & Tracking & Retrieval\tabular
 9 & 10.8 & Clean \acrshort{lw} window & \checkmark & \checkmark\tabularnewline
 10 & 12.0 & Dirty \acrshort{lw} window & \checkmark & \checkmark\tabularnewline
 11 & 13.4 & CO\textsubscript{2} & & \checkmark\tabularnewline
-12 & 0.6-0.9 & High-resolution visible & &\tabularnewline
+12 & 0.6--0.9 & High-resolution visible & &\tabularnewline
 \bottomhline
 \end{tabular}
 \caption[
@@ -85,7 +85,7 @@ Channel & Wavelength (\unit{\mu m}) & Description & Tracking & Retrieval\tabular
 \end{table}
 
 
-An example of observations from \acrshort{seviri} is shown in fig.~\ref{fig:seviri_obs_example} for 15:00:00 \acrshort{utc} on 1\textsuperscript{st} June 2016. 
+An example of observations from \acrshort{seviri} is shown in fig.~\ref{fig:seviri_obs_example} for 15:00:00~\acrshort{utc} on 1\textsuperscript{st} June 2016. 
 A visible composite (fig.~\ref{fig:seviri_obs_example}\,a) is constructed using the 1.64\,\unit{\mu m} and 0.81\,\unit{\mu m} near-infrared and 0.64\,\unit{\mu m} visible channels for the \acrshort{rgb} channels respectively. 
 In this composite, ice clouds -- which appear cyan -- can be seen over central Africa and the southern Atlantic. fig.~\ref{fig:seviri_obs_example}\,b shows the 10.8\,\unit{\mu m} brightness temperature for the same scene, showing the coldest temperatures for the high ice clouds over central Africa. 
 Two combinations of channels are used for the detection of anvil clouds. 
@@ -153,7 +153,8 @@ Detection and tracking of \acrshort{dcc}s was performed using the tobac-flow alg
 While geostationary satellite imagery provides high-resolution observations over large domains and long time periods, which is ideal for studying deep convection, the inability of passive remote sensing to observe convective updrafts directly makes the detection and tracking of \acrshort{dcc}s difficult.
 
 Algorithms for the detection and tracking of \acrshort{dcc}s can generally be split into two groups. 
-Firstly, those designed for tracking deep convective cores, or isolated \acrshort{dcc}s, such as Cb-TRAM \citep{zinner_cb-tram:_2008,zinner_validation_2013} or tobac \citep{heikenfeld_tobac_2019}(Sokolowsky et al. 2023). 
+Firstly, those designed for tracking deep convective cores, or isolated \acrshort{dcc}s, such as Cb-TRAM \citep{zinner_cb-tram:_2008,zinner_validation_2013} or tobac \citep{heikenfeld_tobac_2019}
+%(Sokolowsky et al. 2023). 
 These algorithms work by detecting regions of convective updraft or a proxy (such as cloud top cooling rate), and then treating these regions as point-like objects that are advected over time. 
 Secondly, those designed for tracking mesoscale convective systems such as PyFLEXTRKR \citep{feng_pyflextrkr_2022}, TAMS \citep{ocasio_tracking_2020} or TOOCAN \citep{fiolleau_algorithm_2013}. 
 These algorithms detect large regions of cold cloud tops indicating anvils, and then link them over time by overlapping regions at subsequent time steps. 

@@ -2,8 +2,9 @@
 
 \section{Motivation}
 
-\acrfull{dcc}s---also known as cumulonimbus (\textit{`heaped raincloud'}) or thunderstorms---are dynamical atmospheric phenomena resulting from instability in the troposphere.
+\acrfullpl{dcc}---also known as cumulonimbus (\textit{`heaped raincloud'}) or thunderstorms---are dynamical atmospheric phenomena resulting from instability in the troposphere.
 Formed by central cores towering in excess of 10\,\unit{km} tall, and surrounded by anvil cirrus clouds that measure hundreds or thousands of km in extent, \acrshort{dcc}s form some of the most physically imposing objects in the atmosphere.
+First identified as a unique cloud type in the late 19\textsuperscript{th}~century by \citet{abercromby_identity_1887} and \citet{hildebrandsson_remarks_1887}, \acrshort{dcc}s have been a focus of scientific investigation ever since.
 Far more than merely a visual impact, \acrshort{dcc}s are the source of many severe weather events, including heavy precipitation, lightning, hail, flooding, tornadoes and tropical cyclones \citep{westra_future_2014, houze_chapter_2014, williams_radar_1992, bruning_theory_2013, punge_hail_2016, matsudo_severe_2011}.
 \acrshort{dcc}s play an important role in weather and climate beyond extreme weather events.
 In the tropics, deep convection forms the ascending branch of the Hadley cell, and in doing so begins the transport of energy through the atmosphere from the equator to the poles.
@@ -16,7 +17,7 @@ Understanding the behaviour, interactions and feedbacks of \acrshort{dcc}s is th
 The study of \acrshort{dcc}s is made difficult by the range of scales over which they occur.
 The processes of individual \acrshort{dcc}s span a scale from single kilometer and minutes, to hundreds of km and multiple days.
 When considering their dynamic and stochastic nature and coupling with synoptic scale atmospheric effects, the adequate length and time scales may extend to thousands of km and multiple years, all while maintaining the resolution of the smallest scales.
-Geostationary weather satellites, such as the \acrshort{noaa} \acrshort{goes} series, the EUMetsat Meteosat series, and the \acrshort{jaxa} Himawari series, have provided imagery of \acrshort{dcc}s over many decades for the purpose of monitoring and predicting the weather.
+Geostationary weather satellites, such as the \acrshort{noaa} \acrshort{goes} series, the \acrshort{eumetsat} Meteosat series, and the \acrshort{jma} Himawari series, have provided imagery of \acrshort{dcc}s over many decades for the purpose of monitoring and predicting the weather.
 However, these instruments have not traditionally supported the accuracy required for scientific studies, and it is only with the latest generation that the capability of this imagery for studying the behaviour of deep convection is being fully realised.
 
 The study of \acrshort{dcc}s is made difficult by their dynamic and stochastic nature.
@@ -46,7 +47,7 @@ We will also provide an overview of the structure of this thesis, in which we la
 What separates \acrshort{dcc}s from other types of cloud are their larger vertical development---spanning from the \acrshort{pbl} to near the tropopause, a distance often exceeding 10\,\unit{km}---and the vertical velocity of their updraughts which exceeds those seen elsewhere in the atmosphere by several orders of magnitude.
 \acrshort{dcc}s consist of a vertically growing core with a diameter of ~10\,\unit{km} and updraught velocities of around 10\,\unit{ms\textsuperscript{-1}} \citep{weisman_mesoscale_2015}, and a surrounding anvil cloud formed due to horizontal divergence of cloud droplets lifted to the level of neutral buoyancy \citep{houze_chapter_2014}.
 While the anvil cirrus of a \acrshort{dcc} consists of ice particles, many of these particles form in the liquid phase within the core, before freezing as they are lifted vertically and then detrained horizontally.
-As a result, unlike cirrus clouds which form at high altitudes, liquid-phase microphysics is important to the properties of \acrshort{dcc} anvils.
+As a result, unlike cirrus clouds which form in situ at high altitudes, liquid-phase microphysics are also important to the properties of \acrshort{dcc} anvils.
 
 When an airmass containing water vapour is lifted it expands and cools.
 In doing so, the relative humidity increases as the saturation vapour pressure reduces---in accordance with the Clausius-Clapeyron relation---but the specific humidity remains constant. 
@@ -57,6 +58,7 @@ The conditions under which aerosols can be activated as \acrshort{ccn} are given
 Kelvin's equation defines how the equilibrium vapour pressure increases as the radius of curvature decreases, therefore requiring a higher supersaturation for the activation of smaller droplets. 
 Raoult's law regards the effect of soluble ions on the equilibrium vapour pressure: a larger amount of solute within the droplet reduces the required supersaturation. The resulting curve has a peak supersaturation requirement at a certain droplet radius. 
 For an aerosol particle to be activated and grow into a cloud droplet it must either be larger than this radius and large enough that water can condense on it at the current supersaturation, or contain enough soluble ions that the peak supersaturation of the K{\"o}hler curve is less than the airmass supersaturation.
+As a result, aerosol particles with high solubility---including in particular sulphate and nitrate aerosols, volatile organic compounds and sea salt---form the majority of \acrshort{ccn}.
 
 Activated cloud droplets grow through two processes: condensation and coalescence. 
 Condensation growth is most effective on small droplets as they have the largest surface area to volume ratio, and is responsible for the growth of cloud droplets from the radius of \acrshort{ccn} --- on the order of 0.1\,\unit{\mu m} --- to that of a typical cloud droplet of around 10\,\unit{\mu m} \citep{cloud_physics}. 
@@ -64,7 +66,28 @@ This process also results in a narrowing of the cloud droplet size distribution.
 Coalescence growth occurs through either the merging of cloud droplets due to collision, or the collection of cloud droplets by rain droplets as the fall (accretion).
 It becomes effective for larger cloud droplets beginning with radii of around 20\,\unit{\mu m} and is responsible for their growth into rain droplets \citep{cloud_physics}.
 However, growth through condensation is very slow to reach the droplet sizes required for coalescence growth, and instead stochastic variability and the activation of giant \acrshort{ccn} \citep{feingold_impact_1999} are required for rain droplets to form. 
-Overall, only about 30\% of the condensed water within a cloud will become rain droplets \citep{trenberth_changing_2003}.
+On average, only about 30\% of the condensed water within a cloud will become rain droplets \citep{trenberth_changing_2003}.
+
+Ice clouds have important and complex microphysics.
+Ice cloud particles may be formed either through direct deposition of water vapour into ice, or through the freezing of liquid cloud droplets.
+Liquid water will not, however, freeze immediately below the freezing point due to the freezing energy barrier.
+Instead, liquid cloud droplets may exist in a super-cooled state, which may be frozen by one of two processes.
+Homogeneous freezing occurs at temperatures below --38\,\textdegree C, allowing liquid droplets to freeze without external interactions.
+As a result, homogeneous freezing of liquid cloud droplets tends to result in a larger number of smaller ice particles.
+Heterogeneous freezing occurs due to the presence of \acrshort{inp}s. 
+\acrshort{inp}s reduce the freezing energy barrier due to having similar structures to ice crystals, and so allow freezing at warmer temperatures.
+However, \acrshort{inp}s are somewhat rare in the atmosphere, and so heterogeneous freezing tends to result in fewer ice cloud particles, and, in some cases, mixed-phase clouds which consist of both ice and liquid droplets.
+
+While subsequent growth or decay of ice particles may occur through deposition and sublimation, these processes are slow at low temperatures.
+Ice crystals may grow through aggregation, where multiple crystals join together, or through riming, where super-cooled water droplets freeze on contact with an ice crystal.
+Additional, smaller ice crystals are produced through secondary ice production processes including rime-splintering, droplet shattering and collision fragmentation.
+Ice crystals are commonly removed from the atmosphere via sedimentation, and the sedimentation of ice crystals is linked to a large amount of total precipitation.
+
+Overall, ice cloud microphysics has complex dependencies on a wide range of factors.
+In addition, these complex processes lead to a wide variety of shapes and sizes of ice particles, including both regular and irregular shapes, which adds further variance to ice crystal interactions.
+The understanding of ice cloud microphysics, along with its parameterisations in climate models, is a large and important source of uncertainty in understanding clouds and future climate change.
+
+\subsection{Cloud radiative properties}
 
 
 
@@ -115,7 +138,10 @@ In the dynamic and turbulent environment of deep convection mixing does occur, h
 The entrainment of dry air into convective updrafts reduces both \acrshort{cape} \citep{zhang_effects_2009} and the \acrshort{lnb} \citep{masunaga_convective_2016}. 
 Observations of DCCs have shown that while the highest cloud tops of DCCs reach or even exceed the \acrshort{lnb}, the majority of the anvil cloud is detrained at a level substantially below the \acrshort{lnb} \citep{takahashi_where_2012, takahashi_level_2017}.
 
-
+An additional factor not considered by the parcel model is the impact of circulation on instability.
+Low-level convergence may transport additional heat and moisture to the base of the profile, increasing the potential for convection.
+Wind shear---change in the speed and/or direction of wind with height---may also increase instability by transporting a colder airmass over a warmer boundary layer.
+Wind shear plays an important role in the behaviour of \acrshort{dcc}s which will be explored in the following section.
 
 
 % Atmospheric deep convection occurs as a result of unstable atmospheric temperature and humidity profiles; a condition which occurs when the lapse rate of a dry atmospheric column becomes greater than that of the moist pseudo-adiabat.
