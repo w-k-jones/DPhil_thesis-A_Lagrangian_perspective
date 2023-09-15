@@ -193,7 +193,15 @@ Wind shear plays an important role in the behaviour of \acrshort{dcc}s which wil
 
 \subsection{Lifecycle and structure of \acrshort{dcc}s}
 
-The lifecycle of \acrshort{dcc}s can be separated into three sections: a growing phase, where the core develops vertically; a mature phase in which the anvil cloud develops horizontally while convection continues within the core, and a dissipating phase in which the anvil cloud dissipates after convective activity ceases within the core \citep{wall_life_2018}.
+The lifecycle of deep convection begins with the development of instability throughout the troposphere. The primary driver of instability is \acrshort{lw} cooling of the troposphere (mainly through water vapour emissions), which cools at around 2K per day \citep{jeevanjee_simple_2020}. \acrshort{sw} heating also affects instability which leads to diurnal differences, however there is also a land--sea contrast in this effect. Over land, \acrshort{sw} absorption warms the surface during the daytime, which sensible heating transfers to the lower troposphere. This \acrshort{sw} heating leads to a peak in instability in the afternoon and evening. On the contrary, over the ocean, \acrshort{sw} heating has less of an effect on the surface due to the greater heat capacity of water and the mixing of the ocean surface. Instead, a peak in instability is seen during the night and early morning, which is believed to be due to the effects of \acrshort{sw} heating on the mid and upper troposphere during the day \citep{wall_life_2018}. The diurnal cycle of instability is much less pronounced over the ocean than over land, however \citep{taylor_evaluating_2017}.
+
+Instability can also be driven by the relative motion of air masses. Over the great plains of North America, warm, moist air is transported northward from the Gulf of Mexico which leads to instability as it moves under colder air \citep{walters_airflow_2001}. Polar lows, on the other hand, are linked to the transport of cold air from polar land regions over a relatively warm ocean surface \citep{moreno-ibanez_recent_2021}.
+
+Once sufficient instability has built up throughout the troposphere for deep convection to occur, a lifting action must occur to overcome \acrshort{cin} and initiate the formation of a \acrshort{dcc}. \acrshort{sw} heating of the surface also plays a role here, as large heating rates near the surface can lead to dry convection and convective initiation without other interactions. A number of mechanical lifting mechanisms are also involved in the initiation of convection. Orographic lifting can occur when warm, moist air is blown towards mountains and cools as it ascends \citep{hodges_distribution_1997}. Gust fronts of cold, dense air may also act to lift warmer, moist air masses. These gust fronts may be caused by a number of processes, including synoptic frontal systems \citep{wilson_initiation_1986, jirak_observational_2007}, sea breeze \citep{tripoli_numerical_1979, park_environmental_2020}, and cold pools caused by precipitation \citep{grant_cold_2016}.
+
+The occurrence of cumulus and cumulus congestus clouds (convective clouds in the low- and mid-troposphere \citep{johnson_trimodal_1999}) may also lead to deep convection. These lower-level convective clouds cause convergences of warm, moist air near the surface, building instability, and may also act to `condition’ the lower troposphere to convection by adjusting the environmental temperature profile closer to that of an ascending air parcel and hence reducing \acrshort{cin} \citep{masunaga_mechanism_2014, schulz_observing_2018}.
+
+Once initiated, the lifecycle of \acrshort{dcc}s can be separated into three sections: a growing phase, where the core develops vertically; a mature phase in which the anvil cloud develops horizontally while convection continues within the core; and a dissipating phase in which the anvil cloud dissipates after convective activity ceases within the core \citep{wall_life_2018}.
 For isolated \acrshort{dcc}s (those consisting of a single core) the overall lifecycle typically spans 1-3~hours \citep{chen_diurnal_1997}.
 However, \acrshort{dcc}s may also form with multiple cores feeding a single anvil cloud \citep{roca_simple_2017}, and in these cases may span areas several orders of magnitude larger \citep{houze_mesoscale_2004}, and exist for 10-20~hours or longer \citep{chen_diurnal_1997}.
 
@@ -216,6 +224,8 @@ Firstly, the core region, in which the convective updraught and convective preci
 Secondly, the anvil or cloud shield, which consists of a large area of thick cloud surrounding the core at the level of neutral buoyancy, and within which stratiform precipitation may occur.
 Finally, the area of cirrus outflow, where thin ice cloud extends beyond the edge of the anvil cloud, particularly within the dissipating phase \citep{lilly_cirrus_1988}.
 
+Radiative heating of the anvil cloud base and cooling of the anvil cloud top causes two regions of instability to occur. These unstable profiles drive circulations at the cloud base and top which increase the entrainment of dry air into the anvil while also lifting the anvil higher in the troposphere. While SW heating during the daytime reduces the instability at the cloud top, the greater LW heating at the cloud base results in a greater net dissipation of anvil during the daytime \citep{sokol_tropical_2020}. As the anvil cloud thins, these two regions of instability join into a single lapse rate. This state drives two circulations within the anvil cloud \citep{gasparini_opinion_2023}. The first exists within the anvil cloud and causes updrafts which lift ice particles, reducing sedimentation and increasing particle growth through sedimentation. The second circulation acts horizontally between the anvil cloud and surrounding clear sky regions, and transports additional moisture into the anvil cloud. The combined effect of these circulations prolongs the lifetime of the thin anvil cloud \citep{sokol_tropical_2020}. Further thinning of the cirrus anvil results in uniform radiative heating throughout the anvil, ending the circulation and leading the to complete dissipation of the anvil cloud. 
+
 
 \subsection{Convective organisation}
 
@@ -223,16 +233,18 @@ Finally, the area of cirrus outflow, where thin ice cloud extends beyond the edg
 \acrshort{mcs}s, which occur when an organised cluster of deep convective cores form a single large area of anvil referred to as a cloud shield \citep{roca_simple_2017}, can cover an area of greater than 10,000~km\textsuperscript{2}, several orders of magnitude greater than that of individual \acrshort{dcc}s \citep{houze_mesoscale_2004}.
 Furthermore, the lifetime of these systems is also substantially lengthened, with typical \acrshort{mcs} s lasting for 10 to 20 hours or longer \citep{chen_diurnal_1997}, with a particular increase in the lengths of the initiation and mature phases \citep{wall_life_2018} due to the continuous development of new cores throughout the active lifetime of the \acrshort{mcs}.
 The large cloud shields of the \acrshort{mcs} s result in much larger amounts of stratiform precipitation than individual \acrshort{dcc}s, which is distributed over a much wider area \citep{houze_chapter_2014}.
-These organised convective cloud systems (including tropical and extratropical cyclones, squall lines and tropical cloud clusters) have thermodynamic impacts on the environment to a much greater extent than isolated \acrshort{dcc}s.
-Organised convection is characterised by a moistening of the convective system and a drying of the surrounding atmosphere, creating a sharp contrast between the two regions \citep{houze_chapter_2014}.
-Although in the extratropics it is thought that this effect is limited by the Coriolis effect, in the tropics it is still not clear what limits the extent of organised convection.
-Idealised simulations have shown that the thermodynamic interactions of organised convective systems can propagate thousands of kilometres within the troposphere \citep{beucler_budget_2019}.
+These organised convective cloud systems (including tropical and extratropical cyclones, squall lines and tropical cloud clusters \citep{tsakraklides_global_2003a}) have thermodynamic impacts on the environment to a much greater extent than isolated \acrshort{dcc}s.
+% Organised convection is characterised by a moistening of the convective system and a drying of the surrounding atmosphere, creating a sharp contrast between the two regions \citep{houze_chapter_2014}.
+% Although in the extratropics it is thought that this effect is limited by the Coriolis effect, in the tropics it is still not clear what limits the extent of organised convection.
+% Idealised simulations have shown that the thermodynamic interactions of organised convective systems can propagate thousands of kilometres within the troposphere \citep{beucler_budget_2019}.
 
-Convective organisation or convective aggregation occurs when multiple convective cores cluster together. \acrshort{mcs} s occur when the anvils of multiple, clustered convective cores form a single large area of anvil cloud called a cloud shield \citep{roca_simple_2017}. 
-These systems can cover an area on the order of 10\textsuperscript{5}\,\unit{km\textsuperscript{2}}, several orders of magnitude larger than that of isolated \acrshort{dcc}s \citep{houze_mesoscale_2004}, and typically exist to 10-20 hours or longer \citep{chen_diurnal_1997} due to the increase in the length of the initiation and mature phases of convection \citep{wall_life_2018}.
+% Convective organisation or convective aggregation occurs when multiple convective cores cluster together. \acrshort{mcs} s occur when the anvils of multiple, clustered convective cores form a single large area of anvil cloud called a cloud shield \citep{roca_simple_2017}. 
+% These systems can cover an area on the order of 10\textsuperscript{5}\,\unit{km\textsuperscript{2}}, several orders of magnitude larger than that of isolated \acrshort{dcc}s \citep{houze_mesoscale_2004}, and typically exist to 10-20 hours or longer \citep{chen_diurnal_1997} due to the increase in the length of the initiation and mature phases of convection \citep{wall_life_2018}.
 Convective organisation processes have been observed in satellite remote sensing, radiative-convective equilibrium models and cloud-resolving models \citep{holloway_observing_2017}. 
 The formation and lifetime of \acrshort{mcs}s are strongly linked to the dynamics of the surrounding environment through the convergence of moist, low-level air and the divergence of air at the top of the \acrshort{mcs}  \citep{houze_chapter_2014}. 
-Recent idealised simulations have proposed that the extent of mesoscale systems is controlled by both the \acrshort{sw}  and \acrshort{lw}  heating and cooling of the surrounding environment up to thousands of kilometres away \citep{beucler_budget_2019}. 
+Cold pools have a strong influence on the organisation of convective cores, and set the scales over which organisation occurs \citep{jeevanjee_convective_2013}.
+Convective aggregation concentrates humidity in convective regions, leading to a drying of the surrounding, clear troposphere \citep{bretherton_energybalance_2005}.
+Idealised simulations have proposed that the extent of mesoscale systems is controlled by both the \acrshort{sw}  and \acrshort{lw}  heating and cooling of the surrounding environment up to thousands of kilometres away \citep{beucler_budget_2019}. 
 
 
 \section{Response and feedbacks of \acrshort{dcc}s to climate change}
@@ -625,10 +637,14 @@ The body of this thesis consists of three major chapters, through which we aim t
 
 Automated methods for the detection and tracking of deep convective storms in geostationary satellite imagery have a vital role in both the forecasting of severe storms and research into their behaviour.
 Studying the interactions and feedbacks between multiple \acrshort{dcc}s, however, poses a challenge for existing algorithms due to the necessary compromise between false detection and missed detection errors.
+In addition, existing approaches to tracking convection tend to be optimised for tracking either individual convective cores or \acrshort{mcs}s, and therefore cannot capture the full range of \acrshort{dcc}s.
+A key challenge in tracking \acrfull{dcc}s of different sizes is how the algorithm handles the motion of different \acrfull{dcc}s, which, in relation to their size and shape, sets a scale dependence on the capabilities of existing algorithms.
+
 We utilise an optical flow method to determine the motion of \acrshort{dcc}s in \acrshort{goes}-16 \acrshort{abi} imagery in order to construct a semi-Lagrangian framework for the motion of the cloud field, independently of the detection and tracking of cloud objects.
 The semi-Lagrangian framework allows for severe storms to be simultaneously detected and tracked in both spatial and temporal dimensions.
 For the purpose of this framework we have developed a novel Lagrangian convolution method and a number of novel implementations of morphological image operations that account for the motion of observed objects.
 These novel methods allow the accurate extension of computer vision techniques to the temporal domain for moving objects such as \acrshort{dcc}s.
+
 By combining this framework with existing methods for detecting \acrshort{dcc}s (including detection of growing cores through cloud top cooling and detection of anvil using \acrshort{bt}), we show that the novel framework enables reductions in errors due to both false and missed detections compared to any of the individual methods, reducing the need to compromise when compared with existing frameworks.
 The novel framework enables the continuous tracking of anvil clouds associated with detected deep convection after convective activity has stopped, enabling the study of the entire lifecycle of \acrshort{dcc}s and their associated anvils.
 The algorithm developed in this chapter is utilised to detect and track \acrshort{dcc}s in the subsequent chapters in this thesis.
@@ -636,17 +652,27 @@ The algorithm developed in this chapter is utilised to detect and track \acrshor
 
 \subsection{Chapter \ref{chp:lifecycle}: Investigating the lifecycle and structure of \acrshort{dcc}s and the relation between \acrshort{dcc} cores and anvils}
 
-Deep convective clouds play an important role in the climate and are the cause of a number of extreme weather events.
-As global warming causes an increase in the frequency of storms and related extreme weather events, it is vital that we better understand the response of deep convective clouds to anthropogenic influences.
-Observing these impacts is, however, difficult due to both the complex behaviour of these clouds and the many interactions and feedbacks between deep convective clouds and the environment.
+% Deep convective clouds play an important role in the climate and are the cause of a number of extreme weather events.
+% As global warming causes an increase in the frequency of storms and related extreme weather events, it is vital that we better understand the response of deep convective clouds to anthropogenic influences.
+% Observing these impacts is, however, difficult due to both the complex behaviour of these clouds and the many interactions and feedbacks between deep convective clouds and the environment.
 
-By developing a novel method for detecting deep convective clouds, we can detect and track cores and their associated anvil clouds over their entire lifetime.
-Using a year of observations over the continental United States, we analyse the properties of developing deep convective cores and anvil clouds, and how these properties are linked.
-The spatial patterns of observed convection show notable changes with the seasonal cycle.
-Furthermore, we observe differences in the diurnal distribution of deep convection between different regions, and impacts of the diurnal cycle on the properties of observed developing deep convective clouds.
-In particular, we see strong land/sea contrast, the impact of the sea-breeze effect on convective initiation in coastal regions, and an increase in the intensity of convective growth with later time of initiation over the Great Plains region.
-Despite these changes, some properties, such as the lifetime of the developing cloud core, show little regional variation.
-Finally, we link the properties of growing cores to those of single- and multi-core anvils, and show how multi-core anvils can have larger lifetimes and extents, despite the properties of individual cores being similar to those of single-core anvils.
+% By developing a novel method for detecting deep convective clouds, we can detect and track cores and their associated anvil clouds over their entire lifetime.
+% Using a year of observations over the continental United States, we analyse the properties of developing deep convective cores and anvil clouds, and how these properties are linked.
+% The spatial patterns of observed convection show notable changes with the seasonal cycle.
+% Furthermore, we observe differences in the diurnal distribution of deep convection between different regions, and impacts of the diurnal cycle on the properties of observed developing deep convective clouds.
+% In particular, we see strong land/sea contrast, the impact of the sea-breeze effect on convective initiation in coastal regions, and an increase in the intensity of convective growth with later time of initiation over the Great Plains region.
+% Despite these changes, some properties, such as the lifetime of the developing cloud core, show little regional variation.
+% Finally, we link the properties of growing cores to those of single- and multi-core anvils, and show how multi-core anvils can have larger lifetimes and extents, despite the properties of individual cores being similar to those of single-core anvils.
+
+North America experiences a wide array of convective storms in both tropical and extra-tropical environments, over the ocean and over land. 
+These storms are responsible for a variety of extreme weather events, including extreme precipitation, flooding, lightning, hail and tornadoes.
+In addition, \acrshort{dcc}s play a key role in the climate of many parts of North America, in particular providing the majority of precipitation in many regions.
+Models struggle to represent many aspects of convection in this region, and investigating the behaviour of \acrshort{dcc}s using observations is vital to improving their capabilities.
+Geostationary satellite observations have been widely used for this purpose, but have primarily focused on the properties of \acrshort{mcs}s.
+While more recent research has included both isolated and organised convection, prior studies have not tracked the behaviour of both \acrshort{dcc} cores and anvils.
+
+In chapter~\ref{chp:lifecycle}, we apply the approach developed in the previous chapter to five years of imagery from the advanced baseline imager to study the behaviour of \acrshort{dcc} cores and anvils in this region. Using this dataset, we investigate the spatial, diurnal and seasonal distributions of both cores and anvils, and show the relation between them and their contrasting behaviour between land and ocean. In addition, we show that the intensity and organisation of convection have opposing effects on both the lifecycle and structure of \acrshort{dcc}s. The thin cirrus produced by \acrshort{dcc}s may have a warming effect on the climate, and so understanding how the area and lifetime of these clouds change with the properties of convection is important to understanding \acrshort{dcc} feedbacks. Both the intensity of \acrshort{dcc}s and the frequency of organised convective systems are expected to increase with global warming, so further study of the response of thin cirrus to convective activity is vital.
+
 
 \subsection{Chapter \ref{chp:radiative_effect}: Examining the distribution of tropical \acrshort{dcc} \acrshort{cre} and the manner in which this interacts with the diurnal cycle and lifecycle of \acrshort{dcc}s}
 
@@ -658,3 +684,13 @@ We find that the distribution of anvil cloud \acrshort{cre} of our tracked \acrs
 
 \subsection{Summary and future work}
 
+% Through the use of a novel storm tracking algorithm, we have used geostationary satellite imagery to study to properties of deep convective cores across a wide range of scales. In doing so we have found two key results that require further investigation for understanding future changes in deep convection. Further investigating the contrast between the effects of intensification and organisation on the structure of \acrshort{dcc}s anvils may provide insight into the net changes of anvil structure with climate change. Furthermore, the bimodal \acrshort{cre} distribution of tropical anvil clouds highlights that the contribution of isolated \acrshort{dcc}s is more important to the anvil \acrshort{cre} balance than previously thought, and that these systems may be more sensitive to climate change. Combining research on both these effects may help understand whether the net impact of the response of \acrshort{dcc}s to global warming will be a warming or cooling feedback. Future satellite missions to investigate the processes of deep convection are planning to include cloud tracking to provide insight into the lifecycle of \acrshort{dcc}s, and it is clear that continued development of this technology is required to further the study of these important atmospheric phenomena.
+
+\acrshort{dcc}s play a key role in many atmospheric processes, and their response to global warming is both uncertain \citep{sherwood_assessment_2020} and underestimated by current climate models \citep{hill_climate_2023}.
+While the new generation of convective resolving models may help to address this problem \citep{stevens_added_2020}, these models still do not fully resolve the issues in simulating the dynamics of deep convection \citep{jeevanjee_vertical_2017} and the behaviour of anvil cirrus \citep{sullivan_ice_2021}.
+Observational studies of \acrshort{dcc}s using cloud tracking approaches have been highlighted as a key method to addressing some of these issues \citep{gasparini_opinion_2023}.
+
+In this thesis, we have developed and utilised a novel cloud tracking algorithm to better investigate the properties of \acrshort{dcc} cores and anvils as seen by the latest generation of geostationary weather satellites.
+Key results from chapters~\ref{chp:lifecycle} and \ref{chp:radiative_effect} have shown new results on the structure and \acrshort{cre} of \acrshort{dcc} anvils, which provide insight into how individual \acrshort{dcc} properties may respond to climate change.
+The ability to track the properties of \acrshort{dcc}s over their entire lifetimes has been key to these findings.
+Understanding the lifecycle of \acrshort{dcc}s has been highlighted as a key need for future satellite missions, and so cloud tracking has a key role to play in future studies of deep convection.

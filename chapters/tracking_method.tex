@@ -23,7 +23,7 @@
 
 
 Sequences of images from satellite instruments have been used to detect and track the motion of \acrshort{dcc}s and tropical storms since the earliest geostationary weather satellites \citep{menzel_cloud_2001}.
-Whereas early detection and tracking were performed by hand, numerous algorithms have been developed for the purpose of performing this task automatically, and are widely used for both forecasting and research purposes \citep[e.g.][]{mecikalski_use_2011, senf_characterization_2015, senf_satellite-based_2017, feng_life_2012, feng_spatiotemporal_2019, zinner_cb-tram:_2008}.
+Whereas early detection and tracking were performed by hand, numerous algorithms have been developed for the purpose of performing this task automatically, and are widely used for both forecasting and research purposes \citep[e.g.][]{mecikalski_use_2011, senf_characterization_2015, senf_satellite-based_2017, feng_life_2012, feng_spatiotemporal_2019, zinner_cb-tram_2008}.
 There is a continual effort both to improve existing algorithms and develop new methods to support these activities.
 However, it is important to understand the differences in observations of \acrshort{dcc}s from satellite imagery to those of other sources, particularly radar and lightning observations.
 
@@ -57,7 +57,7 @@ This is unlike radar and lightning observations, which can directly observe deep
 Instead, a proxy for convective activity must be used to detect deep convection in visible/\acrshort{ir} satellite imagery.
 The approaches used for this can generally be separated into two separate methods. 
 Firstly, the use of thresholds on \acrshort{bt} (\acrshort{bt}) or other observed fields, which are capable of detecting \acrshort{dcc} anvil clouds \citep[e.g.][]{schmetz_monitoring_1997, hong_detection_2005, schroder_deep_2009, liang_integrated_2017, senf_size-resolved_2018}.
-Secondly, the detection of rapidly growing cloud tops by observing changes in the anvil cloud-top radiative cooling, or by other similar approximations of cloud growth \citep{zinner_cb-tram:_2008, bedka_objective_2010, muller_novel_2019}.
+Secondly, the detection of rapidly growing cloud tops by observing changes in the anvil cloud-top radiative cooling, or by other similar approximations of cloud growth \citep{zinner_cb-tram_2008, bedka_objective_2010, muller_novel_2019}.
 
 Developing a detection method using either approach is made challenging by the dynamic nature of \acrshort{dcc}s themselves.
 \acrshort{dcc} cores typically have diameters of around 10\,\unit{km}, and updraft velocities on the order of 10\,\unit{m s\textsuperscript{-1}} \citep{weisman_mesoscale_2015}, and exist for 1-3 hours \citep{chen_diurnal_1997}.
@@ -96,7 +96,7 @@ Whereas this approach was successful for large, mesoscale systems, where the adv
 To improve the tracking of small \acrshort{dcc}s, we have developed a semi-Lagrangian framework for single-step detection and tracking which accounts for the motion of \acrshort{dcc}s using optical flow.
 
 By utilising the semi-Lagrangian framework, we are able to combine the best elements of both growth-based and threshold-based detection methods.
-We show that it is possible to detect growing \acrshort{dcc}s to a high degree of accuracy using methods similar to those of \citet{zinner_cb-tram:_2008}, and then extend the detected \acrshort{dcc} over the entire anvil cloud using the "3D" watershed method of \citet{fiolleau_algorithm_2013}.
+We show that it is possible to detect growing \acrshort{dcc}s to a high degree of accuracy using methods similar to those of \citet{zinner_cb-tram_2008}, and then extend the detected \acrshort{dcc} over the entire anvil cloud using the "3D" watershed method of \citet{fiolleau_algorithm_2013}.
 This framework reduces the compromise required between the rate of missed \acrshort{dcc}s and falsely detected \acrshort{dcc}s, improving the overall accuracy of our detection method compared to existing approaches.
 Furthermore, this method allows the anvil cloud to be detected and tracked even after the region of cloud top cooling is no longer detected.
 Finally, the "3D" method handles the merging and splitting of intersecting \acrshort{dcc}s by detecting all \acrshort{dcc}s that intersect at any point during their lifetime as a merged object.
@@ -439,7 +439,7 @@ Optical flow algorithms have been previously shown to be accurate for the predic
 \citet{heikenfeld_tobac_2019} found that at imaging frequencies of less than 5~minutes the motion of \acrshort{dcc} cores was less than the spacing between neighbouring cores in the majority of cases, indicating that the frequency of the \acrshort{abi} \acrshort{conus} scan region is suitable for calculating optical flow vectors of \acrshort{dcc}s.
 The use of optical flow has several advantages over traditional \acrshort{amv}s for the retrieval of \acrshort{dcc} motion vectors: optical flow can be calculated quickly using only two subsequent images and no \textit{a priori} information, aiding in near real-time applications; and also have no requirement for geostrophic balance. 
 Optical flow algorithms are routinely used in the nowcasting of convective precipitation, and can be used to provide accurate predictions of \acrshort{dcc} with an hour of lead time using either radar or satellite observations \citep[e.g.][]{bowler_development_2004, bechini_enhanced_2017, woo_operational_2017}.
-Optical flow, and similar motion vector techniques, have also been successfully applied to both the detection of developing deep convection \citep{zinner_cb-tram:_2008, zhang_locating_2014} and tracking detected deep convective features \citep{senf_size-resolved_2018} separately.
+Optical flow, and similar motion vector techniques, have also been successfully applied to both the detection of developing deep convection \citep{zinner_cb-tram_2008, zhang_locating_2014} and tracking detected deep convective features \citep{senf_size-resolved_2018} separately.
 
 It should be noted that we are using optical flow to estimate the apparent motion of the cloud field between subsequent images, with the aim of using these vectors to map the locations of \acrshort{dcc}s from one step to the next, instead of calculating actual \acrshort{amv}s corresponding to winds.
 This approach avoids a number of challenges with the use of optical flow for calculating \acrshort{amv}s including the estimation of the height of estimated flow vectors and the detection of diverging or converging motion vector fields in situations of growing and dissipating clouds respectively.
@@ -639,7 +639,7 @@ Labelling algorithms assign unique identifiers to each segmented region provided
 
 \subsection{Detection of Growing Deep Convection} \label{sec:core_detection}
 
-Growing deep convective cores are detected in a similar manner to that used by \citet{zinner_cb-tram:_2008}.
+Growing deep convective cores are detected in a similar manner to that used by \citet{zinner_cb-tram_2008}.
 The growth rates are calculated using the finite difference of the 10.4\,\unit{\mu m } \acrshort{bt} and \acrshort{wvd} fields in the Lagrangian perspective.
 We have found that combining both the 10.4\,\unit{\mu m} \acrshort{bt} and the \acrshort{wvd} field provides the best observations for detecting growing deep convective cores.
 The \acrshort{bt} field shows cooling cloud tops throughout the troposphere, while the \acrshort{wvd} isolates growth in the mid- to upper-troposphere, removing spurious observations of growth due to boundary layer convection and cloud formation.
@@ -840,7 +840,7 @@ Sequences from geostationary satellites provide unique observations of \acrshort
 However, the traditional framework used by such algorithms requires a compromise between the rates of false and missed detections due to the overlap in signature from convective and non-convective clouds \citep{konduru_new_2013}.
 Whereas novel methods have approached this problem for the detection of large, mesoscale convective systems \citep{fiolleau_algorithm_2013}, such approaches do not take advantage of the capability of the latest generation of geostationary imaging satellites to detect individual deep convective cores.
 
-By developing and implementing a novel semi-Lagrangian framework for the detection and tracking of \acrshort{dcc}s we are able to combine the detection of growing \acrshort{dcc} cores \citep{zinner_cb-tram:_2008} and \acrshort{dcc} anvils \citep{muller_role_2018} to detect and track \acrshort{dcc}s over their entire lifecycles.
+By developing and implementing a novel semi-Lagrangian framework for the detection and tracking of \acrshort{dcc}s we are able to combine the detection of growing \acrshort{dcc} cores \citep{zinner_cb-tram_2008} and \acrshort{dcc} anvils \citep{muller_role_2018} to detect and track \acrshort{dcc}s over their entire lifecycles.
 The novel methods developed here for the Semi-Lagrangian computer vision framework, along with implementations of multiple image processing operations commonly used for object detection, allow the accurate detection and tracking of moving objects utilising both spatial and temporal information.
 These methods may have impacts on applications of computer vision beyond the detection and tracking of \acrshort{dcc}s.
 Furthermore, the novel framework is able to achieve higher levels of accuracy without compromising on the number of \acrshort{dcc}s detected, as with previous algorithms \citep{muller_novel_2019}.
