@@ -48,7 +48,7 @@ from a Geostationary Perspective}   %note \\[1ex] is a line break in the title
 
 %\renewcommand{\submittedtext}{change the default text here if needed}
 \degree{Doctor of Philosophy}     %the degree
-\degreedate{Trinity 2023}         %the degree date
+\degreedate{2023}         %the degree date
 
 %end the preamble and start the document
 \begin{document}
@@ -81,20 +81,20 @@ from a Geostationary Perspective}   %note \\[1ex] is a line break in the title
 
 \addcontentsline{toc}{chapter}{List of Acronyms and Symbols}
 \clearpage
+
 \baselineskip=12pt plus1pt % reduce for glossary
 \printglossary[type=\acronymtype, title={List of Acronyms and Symbols}, nogroupskip]
 \baselineskip=18pt plus1pt
+
 \end{romanpages}            % end roman page numbering
 \pagenumbering{arabic}      % turn on arabic numbering
-
-
 
 %now include the files of latex for each of the chapters etc
 \baselineskip=24pt plus1pt % double line spacing
 % \linenumbers
-\include{chapters/introduction}
+% \include{chapters/introduction}
 % \include{chapters/tracking_method}
-% \include{chapters/lifecycle}
+\include{chapters/lifecycle}
 % \include{chapters/radiative_effect}
 % \include{chapters/conclusion}
 
