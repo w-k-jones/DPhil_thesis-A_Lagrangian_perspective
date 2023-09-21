@@ -15,16 +15,16 @@ However, our ability to observe anthropogenic impacts on \acrshort{dcc}s is diff
 Understanding the behaviour, interactions and feedbacks of \acrshort{dcc}s is therefore vital for understanding both our present-day climate and its response in a changing world \citep{bony_clouds_2015, sherwood_assessment_2020}.
 
 The study of \acrshort{dcc}s is made difficult by the range of scales over which they occur.
-The processes of individual \acrshort{dcc}s span a scale from single kilometre and minutes, to hundreds of km and multiple days.
+The processes of individual \acrshort{dcc}s span a scale from single kilometres and minutes, to hundreds of km and multiple days.
 When considering their dynamic and stochastic nature and coupling with synoptic scale atmospheric effects, the adequate length and time scales may extend to thousands of km and multiple years, all while maintaining the resolution of the smallest scales.
-Geostationary weather satellites, such as the \acrshort{noaa} \acrshort{goes} series, the \acrshort{eumetsat} Meteosat series, and the \acrshort{jma} Himawari series, have provided imagery of \acrshort{dcc}s over many decades for the purpose of monitoring and predicting the weather.
+Geostationary weather satellites, such as the \acrfull{noaa} \acrfull{goes} series, the \acrfull{eumetsat} Meteosat series, and the \acrlong{jma} Himawari series, have provided imagery of \acrshort{dcc}s over many decades for the purpose of monitoring and predicting the weather.
 However, these instruments have not traditionally supported the accuracy required for scientific studies, and it is only with the latest generation that the capability of this imagery for studying the behaviour of deep convection is being fully realised.
 
 The study of \acrshort{dcc}s is made difficult by their dynamic and stochastic nature.
 Many techniques used to study more slowly varying or spatially uniform atmospheric phenomena (including other cloud types, such as stratus and cumulostratus regions) cannot fully capture the complexity of \acrshort{dcc}s.
 Even snapshot observations, such as those made by polar-orbiting earth observation satellites, cannot fully characterise \acrshort{dcc} behaviour, no matter how detailed they are, due to the rapid changes in the properties of \acrshort{dcc}s over their lifetimes.
 Lagrangian methods---those which follow the \acrshort{dcc}s' motion---provide vital observations of \acrshort{dcc} properties over their lifecycle.
-While particle trajectory models have been successfully utilised to study boundary layer clouds from a Lagrangian perspective \citep[e.g][]{eastman_competing_2018, christensen_aerosols_2020a}, these techniques are not easily applicable due to the complex wind environment of \acrshort{dcc}s, and the low accuracy of reanalysis models and derived \acrshort{amv} in these environments.
+While particle trajectory models have been successfully utilised to study boundary layer clouds from a Lagrangian perspective \citep[e.g][]{eastman_competing_2018, christensen_aerosols_2020a}, these techniques are not easily applicable due to the complex wind environment of \acrshort{dcc}s, and the low accuracy of reanalysis models and derived \acrfullpl{amv} in these environments.
 Instead, image processing methods that detect and track \acrshort{dcc}s are used to study their behaviour from a Lagrangian perspective.
 Traditionally developed for the purpose of forecasting convective development, these methods have seen a renaissance in recent years for in a wide range of applications for studying deep convection, including convective resolving models, weather radars and geostationary satellite imagery.
 There are however a number of limitations in existing tracking models, and so the development of novel techniques is required to better understand the full spectrum of \acrshort{dcc}s.
@@ -32,7 +32,7 @@ There are however a number of limitations in existing tracking models, and so th
 In this introductory chapter, we will explore a range of topics regarding the behaviour of \acrshort{dcc}s and their further impacts.
 We will begin with a description of the dynamical and microphysical properties of clouds, with a focus on \acrshort{dcc}s.
 We will investigate the lifecycle of deep convective clouds, including their initiation, growth and dissipation, and how these stages change with difficult scales of \acrshort{dcc}s.
-We will look into the relationship between \acrshort{dcc}s and radiation, including both the role of \acrshort{sw} heating and \acrshort{lw} cooling in the development of deep convection, the \acrshort{cre} of anvil clouds, and the interactions between radiation, the diurnal cycle and the lifecycle of \acrshort{dcc}s.
+We will look into the relationship between \acrshort{dcc}s and radiation, including both the role of \acrfull{sw} heating and \acrfull{lw} cooling in the development of deep convection, the \acrfull{cre} of anvil clouds, and the interactions between radiation, the diurnal cycle and the lifecycle of \acrshort{dcc}s.
 Moving on, we will provide an overview of the theorised feedbacks mechanisms of \acrshort{dcc}s in a changing climate, with a particular focus on the \acrshort{dcc} \acrshort{cre} feedback.
 We will provide an overview of the use of various satellite observations for the study of \acrshort{dcc}s, including both active and passive instruments.
 Finally, we will describe the development and applications of detection and tracking models for the study of deep convection, and highlight where further development is needed to better understand the behaviour of \acrshort{dcc}s across a wide range of scales.
@@ -72,7 +72,7 @@ We will also provide an overview of the structure of this thesis, in which we la
 \subsection{Cloud microphysical properties}
 
 \acrshort{dcc}s, like any cloud, are formed from a great number of water and ice particles suspended in the atmosphere.
-What separates \acrshort{dcc}s from other types of cloud are their larger vertical development---spanning from the \acrshort{pbl} to near the tropopause, a distance often exceeding 10\,\unit{km}---and the vertical velocity of their updraughts which exceeds those seen elsewhere in the atmosphere by several orders of magnitude.
+What separates \acrshort{dcc}s from other types of cloud are their larger vertical development---spanning from the \acrfull{pbl} to near the tropopause, a distance often exceeding 10\,\unit{km}---and the vertical velocity of their updraughts which exceeds those seen elsewhere in the atmosphere by several orders of magnitude.
 \acrshort{dcc}s consist of a vertically growing core with a diameter of ~10\,\unit{km} and updraught velocities of around 10\,\unit{ms\textsuperscript{-1}} \citep{weisman_mesoscale_2015}, and a surrounding anvil cloud formed due to horizontal divergence of cloud droplets lifted to the level of neutral buoyancy \citep{houze_chapter_2014}.
 While the anvil cirrus of a \acrshort{dcc} consists of ice particles, many of these particles form in the liquid phase within the core, before freezing as they are lifted vertically and then detrained horizontally.
 As a result, unlike cirrus clouds which form in situ at high altitudes, liquid-phase microphysics are also important to the properties of \acrshort{dcc} anvils.
@@ -81,7 +81,7 @@ When an airmass containing water vapour is lifted it expands and cools.
 In doing so, the relative humidity increases as the saturation vapour pressure reduces---in accordance with the Clausius-Clapeyron relation---but the specific humidity remains constant. 
 If the relative humidity becomes greater than 100\% the result is a supersaturated airmass, which can condense to form cloud droplets.
 It is very difficult, however, for water droplets to form in a perfectly clean atmosphere, and so for this to happen supersaturation of several hundred percent would be required.
-Instead, aerosol particles in the supersaturated airmass become the surface on which cloud droplets form, a process known as \acrshort{ccn} activation \citep{acci}.
+Instead, aerosol particles in the supersaturated airmass become the surface on which cloud droplets form, a process known as \acrfull{ccn} activation \citep{acci}.
 The conditions under which aerosols can be activated as \acrshort{ccn} are given by the K{\"o}hler curves, which combine the competing effects of Kelvin's equation and Raoult's law on the equilibrium vapour pressure above the surface of a droplet. 
 Kelvin's equation defines how the equilibrium vapour pressure increases as the radius of curvature decreases, therefore requiring a higher supersaturation for the activation of smaller droplets. 
 Raoult's law regards the effect of soluble ions on the equilibrium vapour pressure: a larger amount of solute within the droplet reduces the required supersaturation. The resulting curve has a peak supersaturation requirement at a certain droplet radius. 
@@ -102,7 +102,7 @@ Liquid water will not, however, freeze immediately below the freezing point due 
 Instead, liquid cloud droplets may exist in a super-cooled state, which may be frozen by one of two processes.
 Homogeneous freezing occurs at temperatures below --38\,\textdegree C, allowing liquid droplets to freeze without external interactions \citep{koop_water_2000}.
 As a result, homogeneous freezing of liquid cloud droplets tends to result in a larger number of smaller ice particles \citep{karcher_parameterization_2002, ickes_classical_2015}.
-Heterogeneous freezing occurs due to the presence of \acrshort{inp}s \citep{kanji_overview_2017a}.
+Heterogeneous freezing occurs due to the presence of \acrfullpl{inp} \citep{kanji_overview_2017a}.
 \acrshort{inp}s reduce the freezing energy barrier due to having similar structures to ice crystals \citep{hoose_heterogeneous_2012}, and so allow freezing at warmer temperatures \citep{karcher_roles_2003}.
 However, \acrshort{inp}s are somewhat rare in the atmosphere \citep{burrows_icenucleating_2022a}, and so heterogeneous freezing tends to result in fewer ice cloud particles, and, in some cases, mixed-phase clouds which consist of both ice and liquid droplets.
 
@@ -119,8 +119,8 @@ The understanding of ice cloud microphysics, along with its parameterisations in
 
 \subsection{Cloud radiative properties}
 
-Cloud droplets interact through radiation both through the reflectance and scattering of solar visible and \acrshort{nir} radiation, and also through the absorbance and emission in the \acrshort{lw} spectrum.
-While the reflection of incoming radiation has a cooling effect on the \acrshort{toa} atmospheric energy balance, the \acrshort{lw} effect of cloud is warming.
+Cloud droplets interact through radiation both through the reflectance and scattering of solar visible and \acrfull{nir} radiation, and also through the absorbance and emission in the \acrshort{lw} spectrum.
+While the reflection of incoming radiation has a cooling effect on the \acrfull{toa} atmospheric energy balance, the \acrshort{lw} effect of cloud is warming.
 As a result, a cloud may have a net warming or cooling effect depending on the balance of these two factors.
 The difference between the \acrshort{toa} radiative flux with clouds versus that for a clear sky is referred to as the \acrshort{cre}.
 
@@ -136,7 +136,7 @@ As the absorption of \acrshort{lw} radiation by cloud droplets is typically grea
 
 Thick, low-level clouds, such as cumulus, stratocumulus and stratus have an overall cooling effect as they reflect a large proportion of incoming solar radiation but emit in the \acrshort{lw} at a similar temperature to the surface. 
 On the contrary, high, thin, cirrus clouds have a strong warming effect as they transmit the majority of incoming solar radiation but emit at a much lower temperature than the surface. 
-\acrshort{dcc} anvils, being both thick and at a high altitude, tend to have a balanced effect within 10\,\unit{Wm\textsuperscript{-2}} of neutral \citep{ramanathan_cloud-radiative_1989, hartmann_effect_1992, hartmann_tropical_2016}, however their \acrshort{sw} and \acrshort{lw} \acrshort{cre} both have large magnitudes. Overall, \acrshort{cre} has a cooling effect on the climate, but displays a positive feedback to global warming. This feedback is one of the largest uncertainties in future climate change \citep{sherwood_assessment_2020}, and recent research has found that this uncertainty may be underestimated by current \acrshort{gcm}s \citep{hill_climate_2023}.
+\acrshort{dcc} anvils, being both thick and at a high altitude, tend to have a balanced effect within 10\,\unit{Wm\textsuperscript{-2}} of neutral \citep{ramanathan_cloud-radiative_1989, hartmann_effect_1992, hartmann_tropical_2016}, however their \acrshort{sw} and \acrshort{lw} \acrshort{cre} both have large magnitudes. Overall, \acrshort{cre} has a cooling effect on the climate, but displays a positive feedback to global warming. This feedback is one of the largest uncertainties in future climate change \citep{sherwood_assessment_2020}, and recent research has found that this uncertainty may be underestimated by current \acrfullpl{gcm} \citep{hill_climate_2023}.
 
 
 \subsection{Thermodynamics of deep convection}
@@ -144,11 +144,11 @@ On the contrary, high, thin, cirrus clouds have a strong warming effect as they 
 Deep convection, like fire, requires three ingredients \citep{brooks_century_2019}. 
 Firstly, a build-up of conditional instability throughout the troposphere. 
 Second, a source of moisture in the lower troposphere. 
-Third, a vertical motion that lifts a parcel of moist, low-level air above the \acrshort{lcl} and the \acrshort{lfc}.
+Third, a vertical motion that lifts a parcel of moist, low-level air above the \acrfull{lcl} and the \acrfull{lfc}.
 
 Conditional instability refers to a situation in which the decrease in temperature with height in an atmospheric column is greater than the moist pseudo-adiabatic lapse rate, but less than that of the dry adiabatic lapse rate. 
 Whereas unconditional instability (where the temperature lapse rate is greater than the dry adiabatic lapse rate) is quickly stabilised through dry convection, conditional instability can continue to build until a convective cloud is formed. 
-The build-up of instability is measured as the \acrshort{cape} of an air parcel, and high values of \acrshort{cape} are connected with more intense convection.
+The build-up of instability is measured as the \acrfull{cape} of an air parcel, and high values of \acrshort{cape} are connected with more intense convection.
 
 The properties of a convective airmass are commonly derived using parcel theory \citep{stull_practical_2016}. 
 This approach approximates the air parcel as undergoing adiabatic processes while it is lifted from the lower to the upper troposphere. 
@@ -161,13 +161,13 @@ Beyond this point, the temperature of the parcel is assumed to follow the moist 
 As this lapse rate is less than that of an environment with conditional instability, as the parcel continues to rise it will reach a point where its temperature is greater than that of the surrounding environment referred to as the \acrshort{lfc}. 
 Above the \acrshort{lfc} the parcel will experience positive buoyancy until it reaches a more stable layer of the atmosphere. 
 As the moist adiabatic lapse rate approaches that of the dry adiabatic lapse rate at low temperature and humidity (and hence at higher altitudes), and the environmental lapse rate reduces as it approaches the tropopause layer \citep{fueglistaler_tropical_2009}, the parcel will cool below the temperature of the surrounding environment. 
-The point at which the temperature profile of the parcel again crosses that of the environment is called the \acrshort{lnb}. 
+The point at which the temperature profile of the parcel again crosses that of the environment is called the \acrfull{lnb}. 
 Although the air parcel may continue to rise above this point due to its momentum, negative buoyancy will act to halt its ascent.
 
 Two further properties related to convection are also shown on the T--logP diagram. 
 \acrshort{cape} can be calculated as the area between the parcel temperature profile and the environment profile between the \acrshort{lfc} and the \acrshort{lnb}, showing clearly how \acrshort{cape} is the total work exerted by positive buoyancy forces between these two levels. 
 From this, \acrshort{cape} can be used to calculate the theoretical maximum updraft velocity if all \acrshort{cape} is converted to kinetic energy, although typical observed maximum updraft velocities are half of this amount. 
-Similarly, \acrshort{cin} can be calculated as the area between the temperature profiles between the initial parcel location and the \acrshort{lfc}. 
+Similarly, \acrfull{cin} can be calculated as the area between the temperature profiles between the initial parcel location and the \acrshort{lfc}. 
 \acrshort{cin} measures the work required to lift the parcel, overcoming negative buoyancy forces, in order to reach the \acrshort{lfc}.
 
 There are a number of caveats with the parcel approach for deep convection that must be considered. 
@@ -193,29 +193,54 @@ Wind shear plays an important role in the behaviour of \acrshort{dcc}s which wil
 
 \subsection{Lifecycle and structure of \acrshort{dcc}s}
 
-The lifecycle of deep convection begins with the development of instability throughout the troposphere. The primary driver of instability is \acrshort{lw} cooling of the troposphere (mainly through water vapour emissions), which cools at around 2K per day \citep{jeevanjee_simple_2020}. \acrshort{sw} heating also affects instability which leads to diurnal differences, however there is also a land--sea contrast in this effect. Over land, \acrshort{sw} absorption warms the surface during the daytime, which sensible heating transfers to the lower troposphere. This \acrshort{sw} heating leads to a peak in instability in the afternoon and evening. On the contrary, over the ocean, \acrshort{sw} heating has less of an effect on the surface due to the greater heat capacity of water and the mixing of the ocean surface. Instead, a peak in instability is seen during the night and early morning, which is believed to be due to the effects of \acrshort{sw} heating on the mid and upper troposphere during the day \citep{wall_life_2018}. The diurnal cycle of instability is much less pronounced over the ocean than over land, however \citep{taylor_evaluating_2017}.
+The lifecycle of deep convection begins with the development of instability throughout the troposphere. 
+The primary driver of instability is \acrshort{lw} cooling of the troposphere (mainly through water vapour emissions), which cools at around 2K per day \citep{jeevanjee_simple_2020}. 
+\acrshort{sw} heating also affects instability which leads to diurnal differences, however there is also a land--sea contrast in this effect. 
+Over land, \acrshort{sw} absorption warms the surface during the daytime, which sensible heating transfers to the lower troposphere. 
+This \acrshort{sw} heating leads to a peak in instability in the afternoon and evening. On the contrary, over the ocean, \acrshort{sw} heating has less of an effect on the surface due to the greater heat capacity of water and the mixing of the ocean surface. 
+Instead, a peak in instability is seen during the night and early morning, which is believed to be due to the effects of \acrshort{sw} heating on the mid and upper troposphere during the day \citep{wall_life_2018}. 
+The diurnal cycle of instability is much less pronounced over the ocean than over land, however \citep{taylor_evaluating_2017}.
 
-Instability can also be driven by the relative motion of air masses. Over the great plains of North America, warm, moist air is transported northward from the Gulf of Mexico which leads to instability as it moves under colder air \citep{walters_airflow_2001}. Polar lows, on the other hand, are linked to the transport of cold air from polar land regions over a relatively warm ocean surface \citep{moreno-ibanez_recent_2021}.
+Instability can also be driven by the relative motion of air masses. 
+Over the great plains of North America, warm, moist air is transported northward from the Gulf of Mexico which leads to instability as it moves under colder air \citep{walters_airflow_2001}. 
+Polar lows, on the other hand, are linked to the transport of cold air from polar land regions over a relatively warm ocean surface \citep{moreno-ibanez_recent_2021}.
 
-Once sufficient instability has built up throughout the troposphere for deep convection to occur, a lifting action must occur to overcome \acrshort{cin} and initiate the formation of a \acrshort{dcc}. \acrshort{sw} heating of the surface also plays a role here, as large heating rates near the surface can lead to dry convection and convective initiation without other interactions. A number of mechanical lifting mechanisms are also involved in the initiation of convection. Orographic lifting can occur when warm, moist air is blown towards mountains and cools as it ascends \citep{hodges_distribution_1997}. Gust fronts of cold, dense air may also act to lift warmer, moist air masses. These gust fronts may be caused by a number of processes, including synoptic frontal systems \citep{wilson_initiation_1986, jirak_observational_2007}, sea breeze \citep{tripoli_numerical_1979, park_environmental_2020}, and cold pools caused by precipitation \citep{grant_cold_2016}.
+Once sufficient instability has built up throughout the troposphere for deep convection to occur, a lifting action must occur to overcome \acrshort{cin} and initiate the formation of a \acrshort{dcc}. 
+\acrshort{sw} heating of the surface also plays a role here, as large heating rates near the surface can lead to dry convection and convective initiation without other interactions. 
+A number of mechanical lifting mechanisms are also involved in the initiation of convection. Orographic lifting can occur when warm, moist air is blown towards mountains and cools as it ascends \citep{hodges_distribution_1997}. 
+Gust fronts of cold, dense air may also act to lift warmer, moist air masses. 
+These gust fronts may be caused by a number of processes, including synoptic frontal systems \citep{wilson_initiation_1986, jirak_observational_2007}, sea breeze \citep{tripoli_numerical_1979, park_environmental_2020}, and cold pools caused by precipitation \citep{grant_cold_2016}.
 
-The occurrence of cumulus and cumulus congestus clouds (convective clouds in the low- and mid-troposphere \citep{johnson_trimodal_1999}) may also lead to deep convection. These lower-level convective clouds cause convergences of warm, moist air near the surface, building instability, and may also act to `condition’ the lower troposphere to convection by adjusting the environmental temperature profile closer to that of an ascending air parcel and hence reducing \acrshort{cin} \citep{masunaga_mechanism_2014, schulz_observing_2018}.
+The occurrence of cumulus and cumulus congestus clouds (convective clouds in the low- and mid-troposphere \citep{johnson_trimodal_1999}) may also lead to deep convection. 
+These lower-level convective clouds cause convergences of warm, moist air near the surface, building instability, and may also act to `condition’ the lower troposphere to convection by adjusting the environmental temperature profile closer to that of an ascending air parcel and hence reducing \acrshort{cin} \citep{masunaga_mechanism_2014, schulz_observing_2018}.
 
 Once initiated, the lifecycle of \acrshort{dcc}s can be separated into three sections: a growing phase, where the core develops vertically; a mature phase in which the anvil cloud develops horizontally while convection continues within the core; and a dissipating phase in which the anvil cloud dissipates after convective activity ceases within the core \citep{wall_life_2018}.
 For isolated \acrshort{dcc}s (those consisting of a single core) the overall lifecycle typically spans 1-3~hours \citep{chen_diurnal_1997}.
 However, \acrshort{dcc}s may also form with multiple cores feeding a single anvil cloud \citep{roca_simple_2017}, and in these cases may span areas several orders of magnitude larger \citep{houze_mesoscale_2004}, and exist for 10-20~hours or longer \citep{chen_diurnal_1997}.
 
-The lifetime of a \acrshort{dcc} with a single convective core (often referred to as an isolated \acrshort{dcc}) is typically 1-3 hours \citep{chen_diurnal_1997}.
-This lifecycle can be split into three distinct stages \citep{wall_life_2018}.
-Firstly, the initiation stage occurs between the point of initiation and the time at which the top of the convective core stops growing upwards.
+The initiation stage occurs between the point of initiation and the time at which the top of the convective core stops growing upwards.
 During this stage precipitation may occur in both the warm and ice phases, and the horizontal growth of the cloud is small in comparison to the vertical growth.
-The initiation stage can be further broken down into the periods before and after the onset of freezing, as this releases additional latent heating and invigorates the growth of the \acrshort{dcc}.
-The second, mature stage occurs after the top of the \acrshort{dcc} has reached the level of neutral buoyancy.
+The initiation stage can be further broken down into the periods before and after the onset of freezing.
+Freezing releases additional latent heat, however this may not contribute additional buoyancy as it is compensated for by the environment \citep{seeley_tropical_2016}.
+
+Due to the large vertical velocities and high supersaturation present in deep convective updrafts, freezing is dominated by homogeneous freezing processes.
+Furthermore, the intense dynamics result in a high rate of secondary ice production through the collision of droplets.
+As a result, \acrshort{dcc}s tend to form with a large number of small ice particles.
+
+In convective updrafts with large vertical velocity, the momentum of the growing cloud may propel it above the \acrshort{lnb}.
+This produces a phenomenon known as an overshooting top.
+As the cloud will continue to cool adiabatically as they rise, the tops of these updrafts can reach substantially colder temperatures than the surrounding environment \citep{proud_recordlow_2021}.
+
+The mature stage occurs after the top of the \acrshort{dcc} has reached the level of neutral buoyancy.
 The heaviest rates of convective precipitation occur during this stage, and the anvil cloud is formed \citep{houze_chapter_2014}.
 The occurrence of heavy precipitation suppresses the convective core both through the generation of downdrafts and through the stabilisation effect of evaporating rain droplets.
 This process will eventually weaken and dissipate the convective core of the \acrshort{dcc} unless the wind shear is large enough to advect the convective rainfall away from the convective core.
+
+Furthermore, the evaporation of falling precipitation leads to the divergence of cold, dense air near the surface.
+These cold pools may suppress further convective activity, however their gust fronts may also trigger new convective cores.
+
 The final stage of the \acrshort{dcc} lifecycle occurs after the convective core has dissipated and convective rainfall has stopped, and is referred to as the dissipating phase.
-During this phase the anvil cloud will continue to expand, with maximum anvil cloud extent occurring much later than maximum convective intensity.
+During this phase, the anvil cloud may continue to expand, with maximum anvil cloud extent occurring much later than maximum convective intensity.
 Additional, stratiform, precipitation may occur throughout the anvil cloud, but this will not be as intense as the earlier convective precipitation \citep{houze_chapter_2014}.
 The dissipating stage may also be split into two separate periods; those before and after the end of stratiform precipitation \citep{wall_life_2018}.
 
@@ -224,13 +249,21 @@ Firstly, the core region, in which the convective updraught and convective preci
 Secondly, the anvil or cloud shield, which consists of a large area of thick cloud surrounding the core at the level of neutral buoyancy, and within which stratiform precipitation may occur.
 Finally, the area of cirrus outflow, where thin ice cloud extends beyond the edge of the anvil cloud, particularly within the dissipating phase \citep{lilly_cirrus_1988}.
 
-Radiative heating of the anvil cloud base and cooling of the anvil cloud top causes two regions of instability to occur. These unstable profiles drive circulations at the cloud base and top which increase the entrainment of dry air into the anvil while also lifting the anvil higher in the troposphere. While SW heating during the daytime reduces the instability at the cloud top, the greater LW heating at the cloud base results in a greater net dissipation of anvil during the daytime \citep{sokol_tropical_2020}. As the anvil cloud thins, these two regions of instability join into a single lapse rate. This state drives two circulations within the anvil cloud \citep{gasparini_opinion_2023}. The first exists within the anvil cloud and causes updrafts which lift ice particles, reducing sedimentation and increasing particle growth through sedimentation. The second circulation acts horizontally between the anvil cloud and surrounding clear sky regions, and transports additional moisture into the anvil cloud. The combined effect of these circulations prolongs the lifetime of the thin anvil cloud \citep{sokol_tropical_2020}. Further thinning of the cirrus anvil results in uniform radiative heating throughout the anvil, ending the circulation and leading the to complete dissipation of the anvil cloud. 
+Radiative heating of the anvil cloud base and cooling of the anvil cloud top causes two regions of instability to occur. 
+These unstable profiles drive circulations at the cloud base and top which increase the entrainment of dry air into the anvil while also lifting the anvil higher in the troposphere. 
+While SW heating during the daytime reduces the instability at the cloud top, the greater LW heating at the cloud base results in a greater net dissipation of anvil during the daytime \citep{sokol_tropical_2020}. 
+As the anvil cloud thins, these two regions of instability join into a single lapse rate. 
+This state drives two circulations within the anvil cloud \citep{gasparini_opinion_2023}. 
+The first exists within the anvil cloud and causes updrafts which lift ice particles, reducing sedimentation and increasing particle growth through sedimentation. 
+The second circulation acts horizontally between the anvil cloud and surrounding clear sky regions, and transports additional moisture into the anvil cloud. 
+The combined effect of these circulations prolongs the lifetime of the thin anvil cloud \citep{sokol_tropical_2020}. 
+Further thinning of the cirrus anvil results in uniform radiative heating throughout the anvil, ending the circulation and leading the to complete dissipation of the anvil cloud. 
 
 
 \subsection{Convective organisation}
 
 \acrshort{dcc}s can exist with one or more convective cores feeding a single anvil cloud.
-\acrshort{mcs}s, which occur when an organised cluster of deep convective cores form a single large area of anvil referred to as a cloud shield \citep{roca_simple_2017}, can cover an area of greater than 10,000~km\textsuperscript{2}, several orders of magnitude greater than that of individual \acrshort{dcc}s \citep{houze_mesoscale_2004}.
+\acrfullpl{mcs}, which occur when an organised cluster of deep convective cores form a single large area of anvil referred to as a cloud shield \citep{roca_simple_2017}, can cover an area of greater than 10,000~km\textsuperscript{2}, several orders of magnitude greater than that of individual \acrshort{dcc}s \citep{houze_mesoscale_2004}.
 Furthermore, the lifetime of these systems is also substantially lengthened, with typical \acrshort{mcs} s lasting for 10 to 20 hours or longer \citep{chen_diurnal_1997}, with a particular increase in the lengths of the initiation and mature phases \citep{wall_life_2018} due to the continuous development of new cores throughout the active lifetime of the \acrshort{mcs}.
 The large cloud shields of the \acrshort{mcs} s result in much larger amounts of stratiform precipitation than individual \acrshort{dcc}s, which is distributed over a much wider area \citep{houze_chapter_2014}.
 These organised convective cloud systems (including tropical and extratropical cyclones, squall lines and tropical cloud clusters \citep{tsakraklides_global_2003a}) have thermodynamic impacts on the environment to a much greater extent than isolated \acrshort{dcc}s.
@@ -275,7 +308,7 @@ These two budgets respond differently to changes in the temperature of the atmos
 The atmospheric energy budget consists of radiative, sensible and latent heating components \citep{trenberth_earths_2009}, with the latter from precipitation making up approximately 40\% of the total budget \citep{rosenfeld_flood_2008}.
 At a global scale, over decadal time scales---where the atmospheric energy budget can be assumed to be closed---any changes in total precipitation can only occur as a response to other changes in the energy budget \citep{allen_constraints_2002}.
 An increase in atmospheric temperature will cause an increase in the \acrshort{lw} cooling of the \acrshort{toa} of approximately 2\,\%\unit{K\textsuperscript{-1}} \citep{held_robust_2006}, and so we should expect long term adjustments in mean precipitation at this rate.
-It should be noted that the direct radiative effect of a \acrshort{ghg}  has a radiative warming effect on the atmosphere, and so anthropogenic climate change is expected to result in a slightly reduced rate of precipitation change \citep{allen_constraints_2002}.
+It should be noted that the direct radiative effect of \acrfullpl{ghg} have a radiative warming effect on the atmosphere, and so anthropogenic climate change is expected to result in a slightly reduced rate of precipitation change \citep{allen_constraints_2002}.
 
 On the other hand, the Clausius-Clapeyron equation gives a change of saturation vapour pressure approximately 7\,\%\unit{K\textsuperscript{-1}}.
 As relative humidity is expected to remain constant with changes in temperature, this Clausius-Clapeyron response increases the total amount of precipitable water in the atmosphere, and is thought to drive the increase in extreme precipitation \citep{ogorman_precipitation_2015}.
@@ -317,7 +350,7 @@ The Iris hypothesis proposes that anvil cirrus will decrease in area, resulting 
 Although the anvil cloud response is generally considered to be a negative climate feedback, the predicted magnitude varies widely and it represents the greatest uncertainty among all cloud feedbacks \citep{sherwood_assessment_2020}.
 
 On the other hand, the \acrfull{fat} hypothesis argues that the anvil \acrfull{ctt} remains constant in a warming climate, and the greater difference between anvil and surface temperature results in a positive \acrshort{lw} feedback \citep{hartmann_important_2002}.
-The basis for \acrshort{fat} is that \acrshort{lw} cooling of the troposphere due to water vapour becomes inefficient below 220\,\unit{K} \citep{jeevanjee_simple_2020}, which, if relative humidity remains constant, fixes the top of the convectively active troposphere at this isotherm. 
+The basis for \acrfull{fat} is that \acrshort{lw} cooling of the troposphere due to water vapour becomes inefficient below 220\,\unit{K} \citep{jeevanjee_simple_2020}, which, if relative humidity remains constant, fixes the top of the convectively active troposphere at this isotherm. 
 While there is evidence that this is the case for the largest \acrshort{dcc} anvils, the increase in static stability may result in a reduced positive feedback due to a `proportionally higher' anvil temperature \citep{zelinka_why_2010} which more closely matches the \acrshort{lw} response of tropical clouds in global climate models.
 While satellite observations have shown a trend in anvil cloud height \citep{norris_evidence_2016}, there is not yet sufficient evidence to distinguish this from inter-annual variability \citep{takahashi_when_2019}.
 \citet{seeley_fat_2019} argued that, while the \acrshort{fat} hypothesis makes a strong case for a fixed inversion temperature, this does not necessarily correspond to the anvil detrainment height \citep{takahashi_level_2017, wang_observational_2020}, and so anvil temperature may not remain fixed.
@@ -325,7 +358,7 @@ While satellite observations have shown a trend in anvil cloud height \citep{nor
 While the iris and \acrshort{fat} feedbacks may act to cancel each other out, and hence maintain the neutral \acrshort{cre} of tropical anvil clouds, there are other potential feedback mechanisms that may influence this balance.
 \citet{hill_climate_2023} showed recently that climate models underestimate dynamically driven cloud feedbacks.
 Furthermore, convective instability is expected to scale with temperature in the same manner as the Clausius-Clapeyron relation \citep{seeley_why_2015, agard_clausius_2017}, and some observations of tropical anvil clouds have instead suggested that warming of the surface invigorates convection \citep{igel_cloudsat_2014}.
-This invigoration effect may result in colder anvil \acrshort{ctt}, and hence a stronger warming feedback.
+This invigoration effect may result in colder anvil \acrfull{ctt}, and hence a stronger warming feedback.
 
 Changes to the lifecycle and diurnal cycle of deep convection may also be an important factor, particularly when considering the \acrshort{sw} feedback. 
 \citet{nowicki_observations_2004} used estimates of \acrfull{toa} \acrshort{lw} and \acrshort{sw} radiative fluxes from \acrfull{seviri} observations to estimate the diurnal cycle of anvil \acrshort{cre} over equatorial Africa and the equatorial Atlantic. 
@@ -357,34 +390,34 @@ The total effect of aerosols on deep convection through both radiative and micro
 Furthermore, observed evidence of aerosol invigoration of deep convection can also be attributed to precipitation feedbacks \citep{varble_erroneous_2018}, as earlier precipitation both stabilises the troposphere (weakening subsequent convection) and reduces the presence of aerosols through wet deposition.
 
 
-\section{Satellite observations of \acrshort{dcc}s}
+% \section{Satellite observations of \acrshort{dcc}s}
 
-Satellite observations have long provided a vital source of observations for studying the processes of \acrshort{dcc}s.
-A wide variety of satellite instruments and analysis methods have been applied to this task.
-These can be summarised into three periods of satellite observations.
+% Satellite observations have long provided a vital source of observations for studying the processes of \acrshort{dcc}s.
+% A wide variety of satellite instruments and analysis methods have been applied to this task.
+% These can be summarised into three periods of satellite observations.
 
-Passive instruments, large, gridded datasets (e.g. ISCCP)
+% Passive instruments, large, gridded datasets (e.g. ISCCP)
 
-Active instruments, collocated observations e.g. A-Train providing in depth observations of in-cloud processes
-Can observe internal processes within the cloud, unlike passive instruments which only observe cloud top properties
-Collocation of multiple instruments can provide further information about processes including precipitation and anvil development.
-But, sun-synchronous polar orbit means that the diurnal cycle is not well sampled as the equator crossing time is fixed and so regions typically are only measured at two times during the day.
+% Active instruments, collocated observations e.g. A-Train providing in depth observations of in-cloud processes
+% Can observe internal processes within the cloud, unlike passive instruments which only observe cloud top properties
+% Collocation of multiple instruments can provide further information about processes including precipitation and anvil development.
+% But, sun-synchronous polar orbit means that the diurnal cycle is not well sampled as the equator crossing time is fixed and so regions typically are only measured at two times during the day.
 
-There is substantial interest in new satellite observations with an aim to both gain a deeper understanding of convective processes while also gaining a better understanding of the lifecycle and diurnal cycle of convection.
-More modern missions typically combine the use of more advanced instruments with new observing strategies, such as satellite constellations and collocating overpasses with geostationary satellite observations.
+% There is substantial interest in new satellite observations with an aim to both gain a deeper understanding of convective processes while also gaining a better understanding of the lifecycle and diurnal cycle of convection.
+% More modern missions typically combine the use of more advanced instruments with new observing strategies, such as satellite constellations and collocating overpasses with geostationary satellite observations.
 
-A number of satellite missions set to launch in the coming decade look set to greatly improve our studies of \acrshort{dcc}s.
-The \acrshort{esa} EarthCARE satellite, planned to launch in 2024, looks set to build upon the successes of the A-train by combining multiple active instruments aboard a single platform.
-The W-band CPR is similar to that aboard CloudSat, will provide measurements of cloud properties from cloud top to cloud base.
-EarthCARE's HSRL provides substantial improvements over previous observations made by the CALIOP lidar aboard CALIPSO.
-Traditional doppler lidars require assumptions to be made about the particles being observed due to their inability to separate the effects of backscatter cross-section from extinction.
-However, these assumptions about particle distributions are known sources of uncertainty, both in observations and in the parameterisations used in models.
-The HSRL, however, is able to explicitly characterise the properties of ice and aerosol particles.
-For \acrshort{dcc}s, this is particularly important for the study of anvil cirrus, and HSRL may help provide a better understanding of the ice particle properties of these clouds.
+% A number of satellite missions set to launch in the coming decade look set to greatly improve our studies of \acrshort{dcc}s.
+% The \acrshort{esa} EarthCARE satellite, planned to launch in 2024, looks set to build upon the successes of the A-train by combining multiple active instruments aboard a single platform.
+% The W-band CPR is similar to that aboard CloudSat, will provide measurements of cloud properties from cloud top to cloud base.
+% EarthCARE's HSRL provides substantial improvements over previous observations made by the CALIOP lidar aboard CALIPSO.
+% Traditional doppler lidars require assumptions to be made about the particles being observed due to their inability to separate the effects of backscatter cross-section from extinction.
+% However, these assumptions about particle distributions are known sources of uncertainty, both in observations and in the parameterisations used in models.
+% The HSRL, however, is able to explicitly characterise the properties of ice and aerosol particles.
+% For \acrshort{dcc}s, this is particularly important for the study of anvil cirrus, and HSRL may help provide a better understanding of the ice particle properties of these clouds.
 
-NASA's upcoming AOS mission will similarly focus on the use of active sensors to observe aerosol, cloud and convective and precipitation processes.
-Unlike EarthCARE, however, AOS will consist of a constellation of multiple satellites operating in two different orbit configurations.
-As well as a traditional sun-synchronous 
+% NASA's upcoming AOS mission will similarly focus on the use of active sensors to observe aerosol, cloud and convective and precipitation processes.
+% Unlike EarthCARE, however, AOS will consist of a constellation of multiple satellites operating in two different orbit configurations.
+% As well as a traditional sun-synchronous 
 
 
 \section{Detection and tracking of deep convection}
@@ -404,7 +437,7 @@ Early efforts at automation applied cross-correlation techniques, previously use
 \citet{rinehart_three-dimensional_1978} produced a cross-correlation algorithm for the estimation of convective cell motion in 3-d weather radar observations.
 While these automated methods provided more accurate motion estimate than humans, they were less capable of detecting independent cloud motions both due to errors introduced by noise, and also due to the visible imagery provided by early geostationary satellites meaning it was difficult to distinguish clouds at different altitudes.
 
-Automatic methods for the detection and tracking of \acrshort{dcc}s were developed for both radar reflectivity \citep{crane_automatic_1979} and geostationary satellite \acrshort{lw} \acrshort{ir} \acrshort{bt} \citep{endlich_automatic_1981}.
+Automatic methods for the detection and tracking of \acrshort{dcc}s were developed for both radar reflectivity \citep{crane_automatic_1979} and geostationary satellite \acrshort{lw} \acrfull{ir} \acrfull{bt} \citep{endlich_automatic_1981}.
 Both of these methods detected \acrshort{dcc} features by labelling the area surrounding local extrema (maxima for radar reflectivity, minima for \acrshort{bt}) in individual images.
 The addition of 11\,\unit{\mu m} \acrshort{ir}-window \acrshort{bt} channels to the first operational \acrshort{goes} and Meteosat weather satellites allowed \acrshort{dcc}s to be distinguished from low clouds.
 The centroids (the location of the feature represented as a single point) of these detected features were then linked to create \acrshort{dcc} tracks through the use of cost-minimisation algorithms with sought to find the best match between pairs of features detected at subsequent time steps.
@@ -640,7 +673,7 @@ Studying the interactions and feedbacks between multiple \acrshort{dcc}s, howeve
 In addition, existing approaches to tracking convection tend to be optimised for tracking either individual convective cores or \acrshort{mcs}s, and therefore cannot capture the full range of \acrshort{dcc}s.
 A key challenge in tracking \acrfull{dcc}s of different sizes is how the algorithm handles the motion of different \acrfull{dcc}s, which, in relation to their size and shape, sets a scale dependence on the capabilities of existing algorithms.
 
-We utilise an optical flow method to determine the motion of \acrshort{dcc}s in \acrshort{goes}-16 \acrshort{abi} imagery in order to construct a semi-Lagrangian framework for the motion of the cloud field, independently of the detection and tracking of cloud objects.
+We utilise an optical flow method to determine the motion of \acrshort{dcc}s in \acrshort{goes}-16 \acrfull{abi} imagery in order to construct a semi-Lagrangian framework for the motion of the cloud field, independently of the detection and tracking of cloud objects.
 The semi-Lagrangian framework allows for severe storms to be simultaneously detected and tracked in both spatial and temporal dimensions.
 For the purpose of this framework we have developed a novel Lagrangian convolution method and a number of novel implementations of morphological image operations that account for the motion of observed objects.
 These novel methods allow the accurate extension of computer vision techniques to the temporal domain for moving objects such as \acrshort{dcc}s.

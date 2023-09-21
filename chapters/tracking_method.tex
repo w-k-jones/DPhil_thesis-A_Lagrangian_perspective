@@ -29,10 +29,10 @@ However, it is important to understand the differences in observations of \acrsh
 
 Visible and \acrshort{ir} imagery from modern geostationary weather satellite instruments provide unique observations of \acrshort{dcc}s and their surrounding environment.
 Figure~\ref{fig:compare_sat_radar_glm} compares observations of \acrshort{dcc}s throughout three different stages of their lifecycle between satellite visible and \acrshort{ir} imagery, doppler cloud radar and lightning flash observations.
-Composite \acrshort{rgb} images from a combination of visible and \acrshort{nir} channels aboard the \acrshort{abi} show a.: small, isolated cores during the growing phase; b.: a large area of optically thick anvil during the mature phase, and c.: a large area of optically thin anvil cloud during the dissipating phase.
+Composite \acrfull{rgb} images from a combination of visible and \acrshort{nir} channels aboard the \acrshort{abi} show a.: small, isolated cores during the growing phase; b.: a large area of optically thick anvil during the mature phase, and c.: a large area of optically thin anvil cloud during the dissipating phase.
 \acrshort{bt} imagery from the \acrshort{abi} 10.4\,\unit{\mu m} channel displays d.: cold, small, developing cores; e.: a large, cold anvil cloud, and f.: warmer \acrshort{bt}s caused by thermal radiation from the surface penetrating the optically thin dissipating anvil. 
-Lightning flash locations observed by the \acrshort{glm} (\acrshort{glm}) aboard \acrshort{goes}-16 show g.: low frequency during the growing phase; h.: high frequency during the mature phase, and i.: no lightning activity in the dissipating phase. 
-Column mean radar reflectivity observed by \acrshort{nexrad} doppler cloud radar shows high radar reflectivity in the convective cores during the j. growing and k. mature phases, and no area of high radar reflectivity during the dissipating phase. 
+Lightning flash locations observed by the \acrfull{glm} aboard \acrshort{goes}-16 show g.: low frequency during the growing phase; h.: high frequency during the mature phase, and i.: no lightning activity in the dissipating phase. 
+Column mean radar reflectivity observed by \acrfull{nexrad} doppler cloud radar shows high radar reflectivity in the convective cores during the j. growing and k. mature phases, and no area of high radar reflectivity during the dissipating phase. 
 The outline of the region of \acrshort{bt}s below 270\,\unit{K} observed by \acrshort{abi} is shown by the orange dashed contour over the \acrshort{glm} flash locations and \acrshort{nexrad} radar reflectivity to indicate their observations relative to the anvil cloud.
 
 
@@ -153,12 +153,12 @@ Secondarily, observations from the \acrshort{nexrad} weather radar network and t
 The \acrshort{abi} is a visible and \acrshort{ir} radiometer aboard the \acrshort{goes}-16 series of weather satellites \citep{schmit_closer_2016}.
 \acrshort{goes}-16, also known as \acrshort{goes}-East, is situated in a geostationary orbit at 75.2\,\textdegree W above the equator, providing a field of view (or `Earth-disc') covering most of the western hemisphere, including all of South America and most of North America.
 \acrshort{abi} has 16 channels operating in a range of spectral bands in the visible, \acrshort{nir} and thermal-\acrshort{ir}.
-The majority of these channels have a resolution of 2\,\unit{km} at the sub-satellite point, although this reduces to approximately 3\,\unit{km} across most of the \acrshort{conus} due to the satellite viewing angle.
+The majority of these channels have a resolution of 2\,\unit{km} at the sub-satellite point, although this reduces to approximately 3\,\unit{km} across most of the \acrfull{conus} due to the satellite viewing angle.
 \acrshort{abi} operates in a flexible scan mode, imaging the continental US (\acrshort{conus}) once every 5 minutes, the full disc every 10 minutes (15 minutes prior to April 2019), and two mesoscale regions of approximately 2500 by 2500\,\unit{km} every minute.
 Additionally, it is capable of scanning the full disc every five minutes if no other scans are performed.
 This combination of high spatial and temporal resolution makes \acrshort{abi} suitable for detecting and tracking small and developing \acrshort{dcc}s, as well as providing the spatial coverage to also track large mesoscale convective systems \citep{heikenfeld_tobac_2019}.
 
-Compared to older geostationary instruments, \acrshort{abi} has higher spatial and temporal resolution, more channels in both the \acrshort{lw} \acrshort{ir} window spectrum and the \acrshort{lw} \acrshort{ir} \acrshort{wv} spectrum, and low noise (table \ref{table:abi_comparison}) \citep{iacovazzi_goes-16_2020}.
+Compared to older geostationary instruments, \acrshort{abi} has higher spatial and temporal resolution, more channels in both the \acrshort{lw} \acrshort{ir} window spectrum and the \acrshort{lw} \acrshort{ir} \acrfull{wv} spectrum, and low noise (table \ref{table:abi_comparison}) \citep{iacovazzi_goes-16_2020}.
 This, combined with many of the channels being derived from those aboard the Visible Infrared Imaging Radiometer Suite, make the data from \acrshort{abi} more suitable for research purposes than that from older instruments \citep{heidinger_chapter_2020}.
 A number of artifacts are known to occur in \acrshort{abi} imagery \citep{gunshor_goes-r_2020}.
 Although the majority of these artifacts are removed using the data quality flag associated with the \acrshort{abi} data, we have found a number of cases in which bad detector stripes (described in section 3.2 of \citealp{gunshor_goes-r_2020}) are not flagged in the data, and so detection and tracking of \acrshort{dcc}s has not been performed during the time periods these artifacts occurred.
@@ -187,7 +187,7 @@ Comparison of data from \acrshort{abi} to that from older geostationary instrume
 \end{table}
 
 
-In this chapter, we have used the \acrshort{abi} level 2 \acrshort{mcmip} which provides calibrated reflectances and \acrshort{bt}s for all \acrshort{abi} channels on a common grid \citep{schmit_chapter_2020}, using the 5-minute frequency imagery provided over the \acrshort{conus} region.
+In this chapter, we have used the \acrshort{abi} level 2 \acrfull{mcmip} which provides calibrated reflectances and \acrshort{bt}s for all \acrshort{abi} channels on a common grid \citep{schmit_chapter_2020}, using the 5-minute frequency imagery provided over the \acrshort{conus} region.
 The case study shown in the figures throughout this paper is for a subset of the \acrshort{conus} scan region centred at 83.7\,\textdegree W, 29.2\,\textdegree N, over the time period of 17:00:00 to 21:00:00 \acrshort{utc} on the 19th June 2018.
 Validation was performed on the \acrshort{conus} scan region over the entirety of 2018.
 All data has been sourced through the \acrshort{noaa} Big Data Program.
@@ -215,7 +215,7 @@ However, the information contained within this field is used for the optical flo
 
 
 Two additional combinations of channels are used to detect areas of \acrshort{dcc} anvil. 
-The \acrshort{wvd} combination (fig.~\ref{fig:abi_channels}\,c) of the upper troposphere \acrshort{wv} channel minus the lower troposphere \acrshort{wv} channel has been shown to provide a high detection rate for \acrshort{dcc}s \citep{muller_role_2018, muller_novel_2019}.
+The \acrfull{wvd} combination (fig.~\ref{fig:abi_channels}\,c) of the upper troposphere \acrshort{wv} channel minus the lower troposphere \acrshort{wv} channel has been shown to provide a high detection rate for \acrshort{dcc}s \citep{muller_role_2018, muller_novel_2019}.
 In clear sky or low cloud conditions, \acrshort{wvd} shows the temperature difference between the upper and lower troposphere of generally around -20\,\unit{K}. 
 However, in the presence of high, thick clouds the 6.2\,\unit{\mu m} has an additional contribution from stratospheric \acrshort{wv} resulting in a warmer, and in extreme cases positive \acrshort{wvd} value \citep{schmetz_monitoring_1997}.
 Because both the \acrshort{wv} channels are strongly absorbed by \acrshort{wv} in the lower troposphere, the \acrshort{wvd} field is not affected by surface and low altitude features and so provides a clear distinction between thick, high clouds and the background across a wide range of situations.
@@ -223,7 +223,7 @@ Because both the \acrshort{wv} channels are strongly absorbed by \acrshort{wv} i
 Furthermore, as the \acrshort{wvd} values are relative to the lower stratosphere temperatures, this field is much less affected by location and meteorology than the \acrshort{lw} \acrshort{ir} channels.
 However, the \acrshort{wvd} is still prone to the false detections of non-convective clouds when using a thresholding method as it cannot directly distinguish between thick, high-altitude clouds that are associated with deep convection and those that are not.
 
-The Split Window Difference (\acrshort{swd}), consisting of the clean \acrshort{ir} window channel minus the dirty \acrshort{ir} window channel (fig.~\ref{fig:abi_channels}\,d), aids in the detection and separation of optically thin anvil cloud (including cirrus outflow) from optically thick anvil due to the difference in ice particle emissivity between these two channels \citep{heidinger_gazing_2009}.
+The \acrfull{swd}, consisting of the clean \acrshort{ir} window channel minus the dirty \acrshort{ir} window channel (fig.~\ref{fig:abi_channels}\,d), aids in the detection and separation of optically thin anvil cloud (including cirrus outflow) from optically thick anvil due to the difference in ice particle emissivity between these two channels \citep{heidinger_gazing_2009}.
 As a result, this combination displays warm temperatures of around 10\,\unit{K} for thin, ice clouds, near 0\,\unit{K} for thick clouds, and approximately 5\,\unit{K} for clear skies due to the contribution of boundary layer \acrshort{wv}.
 The \acrshort{swd} is, however, also sensitive to low-level clouds and low-level \acrshort{wv} concentrations, and so cannot be used alone to detect \acrshort{dcc}s.
 It remains important to consider the \acrshort{swd} field due to the difficulty in separating anvil clouds from cirrus when using \acrshort{lw} \acrshort{ir} \acrshort{bt} alone \citep{hong_detection_2005}. 
@@ -258,7 +258,7 @@ These locations are then processed by mapping their frequency onto the \acrshort
 
 \subsection{Next Generation Radar}
 
-\acrshort{nexrad}, also known by its technical name \acrshort{wsr88d}, is a network of weather radars operated by the National Weather Service across the USA \citep{crum_wsr-88d_1993}.
+\acrshort{nexrad}, also known by its technical name \acrfull{wsr88d}, is a network of weather radars operated by the National Weather Service across the USA \citep{crum_wsr-88d_1993}.
 \acrshort{wsr88d} operates in the S-band spectrum, between 2700 and 3000\,\unit{MHz}.
 \acrshort{nexrad} stations scan at a range of elevations, typically between 0.5\textdegree and 19.5\textdegree above horizontal, with a typical scan cycle taking between 4\,\sfrac{1}{2} and 6~minutes, comparable to the temporal sampling of \acrshort{abi} over the \acrshort{conus} region.
 
@@ -307,7 +307,7 @@ For liquid cloud droplets we use the Hu parameterisation \citep{hu_accurate_1993
 
 The first experiment aims to represent how a vertically developing \acrshort{dcc} core would appear in \acrshort{abi} observations.
 To do so, we run a series of simulations with increasing cloud top heights between 1 and 15\,\unit{k m} at 1\,\unit{k m} intervals.
-These cloud layers are given a base height of 0\,\unit{k m}, \acrshort{lwc} of 1,000\,\unit{g m^{-2}}, and droplet \acrshort{re} of 15\,\unit{\mu m}.
+These cloud layers are given a base height of 0\,\unit{k m}, \acrfull{lwc} of 1,000\,\unit{g m^{-2}}, and droplet \acrfull{re} of 15\,\unit{\mu m}.
 These values were chosen to represent typical conditions seen in a convective core.
 Although we use liquid droplets at all altitudes, simulations with ice cloud droplets showed negligible differences for cloud layers of this thickness.
 
@@ -328,7 +328,7 @@ With such a large \acrshort{lwc}, the \acrshort{bt} matches the \acrshort{ctt} a
 
 The change in observed \acrshort{bt} with height for the 6.2, 7.3, 10.4, and 12.4\,\unit{\mu m} \acrshort{bt} channels along with the \acrshort{wvd} and \acrshort{swd} is plotted in Fig.~\ref{fig:cloud_height_channels}. 
 Above 3\,\unit{k m }, the 10.4 and 12.4\,\unit{\mu m} channels show a constant decrease observed \acrshort{bt} at the moist pseudo-adiabatic lapse rate of 6\,\unit{K}.
-Due to the contribution of \acrshort{wv} to the 6.2 and 7.3\,\unit{\mu m} channels at lower \acrshort{cth}, the \acrshort{wvd} shows the most response to vertical development between 6 and 10\,\unit{k m}.
+Due to the contribution of \acrshort{wv} to the 6.2 and 7.3\,\unit{\mu m} channels at lower \acrfull{cth}, the \acrshort{wvd} shows the most response to vertical development between 6 and 10\,\unit{k m}.
 The \acrshort{swd} shows a response to clouds developing at a low altitude.
 It has been proposed that this can be used to detect the onset of convection in clear sky conditions before other observations, such as cloud radars \citep{lindsey_use_2014, lindsey_using_2018}.
 
@@ -369,7 +369,7 @@ However, this sensitivity to vertical development at a mid to high altitude may 
 
 \subsection{Observing anvil clouds}
 
-In the second experiment, we investigate how anvil clouds of different \acrshort{od} appear in \acrshort{abi} observations.
+In the second experiment, we investigate how anvil clouds of different \acrfull{od} appear in \acrshort{abi} observations.
 The simulations were run with an ice cloud with \acrshort{cth} at 14\,\unit{k m}, cloud base height at 12\,\unit{km} and cloud top \acrshort{re} of 20\,\unit{\mu m}, aiming to represent the typical properties of a dissipating anvil cloud \citep{sokol_tropical_2020}.
 This simulation was then run for a range of \acrshort{od} between 0.125 and 10, with intervals of 0.125 between 0.125 and 1, 0.25 between 1 and 2, 0.5 between 2 and 5, and 1 between 5 and 10.
 
@@ -452,11 +452,11 @@ We consider six different optical flow algorithms implemented in the OpenCV libr
 
 \begin{itemize}
     \item Farnebäck \citep{farneback_two-frame_2003}
-    \item \acrshort{dis} \citep{kroeger_fast_2016}
+    \item \acrfull{dis} \citep{kroeger_fast_2016}
     \item DeepFlow \citep{weinzaepfel_deepflow_2013}
-    \item \acrshort{dualtvl1} \citep{zach_duality_2007, perez_tv-l1_2013}
+    \item \acrfull{dualtvl1} \citep{zach_duality_2007, perez_tv-l1_2013}
     \item Sparse to Dense \citep{bouguet_pyramidal_1999}
-    \item \acrshort{pca}-Flow \citep{wulff_efficient_2015}
+    \item \acrfull{pca}-Flow \citep{wulff_efficient_2015}
 \end{itemize}
 
 The first four of these algorithms are dense optical flow methods, which calculate motion vectors for every pixel in the image.
@@ -515,7 +515,7 @@ This is likely due to the algorithm accounting for changes in brightness between
 The two sparse optical flow algorithms (fig.~\ref{fig:opt_flow_differences}\,g,h) both show worse performance, with the sparse to dense method performing particularly poorly.
 Both algorithms show cooling downwind of the anvil, likely because the region-based methods used to map the sparse motion vectors to the whole image do not detect this region well.
 
-Figure~\ref{fig:opt_flow_mse}\,a shows the \acrshort{mse} of the \acrshort{bt} differences shown in fig.~\ref{fig:opt_flow_differences} for each algorithm.
+Figure~\ref{fig:opt_flow_mse}\,a shows the \acrfull{mse} of the \acrshort{bt} differences shown in fig.~\ref{fig:opt_flow_differences} for each algorithm.
 As seen in fig.~\ref{fig:opt_flow_differences}, the \acrshort{dualtvl1} algorithm has the smallest differences, the other dense algorithms perform similarly, and the \acrshort{pca}-Flow and sparse to dense algorithms perform the worst.
 It should be noted that we should expect some differences in the \acrshort{bt} due to actual changes in the \acrshort{ctt}.
 Figure~\ref{fig:opt_flow_mse}\,b shows the \acrshort{mse} of the \acrshort{bt} differences for pixels with \acrshort{bt} less than 273\,\unit{K}, representing cold cloud observations.
@@ -779,9 +779,9 @@ We classify detection events into three categories:
 \end{itemize}
 
 Using these three categories of events we can define two measures of accuracy for the detection of \acrshort{dcc}s.
-The \acrshort{pod} is defined as the number of correct detections divided by the total number of correct and missed detections.
+The \acrfull{pod} is defined as the number of correct detections divided by the total number of correct and missed detections.
 This provides a measure of how likely the algorithm is to detect a \acrshort{dcc} that exists in the ground truth.
-The \acrshort{far} is defined as the number of false detections divided by the total number of correct and false detections.
+The \acrfull{far} is defined as the number of false detections divided by the total number of correct and false detections.
 This provides a measure of how likely a \acrshort{dcc} detected by the algorithm is not present in the ground truth.
 The F\textsubscript{1}-score is calculated as the harmonic mean of the \acrshort{pod} and the recall (where the recall in is 1~\textminus~\acrshort{far}), and provides an overall measure of accuracy between 0 and 1.
 
@@ -817,17 +817,17 @@ Semi-Lagrangian             & 145,969   & 0.9837            & 0.1611            
 \end{table}
 
 
-Results of the validation of the detected anvil region, as well as those for the detection of growing deep convection and the \acrshort{wvd} filter are shown in table \ref{table:validation}.
+Results of the validation of the detected anvil region, as well as those for the detection of growing deep convection and the \acrshort{wvd} filter, are shown in table \ref{table:validation}.
 The regions of growing \acrshort{dcc}s detected using the method described in section \ref{sec:core_detection} shows low scores for both the \acrshort{far} and \acrshort{pod} metrics.
 While the detection of growing \acrshort{dcc}s shows a low \acrshort{far} of 0.21, the short time frame in which growth can be observed leads to a high rate of missed detections of lightning flashes, which results in a \acrshort{pod} of 0.40.
 This is not necessarily because we are failing to detect cores, but because many lighting observations occur during the mature phase of convection (see fig.~\ref{fig:compare_sat_radar_glm}\,h, \ref{fig:dcc_over_time}\,d) we fail to detect these lightning flashes as we can only observed the core during the growing phase.
 
 For comparison, we also evaluate the accuracy of detecting anvils only by a fixed threshold of the \acrshort{wvd} without detecting growing cores, as used by \citet{muller_role_2018}.
-Compared to the detection of growing \acrshort{dcc} regions, the \acrshort{wvd} threshold shows a much higher \acrshort{pod} of 0.97, but also has a high \acrshort{far} of 0.64, repeating the findings of \citet{muller_novel_2019} which show that although the \acrshort{wvd} threshold method is capable of detecting the majority of \acrshort{dcc}s, in is incapable of distinguishing between anvil clouds and other thick, high altitude clouds.
+Compared to the detection of growing \acrshort{dcc} regions, the \acrshort{wvd} threshold shows a much higher \acrshort{pod} of 0.97, but also has a high \acrshort{far} of 0.64, repeating the findings of \citet{muller_novel_2019} which show that although the \acrshort{wvd} threshold method is capable of detecting the majority of \acrshort{dcc}s, it is incapable of distinguishing between anvil clouds and other thick, high altitude clouds.
 Furthermore, the \acrshort{wvd} threshold detection detects a larger number of objects (n=678,854) compared to either of the other detection methods, further indicating that a large number of non-convective clouds are detected using the threshold method on its own.
-Note that both the core detection and \acrshort{wvd} threshold approach have similar F\textsubscript{1}-scores (0.53 and 0.51 respectively) as the both prioritise one measure of accuracy over the other.
+Note that both the core detection and \acrshort{wvd} threshold approach have similar F\textsubscript{1}-scores (0.53 and 0.51 respectively) as both prioritise one measure of accuracy over the other.
 
-Finally, the anvil regions detected using a combination of the detected growth regions and the \acrshort{wvd} field using the semi-Lagrangian framework described in section \ref{sec:anvil_detection} is validated.
+Finally, the anvil regions detected using a combination of the detected growth regions and the \acrshort{wvd} field using the semi-Lagrangian framework described in section \ref{sec:anvil_detection} are validated.
 The novel method has a high \acrshort{pod} of 0.98 similar to that of the \acrshort{wvd} threshold, while also maintaining much of the low \acrshort{far} of the detection of growing \acrshort{dcc}s (\acrshort{far}=0.16).
 As a result, the Semi-Lagrangian method displays a high overall F\textsubscript{1}-score of 0.91.
 This result highlights the capability of the semi-Lagrangian detection framework to use growth-based detection methods to substantially reduce the compromise between \acrshort{pod} and \acrshort{far} error rates by combining multiple methods for the detection of \acrshort{dcc}s.
