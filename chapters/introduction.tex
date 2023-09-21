@@ -153,7 +153,18 @@ The build-up of instability is measured as the \acrfull{cape} of an air parcel, 
 The properties of a convective airmass are commonly derived using parcel theory \citep{stull_practical_2016}. 
 This approach approximates the air parcel as undergoing adiabatic processes while it is lifted from the lower to the upper troposphere. 
 The buoyancy of the air parcel along this trajectory is dependent on the initial height and moisture content of the parcel as well as the temperature profile of the environment it exists in. 
-Analysis of these trajectories can be performed by plotting them on a diagram of temperature against height, or more commonly temperature against log pressure, as shown for an idealised case in fig. [ADD FIGURE].
+Analysis of these trajectories can be performed by plotting them on a diagram of temperature against height, or more commonly temperature against log pressure, as shown for an idealised case in fig.~\ref{fig:parcel_ascent}.
+
+\begin{figure}[tp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/Intro_parcel_ascent.png}
+    \caption[
+    An illustration of parcel ascent on a T--logP diagram
+    ]{
+    An illustration of parcel ascent on a T--logP diagram. The environmental temperature profile is shown by the red line, and that of the parcel, which starts near the surface, as the dashed black line. Points marking the \acrshort{lcl}, \acrshort{lfc} and \acrshort{lnb} are shown. The \acrshort{cape} and \acrshort{cin} are shown by the orange and blue dashed areas respectively.
+    }
+    \label{fig:parcel_ascent}
+\end{figure}
 
 From its initial position, the parcel is assumed to undergo adiabatic cooling as it is lifted until its temperature reaches that of the dew point of the initial airmass. 
 At this point---referred to as the \acrshort{lcl}---the saturation of the airmass reaches 100\%, condensation occurs and the cloud begins to form. 
