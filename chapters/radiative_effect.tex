@@ -188,6 +188,18 @@ In both cases
 We classify a core as a region of cooling temperature that has existed for at least 15 minutes and has cooled by at least 8\,\unit{K} in a 15-minute period. 
 This threshold provides a strong indicator of intense convective activity \citep{roberts_nowcasting_2003}, and so provides an accurate detection of growing \acrshort{dcc}s.
 
+
+\begin{figure*}[tp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/chapter4_04.png}
+    \caption[
+    Simulated sensitivity of the \acrshort{seviri} 10.8\,\unit{\mu m} \acrshort{bt} (top) and \acrshort{wvd} minus \acrshort{swd} (bottom) to anvil clouds of varying optical thickness at heights of 10, 12 and 14\,\unit{km}
+    ]{
+    Simulated sensitivity of the \acrshort{seviri} 10.8\,\unit{\mu m} \acrshort{bt} (top) and \acrshort{wvd} minus \acrshort{swd} (bottom) to anvil clouds of varying optical thickness at heights of 10, 12 and 14\,\unit{km}. The LibRadTran model was used to estimate the observed radiances, and all simulations used ice clouds with cloud top particle effective radius of 20\,\unit{\mu m}. The grey dashed line shows the 241\,\unit{K} \acrshort{bt}, which, although commonly used as a threshold for anvil detection in satellite imagery, shows large sensitivity of the minimum optical thickness detected with the height of the anvil cloud. The grey region in the lower plot shows the range of temperatures in which the edge of the anvil is detected, as described in chapter~\ref{chp:tracking_method} Similar sensitivity is found for all three cloud heights, with the optical depths of around 1--1.5 seen in the middle of the hysteresis region. The median minimum retrieved optical depth of all tracked anvils in our dataset is found to be 1.45, although this value is biased high by the inability to retrieve optical depth accurately at night time.
+    }
+    \label{fig:S_anvil_sensitivity}
+\end{figure*}
+
 Starting from these convective cores, we then detect the surrounding anvil cloud using the \acrshort{wvd} field \citep{muller_role_2018, muller_novel_2019} and continue to detect the anvil until its dissipation, even after the core is no longer visible. 
 A core and anvil are linked with each other if the two overlap at a time when the core has mean \acrshort{wvd} of \textgreater\,5\,\unit{K}, indicating that it has reached the upper troposphere.
 Each anvil cloud can be associated with multiple cores, allowing us to identify cases of clustered convection. 
@@ -195,12 +207,33 @@ As we detect the cores based on cloud-top cooling, however, we can only detect t
 When determining the number of cores associated with an anvil, we count the total number of cores observed over the entire lifetime, even if they do not occur at the same time, and including all merges and splits of the anvil cloud.
 This flexibility allows for a wide range of different organised systems to be analysed.
 
+\begin{figure}[tp]
+    \includegraphics[width=\textwidth]{figures/chapter4_05.png}
+    \caption[
+    Comparison of the relative spectral response (RSR) functions for the \acrshort{goes}-16 \acrshort{abi} and Meteosat-11 \acrshort{seviri} thermal \acrshort{ir} channels
+    ]{
+    Comparison of the relative spectral response (RSR) functions for the \acrshort{goes}-16 \acrshort{abi} and Meteosat-11 \acrshort{seviri} thermal \acrshort{ir} channels. The \acrshort{lw} window channels on \acrshort{abi} (channels 13 and 15) have a wider spacing than those of \acrshort{seviri} (channels IR10.8 and IR12.0). This wider spacing allows \acrshort{abi} to be more sensitive to the emissivity difference of ice clouds at wavelengths between 10 and 12\,\unit{mu m}, and so it is better able to detect thin cirrus clouds.}
+    \label{fig:S_abi_seviri_rsr}
+\end{figure}
+
+
 Due to the lack of sensitivity of the \acrshort{seviri} \acrshort{swd} to thin ice clouds, we only detect and track the thick portion of the anvil in this chapter.
-The \acrshort{wvd} channel of \acrshort{seviri} is capable of detecting anvils with optical thicknesses of approximately 1--1.5 (see supplementary fig. S1).
-However, the closer spacing and narrower bandwidth of the \acrshort{seviri} \acrshort{lw} window channels (see supplementary fig. S2), along with the higher noise means that the \acrshort{swd} is less sensitive to thin cirrus compared to instruments such as the \acrshort{goes}-16 \acrshort{abi} (see supplementary fig. S3).
+The \acrshort{wvd} channel of \acrshort{seviri} is capable of detecting anvils with optical thicknesses of approximately 1--1.5 (see fig.~\ref{fig:S_anvil_sensitivity}).
+However, the closer spacing and narrower bandwidth of the \acrshort{seviri} \acrshort{lw} window channels (see fig.~\ref{fig:S_abi_seviri_rsr}), along with the higher noise means that the \acrshort{swd} is less sensitive to thin cirrus compared to instruments such as the \acrshort{goes}-16 \acrshort{abi} (see fig.~\ref{S_abi_seviri_anvil_sensitivty}).
 The anvils tracked in this paper have a median retrieved minimum optical depth of 1.45, although this value is likely biased high as many anvils dissipate at night when accurate satellite retrievals of optical depth are not available.
 While this sensitivity captures much of the \acrshort{cre} of \acrshort{dcc} anvils \citep{berry_cloud_2014} the long lifetimes of dissipating thin anvils may have a significant warming contribution to net anvil \acrshort{cre} \citep{horner_evolution_2023}.
 As a result, it is expected that the anvil \acrshort{cre} measured in this study is biased low.
+
+
+\begin{figure}[tp]
+    \includegraphics[width=\textwidth]{figures/chapter4_06.png}
+    \caption[
+    Comparison of the sensitivities of \acrshort{abi} (dashed lines) and \acrshort{seviri} (solid lines) to anvil clouds of different optical thickness
+    ]{
+    Comparison of the sensitivities of \acrshort{abi} (dashed lines) and \acrshort{seviri} (solid lines) to anvil clouds of different optical thickness, using the LibRadTran simulation of an anvil at 14\,\unit{km} as used in fig.~\ref{fig:S_anvil_sensitivity}. The 10.8\,\unit{\mu m} \acrshort{bt} (top panel) and \acrshort{wvd} (middle panel) show very similar values for both instruments. The simulations of the \acrshort{swd} (bottom panel) show that \acrshort{seviri} is only about half as sensitive as \acrshort{abi} to thin ice clouds.
+    }
+    \label{fig:S_abi_seviri_anvil_sensitivty}
+\end{figure}
 
 An example of the cores and anvils detected by the tobac-flow algorithm is shown in fig.~\ref{fig:seviri_detection}, at 3-hour intervals. In fig.~\ref{fig:seviri_detection}\,a, we see a large number of developing cores over central Africa. 
 In fig.~\ref{fig:seviri_detection}\,b, we see more developing cores over Western Africa as the pattern of initiation has shifted with the diurnal cycle.
