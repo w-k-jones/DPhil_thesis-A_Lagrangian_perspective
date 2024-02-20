@@ -231,15 +231,15 @@ We observed the maximum frequency of convection at around 6\textdegree N, 12\tex
 High rates of convection are also observed over the coastal plains and inland highlands of Guinea, Sierra Leone and Liberia (5--12\,\textdegree N, 5--15\,\textdegree W)
 
 
-\begin{figure}[tp]
-    \includegraphics[width=\textwidth]{figures/ch3_05.png}
+\begin{figure*}[tp]
+    \includegraphics[width=12cm]{figures/chapter4_05.png}
     \caption[
     Number of detected cores and average hour of core detection
     ]{
     a.: The total number of \acrshort{dcc} cores detected over the case study for each 1\texttimes 1\textdegree grid box. b.: The average hour of detection for the cores detected in each 1\texttimes 1\textdegree grid box. Grid boxes with a standard deviation greater than 6 hours are single-hatched, and greater than 12 hours cross-hatched.
     }
     \label{fig:seviri_map_dists}
-\end{figure}
+\end{figure*}
 
 
 Figure~\ref{fig:seviri_map_dists}\,b shows the average time of detection for convection in each 1\texttimes 1\textdegree grid square. 
@@ -272,15 +272,15 @@ Figure~\ref{fig:seviri_anvil_stats}\,b shows the average anvil lifetime compared
 While the lifetime also increases with the number of cores, the difference between isolated and highly clustered anvils is proportionately smaller.
 
 
-\begin{figure}[tp]
-    \includegraphics[width=\textwidth]{figures/ch3_06.png}
+\begin{figure*}[tp]
+    \includegraphics[width=12cm]{figures/chapter4_06.png}
     \caption[
     Anvil statistics by number of associated cores for average maximum area, average lifetime, occurrence of anvils by number of cores, and percentage of total anvil coverage
     ]{
     Anvil statistics by number of associated cores for a.: average maximum area; b.: average lifetime; c.: the number of observed anvils by number of cores; and d.: percentage of total anvil coverage. Error bars in a and b show the standard error of the mean.
     }
     \label{fig:seviri_anvil_stats}
-\end{figure}
+\end{figure*}
 
 
 Figure~\ref{fig:seviri_anvil_stats}\,c shows the number of anvils observed with differing numbers of cores. 
@@ -297,15 +297,15 @@ The most clustered anvils tend to have a minimum \acrshort{ctt} of around 180\,\
 Care should be taken when interpreting such low retrieved \acrshort{ctt} values due to the large uncertainty associated with sensor noise at these cold temperatures.
 
 
-\begin{figure}[tp]
-    \includegraphics[width=\textwidth]{figures/ch3_07.png}
+\begin{figure*}[tp]
+    \includegraphics[width=12cm]{figures/chapter4_07.png}
     \caption[
     Anvil statistics by number of cores for average anvil \acrshort{ctt} and average minimum anvil temperature
     ]{
     Anvil statistics by number of cores for a.: average anvil \acrshort{ctt}; and b.: average minimum anvil temperature. Error bars show the standard error of the mean.
     }
     \label{fig:seviri_anvil_ctt_stats}
-\end{figure}
+\end{figure*}
 
 
 \citet{futyan_deep_2007} divide the \acrshort{dcc} lifecycle into growing, mature and dissipating phases based on the time of observation of the coldest anvil \acrshort{ctt}, maximum anvil area and dissipation of the anvil. 
@@ -315,15 +315,15 @@ As the number of cores associated with each anvil increases, the time of the col
 As a result, these more clustered anvils spend more of their lifetime existing with warming, shrinking anvils than the isolated \acrshort{dcc}s.
 
 
-\begin{figure}[tp]
-    \includegraphics[width=\textwidth]{figures/ch3_08.png}
+\begin{figure*}[tp]
+    \includegraphics[width=12cm]{figures/chapter4_08.png}
     \caption[
     The distribution of time to coldest mean anvil \acrshort{ctt}, largest anvil area and time of anvil dissipation
     ]{
     The distribution of time to coldest mean anvil \acrshort{ctt} (orange), largest anvil area (green) and time of anvil dissipation (red) for anvils grouped by number of cores. The vertical lines show the mean time for each distribution.
     }
     \label{fig:seviri_lifetime_dists}
-\end{figure}
+\end{figure*}
 
 
 In fig.~\ref{fig:seviri_lifetime_proportions}, we compare the proportion of the overall anvil lifetime spent in each of the lifecycle phases defined by \citet{futyan_deep_2007} to the number of cores associated with the anvil. 
@@ -332,34 +332,34 @@ There is a clear trend that, as the number of cores increases, the proportion of
  The time of the coldest average \acrshort{ctt} will be when the \acrshort{lw} \acrshort{cre} of the anvil cloud is at its greatest, and so can help understand the evolution of the anvil \acrshort{cre} over its lifetime.
 
 
-\begin{figure}[tp]
-    \includegraphics[width=\textwidth]{figures/ch3_09.png}
+\begin{figure*}[tp]
+    \includegraphics[width=12cm]{figures/chapter4_09.png}
     \caption[
     The proportion of anvil lifetime spent in the growing, mature and dissipating phase
     ]{
     The proportion of anvil lifetime spent in the growing (orange), mature (green) and dissipating (red) phase, according to the criteria used by \citet{futyan_deep_2007}
     }
     \label{fig:seviri_lifetime_proportions}
-\end{figure}
+\end{figure*}
 
 
 \subsection{Anvil \acrshort{cre}}
 
-Using the broadband fluxes data in conjunction with the tracked \acrshort{dcc} dataset, we are able to track how the \acrshort{sw}, \acrshort{lw} and net \acrshort{cre} evolve over the lifetime of each tracked anvil. 
-Figure~\ref{fig:cre_lifecycle_examples} shows the time series of \acrshort{sw}, \acrshort{lw} and net \acrshort{cre} as well as the cumulative average \acrshort{cre} (the average of net \acrshort{cre}over anvil area and lifetime up until that time) for a number of different cases of anvil lifecycles. 
+Using the broadband fluxes data in conjunction with the tracked \acrshort{dcc} dataset, we are able to track how the \acrshort{sw}, \acrshort{lw} and net \acrshort{cre} evolve over the lifetime of each tracked anvil.
+Figure~\ref{fig:cre_lifecycle_examples} shows the time series of \acrshort{sw}, \acrshort{lw} and net \acrshort{cre} as well as the cumulative average \acrshort{cre} (the average of net \acrshort{cre} over anvil area and lifetime up until that point in time) for several different anvil lifecycles.
 Note that all fluxes are \acrshort{toa} and measured in the downward direction, so a positive value represents warming and a negative value represents cooling.
 
 
-\begin{figure}[tp]
+\begin{figure*}[tp]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/ch3_10.png}
+    \includegraphics[width=10.8cm]{figures/chapter4_10.png}
     \caption[
     Anvil net, \acrshort{lw}, and \acrshort{sw} \acrshort{cre}, cumulative mean \acrshort{cre} over anvil lifetime
     ]{
-    Anvil net, \acrshort{lw}, and \acrshort{sw} \acrshort{cre}, cumulative mean \acrshort{cre} over anvil lifetime and anvil area for a.: an isolated, short-lived (4-hour) \acrshort{dcc}; b.: a moderately clustered, 1-day long \acrshort{dcc}; and c.: a large, clustered, 4-day long \acrshort{dcc}. All times are the local solar time, to the nearest 5-minute interval
+    Anvil net, \acrshort{lw}, and \acrshort{sw} \acrshort{cre}, cumulative mean \acrshort{cre} over anvil lifetime and anvil area for a.: an isolated, short-lived (4-hour) \acrshort{dcc}; b.: a moderately clustered, 1-day long \acrshort{dcc}; and c.: a large, clustered, 4-day long \acrshort{dcc}. All times are the local solar time, to the nearest 5-minute interval. The black lines show the change in area of each \acrshort{dcc} over their lifecycle.
     }
     \label{fig:cre_lifecycle_examples}
-\end{figure}
+\end{figure*}
 
 
 Figure~\ref{fig:cre_lifecycle_examples}\,a shows the case of an isolated, short-lived \acrshort{dcc}. 
@@ -381,22 +381,22 @@ This reduction in \acrshort{lw} \acrshort{cre} may be due to a thinning of the a
 In addition, the cumulative radiative cooling of the anvil top may drive subsidence and reduce the cloud-top height of the anvil over time \citep{sokol_tropical_2020}
 
 Figure~\ref{fig:anvil_cre_dist} shows the distribution of net lifetime \acrshort{cre} for all tracked anvils. 
-The overall negative average value of --\,8.17\,\textpm\,0.85\,\unit{W m^{-2}} is approximately zero when considering the negative bias in the broadband flux dataset. 
+The overall negative average value of --\,0.94\,\textpm\,0.91\,\unit{W m^{-2}} is very close to zero considering the large spread in \acrshort{cre}. 
 However, the distribution shows a bimodal structure, with two peaks at around +\,100\,\unit{W m^{-2}} (warming) and --\,180\,\unit{W m^{-2}} (cooling). 
 The distribution is coloured according to the mean number of cores associated with the anvils in each bin of the distribution. 
 Both the peaks of the distribution are mainly composed of isolated \acrshort{dcc}s which occur during the daytime (negative peak) or night-time (positive peak). 
 The centre of the distribution---with average \acrshort{cre}s close to zero---shows a greater number of the clustered \acrshort{dcc}s with multiple cores which, due to their longer lifetime, tend to exist during both the day- and night time.
 
 
-\begin{figure}[tp]
-    \includegraphics[width=\textwidth]{figures/ch3_11.png}
+\begin{figure*}[tp]
+    \includegraphics[width=12cm]{figures/chapter4_11.png}
     \caption[
     The distribution of lifetime anvil \acrshort{cre} for all observed anvils
     ]{
-    The distribution of lifetime anvil \acrshort{cre} for all observed anvils. The mean number of cores per anvil in each bin is indicated by the colour scale. The vertical dashed line shows the integrated mean \acrshort{cre} (over area and lifetime) over all anvils, weighted by the anvil areas (0.86\,\textpm\,0.91\,\unit{W m^{-2}}).
+    The distribution of lifetime anvil \acrshort{cre} for all observed anvils. The mean number of cores per anvil in each bin is indicated by the colour scale. The vertical dashed line shows the integrated mean \acrshort{cre} (over area and lifetime) over all anvils, weighted by the anvil areas (--0.94\,\textpm\,0.91\,\unit{W m^{-2}}).
     }
     \label{fig:anvil_cre_dist}
-\end{figure}
+\end{figure*}
 
 
 In fig.~\ref{fig:anvil_sw_lw_cre} we break down the \acrshort{cre} distribution into that of the \acrshort{sw} (fig.~\ref{fig:anvil_sw_lw_cre}\,a) and \acrshort{lw} (fig.~\ref{fig:anvil_sw_lw_cre}\,b) components. 
@@ -405,42 +405,43 @@ The \acrshort{sw} \acrshort{cre} has a large peak at 0\,\unit{W m^{-2}} for \acr
 Note that the average for the \acrshort{lw} falls to the right of the peak of the distribution because the average is integrated over the anvil area and lifetime, and the largest and longest-lived anvils tend to have colder \acrshort{ctt} and hence larger \acrshort{lw} \acrshort{cre}.
 
 
-\begin{figure}[tp]
-    \includegraphics[width=\textwidth]{figures/ch3_12.png}
+\begin{figure*}[tp]
+    \includegraphics[width=12cm]{figures/chapter4_12.png}
     \caption[
     The distributions of mean anvil \acrshort{sw} \acrshort{cre} and \acrshort{lw} \acrshort{cre}
     ]{
-    The distributions of mean anvil \acrshort{sw} \acrshort{cre} (a) and \acrshort{lw} \acrshort{cre} (b). The vertical dashed line shows the integrated mean \acrshort{cre} over all anvils (\acrshort{sw}: -133.9\,\textpm\,0.9\,\unit{W m^{-2}}, \acrshort{lw}: 134.8\,\textpm\,0.1\,\unit{W m^{-2}})
+    The distributions of mean anvil \acrshort{sw} \acrshort{cre} (a) and \acrshort{lw} \acrshort{cre} (b). The vertical dashed line shows the integrated mean \acrshort{cre} over all anvils (\acrshort{sw}: -135.0\,\textpm\,0.9\,\unit{W m^{-2}}, \acrshort{lw}: 134.0\,\textpm\,0.1\,\unit{W m^{-2}})
     }
     \label{fig:anvil_sw_lw_cre}
-\end{figure}
+\end{figure*}
 
 
-Figure~\ref{fig:anvil_cre_time_vs_ctt} shows the average net anvil \acrshort{cre} binned by intervals of time of detection and mean anvil \acrshort{ctt}. 
-We see that, as expected, mean anvil \acrshort{cre} becomes more positive with increasing \acrshort{ctt}. 
-However, the diurnal cycle of detection shows a much stronger contrast, with anvils detected during the daytime having a cooling effect compared to those at night. 
-This diurnal cycle effect is stronger for those anvils with cooler average \acrshort{ctt}, generally representing isolated, shorter-lived \acrshort{dcc}s, and is weaker for colder anvil \acrshort{ctt}. 
-Note also that the phase of the diurnal cycle shifts to earlier times of detection as average anvil \acrshort{ctt} become colder, as these \acrshort{dcc}s tend to have longer lifetimes.
+Figure~\ref{fig:anvil_cre_time_vs_ctt} shows (a) the average instantaneous anvil \acrshort{cre} binned by the time of observation (local solar time) and mean anvil \acrshort{ctt}, and (b) the average lifetime anvil \acrshort{cre} binned by time of initial detection (local solar time) and mean anvil \acrshort{ctt}.
+We see that, as expected, mean anvil \acrshort{cre} becomes more positive with decreasing \acrshort{ctt} due to increased \acrshort{lw} warming. 
+However, the diurnal cycle of detection shows a much stronger contrast, with anvils detected during the daytime having a net cooling effect compared to those at night which have a net warming \acrshort{cre}. 
+This diurnal cycle effect is stronger for those anvils with warmer average \acrshort{ctt}, generally representing isolated, shorter-lived \acrshort{dcc}s, and is weaker for colder anvil \acrshort{ctt}. 
+Note also that in fig.~\ref{fig:seviri_anvil_ctt_stats}\,b that the phase of the diurnal cycle shifts to earlier times of detection as average anvil \acrshort{ctt} become colder, as these \acrshort{dcc}s tend to have longer lifetimes.
 
 
-\begin{figure}[tp]
-    \centering
-    \includegraphics[width=0.75\textwidth]{figures/ch3_13.png}
+\begin{figure*}[tp]
+    \includegraphics[width=12cm]{figures/chapter4_13.png}
     \caption[
     Average anvil \acrshort{cre} binned by the time of detection (local time) and mean anvil \acrshort{ctt}
     ]{
-    Average anvil \acrshort{cre} binned by the time of detection (local time) and mean anvil \acrshort{ctt}.
+    (a) Average instantaneous anvil \acrshort{cre} binned by the time of observation (local solar time) and mean anvil \acrshort{ctt}. (b) Average lifetime anvil \acrshort{cre} binned by time of initial detection (local solar time) and mean anvil \acrshort{ctt}. Hashed regions in (b) show bins in which no anvils were detected.
     }
     \label{fig:anvil_cre_time_vs_ctt}
-\end{figure}
+\end{figure*}
 
 
-For anvil cloud \acrshort{cre} to be radiatively balanced, sufficient \acrshort{dcc}s must initiate during the daytime, cooling region shown in fig.~\ref{fig:anvil_cre_time_vs_ctt} to balance the warming effect of \acrshort{dcc}s initiating during the rest of the diurnal cycle. 
-As anvil temperatures become colder, this region becomes narrower and shifts earlier in the day, due to both the increased \acrshort{lw} \acrshort{cre} of colder anvil clouds and also due to the tendency of these anvils to have longer lifetimes. 
-As a result, if warming surface temperatures lead to the invigoration of \acrshort{dcc}s, the warming effect we would see would be larger than just that due to the change in anvil temperature alone. 
-To restore the net anvil \acrshort{cre} to zero, the distribution of \acrshort{dcc}s may need to shift earlier in the diurnal cycle, leading to large changes in the patterns of convection and precipitation. 
-This may also further affect the anvil lifetime, due to the differences in the anvil subsidence between day- and nighttime \citep{sokol_tropical_2020}
+It is apparent from figs.~\ref{fig:anvil_cre_dist} and \ref{fig:anvil_sw_lw_cre} that the observed neutral net anvil \acrshort{cre} is not only due to a balance between the \acrshort{sw} and \acrshort{lw}, but also from a balance of the cooling effect of daytime \acrshort{dcc}s and the warming effect of those occurring at night. 
+If the number of \acrshort{dcc}s occurring during the daytime were to reduce we would expect a net warming effect without any change to the \acrshort{cre} of individual \acrshort{dcc}s.
+As the diurnal cycle of convection over the ocean is nearly uniform, we should expect little impact on anvil \acrshort{cre} from changes in the time of convective initiation.
+However, over land, where convective activity is much more common in the afternoon, changes in the diurnal cycle may have a much larger effect on anvil \acrshort{cre}.
 
+Furthermore, fig.~\ref{fig:anvil_cre_time_vs_ctt}\,b highlights that differences in anvil temperature are linked to the diurnal cycle of anvil \acrshort{cre} as colder anvils tend to have longer lifetimes.
+As a result, if warming surface temperatures lead to the invigoration of \acrshort{dcc}s, the warming effect we would see would be larger than the \acrshort{lw} effect from the change in anvil temperature alone. 
+Surface warming may also result in an earlier time of convective initiation, resulting in a cooling feedback.
 
 
 \section{Summary}  %% \conclusions[modified heading if necessary]
@@ -453,10 +454,10 @@ We find that, as expected, anvils with the greatest number of cores---including 
 As a result, despite the majority of observed \acrshort{dcc}s being isolated, the highly clustered anvils make up most of the anvil coverage, and so cause most of the anvil impact over this region. 
 We also find that the proportion of the lifecycle spent in the mature and dissipating phases increases with the number of cores, and the proportion spent in the growing phase decreases.
 
-When looking into the net \acrshort{cre} of anvils, we find that, although the average \acrshort{cre} across all observed anvils is approximately zero, few anvils have near zero \acrshort{cre} themselves. 
+When looking into the net \acrshort{cre} of anvils, we find that, although the average \acrshort{cre} across all observed anvils is close to zero, few anvils have near zero \acrshort{cre} themselves. 
 We find a bimodal distribution of anvil \acrshort{cre}, with isolated \acrshort{dcc}s that exist during the daytime causing the negative (cooling) peak, and those that exist during the night-time causing the positive (warming) peak. 
 The systems with near zero \acrshort{cre} tend to live longer with more cores, and exist during both the day- and night-time. 
-As a result, when considering the magnitude of the anvil \acrshort{cre}, isolated \acrshort{dcc}s have an outsize contribution to the overall average anvil \acrshort{cre} of 18.7\% compared to their proportion of all anvil coverage (11.9\%).
+As a result, when considering the magnitude of the anvil \acrshort{cre}, isolated \acrshort{dcc}s have an outsized contribution to the overall average anvil \acrshort{cre} of 21.4\% compared to their proportion of all anvil coverage (15.3\%) (see supplementary fig. S4).
 
 The interaction between the diurnal cycle of convection and \acrshort{dcc} lifetime plays a key role in the shape of the \acrshort{sw} anvil \acrshort{cre} distribution and is important to consider in regard to anvil \acrshort{cre} feedback. 
 As the \acrshort{lw} \acrshort{cre} is normally distributed, a response to changing cloud top height or temperature may occur as a shift in the distribution. 
@@ -464,13 +465,23 @@ However, the bimodal distribution of the \acrshort{sw} \acrshort{cre} must resul
 As the position of the peak at 0 \,\unit{W m^{-2}} relating to night-time \acrshort{dcc}s is fixed, to change the overall average \acrshort{sw} \acrshort{cre} either the width of the distribution has to increase or decrease, or the number of \acrshort{dcc}s occurring during the day- or night-time has to increase. 
 The former has important implications for the diurnal cycle of temperature in the tropics, and the latter for the diurnal cycle of convection, which, in turn, affects the anvil lifecycle.
 
+Changes in the diurnal cycle of convection may not have a large impact on net anvil \acrshort{cre} over the ocean due to the mostly uniform occurrence of convection throughout the day.
+Over land, however, the afternoon peak of convection at around 3\,pm solar time (see fig.~\ref{fig:seviri_map_dists}) coincides with a time at which anvil \acrshort{cre} is very sensitive to shifts in the diurnal cycle (fig.~\ref{fig:anvil_cre_time_vs_ctt}\,b).
+Furthermore, a reduction or increase in the number of \acrshort{dcc}s occurring at a specific time of day may change the net \acrshort{cre} of anvils without any change in the \acrshort{cre} of individual \acrshort{dcc}s.
+
+Diagnosing a diurnal cycle related anvil cloud feedback in climate models may however be difficult.
+\citet{beydoun_dissecting_2021} found that changes in anvil lifetime contributed little to \acrshort{cre} feedbacks in a cloud-resolving radiative-convective-equilibrium model.
+It is unclear how well the diurnal cycle of convection and convective lifecycle are represented in such a model, although convective-resolving models have been found to model these better than parameterised climate models \citep{prein_review_2015, feng_mesoscale_2023}.
+Disentangling the impacts of convective processes and anvil cirrus processes on anvil lifecycle and \acrshort{cre} is also a key challenge.
+Here, the use of model experiments such as that of \citet{gasparini_diurnal_2022} may help better understand the impacts of both processes on anvil \acrfull{cre} and the potential for climate feedbacks.
+
 There are, however, a number of limitations in this study which present opportunities for future research. 
 Firstly, as this study only involved 4 months of data during the Northern Hemisphere summer, we were not able to investigate the impact of the seasonal cycle on the behaviour of \acrshort{dcc}s and their \acrshort{cre}. 
 Furthermore, extending to a larger domain would allow investigation of regional differences, in particular the important land--sea contrast of deep convection \citep{takahashi_revisiting_2023}. 
-A major limitation of the \acrshort{seviri} data is its poor sensitivity to thin anvil cirrus, which has an important impact on net anvil \acrshort{cre} \citep{protopapadaki_upper_2017, horner_evolution_2022}.
+A major limitation of the \acrshort{seviri} data is its poor sensitivity to thin anvil cirrus, which has an important impact on net anvil \acrshort{cre} \citep{protopapadaki_upper_2017, horner_evolution_2023}.
 The flexible combined imager \citep{martin_fci_2021} aboard the third-generation Meteosat may allow better detection and study of thin anvil cirrus over tropical Africa in the near future.
 
-Cloud tracking provides a key capability for the study of deep convective anvil clouds \citep{gasparini_opinion_2023}.
+Cloud tracking provides a key capability for the study of deep convective anvil clouds \citep{gasparini_opinion_2023b}.
 The ability to observe changes over the lifetime of an anvil cloud independently of changes in the microphysical or macrophysical properties of \acrshort{dcc}s.
 Further application of cloud tracking approaches may better our understanding of \acrshort{dcc} lifecycle, its relation to the diurnal cycle of radiation, and its response to a changing climate.
 
