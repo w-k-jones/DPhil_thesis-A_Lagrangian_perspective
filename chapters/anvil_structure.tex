@@ -4,8 +4,12 @@
 
 Understanding how the structure of anvil clouds changes in response to changes in convective behaviour is vital to understanding climate feedbacks of \acrshort{dcc}s.
 Around 50\% of cirrus clouds in the tropics originate from deep convection \citep{massie_distribution_2002, luo_characterizing_2004}.
-While the optically thick portion of anvil clouds generally has a neutral effect on the \acrshort{toa} radiative balance, thin cirrus clouds have a strong warming effect.
+While the optically thick portion of anvil clouds generally has a neutral effect on the \acrshort{toa} radiative balance, thin cirrus clouds have a strong warming effect \citep{berry_cloud_2014}.
 As a result, changes in convective activity that result in a change in the size of the thin anvil coverage may have large climate feedbacks.
+
+The change of anvil cloud area in response to warming (the iris effect \citep{lindzen_does_2001, bony_thermodynamic_2016}) is generally considered to have a cooling feedback in response to climate change.
+However, it is the largest source of uncertainty in cloud--climate feedbacks, with around a third of models predicting a warming response \citep{sherwood_assessment_2020}.
+To address this uncertainty, a better understanding of the links between convective processes and anvil properties, changes in anvil structure and the properties of ice clouds are required \citep{gasparini_opinion_2023}.
 
 Assessing the extent of thin anvil cirrus is challenging due to the difficulties in observing these clouds using \acrshort{ir} radiometers.
 The low emissivity of thin cirrus clouds means that observed \acrshort{bt} is dominated by radiances from the lower atmosphere and surface below.
@@ -24,13 +28,14 @@ By using geostationary satellite observations, we can investigate changes in the
 Furthermore, by taking into account the number of cores associated with each anvil, we can also investigate how organisation impacts anvil structure.
 
 
-\section{Method}
-
-\subsection{Dataset}
+\section{Data}
 
 In this chapter, we utilise the same dataset of tracked \acrshort{dcc}s presented in section~\ref{sec:conus_method}.
 
 Using the dataset of tracked anvils, we can investigate changes in the proportion of thick and thin anvil coverage considering both spatial extent and the lifecycle of the anvil cloud.
+
+
+\section{Method}
 
 
 \subsection{Detection of thick and thin anvils}
@@ -55,7 +60,7 @@ This provides clear support for the argument made by \citet{augustine_mesoscale_
     \centering
     \includegraphics[width=0.9\textwidth]{figures/bt_wvd_swd_height_od.png}
     \caption[
-    Simulated \acrshort{abi} \acrshort{bt} observations of \acrshort{dcc} anvils for different optical depths and heights.
+    Simulated \acrshort{abi} \acrshort{bt} observations of \acrshort{dcc} anvils at a range of heights and optical depths.
     ]{
     Simulated \acrshort{abi} \acrshort{bt} observations for \acrshort{dcc} anvils at 10\,\unit{km} (solid lines), 12\,\unit{km} (dashed lines) and 14\,\unit{km} (dotted lines) at optical depths between 0.1 and 10. Panels show (top) 10.4\,\unit{\mu m} \acrshort{bt}; (middle) \acrshort{wvd} minus \acrshort{swd}, used in thick anvil detection; and (bottom) \acrshort{wvd} plus \acrshort{swd}, used in thin anvil detection. The grey dashed line shows the 241\,\unit[K] threshold, and the grey shaded regions show the range in which edge detection is performed for thick and thin anvils.
     }
