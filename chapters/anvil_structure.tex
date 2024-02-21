@@ -1,4 +1,4 @@
-\chapter{Contrasting effects of core intensity and organisation on the lifecycle and thin anvil extent of \acrshort{dcc}s} \label{sec:anvil_structure}
+\chapter{Contrasting effects of core intensity and organisation on the lifecycle and thin anvil extent of \acrshort{dcc}s} \label{chp:anvil_structure}
 
 \section{Introduction}
 
@@ -30,7 +30,7 @@ Furthermore, by taking into account the number of cores associated with each anv
 
 \section{Data}
 
-In this chapter, we utilise the same dataset of tracked \acrshort{dcc}s presented in section~\ref{sec:conus_method}.
+In this chapter, we utilise the same dataset of tracked \acrshort{dcc}s presented in chapter~\ref{chp:lifecycle}.
 
 Using the dataset of tracked anvils, we can investigate changes in the proportion of thick and thin anvil coverage considering both spatial extent and the lifecycle of the anvil cloud.
 
@@ -58,7 +58,7 @@ This provides clear support for the argument made by \citet{augustine_mesoscale_
 %f
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=0.9\textwidth]{figures/bt_wvd_swd_height_od.png}
+    \includegraphics[width=0.9\textwidth]{figures/chapter3_01.png}
     \caption[
     Simulated \acrshort{abi} \acrshort{bt} observations of \acrshort{dcc} anvils at a range of heights and optical depths.
     ]{
@@ -89,6 +89,16 @@ The use of
 \subsection{Estimation of convective intensity and organisation}
 
 
+\subsection{Lifecycle analysis}
+
+To analyse changes in the lifecycle of \acrshort{dcc}s, we categorise their lifetime based on the method developed by \citet{futyan_deep_2007}.
+This method separates the anvil cloud into growing, maturing and dissipating stages based on observations of \acrshort{bt} and anvil area.
+\citeauthor{futyan_deep_2007}'s method defines the end of the growing phase as the time at which the anvil reaches its minimum observed \acrshort{bt}, and the end of the mature phase as the time at which the anvil reaches the maximum observed area.
+While simple, this approach is applicable to a wide range of observed \acrshort{dcc}s including both isolated and organised convection.
+Furthermore, by determining the anvil lifecycle only in terms of the observed anvil properties, we can treat the properties of the detected cores as independent variables allowing straightforward analysis of their impacts on lifecycle.
+
+
+
 \section{Results}
 
 %f
@@ -106,7 +116,7 @@ We see a larger thin anvil fraction compared to \citet{protopapadaki_upper_2017}
 
 Figure~\ref{fig:thin_anvil_proportion}\,b compares how the thin anvil fraction changes with the maximum cooling rate of the initial core associated with the anvil.
 Here we see again that there is a positive relation between the strength of convection and the thin anvil fraction.
-This also agrees with the results of \citet{takahashi_level_2017}, who used radar measurements of convective cores to assess the convective strength and its relationship with thin anvil area.
+This also agrees with the results of \citet{takahashi_relationships_2017}, who used radar measurements of convective cores to assess the convective strength and its relationship with thin anvil area.
 
 In fig.~\ref{fig:thin_anvil_proportion}\,c, we compare the thin anvil fraction to the number of cores associated with each anvil.
 In contrast to fig.~\ref{fig:thin_anvil_proportion}\,b and c, we see a decrease in the thin anvil fraction with an increase in the number of cores.
