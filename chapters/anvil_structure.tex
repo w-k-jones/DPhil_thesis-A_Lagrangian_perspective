@@ -64,7 +64,7 @@ This provides clear support for the argument made by \citet{augustine_mesoscale_
     \caption[
     Simulated \acrshort{abi} \acrshort{bt} observations of \acrshort{dcc} anvils at a range of heights and optical depths for detection of thick and thin anvil detection
     ]{
-    Simulated \acrshort{abi} \acrshort{bt} observations for \acrshort{dcc} anvils at 10\,\unit{km} (solid lines), 12\,\unit{km} (dashed lines) and 14\,\unit{km} (dotted lines) at optical depths between 0.1 and 10. Panels show (top) 10.4\,\unit{\mu m} \acrshort{bt}; (middle) \acrshort{wvd} minus \acrshort{swd}, used in thick anvil detection; and (bottom) \acrshort{wvd} plus \acrshort{swd}, used in thin anvil detection. The grey dashed line shows the 241\,\unit[K] threshold, and the grey shaded regions show the range in which edge detection is performed for thick and thin anvils.
+    Simulated \acrshort{abi} \acrshort{bt} observations for \acrshort{dcc} anvils at 10\,\unit{km} (solid lines), 12\,\unit{km} (dashed lines) and 14\,\unit{km} (dotted lines) at optical depths between 0.1 and 10. Panels show (top) 10.4\,\unit{\mu m} \acrshort{bt}; (middle) \acrshort{wvd} minus \acrshort{swd}, used in thick anvil detection; and (bottom) \acrshort{wvd} plus \acrshort{swd}, used in thin anvil detection. The grey dashed line shows the 241\,\unit[K] threshold, and the grey shaded regions show the range in which cloud edge detection is performed for thick and thin anvils.
     }
     \label{fig:bt_wvd_swd_height_od}
 \end{figure}
@@ -93,7 +93,7 @@ As a result, we expect that the observed \acrshort{bt} for extra-tropical \acrsh
 
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter3_02.png}
+    \includegraphics[width=\textwidth]{figures/chapter3_07.png}
     \caption[
     Definition of anvil lifecycle stages based on the method of \citet{futyan_deep_2007}
     ]{
@@ -109,6 +109,18 @@ This method separates the anvil cloud into growing, maturing and dissipating sta
 While simple, this approach is applicable to a wide range of observed \acrshort{dcc}s including both isolated and organised convection.
 Furthermore, by determining the anvil lifecycle only in terms of the observed anvil properties, we can treat the properties of the detected cores as independent variables allowing straightforward analysis of their impacts on lifecycle.
 
+\subsection{Composite analysis}
+
+\begin{figure}[tp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter3_12.png}
+    \caption[
+    The average evolution of composites of cores (red), thick anvils (orange) and thin anvils (blue) over their normalised lifetimes
+    ]{
+    The average evolution of composites of cores (red), thick anvils (orange) and thin anvils (blue) over their normalised lifetimes, where 0 is the initial core detection time and 1 is the final anvil detection time. Panel (a) shows the average area of anvils, and (b) shows the proportion of the total area corresponding to each part of the anvil structure.
+    }
+    \label{fig:composite_example}
+\end{figure}
 
 
 \section{Results}
@@ -116,7 +128,7 @@ Furthermore, by determining the anvil lifecycle only in terms of the observed an
 %f
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/chapter3_03.png}
+    \includegraphics[width=0.75\textwidth]{figures/chapter3_02.png}
     \caption[
     Thin anvil proportion of anvils categorised by mean anvil \acrshort{bt}, initial core cooling rate and number of cores
     ]{
@@ -137,6 +149,18 @@ This also agrees with the results of \citet{takahashi_relationships_2017}, who u
 In fig.~\ref{fig:thin_anvil_proportion}\,c, we compare the thin anvil fraction to the number of cores associated with each anvil.
 In contrast to fig.~\ref{fig:thin_anvil_proportion}\,b and c, we see a decrease in the thin anvil fraction with an increase in the number of cores.
 As this occurs despite the tendency for multiple-core anvils to have colder average \acrshort{bt}, this indicates that further factors are involved in the thin anvil fraction.
+
+%f
+\begin{figure}[tp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/chapter3_03.png}
+    \caption[
+    A comparison of the proportion of thin cirrus measured at the time of maximum anvil area, and the proportional difference in lifetime, compared to the overall thin cirrus proportion.
+    ]{
+    A comparison of the proportion of thin cirrus measured at the time of maximum anvil area, and the proportional difference in lifetime, compared to the overall thin cirrus proportion. Panel (a) shows the change in thin cirrus proportion with core cooling rate, and (b) shows the changes with the number of cores. In both panels, the black dotted line shows the total thin cirrus proportion over the entire \acrshort{dcc} lifecycle.
+    }
+    \label{fig:regional_thin_anvil_proportion}
+\end{figure}
 
 In the rest of this section, we will investigate how both the core intensity and organisation impact the lifecycle anvil clouds, and how these changes influence the thin anvil fraction.
 
@@ -172,28 +196,50 @@ There is however a slight widening in the gap between thick and thin anvil maxim
 Figure~\ref{fig:anvil_cooling_rate_properties}\,b shows that while the average thick anvil lifetime remains constant with increasing core cooling rate, the thin anvil lifetime increases.
 We also see a consistent decrease in both average and minimum thick anvil \acrshort{bt} with cooling rate, shown in fig.~\ref{fig:anvil_cooling_rate_properties}\,c.
 
-
 %f
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter3_06.png}
+    \includegraphics[width=0.75\textwidth]{figures/chapter3_06.png}
     \caption[
-    Distributions of anvil lifecycle binned by initial cooling rate
+    A comparison of the proportion of thin cirrus measured at the time of maximum anvil area, and the proportional difference in lifetime, compared to the overall thin cirrus proportion.
     ]{
-    Distributions of anvil lifecycle binned by initial cooling rate. The vertical lines show the mean value of each distribution.
+    A comparison of the proportion of thin cirrus measured at the time of maximum anvil area, and the proportional difference in lifetime, compared to the overall thin cirrus proportion. Panel (a) shows the change in thin cirrus proportion with core cooling rate, and (b) shows the changes with the number of cores. In both panels, the black dotted line shows the total thin cirrus proportion over the entire \acrshort{dcc} lifecycle.
     }
-    \label{fig:anvil_cooling_rate_lifecycle}
+    \label{fig:max_area_and_lifetime_contributions}
 \end{figure}
+
+% %f
+% \begin{figure}[tp]
+%     \centering
+%     \includegraphics[width=\textwidth]{figures/chapter3_06.png}
+%     \caption[
+%     Distributions of anvil lifecycle binned by initial cooling rate
+%     ]{
+%     Distributions of anvil lifecycle binned by initial cooling rate. The vertical lines show the mean value of each distribution.
+%     }
+%     \label{fig:anvil_cooling_rate_lifecycle}
+% \end{figure}
 
 Figure~\ref{fig:anvil_cooling_rate_lifecycle} shows the distribution of the different stages of anvil lifecycle for different bins of initial core cooling rate.
 With increasing cooling rate the time of coldest mean \acrshort{bt} becomes earlier, mirroring the findings regarding the relationship between core lifetime and cooling rate found in fig.~\ref{fig:core_cooling_rate_relations}.
 While the timing of the maximum thick anvil area and thick anvil dissipation show little change with cooling rate, the time of thin anvil maximum area and dissipation increase.
 
+%f
+\begin{figure}[tp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter3_08.png}
+    \caption[
+    The average lifetime of each lifecycle stage for anvils categorised by initial core cooling rate
+    ]{
+    The lifetime of each of the lifecycle stages defined in section~\ref{sec:lifecycle_definition} for anvils categorised by initial core cooling rate.
+    }
+    \label{fig:anvil_cooling_rate_absolute_lifecycle}
+\end{figure}
 
 %f
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter3_07.png}
+    \includegraphics[width=\textwidth]{figures/chapter3_09.png}
     \caption[
     The average fraction of anvil lifetime of each lifecycle stage for anvils categorised by initial core cooling rate
     ]{
@@ -218,17 +264,17 @@ We see a similar rate of the decrease of average anvil \acrshort{bt} with the nu
 The minimum anvil \acrshort{bt} decreases at a notably faster rate with increasing number of cores however.
 Although this is indicative of an increased likelihood of overshooting cores in more organised \acrshort{dcc}s, we must also note that the larger area of these systems also makes it more likely to observe colder pixels.
 
-%f
-\begin{figure}[tp]
-    \centering
-    \includegraphics[width=\textwidth]{figures/chapter3_08.png}
-    \caption[
-    Distributions of anvil lifecycle binned by number of cores
-    ]{
-    Distributions of anvil lifecycle binned by number of cores. The vertical lines show the mean value of each distribution.
-    }
-    \label{fig:anvil_number_of_cores_lifecycle}
-\end{figure}
+% %f
+% \begin{figure}[tp]
+%     \centering
+%     \includegraphics[width=\textwidth]{figures/chapter3_08.png}
+%     \caption[
+%     Distributions of anvil lifecycle binned by number of cores
+%     ]{
+%     Distributions of anvil lifecycle binned by number of cores. The vertical lines show the mean value of each distribution.
+%     }
+%     \label{fig:anvil_number_of_cores_lifecycle}
+% \end{figure}
 
 Figure~\ref{fig:anvil_number_of_cores_lifecycle} shows how the timing of the different anvil stages changes with increasing number of cores.
 In general, the lifetime of every stage of the \acrshort{dcc} lifecycle increases with the number of cores.
@@ -237,7 +283,19 @@ However, the time between the thick and thin anvil maximum area and the thick an
 %f
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter3_09.png}
+    \includegraphics[width=\textwidth]{figures/chapter3_10.png}
+    \caption[
+    The average lifetime of each lifecycle stage for anvils categorised by number of cores
+    ]{
+    The average lifetime of each of the lifecycle stages defined in section~\ref{sec:lifecycle_definition} for anvils categorised by number of cores.
+    }
+    \label{fig:anvil_number_of_cores_absolute_lifecycle}
+\end{figure}
+
+%f
+\begin{figure}[tp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter3_11.png}
     \caption[
     The average fraction of anvil lifetime of each lifecycle stage for anvils categorised by number of cores
     ]{
@@ -250,6 +308,32 @@ Figure~\ref{fig:anvil_number_of_cores_proportional_lifecycle} shows the proporti
 Unlike fig.~\ref{fig:anvil_cooling_rate_proportional_lifecycle}, we see an increase in the growing phase with increasing number of cores, and a decrease in the thin anvil dissipation phase.
 In addition, while the thick anvil maturing phase changes little with the number of cores, the time for the thin anvil to reach its maximum area is substantially shorter for \acrshort{dcc}s with the most cores.
 It is a combination of the smaller proportional increase in area for the thin anvil, seen in fig.~\ref{fig:anvil_number_of_cores_properties}, and smaller proportion of the \acrshort{dcc} lifecycle spent in the thin anvil dissipating phase which account for the reduction in the thin anvil proportion for increasing number of cores seen in fig.~\ref{fig:thin_anvil_proportion}\,c.
+
+\subsection{Changes in thin anvil fraction over \acrshort{dcc} lifecycle}
+
+%f
+\begin{figure}[tp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter3_13.png}
+    \caption[
+    Mean thin anvil proportion for composites of anvil area of normalised lifetime categorised by the cooling rate of their initial cores.
+    ]{
+    Mean thin anvil proportion for composites of anvil area of normalised lifetime categorised by the cooling rate of their initial cores. 
+    }
+    \label{fig:cooling_rate_composite}
+\end{figure}
+
+%f
+\begin{figure}[tp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter3_14.png}
+    \caption[
+    Mean thin anvil proportion for composites of anvil area of normalised lifetime categorised by the number of cores
+    ]{
+    Mean thin anvil proportion for composites of anvil area of normalised lifetime categorised by the number of cores. 
+    }
+    \label{fig:number_of_cores_composite}
+\end{figure}
 
 \section{Summary}
 
