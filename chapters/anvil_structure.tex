@@ -4,10 +4,11 @@
 
 Understanding how the structure of anvil clouds changes in response to changes in convective behaviour is vital to understanding climate feedbacks of \acrshort{dcc}s.
 Around 50\% of cirrus clouds in the tropics originate from deep convection \citep{massie_distribution_2002, luo_characterizing_2004}.
-While the optically thick portion of anvil clouds generally has a neutral effect on the \acrshort{toa} radiative balance, thin cirrus clouds have a strong warming effect \citep{berry_cloud_2014}.
-As a result, changes in convective activity that result in a change in the size of the thin anvil coverage may have large climate feedbacks.
+Overall, anvil clouds have a near-neutral radiative impact on the tropics, despite their large \acrshort{sw} reflectance and \acrshort{lw} absorption \citep{hartmann_effect_1992, hartmann_tropical_2016}.
+Their radiative effect is not homogeneous however; while the optically thick portion of anvil clouds generally have a cooling effect on the \acrshort{toa} radiative balance, the thin, detrained cirrus has a strong warming effect \citep{berry_cloud_2014}.
+As a result, changes in convective activity that result in a change in the size and structure of anvil clouds may have large impacts on the climate.
 
-The change of anvil cloud area in response to warming (the iris effect \citep{lindzen_does_2001, bony_thermodynamic_2016}) is generally considered to have a cooling feedback in response to climate change.
+The change of anvil cloud area in response to warming---the iris effect \citep{lindzen_does_2001, bony_thermodynamic_2016}---is generally considered to have a cooling feedback in response to climate change.
 However, it is the largest source of uncertainty in cloud--climate feedbacks, with around a third of models predicting a warming response \citep{sherwood_assessment_2020}.
 To address this uncertainty, a better understanding of the links between convective processes and anvil properties, changes in anvil structure and the properties of ice clouds are required \citep{gasparini_opinion_2023}.
 
@@ -30,17 +31,18 @@ Furthermore, by taking into account the number of cores associated with each anv
 
 \section{Data}
 
-In this chapter, we utilise the same dataset of tracked \acrshort{dcc}s presented in chapter~\ref{chp:lifecycle}.
+In this chapter, we utilise the dataset of tracked \acrshort{dcc}s first presented in chapter~\ref{chp:lifecycle}.
+
+
 
 Using the dataset of tracked anvils, we can investigate changes in the proportion of thick and thin anvil coverage considering both spatial extent and the lifecycle of the anvil cloud.
 
 
 \section{Method}
 
-
 \subsection{Detection of thick and thin anvils}
 
-Observing thin cirrus anvils using observed \acrshort{bt} is difficult due to their low emissivity.
+Observing thin cirrus anvils using satellite \acrshort{bt} is difficult due to their low emissivity.
 Furthermore, \acrshort{bt} is affected both by the height of the observed cloud and its optical thickness.
 As shown in fig.~\ref{fig:optical_depth_channels}, the observed \acrshort{bt} increases as optical depth decreases.
 For detection using a fixed threshold, as used in many anvil detection algorithms, this means that the limit of optical depth at which the anvil is detected increases as the height of the cloud decreases.
@@ -49,7 +51,7 @@ This problem with detected anvil area using \acrshort{bt} thresholds was identif
 
 While observing the thin cirrus anvil is challenging, we have shown in section \ref{sec:anvil_detection} that by using a combination of \acrshort{bt} differences we are capable of detecting thin cirrus.
 Furthermore, the use of channel differences reduces the height dependence of the detection of anvils compared to the use of a single \acrshort{bt}.
-Figure~\ref{fig:bt_wvd_swd_height_od} shows simulated \acrshort{bt} observations using the same radiative transfer modelling as used in section~\ref{sec:detection_theory}.
+Figure~\ref{fig:bt_wvd_swd_height_od} shows simulated \acrshort{bt} observations using the libRadTran model \citep{emde_libradtran_2016}, as described in section~\ref{sec:detection_theory}.
 The top panel shows simulation \acrshort{bt} observations by \acrshort{abi} at 10.4\,\unit{\mu m} at heights of 10, 12 and 14\,\unit{km} (shown by the solid, dashed and dotted lines respectively).
 Also shown by the grey, dashed line is an example of the 241\,\unit{K} \acrshort{bt} threshold.
 At this threshold there is substantial variance in the limit of \acrshort{od} at which anvil clouds are detected, which ranges from 1 at 14\,\unit{km} to 3 at \unit{km}.
@@ -68,7 +70,7 @@ This provides clear support for the argument made by \citet{augustine_mesoscale_
 \end{figure}
 
 The middle and bottom panels in fig.~\ref{fig:bt_wvd_swd_height_od} show the simulated \acrshort{od} for the combinations of \acrshort{wvd} minus \acrshort{swd} and \acrshort{wvd} plus \acrshort{swd} respectively.
-The use of these two combinations for the detection of thick and thin anvil was described in section~\ref{sec:anvil_detection}.
+Section~\ref{sec:anvil_detection} describes how these two channel combinations are used for the detection of thick and thin anvils.
 In both panels, the grey shaded region shows the \acrshort{bt} range in which edge detection is used to find the anvil area.
 Compared to 10.4\,\unit{\mu m} \acrshort{bt}, the \acrshort{wvd} minus \acrshort{swd} combination shows very little variance in the optical depths at which the anvil cloud is detected within the threshold range.
 Throughout the threshold range of --5 to --12.5\,\unit{K} the \acrshort{od} corresponding to the same observed \acrshort{bt} difference varies by approximately 0.1--0.2 between differing heights, compared to 1--2 for 10.4\,\unit{\mu m} \acrshort{bt}.
@@ -81,8 +83,6 @@ Lidar observations of thin cirrus anvil have shown that the heights of these clo
 It should be noted that the simulations shown in fig.~\ref{fig:bt_wvd_swd_height_od} were calculated using a standard tropical atmospheric profile to best represent the moist environment in which deep convection occurs.
 While anvils occurring in the extra-tropical parts of the \acrshort{conus} domain are expected to have lower cloud top heights, there is also expected to be a colder temperature profile.
 As a result, we expect that the observed \acrshort{bt} for extra-tropical \acrshort{dcc}s behave more like that of the 12 and 14\,\unit{km} simulations shown in fig.~\ref{fig:bt_wvd_swd_height_od}, rather than that at 10\,\unit{km}.
-
-The use of 
 
 
 
