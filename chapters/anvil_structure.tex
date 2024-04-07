@@ -2,7 +2,7 @@
 
 \section{Introduction}
 
-Understanding how the structure of anvil clouds changes in response to changes in convective behaviour is vital to understanding climate feedbacks of \acrshort{dcc}s.
+Understanding how the structure of anvil clouds changes in response to changes in convective behaviour is vital to understanding the radiative impacts and climate feedbacks of \acrshort{dcc}s.
 Around 50\% of cirrus clouds in the tropics originate from deep convection \citep{massie_distribution_2002, luo_characterizing_2004}.
 Overall, anvil clouds have a near-neutral radiative impact on the tropics, despite their large \acrshort{sw} reflectance and \acrshort{lw} absorption \citep{hartmann_effect_1992, hartmann_tropical_2016}.
 Their radiative effect is not homogeneous however; while the optically thick portion of anvil clouds generally have a cooling effect on the \acrshort{toa} radiative balance, the thin, detrained cirrus has a strong warming effect \citep{berry_cloud_2014}.
@@ -31,12 +31,29 @@ Furthermore, by taking into account the number of cores associated with each anv
 
 \section{Data}
 
-In this chapter, we utilise the dataset of tracked \acrshort{dcc}s first presented in chapter~\ref{chp:lifecycle}.
-
-
-
+In this chapter, we utilise the dataset of tracked \acrshort{dcc}s first presented in chapter~\ref{chp:lifecycle} to investigate how the structure of observed \acrshort{dcc}s depends on the properties of their convective cores.
+Produced using the method detailed in chapter~\ref{chp:tracking_method}, we track convective cores during their vertically growing period, and thick and thin anvils using two channel combinations.
 Using the dataset of tracked anvils, we can investigate changes in the proportion of thick and thin anvil coverage considering both spatial extent and the lifecycle of the anvil cloud.
 
+Data filtering is applied to detected anvils according to the criteria shown previously in table~\ref{table:anvil_validity_criteria}.
+This results in a total of 402,191 anvils considered for analysis, which between them are connected to a total of 811,666 cores.
+The filtering requires that every anvil in the analysis dataset begins with a valid observed core, ensuring that we can link the subsequent development of the anvil to the properties of the core.
+In addition, it ensures that each anvil is observed for its entire lifetime, and the entire extent of both thick and thin anvil are observed over this period.
+While this does mean that fewer large anvils are considered valid as their greater extent means that they are more likely to intersect the edges of the domain, it ensures that changes in both thick and thin anvil area can be considered robust over the entire lifecycle of the analyses anvils.
+
+This dataset contains a range of properties relating to the observed \acrshort{dcc}s.
+In this chapter, we will focus our investigations on how the area of the detected cores, thick and thin anvils change with each time step.
+We also analyse two related properties, which are the maximum area of the thick and thin anvil, i.e.\ the area at the time step when the anvil reaches its maximum observed extent, and the total area which is the sum of the areas observed at each time step over each anvils lifetime.
+The thin anvil proportion refers to the area of the detected thin anvil divided by the total area of both anvil and core.
+In general, this is calculated as the total over the entire \acrshort{dcc} lifetime, however in section~\ref{sec:composite_results} we will investigate how this changes over the \acrshort{dcc} lifecycle.
+
+In addition, we consider how the \acrshort{bt} of each core and anvil change over time.
+The area-weighted average of the 10.4\,\unit{\mu m} \acrshort{bt} is taken at each time step for each core, thick and thin anvil.
+The 10.4\,\unit{\mu m} \acrshort{lw} window \acrshort{bt} has a minimal contribution from water in the atmosphere, and so can provide temperature measurements of clouds from near the surface to the top of the atmosphere.
+It should be noted that the \acrshort{bt} is affected by the emissivity of the cloud, and so for thin cirrus in will be warmer than the actual \acrshort{ctt} due to the contribution from the atmosphere below.
+As a result of this we use the mean \acrshort{bt} of the thick anvil as a proxy for convective cloud height as this avoids a bias from the warmer thin anvil.
+The (negative) cooling rate of each core is calculated as the largest change in the mean core \acrshort{bt} measured over any 15~minute period.
+This relates to the vertical growth of the \acrshort{dcc} core as discussed in section~\ref{sec:theory_core}.
 
 \section{Method}
 
@@ -48,14 +65,6 @@ As shown in fig.~\ref{fig:optical_depth_channels}, the observed \acrshort{bt} in
 For detection using a fixed threshold, as used in many anvil detection algorithms, this means that the limit of optical depth at which the anvil is detected increases as the height of the cloud decreases.
 This results in the detected anvil area varying with height, with an anvil at a lower altitude being detected as smaller than one at a higher altitude even if there size and structure are otherwise identical.
 This problem with detected anvil area using \acrshort{bt} thresholds was identified as early as \citet{augustine_mesoscale_1988}, but remains a feature of many detection algorithms to this day (see e.g.\ section~\ref{sec:tracking_timeline}).
-
-While observing the thin cirrus anvil is challenging, we have shown in section \ref{sec:anvil_detection} that by using a combination of \acrshort{bt} differences we are capable of detecting thin cirrus.
-Furthermore, the use of channel differences reduces the height dependence of the detection of anvils compared to the use of a single \acrshort{bt}.
-Figure~\ref{fig:bt_wvd_swd_height_od} shows simulated \acrshort{bt} observations using the libRadTran model \citep{emde_libradtran_2016}, as described in section~\ref{sec:detection_theory}.
-The top panel shows simulation \acrshort{bt} observations by \acrshort{abi} at 10.4\,\unit{\mu m} at heights of 10, 12 and 14\,\unit{km} (shown by the solid, dashed and dotted lines respectively).
-Also shown by the grey, dashed line is an example of the 241\,\unit{K} \acrshort{bt} threshold.
-At this threshold there is substantial variance in the limit of \acrshort{od} at which anvil clouds are detected, which ranges from 1 at 14\,\unit{km} to 3 at \unit{km}.
-This provides clear support for the argument made by \citet{augustine_mesoscale_1988} that the anvil area detected using this threshold is ``subjective''.
 
 %f
 \begin{figure}[tp]
@@ -69,13 +78,21 @@ This provides clear support for the argument made by \citet{augustine_mesoscale_
     \label{fig:bt_wvd_swd_height_od}
 \end{figure}
 
+While observing the thin cirrus anvil is challenging, we have shown in section \ref{sec:anvil_detection} that by using a combination of \acrshort{bt} differences we are capable of detecting thin cirrus.
+Furthermore, the use of channel differences reduces the height dependence of the detection of anvils compared to the use of a single \acrshort{bt}.
+Figure~\ref{fig:bt_wvd_swd_height_od} shows simulated \acrshort{bt} observations using the libRadTran model \citep{emde_libradtran_2016}, as described in section~\ref{sec:detection_theory}.
+The top panel shows simulation \acrshort{bt} observations by \acrshort{abi} at 10.4\,\unit{\mu m} at heights of 10, 12 and 14\,\unit{km} (shown by the solid, dashed and dotted lines respectively).
+Also shown by the grey, dashed line is an example of the 241\,\unit{K} \acrshort{bt} threshold.
+At this threshold there is substantial variance in the limit of \acrshort{od} at which anvil clouds are detected, which ranges from 1 at 14\,\unit{km} to 3 at \unit{km}.
+This provides clear support for the argument made by \citet{augustine_mesoscale_1988} that the anvil area detected using this threshold is ``subjective''.
+
 The middle and bottom panels in fig.~\ref{fig:bt_wvd_swd_height_od} show the simulated \acrshort{od} for the combinations of \acrshort{wvd} minus \acrshort{swd} and \acrshort{wvd} plus \acrshort{swd} respectively.
 Section~\ref{sec:anvil_detection} describes how these two channel combinations are used for the detection of thick and thin anvils.
 In both panels, the grey shaded region shows the \acrshort{bt} range in which edge detection is used to find the anvil area.
 Compared to 10.4\,\unit{\mu m} \acrshort{bt}, the \acrshort{wvd} minus \acrshort{swd} combination shows very little variance in the optical depths at which the anvil cloud is detected within the threshold range.
 Throughout the threshold range of --5 to --12.5\,\unit{K} the \acrshort{od} corresponding to the same observed \acrshort{bt} difference varies by approximately 0.1--0.2 between differing heights, compared to 1--2 for 10.4\,\unit{\mu m} \acrshort{bt}.
 
-The \acrshort{wvd} plus \acrshort{swd} combination, shown in the bottom panel of fig.~\ref{fig:bt_wvd_swd_height_od}.
+The \acrshort{wvd} plus \acrshort{swd} combination is shown in the bottom panel of fig.~\ref{fig:bt_wvd_swd_height_od}.
 Greater variance between different heights is seen, particularly for the 10\,\unit{km} anvil simulation.
 However, the \acrshort{od} corresponding to the observed \acrshort{bt} differences are very similar throughout the detection range of 0 to --7.5\,\unit{K} for heights of 12 and 14\,\unit{km}.
 Lidar observations of thin cirrus anvil have shown that the heights of these clouds typically exceed 12\,\unit{km} \citep{wall_observational_2020, horner_evolution_2023}, and so we expect there to be little difference in the sensitivity to most observed anvils.
@@ -85,15 +102,33 @@ While anvils occurring in the extra-tropical parts of the \acrshort{conus} domai
 As a result, we expect that the observed \acrshort{bt} for extra-tropical \acrshort{dcc}s behave more like that of the 12 and 14\,\unit{km} simulations shown in fig.~\ref{fig:bt_wvd_swd_height_od}, rather than that at 10\,\unit{km}.
 
 
-
 \subsection{Estimation of convective intensity and organisation}
+
+As we cannot observe the vertical velocity or convective mass flux of \acrshort{dcc} updrafts directly using geostationary satellite observations, a proxy is needed to estimate their intensity instead.
+The minimum \acrshort{bt} of an observed \acrshort{dcc} is commonly used as a proxy for convective intensity, and is used by \citet{protopapadaki_upper_2017} for this purpose.
+This property is more closely related to the height of the \acrshort{dcc}, however.
+While the height of a \acrshort{dcc} is related to the intensity of convection, it is also related to the tropopause height and level of neutral buoyancy which may vary with location and meteorology independent of convective processes.
+While we use the minimum \acrshort{bt} of observed anvils in this chapter to compare to previous studies, a more direct proxy for convective intensity is desired.
+
+The primary proxy for convective intensity in this chapter is the maximum cooling rate of the initial observed core for each \acrshort{dcc}.
+As described in section~\ref{sec:theory_core}, the core cooling rate is linked to the vertical development of the core over time.
+A cooling rate of 1\,\unit{K minute\textsuperscript{-1}} approximately represents a cloud top vertical velocity of 2.5\,\unit{ms\textsuperscript{-1}}.
+While this should not be confused with the updraft velocity of the core itself, and is expected to be less due to the effects of entrainment and overturning circulation at the top of the updraft, it is linked to the updraft velocity directly.
+In section~\ref{sec:core_properties} it was shown that the core cooling rate and minimum core \acrshort{bt} are correlated.
+The initial detected core is selected for the maximum cooling rate to ensure that we have suitable observations of the core throughout its growth that are not masked by an anvil above.
+While the updraft may strengthen later in the development of the \acrshort{dcc}, or subsequent cores in a multi-core system have stronger updrafts, we consider this the most direct proxy we have available for the updraft intensities of observed \acrshort{dcc}s.
+
+The number of cores associated with each \acrshort{dcc} is used as a measure of its organisation, again providing the most direct proxy available.
+While it may not be possible to observe all the cores associated with larger \acrshort{mcs}s due to the anvil blocking observations of cores below, it is still expected that many separate cores associated with such systems are detected.
+As shown in chapter~\ref{chp:lifecycle}, tracked \acrshort{dcc}s with many cores show the properties expected of \acrshort{mcs}s.
 
 
 \subsection{Lifecycle analysis} \label{sec:lifecycle_definition}
 
+
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter3_07.png}
+    \includegraphics[width=\textwidth]{figures/chapter3_02.png}
     \caption[
     Definition of anvil lifecycle stages based on the method of \citet{futyan_deep_2007}
     ]{
@@ -102,18 +137,29 @@ As a result, we expect that the observed \acrshort{bt} for extra-tropical \acrsh
     \label{fig:lifecycle_example}
 \end{figure}
 
-
 To analyse changes in the lifecycle of \acrshort{dcc}s, we categorise their lifetime based on the method developed by \citet{futyan_deep_2007}.
 This method separates the anvil cloud into growing, maturing and dissipating stages based on observations of \acrshort{bt} and anvil area.
 \citeauthor{futyan_deep_2007}'s method defines the end of the growing phase as the time at which the anvil reaches its minimum observed \acrshort{bt}, and the end of the mature phase as the time at which the anvil reaches the maximum observed area.
-While simple, this approach is applicable to a wide range of observed \acrshort{dcc}s including both isolated and organised convection.
+While simple, this approach applies to a wide range of observed \acrshort{dcc}s including both isolated and organised convection.
 Furthermore, by determining the anvil lifecycle only in terms of the observed anvil properties, we can treat the properties of the detected cores as independent variables allowing straightforward analysis of their impacts on lifecycle.
+
+We extend \citeauthor{futyan_deep_2007}'s method in this chapter through consideration of the development of both thick and thin anvil, which results in the lifecycle stages shown in fig.~\ref{fig:lifecycle_example}.
+The growing stage (orange) is defined as the time from the initial detection of the \acrshort{dcc} to the time at which the thick anvil has its coldest average \acrshort{bt}.
+The thick anvil maturation stage (blue) occurs between this time and the time at which the thick anvil reaches its maximum area, and the thin anvil maturing stage (green) occurs until the thin anvil reaches its maximum area.
+In this stage, the thin anvil continues to expand while the thick anvil begins to shrink.
+The thick anvil dissipating stage (red) ends at the final detection time of the thick anvil, while the thin anvil dissipating stage (purple) ends at the final detection time of the thin anvil, which is also the final detection time of the tracked \acrshort{dcc}.
+By increasing the granularity of the lifecycle definition in this manner we can investigate how the impact of convective processes on \acrshort{dcc} lifecycle might also impact their structure.
 
 \subsection{Composite analysis}
 
+To compare how the structure of tracked \acrshort{dcc} evolve over their lifecycle, we interpolate the area of their cores, thick and thin anvils over a normalised lifetime.
+In this normalised lifetime, 0 is defined as the time of initial core detection, and 1 is the time of the final anvil detection.
+By normalising their lifetimes in this manner, the change over time of \acrshort{dcc}s with different lifetimes can be composited and compared.
+
+
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter3_12.png}
+    \includegraphics[width=\textwidth]{figures/chapter3_03.png}
     \caption[
     The average evolution of composites of cores (red), thick anvils (orange) and thin anvils (blue) over their normalised lifetimes
     ]{
@@ -122,13 +168,23 @@ Furthermore, by determining the anvil lifecycle only in terms of the observed an
     \label{fig:composite_example}
 \end{figure}
 
+An example composite of the average properties of all analysed anvils in this chapter is shown in fig.~\ref{fig:composite_example}.
+Figure~\ref{fig:composite_example}\,a shows the average change in area of the core (red), thick anvil (orange) and thin anvil (blue) over the normalised lifetime of the \acrshort{dcc}s.
+Figure~\ref{fig:composite_example}\,b shows how these areas change as a proportion of the net \acrshort{dcc} area.
+From fig.~\ref{fig:composite_example}\,b we can see how, on average, the structure of \acrshort{dcc}s evolves over their lifetime.
+Initially, the \acrshort{dcc} consists entirely of a growing core, with the initial anvil formation occurring between 10\% and 20\% of the \acrshort{dcc} lifetime.
+The initial expansion of the anvil is mostly thin, likely because the majority of the mass flux is still travelling upwards, and the area of thick anvil is covered by the developing core.
+Between 20\% and 40\% of the normalised lifetime, while the anvil is maturing, the thick and thin anvil expand at similar rates and so the proportion of thin anvil remains consistent.
+Beyond this point, the thick anvil reaches its maximum area before the thin anvil and dissipates faster, and the fraction of thin anvil increases until the end of the \acrshort{dcc} lifecycle.
+
+Through the use of composite analysis, we can investigate where throughout the \acrshort{dcc} lifecycle different convective processes impact the anvil structure, rather than limiting our analysis to bulk properties.
 
 \section{Results}
 
 %f
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/chapter3_02.png}
+    \includegraphics[width=0.75\textwidth]{figures/chapter3_04.png}
     \caption[
     Thin anvil proportion of anvils categorised by mean anvil \acrshort{bt}, initial core cooling rate and number of cores
     ]{
@@ -153,7 +209,7 @@ As this occurs despite the tendency for multiple-core anvils to have colder aver
 %f
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/chapter3_03.png}
+    \includegraphics[width=0.75\textwidth]{figures/chapter3_05.png}
     \caption[
     A comparison of the proportion of thin cirrus measured at the time of maximum anvil area, and the proportional difference in lifetime, compared to the overall thin cirrus proportion.
     ]{
@@ -169,7 +225,7 @@ In the rest of this section, we will investigate how both the core intensity and
 %f
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/chapter3_04.png}
+    \includegraphics[width=0.75\textwidth]{figures/chapter3_06.png}
     \caption[
     The effect of initial core cooling rate on maximum anvil area, anvil lifetime, and mean and minimum \acrshort{bt}
     ]{
@@ -181,7 +237,7 @@ In the rest of this section, we will investigate how both the core intensity and
 %f
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/chapter3_05.png}
+    \includegraphics[width=0.75\textwidth]{figures/chapter3_07.png}
     \caption[
     The effect of the number of cores on maximum anvil area, anvil lifetime, and mean and minimum \acrshort{bt}
     ]{
@@ -199,7 +255,7 @@ We also see a consistent decrease in both average and minimum thick anvil \acrsh
 %f
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/chapter3_06.png}
+    \includegraphics[width=0.75\textwidth]{figures/chapter3_08.png}
     \caption[
     A comparison of the proportion of thin cirrus measured at the time of maximum anvil area, and the proportional difference in lifetime, compared to the overall thin cirrus proportion.
     ]{
@@ -227,7 +283,7 @@ While the timing of the maximum thick anvil area and thick anvil dissipation sho
 %f
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter3_08.png}
+    \includegraphics[width=\textwidth]{figures/chapter3_09.png}
     \caption[
     The average lifetime of each lifecycle stage for anvils categorised by initial core cooling rate
     ]{
@@ -239,7 +295,7 @@ While the timing of the maximum thick anvil area and thick anvil dissipation sho
 %f
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter3_09.png}
+    \includegraphics[width=\textwidth]{figures/chapter3_10.png}
     \caption[
     The average fraction of anvil lifetime of each lifecycle stage for anvils categorised by initial core cooling rate
     ]{
@@ -283,7 +339,7 @@ However, the time between the thick and thin anvil maximum area and the thick an
 %f
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter3_10.png}
+    \includegraphics[width=\textwidth]{figures/chapter3_11.png}
     \caption[
     The average lifetime of each lifecycle stage for anvils categorised by number of cores
     ]{
@@ -295,7 +351,7 @@ However, the time between the thick and thin anvil maximum area and the thick an
 %f
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter3_11.png}
+    \includegraphics[width=\textwidth]{figures/chapter3_12.png}
     \caption[
     The average fraction of anvil lifetime of each lifecycle stage for anvils categorised by number of cores
     ]{

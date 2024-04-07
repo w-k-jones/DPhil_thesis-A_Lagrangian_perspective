@@ -44,6 +44,10 @@ We will also provide an overview of the structure of this thesis, in which we la
 
 \section{Physical properties of \acrshort{dcc}s}
 
+The physical nature of a \acrshort{dcc} can be viewed through several lenses: as a cloud system, consisting of a multitude of liquid and ice water cloud particles along with several kinds of precipitation; a thermodynamic system in which moisture and energy are transformed into intense vertical motion and circulations across several scales; and a radiative system in which the large anvil reflects sunlight and absorbs \acrshort{lw} radiation, both heating and cooling the atmosphere within and below it.
+These processes are not independent and interact with each other in numerous ways.
+As a result, understanding each of them is important to understanding the behaviour of \acrshort{dcc}s.
+
 % Atmospheric deep convection occurs as a result of unstable atmospheric temperature and humidity profiles; a condition which occurs when the lapse rate of a dry atmospheric column becomes greater than that of the moist pseudo-adiabat.
 % This unstable condition occurs due to either or a combination of \acrshort{lw}  cooling of the upper troposphere, and radiative heating of the surface and lower troposphere.
 % The potential energy available to a convected air parcel (\acrshort{cape}) is dependent on the strength of the lapse rate instability and is strongly correlated with the intensity of \acrshort{dcc}s and associated extreme weather.
@@ -156,15 +160,17 @@ The build-up of instability is measured as the \acrfull{cape} of an air parcel, 
 The properties of a convective airmass are commonly derived using parcel theory \citep{stull_practical_2016}. 
 This approach approximates the air parcel as undergoing adiabatic processes while it is lifted from the lower to the upper troposphere. 
 The buoyancy of the air parcel along this trajectory is dependent on the initial height and moisture content of the parcel as well as the temperature profile of the environment it exists in. 
-Analysis of these trajectories can be performed by plotting them on a diagram of temperature against height, or more commonly temperature against log pressure, as shown for an idealised case in fig.~\ref{fig:parcel_ascent}.
+Analysis of these trajectories can be performed by plotting them on a thermodynamic diagram. 
+An example of a tephigram, which plots the ascent of a parcel on axes of temperature and potential temperature which are skewed by 45 degrees, is shown in fig.~\ref{fig:parcel_ascent}.
+The tephigram has advantages over other thermodynamic diagrams commonly used in meteorology, such as the T--logP diagram, as its axes are orthogonal to each other and therefore thermodynamic properties such as \acrshort{cape} and \acrshort{cin} are accurately represented by their areas.
 
 \begin{figure}[tp]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/Intro_parcel_ascent.png}
+    \includegraphics[width=0.75\textwidth]{figures/example_tephigram.png}
     \caption[
-    An illustration of parcel ascent on a T--logP diagram
+    An illustration of parcel ascent on a tephigram for a sounding taken on 2018-06-20 00:00 \acrshort{utc} at Jacksonville, Florida
     ]{
-    An illustration of parcel ascent on a T--logP diagram. The environmental temperature profile is shown by the red line, and that of the parcel, which starts near the surface, as the dashed black line. Points marking the \acrshort{lcl}, \acrshort{lfc} and \acrshort{lnb} are shown. The \acrshort{cape} and \acrshort{cin} are shown by the orange and blue dashed areas respectively.
+    An illustration of parcel ascent on a tephigram for a sounding taken on 2018-06-20 00:00 \acrshort{utc} at Jacksonville, Florida. The environmental temperature profile is shown by the red line, and the dewpoint temperature by the blue line. The path of the parcel, which starts near the surface, is shown by the black line. Points marking the \acrshort{lcl}, \acrshort{lfc} and \acrshort{lnb} are shown. The \acrshort{cape} and \acrshort{cin} are shown by the red and blue areas respectively.
     }
     \label{fig:parcel_ascent}
 \end{figure}
@@ -178,7 +184,7 @@ As the moist adiabatic lapse rate approaches that of the dry adiabatic lapse rat
 The point at which the temperature profile of the parcel again crosses that of the environment is called the \acrfull{lnb}. 
 Although the air parcel may continue to rise above this point due to its momentum, negative buoyancy will act to halt its ascent.
 
-Two further properties related to convection are also shown on the T--logP diagram. 
+Two further properties related to convection are also shown on the tephigram. 
 \acrshort{cape} can be calculated as the area between the parcel temperature profile and the environment profile between the \acrshort{lfc} and the \acrshort{lnb}, showing clearly how \acrshort{cape} is the total work exerted by positive buoyancy forces between these two levels. 
 From this, \acrshort{cape} can be used to calculate the theoretical maximum updraft velocity if all \acrshort{cape} is converted to kinetic energy, although typical observed maximum updraft velocities are half of this amount. 
 Similarly, \acrfull{cin} can be calculated as the area between the temperature profiles between the initial parcel location and the \acrshort{lfc}. 
