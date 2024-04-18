@@ -1,4 +1,4 @@
-\chapter{The Lifecycle of Deep Convective Cores and their Associated Anvil Clouds Observed over North America} \label{chp:lifecycle}
+\chapter{Linking the Properties of Deep Convective Cores and their Associated Anvil Clouds Observed over North America} \label{chp:lifecycle}
 
 
 % \begin{abstract}
@@ -20,6 +20,13 @@
 
 
 \section{Introduction}  %% \introduction[modified heading if necessary]
+
+Understanding the relationships between the properties of deep convective cores and anvils is vital to understanding the behaviour of \acrshort{dcc}s in both the present day and future climate.
+Our ability to study these relationships is limited, however, by a lack of datasets connecting convective processes to anvil properties over the entire \acrshort{dcc} lifetime \citep{gasparini_opinion_2023}.
+The capabilities of the newest generation of geostationary satellite instruments provide opportunities to address this issue.
+Data from the \acrshort{goes}-16 \acrshort{abi} instrument's \acrshort{conus} domain provide many advantages for investigating convective processes.
+The higher spatial and temporal resolutions and number of channels allow us to move beyond the traditional tracking of large, cold cloud shields to instead track \acrshort{dcc}s from the initial development of the core to the final dissipation of the anvil across scales spanning isolated \acrshort{dcc}s to large \acrshort{mcs}s.
+Furthermore, the \acrshort{conus} domain contains a wide variety of regimes which we expect to impact the properties of \acrshort{dcc}s, including land, ocean, tropics and mid-latitudes.
 
 Deep convective storms play an important role in both the weather and climate of North America.
 The continent experiences tropical, subtropical and extra-tropical convection across a range of modes, including isolated \acrshort{dcc}s, \acrshort{mcs}s and supercell convection \citep{brooks_century_2019}.
@@ -98,21 +105,8 @@ The linking algorithm combines \acrshort{dcc}s detected at the same locations wi
 Splitting and merging of objects is taken into account, so a single object which splits into two, or two objects which merge into one in the subsequent file are all considered a single, tracked object.
 The linking algorithm is applied separately to each month of data for performance reasons.
 
-After linking, a processing step is applied to calculate the properties of detected cores and anvils at each step of their lifecycles.
-Finally, core and anvil step properties are aggregated over each month of observation, and overall core and anvil properties are calculated.
-During this final step quality flagging is performed to isolate detected features that fail one or more quality checks.
-The quality criteria are split into two criteria.
-The first set of criteria---for core or anvil removal---removes detected features which should not pass the criteria for detection in the first place.
-Detected features which flag any of these criteria are removed from the aggregated dataset in their entirety.
-This step in particular removes anvils which have no cores associated with them, or are not detected as initiating with a developing core.
-
-The second set of criteria is used to identify detected cores or anvils for which we do not observe their entire extent or lifecycle.
-Cores and anvils which flag are of these criteria are still included within the aggregated properties dataset, but are not used when investigating \acrshort{dcc} properties throughout this chapter.
-
-Quality criteria for cores are listed in table \ref{table:core_validity_criteria}, and those for anvils in table \ref{table:anvil_validity_criteria}.
-
 %t
-\begin{table}[tb]
+\begin{table}[b]
 \centering
 \begin{tabular}{ll}
 \tophline
@@ -131,6 +125,20 @@ Validity criteria for detected cores
 Validity criteria for detected cores. Cores which flag any of the removal criteria are removed in their entirety from the dataset. Those which flag any of the invalid criteria are retained, but removed from subsequent analysis.}
 \label{table:core_validity_criteria}
 \end{table}
+
+After linking, a processing step is applied to calculate the properties of detected cores and anvils at each step of their lifecycles.
+Finally, core and anvil step properties are aggregated over each month of observation, and overall core and anvil properties are calculated.
+During this final step quality flagging is performed to isolate detected features that fail one or more quality checks.
+The quality criteria are split into two criteria.
+The first set of criteria---for core or anvil removal---removes detected features which should not pass the criteria for detection in the first place.
+Detected features which flag any of these criteria are removed from the aggregated dataset in their entirety.
+This step in particular removes anvils which have no cores associated with them, or are not detected as initiating with a developing core.
+
+The second set of criteria is used to identify detected cores or anvils for which we do not observe their entire extent or lifecycle.
+Cores and anvils which flag are of these criteria are still included within the aggregated properties dataset, but are not used when investigating \acrshort{dcc} properties throughout this chapter.
+
+Quality criteria for cores are listed in table \ref{table:core_validity_criteria}, and those for anvils in table \ref{table:anvil_validity_criteria}.
+
 
 
 %t
@@ -183,7 +191,13 @@ The second, consisting of aggregated monthly core and anvil properties, is produ
 Figure~\ref{fig:conus_detected_dccs} shows an example of detected cores and anvils over the \acrshort{conus} region, against backgrounds of composite visible imagery (fig.~\ref{fig:conus_detected_dccs}\,a) and 10.4\,\unit{\mu m} \acrshort{bt} (fig.~\ref{fig:conus_detected_dccs}\,b).
 Cores and anvils which are removed from the aggregated dataset are outlined with dotted lines, and those which are marker invalid are shown with dashed outlines.
 
-Over the five-year observing period we detect a total of 3,877,130 cores, of which 3,817,286 are valid, and 648,345 anvils, of which 576,555 are valid.
+Over the five-year observing period we detect a total of 3,877,130 cores, of which 3,817,286 are valid, and 1,696,075 are linked with an anvil cloud. 
+We detect a total of 648,345 anvils, of which 402,191 are valid, and these valid anvils contain 811,666.
+The disparity in the number of valid cores and the number of cores contained with valid anvils is due to additional filtering applied to the anvils.
+As the larger and longer-lived anvils are more likely to intersect the edges of the domain, they are more likely to be marked invalid than the cores.
+In these cases, we may consider the cores themselves to be valid for analysis, as we observe their evolution and connect them with an anvil cloud, but exclude the anvil itself from analysis as we do not capture its entire extent and lifetime.
+The exclusion of anvils that intersect the edges of the domain introduces a bias towards removing larger, long-lived systems near the edge of the domain, which should be considered when assessing the properties of the observed \acrshort{dcc}s.
+
 
 
 % \section{A novel method for detecting deep convective cloud cores and their associated anvils in geostationary satellite imagery}
