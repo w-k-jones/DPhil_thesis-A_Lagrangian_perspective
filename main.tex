@@ -33,6 +33,24 @@
 \renewcommand{\bottomfraction}{.5}
 \renewcommand{\floatpagefraction}{.7}
 
+% Equation floats
+% \usepackage{float}
+\usepackage{aliascnt}
+\newaliascnt{eqfloat}{equation}
+\newfloat{eqfloat}{h}{eqflts}
+\floatname{eqfloat}{Equation}
+
+\newcommand*{\ORGeqfloat}{}
+\let\ORGeqfloat\eqfloat
+\def\eqfloat{%
+  \let\ORIGINALcaption\caption
+  \def\caption{%
+    \addtocounter{equation}{-1}%
+    \ORIGINALcaption
+  }%
+  \ORGeqfloat
+}
+
 \makeglossaries
 \input{acronyms}
 
@@ -98,9 +116,9 @@ Deep Convective Clouds}   %note \\[1ex] is a line break in the title
 %now include the files of latex for each of the chapters etc
 \baselineskip=24pt plus1pt % double line spacing
 \linenumbers
-% \include{chapters/introduction}
+\include{chapters/introduction}
 % \include{chapters/tracking_method}
-\include{chapters/lifecycle}
+% \include{chapters/lifecycle}
 % \include{chapters/anvil_structure}
 % \include{chapters/radiative_effect}
 % \include{chapters/conclusion}
@@ -119,7 +137,9 @@ Deep Convective Clouds}   %note \\[1ex] is a line break in the title
 %uncomment next line to change bibliography name to references
 %\renewcommand{\bibname}{References}
 
-\bibliographystyle{apalike}  % bibliography style
+% \bibliographystyle{jmb.bst}  % bibliography style
+\bibliographystyle{apalike}
+
 \begin{small}
 \bibliography{bibliography.bib}
 \end{small}
