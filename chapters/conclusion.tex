@@ -29,8 +29,8 @@ In chapter~\ref{chp:tracking_method}, we develop a novel method to detect and tr
 Through theory developed using simple, 1D models \citep{emde_libradtran_2016}, the ability to better detect the entire extent of thick and thin anvils and developing cores using a combination of channel differences and temporal changes.
 We found that while changes in the clean \acrshort{lw} window \acrshort{bt} over time provide the best indication of growing \acrshort{dcc}s, use of the \acrshort{wvd} and \acrshort{swd} channel combinations provide greater insight into the detection of both thick and thin anvil clouds.
 The use of a semi-Lagrangian framework to remove the motion of observed \acrshort{dcc}s was successfully applied to overcome the scaling issue encountered by existing algorithms \citep{lakshmanan_objective_2009}, with optical flow successfully applied to estimate the cloud motion vectors.
-Combining a selection of novel approaches to cloud detection and tracking \citep{muller_novel_2019, fiolleau_algorithm_2013, zinner_cb-tram_2008} within this framework allows the detection and tracking of \acrshort{dcc}s from the initial detection of the growing core to the dissipation of the thin anvil cirrus, allowing tracking of the full extent of the \acrshort{dcc} lifetime.
-In addition, the combined core and anvil tracking improves both the sensitivity and robustness of the algorithm, providing more trust in its output.
+Combining a selection of novel approaches to cloud detection and tracking \citep{muller_novel_2019, fiolleau_algorithm_2013, zinner_cb-tram_2008} within this framework allows the detection and tracking of \acrshort{dcc}s from the initial detection of the growing core to the dissipation of the thin anvil cirrus, allowing tracking of the full extent of the \acrshort{dcc} lifetime (fig.~\ref{fig:detected_anvils}.
+In addition, the combined core and anvil tracking improves both the sensitivity and robustness of the algorithm, with an F\textsubscript{1}-score of 0.91, providing a high degree of trust in the \acrshort{dcc}s detected by the algorithm.
 
 \subsection{Chapter~\ref{chp:lifecycle}: relating the spatial distribution, properties and diurnal cycle of convective cores and anvils}
 
@@ -41,6 +41,7 @@ North America experiences a wide array of convective storms in both tropical and
 In chapter~\ref{chp:lifecycle}, we apply the \textit{tobac-flow} algorithm to five years of observations to study the behaviour of \acrshort{dcc} cores and anvils in this region. 
 Using this dataset, we investigate the spatial, diurnal and seasonal distributions of both cores and anvils, and show the relation between them and their contrasting behaviour between land and ocean.
 We find that sufficient observations can be made of developing cores to evaluate their properties, and link these properties to the subsequent development of the \acrshort{dcc}.
+We find that \acrshort{dcc}s tend to be larger, longer lived and colder over land than the ocean , and their cores more intense during the daytime.
 In addition, we show the extent to which both convective cores and anvils are impacted by the diurnal cycle.
 Over the ocean, the enhancement of anvil cloud lifetime by \acrshort{sw} heating \citep{gasparini_diurnal_2022} increases the occurrence of anvil clouds during the daytime, despite the contrasting nighttime peak in convective core development.
 In contrast, over land the diurnal cycle leads to a strong peak of convection in the afternoon, as well as increasing convective intensity throughout the day.
@@ -124,8 +125,6 @@ As a result, the response of these systems to global warming may have a larger e
 
 \section{Discussion \& Future work}
 
-Through the use of a novel storm tracking algorithm, we have used geostationary satellite imagery to study to properties of deep convective cores across a wide range of scales. In doing so we have found two key results that require further investigation for understanding future changes in deep convection. Further investigating the contrast between the effects of intensification and organisation on the structure of \acrshort{dcc}s anvils may provide insight into the net changes of anvil structure with climate change. Furthermore, the bimodal \acrshort{cre} distribution of tropical anvil clouds highlights that the contribution of isolated \acrshort{dcc}s is more important to the anvil \acrshort{cre} balance than previously thought, and that these systems may be more sensitive to climate change. Combining research on both these effects may help understand whether the net impact of the response of \acrshort{dcc}s to global warming will be a warming or cooling feedback. Future satellite missions to investigate the processes of deep convection are planning to include cloud tracking to provide insight into the lifecycle of \acrshort{dcc}s, and it is clear that continued development of this technology is required to further the study of these important atmospheric phenomena.
-
 
 % \section{Summary of chapter \ref{chp:tracking_method}}
 
@@ -177,50 +176,42 @@ In recent years there has been an increased focus on the study of anvil lifecycl
 The response of \acrshort{dcc}s to climate change is both important and uncertain \citep{sherwood_assessment_2020, hill_climate_2023}.
 Improving our understanding of cirrus cloud properties and lifecycles is vital to improving this situation \citep{sullivan_ice_2021, gasparini_opinion_2023}.
 
-The key results of this thesis are in the lifecycle, structure and \acrshort{cre} of \acrshort{dcc}s and their anvils.
+The key results of this thesis are in the new observational insights into the lifecycle, structure and \acrshort{cre} of \acrshort{dcc}s and their anvils.
 The development of a novel tracking algorithm allows both isolated and organised \acrshort{dcc}s to be tracked across their entire lifetime across a wide range of scales.
-Furthermore, by tracking both cores and anvil clouds, we are able to link their properties in ways that previous studies have not.
+Furthermore, by tracking both cores and anvil clouds, we are able to link the behaviours of the convective cores to the evolution of the anvil clouds, and provide observational evidence for how these properties affect each other.
 
-Both chapters~\ref{chp:lifecycle} and \ref{chp:radiative_effect} showed significant differences in the lifecycles of \acrshort{dcc}s over the land and the ocean.
+Chapters~\ref{chp:lifecycle}, and \ref{chp:radiative_effect} showed significant differences in the lifecycles of \acrshort{dcc}s over the land and the ocean.
 In particular, these differences may influence \acrshort{dcc} cores and anvils to different extents.
 Several processes, occurring over a range of scales, may influence the properties of observed \acrshort{dcc}s.
 Lake effects, such as those seen over the African Great Lakes in chapter~\ref{chp:radiative_effect}, may provide a useful case study for understanding these differences, as while their local and surface properties may be similar to that of oceans, the larger environmental conditions may be more affected by the adjacent land regions.
 
-We see large differences in the anvil properties of isolated and organised convection, both in terms of the anvil structure and the anvil \acrshort{cre}.
+In chapter~\ref{chp:anvil_structure} we found contrasting impacts of convective intensity and organisation on the structure and lifecycle of anvil clouds. 
+Analysing how the structure of these \acrshort{dcc}s evolved over their lifetime provided key insights into which convective and anvil processes lead to the observed changes in thick thin anvils.
 These contrasts may help further understand the uncertainties in anvil radiative feedbacks, particularly that of the anvil area feedback.
 In addition, it highlights the importance of isolated \acrshort{dcc}s to the total anvil \acrshort{cre}, motivating further study into how their behaviour differs from organised convection.
+Further investigating the contrast between the effects of intensification and organisation on the structure of \acrshort{dcc}s anvils may provide insight into the net changes of anvil structure with climate change. However, while with these structural changes alone we would expect more intense \acrshort{dcc}s to be warming, and more organised \acrshort{dcc}s to be cooling, the changes in \acrshort{bt} and the diurnal cycle observed for both of these processes may dominate any changes in \acrshort{cre}.
+The bimodal \acrshort{cre} distribution of tropical anvil clouds highlights that the contribution of isolated \acrshort{dcc}s is more important to the anvil \acrshort{cre} balance than previously thought, and that these systems may be more sensitive to climate change. Combining research on both these effects may help understand whether the net impact of the response of \acrshort{dcc}s to global warming will be a warming or cooling feedback.
 
 Existing studies, including those of chapters~\ref{chp:lifecycle} and \ref{chp:radiative_effect} in this thesis, have observed how the microphysical, dynamical and radiative properties change in isolation.
 Investigating how these factors combine to produce the net behaviour and response of anvils, including the contrasts between isolated and organised convection, could greatly help our understanding of these processes.
 Combining the use of modern geostationary satellite sensors including \acrshort{abi}, \acrlong{ahi} and the upcoming \acrlong{fci} aboard the third generation Meteosat \citep{durand_flexible_2015}, along with retrievals of anvil \acrshort{cre} and radiative heating, may help close the loop on these processes.
 A larger cloud tracking study, combining these elements, investigating how the microphysical, macrophysical properties and structure of \acrshort{dcc}s change over their lifecycle and throughout the diurnal cycle, and then demonstrating the effect of these changes on the \acrshort{cre} of the anvil across both thick and thin parts and along its entire lifetime, could greatly reduce uncertainties in anvil cloud feedbacks.
+A new framework for decomposing anvil cloud feedbacks that includes structure, optical and lifecycle changes may prove key to their would greatly help understanding their behaviours.
 
 While geostationary satellite observations provide unique insights into the behaviour of \acrshort{dcc}s, they cannot observe processes occurring within the cloud.
 Active satellite instruments, including the \acrshort{cpr} aboard Cloudsat and the \acrlong{caliop} lidar as part of the \acrfull{atrain}, have substantially improved our understanding of processes occurring within \acrshort{dcc}s \citep{stephens_cloudsat_2018}.
 A number of new satellite missions across the coming decade look to build upon these discoveries and further improve our knowledge of \acrshort{dcc} processes.
-
 The \acrshort{esa} \acrfull{earthcare} satellite, planned to launch in 2024, looks set to build upon the successes of the A-train by combining multiple active instruments aboard a single platform \citep{wehr_earthcare_2023}.
-The W-band \acrshort{cpr} is similar to that aboard CloudSat, and will provide measurements of cloud properties from cloud top to cloud base.
-\acrshort{earthcare}'s \acrfull{hsrl} provides substantial improvements over previous observations made by \acrshort{caliop}.
-Traditional Doppler lidars require assumptions to be made about the particles being observed due to their inability to separate the effects of backscatter cross-section from extinction.
-However, these assumptions about particle distributions are known sources of uncertainty, both in observations and in the parameterisations used in models.
-The \acrshort{hsrl}, however, is able to explicitly characterise the properties of ice and aerosol particles, and so may provide a better understanding of the microphysical properties of anvil cirrus.
-
-\acrshort{nasa}'s upcoming \acrfull{aos} mission will similarly focus on the use of active sensors to observe aerosol, cloud and convective and precipitation processes \citep{braun_nasa_2023}.
-\acrshort{aos} will consist of a constellation of multiple satellites operating in different orbit configurations.
-While the individual instruments are not as capable as those of \acrshort{earthcare}, the use of multiple satellites will allow it to better observe the full diurnal cycle.
-
 The \acrshort{nasa} \acrfull{incus} mission presents an innovative approach to studying the properties of deep convective updrafts \citep{vandenheever_tropical_2023}.
 By flying three satellites, each equipped with Ka-band rainfall radars, in close formation, \acrshort{incus} observations can be used to calculate the convective mass flux.
 In turn, this property can be used to understand how the growth and lifecycle of anvils relate to the cores which feed them.
+\acrshort{nasa}'s upcoming \acrfull{aos} mission will similarly focus on the use of active sensors to observe aerosol, cloud and convective and precipitation processes \citep{braun_nasa_2023}.
+\acrshort{aos} will consist of a constellation of multiple satellites operating in different orbit configurations.
 
 As the success of the \acrshort{atrain} has shown \citep{stephens_cloudsat_2018}, the use of multiple satellite observations can provide much greater insight into cloud processes than those from a single source.
 Both the \acrshort{aos} and \acrshort{incus} missions are planning on using cloud tracking from geostationary satellites in an operational role to locate their observations of \acrshort{dcc}s within the lifecycle of the cloud.
-Upcoming observational missions, along with the development of global convective resolving models, look to enable a number of advances in our understanding of \acrshort{dcc}s.
+Upcoming observational missions, along with the development of global convective resolving models, and idealised simulation, look to enable a great number of advances in our understanding of \acrshort{dcc}s.
 The opportunities opening up have led to the present being called ``the decade of convection'' \citep{vandenheever_tropical_2023}, and cloud tracking algorithms and their applications will provide a key part of it.
-
-
-
 
 \section{Concluding remarks}
 

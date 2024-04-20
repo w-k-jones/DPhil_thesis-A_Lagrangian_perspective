@@ -57,14 +57,6 @@ We find that the overall distribution of anvil \acrshort{cre} is determined by t
 
 \section{Data}
 
-For this case study, we used data from \acrshort{seviri} \citep{aminou_msg_2002} aboard the \acrfull{msg} Meteosat-11 satellite, which is in a geostationary orbit above the equator at 0\textdegree W. 
-We use data from 4 months (May--August 2016) over sub-Saharan Africa (approximately 18\,\textdegree W--46\,\textdegree E, 31\,\textdegree S--15\,\textdegree N) at the full resolution of \acrshort{seviri} (3\,\unit{km} at nadir) as well as retrieved cloud properties and derived broadband fluxes produced by the \acrshort{esa} Cloud-\acrshort{cci}+ project.
-\acrshort{bt} from \acrshort{seviri} is used by the tracking algorithm, and reflectances and \acrshort{bt} are used by the cloud retrieval.
-
-\acrshort{seviri} is a visible and \acrshort{ir} radiometer with a nadir spatial resolution of 3\,\unit{km} and a temporal sampling time of 15 minutes for the full earth disc. 
-\acrshort{seviri} has 12 channels across the visible, \acrshort{nir} and thermal-IR spectrum, with one being a high-resolution visible channel with a nadir resolution of 1\,\unit{km}. 
-A brief overview of these channels, along with which are used for tracking \acrshort{dcc}s and the cloud properties retrieval, is provided in table~\ref{table:seviri_channels}.
-
 
 \begin{table}[tb]
 \begin{tabular}{lllcc}
@@ -91,6 +83,13 @@ Channel & Wavelength (\unit{\mu m}) & Description & Tracking & Retrieval\tabular
 \label{table:seviri_channels}
 \end{table}
 
+For this case study, we used data from \acrshort{seviri} \citep{aminou_msg_2002} aboard the \acrfull{msg} Meteosat-11 satellite, which is in a geostationary orbit above the equator at 0\textdegree W. 
+We use data from 4 months (May--August 2016) over sub-Saharan Africa (approximately 18\,\textdegree W--46\,\textdegree E, 31\,\textdegree S--15\,\textdegree N) at the full resolution of \acrshort{seviri} (3\,\unit{km} at nadir) as well as retrieved cloud properties and derived broadband fluxes produced by the \acrshort{esa} Cloud-\acrshort{cci}+ project.
+\acrshort{bt} from \acrshort{seviri} is used by the tracking algorithm, and reflectances and \acrshort{bt} are used by the cloud retrieval.
+
+\acrshort{seviri} is a visible and \acrshort{ir} radiometer with a nadir spatial resolution of 3\,\unit{km} and a temporal sampling time of 15 minutes for the full earth disc. 
+\acrshort{seviri} has 12 channels across the visible, \acrshort{nir} and thermal-IR spectrum, with one being a high-resolution visible channel with a nadir resolution of 1\,\unit{km}. 
+A brief overview of these channels, along with which are used for tracking \acrshort{dcc}s and the cloud properties retrieval, is provided in table~\ref{table:seviri_channels}.
 
 An example of observations from \acrshort{seviri} is shown in fig.~\ref{fig:seviri_obs_example} for 15:00:00~\acrshort{utc} on 1\textsuperscript{st} June 2016. 
 A visible composite (fig.~\ref{fig:seviri_obs_example}\,a) is constructed using the 1.64\,\unit{\mu m} and 0.81\,\unit{\mu m} near-infrared and 0.64\,\unit{\mu m} visible channels for the \acrshort{rgb} channels respectively. 
@@ -516,11 +515,11 @@ Changes in the diurnal cycle of convection may not have a large impact on net an
 Over land, however, the afternoon peak of convection at around 3\,pm solar time (see fig.~\ref{fig:seviri_map_dists}) coincides with a time at which anvil \acrshort{cre} is very sensitive to shifts in the diurnal cycle (fig.~\ref{fig:anvil_cre_time_vs_ctt}\,b).
 Furthermore, a reduction or increase in the number of \acrshort{dcc}s occurring at a specific time of day may change the net \acrshort{cre} of anvils without any change in the \acrshort{cre} of individual \acrshort{dcc}s.
 
-Diagnosing a diurnal cycle related anvil cloud feedback in climate models may however be difficult.
+Diagnosing a diurnal-cycle-related anvil cloud feedback in climate models may however be difficult.
 \citet{beydoun_dissecting_2021} found that changes in anvil lifetime contributed little to \acrshort{cre} feedbacks in a cloud-resolving radiative-convective-equilibrium model.
 It is unclear how well the diurnal cycle of convection and convective lifecycle are represented in such a model, although convective-resolving models have been found to model these better than parameterised climate models \citep{prein_review_2015, feng_mesoscale_2023}.
 Disentangling the impacts of convective processes and anvil cirrus processes on anvil lifecycle and \acrshort{cre} is also a key challenge.
-Here, the use of model experiments such as that of \citet{gasparini_diurnal_2022} may help better understand the impacts of both processes on anvil \acrfull{cre} and the potential for climate feedbacks.
+Here, the use of model experiments such as \citet{gasparini_diurnal_2022} may help understand the impacts of each process on anvil \acrfull{cre} and the potential climate feedbacks.
 
 There are, however, a number of limitations in this study which present opportunities for future research. 
 Firstly, as this study only involved 4 months of data during the Northern Hemisphere summer, we were not able to investigate the impact of the seasonal cycle on the behaviour of \acrshort{dcc}s and their \acrshort{cre}. 
