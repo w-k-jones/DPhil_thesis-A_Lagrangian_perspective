@@ -91,15 +91,15 @@ While such algorithms provide accurate detection of these early phases of \acrsh
 \citet{fiolleau_algorithm_2013} identified this need to compromise on the accuracy of detecting \acrshort{dcc}s as a problem caused by the commonly used two-step framework for detecting and tracking \acrshort{dcc}s.
 In this framework, \acrshort{dcc}s are first detected in individual images, and then linked together over time in sequences of images.
 As a result, the detection method chosen must be capable of detecting \acrshort{dcc}s at each individual time step in order to track their entire lifecycle.
-Instead \citet{fiolleau_algorithm_2013} implemented a single-step framework for mesoscale convective systems that treats a sequence of images as a "3D" volume, and performs detection and tracking simultaneously by applying a watershed method over both spatial and temporal dimensions.
+Instead \citet{fiolleau_algorithm_2013} implemented a single-step framework for mesoscale convective systems that treats a sequence of images as a `3-D' volume (consisting of two spatial dimensions and one temporal dimension), and performs detection and tracking simultaneously by applying a watershed method over both spatial and temporal dimensions.
 Whereas this approach was successful for large, mesoscale systems, where the advection of the anvil is small compared to the overall anvil area, it is less capable of tracking small, rapidly moving convective cores.
 To improve the tracking of small \acrshort{dcc}s, we have developed a semi-Lagrangian framework for single-step detection and tracking which accounts for the motion of \acrshort{dcc}s using optical flow.
 
 By utilising the semi-Lagrangian framework, we are able to combine the best elements of both growth-based and threshold-based detection methods.
-We show that it is possible to detect growing \acrshort{dcc}s to a high degree of accuracy using methods similar to those of \citet{zinner_cb-tram_2008}, and then extend the detected \acrshort{dcc} over the entire anvil cloud using the "3D" watershed method of \citet{fiolleau_algorithm_2013}.
+We show that it is possible to detect growing \acrshort{dcc}s to a high degree of accuracy using methods similar to those of \citet{zinner_cb-tram_2008}, and then extend the detected \acrshort{dcc} over the entire anvil cloud using the 3-D watershed method of \citet{fiolleau_algorithm_2013}.
 This framework reduces the compromise required between the rate of missed \acrshort{dcc}s and falsely detected \acrshort{dcc}s, improving the overall accuracy of our detection method compared to existing approaches.
 Furthermore, this method allows the anvil cloud to be detected and tracked even after the region of cloud top cooling is no longer detected.
-Finally, the "3D" method handles the merging and splitting of intersecting \acrshort{dcc}s by detecting all \acrshort{dcc}s that intersect at any point during their lifetime as a merged object.
+Finally, the 3-D method handles the merging and splitting of intersecting \acrshort{dcc}s by detecting all \acrshort{dcc}s that intersect at any point during their lifetime as a merged object.
 
 
 % Performing such research is made difficult in particular by the wide range of scales -- both spatial and temporal -- required.
@@ -248,35 +248,35 @@ The weighting functions are calculated using a radiative transfer model with tem
 \centering
 \begin{tabular}{lrrr}
 \tophline
-Instrument   & wavelength   & NE$\Delta$T [300\,K]    & NE$\Delta$T [220\,K] \\
+Instrument   & wavelength   & \acrshort{nedt} [300\,K]    & \acrshort{nedt} [220\,K] \\
 \middlehline
 ABI (GOES--16)         & 6.2\,\unit{\mu m} & 0.013\,K & 0.117\,K\\
              & 7.4\,\unit{\mu m} & 0.024\,K & 0.137\,K\\
              & 10.4\,\unit{\mu m} & 0.028\,K & 0.082\,K\\
              & 12.4\,\unit{\mu m} & 0.023\,K & 0.052\,K\\
 \middlehline
-SEVIRI (MSG--11)       & 6.2\,\unit{\mu m} & 0.05\,K & 0.448\,K\\
-             & 7.3\,\unit{\mu m} & 0.05\,K & 0.294\,K\\
-             & 10.8\,\unit{\mu m} & 0.06\,K & 0.165\,K\\
-             & 12.0\,\unit{\mu m} & 0.10\,K & 0.237\,K\\
+SEVIRI (MSG--11)       & 6.2\,\unit{\mu m} & 0.05\,K & 0.45\,K\\
+             & 7.3\,\unit{\mu m} & 0.05\,K & 0.29\,K\\
+             & 10.8\,\unit{\mu m} & 0.06\,K & 0.17\,K\\
+             & 12.0\,\unit{\mu m} & 0.10\,K & 0.24\,K\\
 \bottomhline
 \end{tabular}
 \caption[
-Operating noise equivalent $\Delta$T (NE$\Delta$T) for the \acrshort{abi} and \acrshort{seviri} instruments. 
+Operational \acrshort{nedt} for the \acrshort{abi} and \acrshort{seviri} instruments. 
 ]{
-Operating noise equivalent $\Delta$T (NE$\Delta$T) for the \acrshort{abi} and \acrshort{seviri} instruments. NE$\Delta$T is shown both at 300\,K and at 220\,K. \acrshort{abi} data is from {https://www.star.nesdis.noaa.gov/GOESCal/G16\_ABI\_INST\_CAL\_daily\_allmode.php}; \acrshort{seviri} data is from \citet{pili_inorbit_2016}.
+Operational \acrshort{nedt} for the \acrshort{abi} and \acrshort{seviri} instruments. \acrshort{nedt} is shown both at 300\,K and at 220\,K. \acrshort{abi} data is from {https://www.star.nesdis.noaa.gov/GOESCal/G16\_ABI\_INST\_CAL\_daily\_allmode.php}; \acrshort{seviri} data is from \citet{pili_inorbit_2016}.
 } % Table Footnotes
 \label{table:channel_nedt}
 \end{table}
 
 Measured, on-orbit instrument noise for the \acrshort{abi} and \acrshort{seviri} instruments are provided for each of the four channels selected for use in table~\ref{table:channel_nedt}.
-The NE$\Delta$T values are provided at a reference temperature of 300\,K.
-However, as NE$\Delta$T varies with temperature, it is also important to consider the noise at the colder temperatures typical of anvil clouds.
-NE$\Delta$T at 220\,K were calculated by multiplying the NE$\Delta$T at 300\,K by the ratio of the partial derivative of the Planck function at 300\,K to that at 220\,K.
-This results in a noticeably larger NE$\Delta$T at the lower temperature, in particular for the \acrshort{wv} channels due to the difference in the gradient of the Planck function between the two temperatures.
-Propagating these uncertainties provides estimates of the noise in the \acrshort{wvd} and \acrshort{swd} combinations of 0.180\,K and 0.097\,K respectively for \acrshort{abi}, and 0.536\,K and 0.289\,K for \acrshort{seviri}.
+The \acrfull{nedt} values are provided at a reference temperature of 300\,K.
+However, as \acrshort{nedt} varies with temperature, it is also important to consider the noise at the colder temperatures typical of anvil clouds.
+\acrshort{nedt} at 220\,K were calculated by multiplying the \acrshort{nedt} at 300\,K by the ratio of the partial derivative of the Planck function at 300\,K to that at 220\,K.
+This results in a noticeably larger \acrshort{nedt} at the lower temperature, in particular for the \acrshort{wv} channels due to the difference in the gradient of the Planck function between the two temperatures.
+Propagating these uncertainties provides estimates of the noise in the \acrshort{wvd} and \acrshort{swd} combinations of 0.180\,K and 0.097\,K respectively for \acrshort{abi}, and 0.54\,K and 0.29\,K for \acrshort{seviri}.
 
-In addition to the NE$\Delta$T, there are several sources of systematic errors which may affect the observed \acrshort{bt} and channel differences.
+In addition to the \acrshort{nedt}, there are several sources of systematic errors which may affect the observed \acrshort{bt} and channel differences.
 Any bias in the \acrshort{abi} and \acrshort{seviri} channels are accounted for in calibration.
 Limb darkening at larger satellite zenith angles is harder to account for.
 For the channel differences this will have two impacts.
@@ -393,9 +393,9 @@ It has been proposed that this can be used to detect the onset of convection in 
 
 
 Figure~\ref{fig:cloud_height_cooling_rates} shows the change of observed \acrshort{bt} in units of K$\cdot\mathrm{minute^{-1}}$ for a convective core rising at a rate of 1\,\unit{ms^{-1}}.
-Above 3\,km, the 10.4\,\unit{\mu m} shows a consistent cooling of 0.5\,\unit{K minute^{-1}}.
-\citet{roberts_nowcasting_2003} found a threshold for severe convection of 8\,\unit{K} cooling over 15~minutes, or approximately 0.5\,\unit{K minute^{-1}}, which would represent a cloud top vertical velocity of 1.25\,\unit{m s^{-1}} according to our simulation.
-The \acrshort{wvd} shows a maximum rate of change between 7 and 8\,\unit{k m}, with a warming rate of half the magnitude of the \acrshort{bt} cooling rate.
+Above 3\,km, the 10.4\,\unit{\mu m} shows a consistent cooling of 0.5\,K$\cdot\mathrm{minute^{-1}}$.
+\citet{roberts_nowcasting_2003} found a threshold for severe convection of 8\,\unit{K} cooling over 15~minutes, or approximately 0.5\,K$\cdot\mathrm{minute^{-1}}$, which would represent a cloud top vertical velocity of 1.25\,\unit{m s^{-1}} according to our simulation.
+The \acrshort{wvd} shows a maximum rate of change between 7 and 8\,\unit{km}, with a warming rate of half the magnitude of the \acrshort{bt} cooling rate.
 
 
 \begin{figure}[tp]
@@ -408,15 +408,15 @@ The \acrshort{wvd} shows a maximum rate of change between 7 and 8\,\unit{k m}, w
     \label{fig:cloud_height_cooling_rates}
 \end{figure}
 
-Using the NE$\Delta$T values provided in table~\ref{table:channel_nedt}, the uncertainty due to sensor noise in the \acrshort{bt} difference over a five--minute period is approximately 0.047\,\unit{K minute^{-1}}, or just less than 10\% of the threshold given by \citet{roberts_nowcasting_2003}.
-By averaging the cooling rates over 5 pixels and a 15--minute time period the uncertainty is reduced to 0.012\,\unit{K minute^{-1}}, or less than 2.5\%.
+Using the \acrshort{nedt} values provided in table~\ref{table:channel_nedt}, the uncertainty due to sensor noise in the \acrshort{bt} difference over a five--minute period is approximately 0.047\,K$\cdot \mathrm{minute^{-1}}$, or just less than 10\% of the threshold given by \citet{roberts_nowcasting_2003}.
+By averaging the cooling rates over 5 pixels and a 15--minute time period the uncertainty is reduced to 0.012\,K$\cdot \mathrm{minute^{-1}}$, or less than 2.5\%.
 
 Overall, we see from this experiment that the 10.4\,\unit{\mu m} \acrshort{bt} channel from \acrshort{abi} can be used to clearly identify a vertically developing core across a wide range of altitudes.
 On the other hand, the \acrshort{wvd} is only sensitive to vertically developing clouds in a narrower range of altitudes, and shows a weaker rate of \acrshort{bt} change.
 However, this sensitivity to vertical development at a mid to high altitude may be helpful in distinguishing between \acrshort{dcc}s and other, vertically developed clouds at lower altitudes, such as cumulus congestus.
 
 It should be noted that these simulations were performed with the cloud temperature in equilibrium with the surrounding environment, this is not the case for a convective core which will be warmer than the surrounding air.
-Taking 6\,\unit{K/km} as a typical value for the moist pseudo--adiabatic lapse rate, the cooling rate for a convective cloud top rising at 1\,\unit{ms^{-1}} is 0.36\,\unit{K minute^{-1}}.
+Taking 6\,\unit{K/km} as a typical value for the moist pseudo--adiabatic lapse rate, the cooling rate for a convective cloud top rising at 1\,\unit{ms^{-1}} is 0.36\,$\mathrm{K \cdot minute^{-1}}$.
 This is similar to the value shown in fig.~\ref{fig:cloud_height_cooling_rates} for the 10.4\,\unit{\mu m} \acrshort{bt}.
 In addition, due to mixing of surrounding air with the convective cloud top, we expect that the observed temperature profile of the core will be somewhere between that of the environment profile and the moist pseudo--adiabatic lapse rate.
 Furthermore, overshooting tops should continue to cool with the moist pseudo--adiabatic lapse rate, indicating that the \acrshort{bt} difference is also capable of detecting overshooting convective cores.
@@ -591,7 +591,7 @@ As seen in fig.~\ref{fig:opt_flow_differences}, the \acrshort{dualtvl1} algorith
 It should be noted that we should expect some differences in the \acrshort{bt} due to actual changes in the \acrshort{ctt}.
 Figure~\ref{fig:opt_flow_mse}\,b shows the \acrshort{rmse} of the \acrshort{bt} differences for pixels with \acrshort{bt} less than 273\,\unit{K}, representing cold cloud observations.
 While the \acrshort{rmse} shown here for all algorithms is large compared to the sensor noise previously calculated for the \acrshort{bt} difference in section~\ref{sec:theory_core} (0.47\,K), it should be noted that some of the \acrshort{rmse} here is due to contributions from changes in the height of the anvil cloud.
-As a result, the actual error in the \acrshort{bt} difference over time due to horizontal cloud motions not captured by the optical flow algorithm is likely much smaller, on a similar magnitude to the NE$\Delta$T.
+As a result, the actual error in the \acrshort{bt} difference over time due to horizontal cloud motions not captured by the optical flow algorithm is likely much smaller, on a similar magnitude to the \acrshort{nedt}.
 
 To estimate the uncertainty in the calculated motion vectors, we calculate the residual motion vectors for each algorithm.
 The residual motion is calculated by first warping each image to the locations predicted by the optical flow vectors, in the same manner used to calculate the \acrshort{bt} differences in fig.~\ref{fig:opt_flow_differences}.
@@ -662,7 +662,7 @@ As a result, it is important to include the effects of advection when comparing 
 
 %f
 \begin{figure}[tp]
-    \includegraphics[width=\textwidth]{figures/chapter1_15.png}
+    \includegraphics[width=0.75\textwidth]{figures/chapter1_15.png}
     \caption[
     A comparison of convolution stencils with square connectivity in Eulerian and Lagrangian frameworks.
     ]{
