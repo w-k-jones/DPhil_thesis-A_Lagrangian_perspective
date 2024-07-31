@@ -193,7 +193,7 @@ All data has been sourced through the \acrshort{noaa} Big Data Program.
 
 
 
-\subsubsection{Selection of \acrshort{abi} Channels and Channel Combinations}
+\subsubsection{Selection of \acrshort{abi} Channels and Channel Combinations} \label{sec:abi_channels}
 
 In order to have an equal performance during both day and nighttime, a selection of \acrshort{lw} \acrshort{ir} \acrshort{abi} channels are used for the detection and tracking of \acrshort{dcc}s (see fig.~\ref{fig:abi_channels}). 
 These channels consist of the 10.4\,\unit{\mu m} and 12.4\,\unit{\mu m} \acrshort{lw} (also known as the clean and dirty window channels respectively due to the presence of \acrshort{wv} in the latter), and the upper and lower troposphere \acrshort{wv} channels at 6.2\,\unit{\mu m} and 7.3\,\unit{\mu m} respectively.
@@ -415,20 +415,17 @@ Overall, we see from this experiment that the 10.4\,\unit{\mu m} \acrshort{bt} c
 On the other hand, the \acrshort{wvd} is only sensitive to vertically developing clouds in a narrower range of altitudes, and shows a weaker rate of \acrshort{bt} change.
 However, this sensitivity to vertical development at a mid to high altitude may be helpful in distinguishing between \acrshort{dcc}s and other, vertically developed clouds at lower altitudes, such as cumulus congestus.
 
+It should be noted that these simulations were performed with the cloud temperature in equilibrium with the surrounding environment, this is not the case for a convective core which will be warmer than the surrounding air.
+Taking 6\,\unit{K/km} as a typical value for the moist pseudo--adiabatic lapse rate, the cooling rate for a convective cloud top rising at 1\,\unit{ms^{-1}} is 0.36\,\unit{K minute^{-1}}.
+This is similar to the value shown in fig.~\ref{fig:cloud_height_cooling_rates} for the 10.4\,\unit{\mu m} \acrshort{bt}.
+In addition, due to mixing of surrounding air with the convective cloud top, we expect that the observed temperature profile of the core will be somewhere between that of the environment profile and the moist pseudo--adiabatic lapse rate.
+Furthermore, overshooting tops should continue to cool with the moist pseudo--adiabatic lapse rate, indicating that the \acrshort{bt} difference is also capable of detecting overshooting convective cores.
 
 \subsection{Observing anvil clouds}
 
 In the second experiment, we investigate how anvil clouds of different \acrfull{od} appear in \acrshort{abi} observations.
 The simulations were run with an ice cloud with \acrshort{cth} at 14\,\unit{k m}, cloud base height at 12\,\unit{km} and cloud top \acrshort{re} of 20\,\unit{\mu m}, aiming to represent the typical properties of a dissipating anvil cloud \citep{sokol_tropical_2020}.
 This simulation was then run for a range of \acrshort{od} between 0.125 and 10, with intervals of 0.125 between 0.125 and 1, 0.25 between 1 and 2, 0.5 between 2 and 5, and 1 between 5 and 10.
-
-\acrshort{bt} spectra for these simulations are shown in Fig.~\ref{fig:optical_depth_spectra}, along with the \acrshort{abi} spectral response functions as in Fig.~\ref{fig:cloud_height_spectra}.
-As before, we see absorption due to CO\textsubscript{2}, ozone, and \acrshort{wv}.
-Unlike the simulations in section \ref{sec:theory_core} however, we see a difference in the \acrshort{bt} spectra across the \acrshort{lw} window (10--13\,\unit{\mu m}) for clouds with \acrshort{od} between 0 and 2, with colder \acrshort{bt} at longer wavelengths.
-This is due to the difference in ice emissivity across this range of wavelengths \citep{fu_radiation_2015}.
-As the emissivity of ice particles reduces for wavelengths at 10\,\unit{\mu m} and below there is a greater contribution from the atmosphere below the cloud layer and, as a result, warmer \acrshort{bt}s are observed.
-It should be noted that this difference is dependent on the size of the ice particles, with smaller \acrshort{re} resulting in a larger difference in emissivity \citep{dubuisson_sensitivity_2008}.
-
 
 \begin{figure}[tp]
     \includegraphics[width=\textwidth]{figures/chapter1_08.png}
@@ -440,13 +437,12 @@ It should be noted that this difference is dependent on the size of the ice part
     \label{fig:optical_depth_spectra}
 \end{figure}
 
-
-Figure~\ref{fig:optical_depth_channels} shows simulated \acrshort{abi} observations for the 6.2, 7.3, 10.4, and 12.4\,\unit{\mu m} \acrshort{bt} channels, the \acrshort{wvd} and the \acrshort{swd} for a range of \acrshort{od} between 0.1 and 10.
-At high \acrshort{od}, all channels show a cold \acrshort{bt} close to that of the \acrshort{ctt}, however, for \acrshort{od} below 3, the increased contribution from the atmosphere below results in warmer \acrshort{bt}.
-The \acrshort{wvd} similarly shows a more negative \acrshort{bt} difference at \acrshort{od} below 3, with a continual decrease for smaller \acrshort{od}.
-The \acrshort{swd} however shows an increasingly positive \acrshort{bt} difference for \acrshort{od} below 5, peaking at 10\,\unit{K} around 1~\acrshort{od}.
-However, below this \acrshort{od} the \acrshort{swd} decreases towards smaller positive values.
-As a result, the \acrshort{swd} has the potential to detect thin anvil cirrus at much lower \acrshort{od} than \acrshort{bt} channels or \acrshort{wvd}, down to values around 0.25~\acrfull{od}.
+\acrshort{bt} spectra for these simulations are shown in Fig.~\ref{fig:optical_depth_spectra}, along with the \acrshort{abi} spectral response functions as in Fig.~\ref{fig:cloud_height_spectra}.
+As before, we see absorption due to CO\textsubscript{2}, ozone, and \acrshort{wv}.
+Unlike the simulations in section \ref{sec:theory_core} however, we see a difference in the \acrshort{bt} spectra across the \acrshort{lw} window (10--13\,\unit{\mu m}) for clouds with \acrshort{od} between 0 and 2, with colder \acrshort{bt} at longer wavelengths.
+This is due to the difference in ice emissivity across this range of wavelengths \citep{fu_radiation_2015}.
+As the emissivity of ice particles reduces for wavelengths at 10\,\unit{\mu m} and below there is a greater contribution from the atmosphere below the cloud layer and, as a result, warmer \acrshort{bt}s are observed.
+It should be noted that this difference is dependent on the size of the ice particles, with smaller \acrshort{re} resulting in a larger difference in emissivity \citep{dubuisson_sensitivity_2008}.
 
 
 \begin{figure}[tp]
@@ -458,6 +454,22 @@ As a result, the \acrshort{swd} has the potential to detect thin anvil cirrus at
     }
     \label{fig:optical_depth_channels}
 \end{figure}
+
+Figure~\ref{fig:optical_depth_channels} shows simulated \acrshort{abi} observations for the 6.2, 7.3, 10.4, and 12.4\,\unit{\mu m} \acrshort{bt} channels, the \acrshort{wvd} and the \acrshort{swd} for a range of \acrshort{od} between 0.1 and 10.
+At high \acrshort{od}, all channels show a cold \acrshort{bt} close to that of the \acrshort{ctt}, however, for \acrshort{od} below 3, the increased contribution from the atmosphere below results in warmer \acrshort{bt}.
+The \acrshort{wvd} similarly shows a more negative \acrshort{bt} difference at \acrshort{od} below 3, with a continual decrease for smaller \acrshort{od}.
+The \acrshort{swd} however shows an increasingly positive \acrshort{bt} difference for \acrshort{od} below 5, peaking at 10\,\unit{K} around 1~\acrshort{od}.
+Below this \acrshort{od} the \acrshort{swd} decreases towards smaller positive values.
+As a result, the \acrshort{swd} has the potential to detect thin anvil cirrus at much lower \acrshort{od} than \acrshort{bt} channels or \acrshort{wvd}, down to values around 0.25~\acrfull{od}.
+
+While the \acrshort{bt}, \acrshort{wvd} and \acrshort{swd} are plotted in fig.~\ref{fig:optical_depth_channels} as a function of \acrshort{od} only, other factors may influence the observations.
+Changes in cloud height will affect the observed \acrshort{bt}, as higher anvils will have lower temperatures and vice versa.
+The \acrshort{wvd} should be unaffected by cloud height as long as the cloud is above heights at which \acrshort{wv} contributes to the vertical weighting functions (fig.~\ref{fig:abi_vertical_weighting}), and above 12\,km there is little change with height (fig.~\ref{fig:cloud_height_cooling_rates}). 
+Changes in tropospheric humidity will affect the \acrshort{wvd} as this will change the height of the weighting function response and hence the height at which the \acrshort{wvd} is sensitive to clouds.
+As the majority of \acrshort{dcc}s are expected to occur in relatively humid environments we expect that this effect will be minimal.
+However, in particularly cold, dry conditions this may result in lower level clouds being erroneously detected as anvils.
+Finally, the \acrshort{swd} has some sensitivity to \acrshort{re}, as larger particles show a smaller difference in emissivity between 10 and 12\,\unit{\mu m}.
+The effect of this is small, and the peak \acrshort{swd} remains present at the same optical depth.
 
 
 \section{Method} \label{sec:tracking_method}
@@ -564,12 +576,6 @@ This is likely due to the algorithm accounting for changes in brightness between
 The two sparse optical flow algorithms (fig.~\ref{fig:opt_flow_differences}\,g,h) both show worse performance, with the sparse to dense method performing particularly poorly.
 Both algorithms show cooling downwind of the anvil, likely because the region-based methods used to map the sparse motion vectors to the whole image do not detect this region well.
 
-Figure~\ref{fig:opt_flow_mse}\,a shows the \acrfull{rmse} of the \acrshort{bt} differences shown in fig.~\ref{fig:opt_flow_differences} for each algorithm.
-As seen in fig.~\ref{fig:opt_flow_differences}, the \acrshort{dualtvl1} algorithm has the smallest differences, the other dense algorithms perform similarly, and the \acrshort{pca}-Flow and sparse to dense algorithms perform the worst.
-It should be noted that we should expect some differences in the \acrshort{bt} due to actual changes in the \acrshort{ctt}.
-Figure~\ref{fig:opt_flow_mse}\,b shows the \acrshort{rmse} of the \acrshort{bt} differences for pixels with \acrshort{bt} less than 273\,\unit{K}, representing cold cloud observations.
-
-
 \begin{figure}[tp]
     \includegraphics[width=0.9\textwidth]{figures/chapter1_12.png}
     \caption[
@@ -580,6 +586,12 @@ Figure~\ref{fig:opt_flow_mse}\,b shows the \acrshort{rmse} of the \acrshort{bt} 
     \label{fig:opt_flow_mse}
 \end{figure}
 
+Figure~\ref{fig:opt_flow_mse}\,a shows the \acrfull{rmse} of the \acrshort{bt} differences shown in fig.~\ref{fig:opt_flow_differences} for each algorithm.
+As seen in fig.~\ref{fig:opt_flow_differences}, the \acrshort{dualtvl1} algorithm has the smallest differences, the other dense algorithms perform similarly, and the \acrshort{pca}-Flow and sparse to dense algorithms perform the worst.
+It should be noted that we should expect some differences in the \acrshort{bt} due to actual changes in the \acrshort{ctt}.
+Figure~\ref{fig:opt_flow_mse}\,b shows the \acrshort{rmse} of the \acrshort{bt} differences for pixels with \acrshort{bt} less than 273\,\unit{K}, representing cold cloud observations.
+While the \acrshort{rmse} shown here for all algorithms is large compared to the sensor noise previously calculated for the \acrshort{bt} difference in section~\ref{sec:theory_core} (0.47\,K), it should be noted that some of the \acrshort{rmse} here is due to contributions from changes in the height of the anvil cloud.
+As a result, the actual error in the \acrshort{bt} difference over time due to horizontal cloud motions not captured by the optical flow algorithm is likely much smaller, on a similar magnitude to the NE$\Delta$T.
 
 To estimate the uncertainty in the calculated motion vectors, we calculate the residual motion vectors for each algorithm.
 The residual motion is calculated by first warping each image to the locations predicted by the optical flow vectors, in the same manner used to calculate the \acrshort{bt} differences in fig.~\ref{fig:opt_flow_differences}.
@@ -697,6 +709,8 @@ We classify a region of growing deep convection as a region of either continuous
 These growth rates must be detected over a minimum 15-minute period, covering an area of at least 3 by 3 pixels (approximately 7.5 by 7.5\,\unit{km}) at each time step.
 Each region of detected growth is given a unique label, the average \acrshort{bt} of the detected cloud at each time step is calculated, and any label which fail to meet the cooling rate thresholds of 8\,\unit{K} over a 15-minute period (from \citep{roberts_nowcasting_2003, hartung_intercomparison_2013}) are removed.
 Finally, each label is checked to ensure that the growth region ends with a \acrshort{wvd} field with a value of greater than -5, indicating that the growing core reaches a high altitude \citep{muller_role_2018}.
+While threshold detection methods are sensitive to noise, the uncertainty in the \acrshort{bt} cooling rates due to sensor noise, combined with the uncertainty in the optical flow vectors, is not expected to exceed 5\% of the threshold.
+A simple threshold method applied to the \acrshort{bt} cooling rate is, therefore, suitable for the detection of developing deep convection.
 
 Figure~\ref{fig:core_detection} shows a comparison between the detected core cooling rates in \acrshort{abi} imagery and the corresponding column radar reflectivity measured by \acrshort{nexrad} for the case of newly developing convection (fig.~\ref{fig:core_detection}\,a,c,e) and mature \acrshort{dcc} (fig.~\ref{fig:core_detection}\,b,d,f)
 Both 10.4\,\unit{\mu m} \acrshort{bt} and \acrshort{wvd} growth rates show growth detected in the same locations as the high column radar reflectivity from \acrshort{nexrad}.
@@ -732,6 +746,11 @@ This change is made to account for the effect of low-level \acrshort{wv} on the 
 Between these two thresholds, we have a region in which we are uncertain of the extent of the anvil cloud.
 By applying a Sobel filter to detect the local gradient magnitude of the combined \acrshort{wvd}/\acrshort{swd} field \citep{sobel_isotropic_2014}, we detect the outer extent of the anvil cloud within this region where we see the greatest magnitude in the detected edges (see fig.~\ref{fig:edge_detection}\,b,d).
 
+The uncertainty due to sensor noise is small relative to the range between the two thresholds, at 2.7\,\% for the combined \acrshort{wvd} and \acrshort{swd} fields.
+While this low noise may indicate that a simple threshold approach may be suitable, such an approach would be susceptible to the systematic biases in the \acrshort{wvd} and \acrshort{swd} observations identified in section~\ref{sec:abi_channels}.
+Combining the edge detection approach with the two-threshold approach provides robustness to systematic bias, since as long as the maximum gradient of the cloud edge remains between the two thresholds the same cloud extent should be detected.
+This allows systematic biases on the order of several K without significantly affecting the results, allowing better comparison of \acrshort{dcc}s observed in different environments.
+
 
 %f
 \begin{figure}[tp]
@@ -747,6 +766,7 @@ By applying a Sobel filter to detect the local gradient magnitude of the combine
 
 When applied to the detected edges of the anvil clouds using the Sobel filter, with the growth regions detected previously as markers, the watershed method allows us to detect those anvil regions associated with detected regions of growing \acrshort{dcc}s, while avoiding the detection of non-convective regions of high, cold clouds.
 Furthermore, due to the application of the watershed algorithm to both the spatial and temporal dimensions of the sequence of images through the semi-Lagrangian framework, we are able to detect the associated anvil clouds after the growth of the \acrshort{dcc} is no longer observed.
+
 
 Figure~\ref{fig:detected_anvils} shows an example of the results of detecting and tracking \acrshort{dcc} cores (outlined in red) and the associated anvils (outlined in orange and blue for the thick and thin anvil regions respectively).
 During the growing phase (fig.~\ref{fig:detected_anvils}\,a,b) we see a number of developing cores, as well as the initial growth of primarily thick anvil cloud.
@@ -860,7 +880,7 @@ Semi-Lagrangian             & 145,969   & 0.9837            & 0.1611            
 \caption[
 \acrshort{pod}, \acrshort{far} and F\textsubscript{1}-score for three different detection methods validated against observed \acrshort{glm} flashes
 ]{
-\acrshort{pod}, \acrshort{far} and F\textsubscript{1}-score for three different detection methods validated against observed \acrshort{glm} flashes (n=116,671,289). Growth based refers to the detection of growing \acrshort{dcc}s using the method described in section \ref{sec:core_detection} \acrshort{wvd} threshold uses the threshold method developed by \citet{muller_role_2018}. Semi-Lagrangian refers to the detection of anvils clouds connected to growing cores using the edge-based watershedding method described in section \ref{sec:anvil_detection}.
+\acrshort{pod}, \acrshort{far} and F\textsubscript{1}-score for three different detection methods validated against observed \acrshort{glm} flashes (n=116,671,289). Growth-based refers to the detection of growing \acrshort{dcc}s using the method described in section \ref{sec:core_detection} \acrshort{wvd} threshold uses the threshold method developed by \citet{muller_role_2018}. Semi-Lagrangian refers to the detection of anvils clouds connected to growing cores using the edge-based watershedding method described in section \ref{sec:anvil_detection}.
 } % Table Footnotes
 \label{table:validation}
 \end{table}
