@@ -30,7 +30,7 @@ However, the observed \acrshort{bt} of the anvil also changes over its lifetime 
 While the use of echo top height avoids this confounding issue, these collocated measurements can only be made when the \acrfull{dcc} is convectively active and so cannot be used to assess the structure of dissipating anvils.
 
 Chapter~\ref{chp:lifecycle} presented a large dataset of tracked \acrshort{dcc}s, including growing cores, and thick and thin anvils, and showed that this dataset captures relations between convective processes and anvil properties.
-By using geostationary satellite observations changes in the structure of \acrshort{dcc} anvils can be investigated throughout their lifecycles, along with changes in the lifetime of both thick and thin anvils.
+Using geostationary satellite observations ,changes in the structure of \acrshort{dcc} anvils can be investigated throughout their lifecycles, along with changes in the lifetime of both thick and thin anvils.
 Furthermore, the impacts of convective organisation on anvil structure can be investigated by taking into account the number of cores associated with each anvil.
 
 
@@ -91,16 +91,22 @@ Also shown by the grey, dashed line is an example of the 241\,\unit{K} \acrshort
 At this threshold there is substantial variance in the limit of \acrshort{od} at which anvil clouds are detected, which ranges from 1 at 14\,\unit{km} to 3 at \unit{km}.
 This provides clear support for the argument made by \citet{augustine_mesoscale_1988} that the anvil area detected using this threshold is ``subjective''.
 
-The middle and bottom panels in fig.~\ref{fig:bt_wvd_swd_height_od} show the simulated \acrshort{od} for the combinations of \acrshort{wvd} minus \acrshort{swd} and \acrshort{wvd} plus \acrshort{swd} respectively.
+The middle and bottom panels in fig.~\ref{fig:bt_wvd_swd_height_od} show the simulated \acrshort{bt} for the combinations of \acrshort{wvd} minus \acrshort{swd} and \acrshort{wvd} plus \acrshort{swd} respectively across a range of \acrshort{od}.
 Section~\ref{sec:anvil_detection} describes how these two channel combinations are used for the detection of thick and thin anvils.
 In both panels, the grey shaded region shows the \acrshort{bt} range in which edge detection is used to find the anvil area.
 Compared to 10.4\,\unit{\mu m} \acrshort{bt}, the \acrshort{wvd} minus \acrshort{swd} combination shows very little variance in the optical depths at which the anvil cloud is detected within the threshold range.
-Throughout the threshold range of --5 to --12.5\,\unit{K} the \acrshort{od} corresponding to the same observed \acrshort{bt} difference varies by approximately 0.1--0.2 between differing heights, compared to 1--2 for 10.4\,\unit{\mu m} \acrshort{bt}.
+Throughout the threshold range of --5 to --12.5\,\unit{K} the \acrshort{od} corresponding to the same observed \acrshort{bt} difference varies by approximately 0.1--0.2 between differing heights, compared to 1--2 for a simple threshold approach on the 10.4\,\unit{\mu m} \acrshort{bt}.
 
 The \acrshort{wvd} plus \acrshort{swd} combination is shown in the bottom panel of fig.~\ref{fig:bt_wvd_swd_height_od}.
 Greater variance between different heights is seen, particularly for the 10\,\unit{km} anvil simulation.
 However, the \acrshort{od} corresponding to the observed \acrshort{bt} differences are very similar throughout the detection range of 0 to --7.5\,\unit{K} for heights of 12 and 14\,\unit{km}.
 Lidar observations of thin cirrus anvil have shown that the heights of these clouds typically exceed 12\,\unit{km} \citep{wall_observational_2020, horner_evolution_2023}, and so little difference is expected in the sensitivity to observed anvils.
+
+From fig.~\ref{fig:bt_wvd_swd_height_od} the limits of detection for thick anvils can be estimated as 2$\pm$0.5 \acrshort{od}, and 0.5$\pm$0.2 \acrshort{od} for the thin anvil.
+This means that the thinnest anvil cirrus remains undetected \citep{berry_cloud_2014} using this method.
+This may lead to biases in the calculation of the thin anvil fraction, as while all anvil thicker than the thick anvil threshold will be detected, not all the thin below the threshold will be.
+This could lead to an understimate of the thin anvil area and fraction in anvils where the \acrshort{od} distribution shows a large frequency of very thin cirrus.
+Such thin anvil cirrus will have a small radiative effect on the climate, and, therefore, this bias in the thin anvil fraction may not result in a large uncertainty in the climate imapcts due to the low contribution to anvil \acrshort{cre} from the unobserved cirrus.
 
 It should be noted that the simulations shown in fig.~\ref{fig:bt_wvd_swd_height_od} were calculated using a standard tropical atmospheric profile to best represent the moist environment in which deep convection occurs.
 While anvils occurring in the extra-tropical parts of the \acrshort{conus} domain are expected to have lower cloud top heights, there is also expected to be a colder temperature profile.
@@ -209,7 +215,7 @@ This allows the study of responses to prior observed convective processes, rathe
     \caption[
     A comparison of the change in thin anvil proportion with maximum core cooling rate and number of cores for four different regions
     ]{
-    A comparison of the change in thin anvil proportion with (a) maximum core cooling rate and (b) number of cores for four different regions: sea (blue diamond markers), land (orange square markers), tropics (\textless 30\,\textdegree N; red downward triangle markers) and mid-latitudes (\textgreater 30\,\textdegree N; purple upward triangle markers). Error bars show the standard deviation of the thin anvil fraction.
+    A comparison of the change in thin anvil proportion with (a) maximum core cooling rate and (b) number of cores for four different regions: sea (blue diamond markers), land (orange square markers), tropics (\textless 30\,\textdegree N; red downward triangle markers) and mid-latitudes (\textgreater 30\,\textdegree N; purple upward triangle markers). Error bars show the standard error of the mean.
     }
     \label{fig:regional_thin_anvil_proportion}
 \end{figure}
@@ -244,7 +250,7 @@ While comparing the bulk properties of these anvils provides an indication of ho
     \caption[
     The effect of initial core cooling rate on maximum anvil area, anvil lifetime, and mean and minimum \acrshort{bt}
     ]{
-    The effect of initial core cooling rate on (a) maximum anvil area, (b) anvil lifetime, and (c) mean and minimum \acrshort{bt}. Error bars show the standard deviation. Points have been staggered to show the thick and thin anvil properties more clearly, but correspond to the same tick marks on the x axis.
+    The effect of initial core cooling rate on (a) maximum anvil area, (b) anvil lifetime, and (c) mean and minimum \acrshort{bt}. Error bars show the standard error of the mean. Points have been staggered to show the thick and thin anvil properties more clearly, but correspond to the same tick marks on the x axis.
     }
     \label{fig:anvil_cooling_rate_properties}
 \end{figure}
@@ -263,7 +269,7 @@ This change in anvil \acrshort{bt} with the core intensity agrees with the resul
     \caption[
     The effect of the number of cores on maximum anvil area, anvil lifetime, and mean and minimum \acrshort{bt}
     ]{
-    The effect of the number of cores on (a) maximum anvil area, (b) anvil lifetime, and (c) mean and minimum \acrshort{bt}. Error bars show the standard deviation. Points have been staggered to show the thick and thin anvil properties more clearly, but correspond to the same tick marks on the x axis.
+    The effect of the number of cores on (a) maximum anvil area, (b) anvil lifetime, and (c) mean and minimum \acrshort{bt}. Error bars show the standard error of the mean. Points have been staggered to show the thick and thin anvil properties more clearly, but correspond to the same tick marks on the x axis.
     }
     \label{fig:anvil_number_of_cores_properties}
 \end{figure}
@@ -283,7 +289,7 @@ Although this is indicative of an increased likelihood of overshooting cores in 
     \caption[
     A comparison of the proportion of thin anvil measured at the time of maximum anvil area, and the proportional difference in lifetime, compared to the overall thin anvil proportion.
     ]{
-    A comparison of the proportion of thin anvil measured at the time of maximum anvil area, and the proportional difference in lifetime, compared to the overall thin anvil proportion. Panel (a) shows the change in thin anvil proportion with core cooling rate, and (b) shows the changes with the number of cores. In both panels, the black dotted line shows the total thin anvil proportion over the entire \acrshort{dcc} lifecycle. Error bars show the standard deviation of the thin anvil fraction, and while some extend below zero all measured thin anvil fractions are positive.
+    A comparison of the proportion of thin anvil measured at the time of maximum anvil area, and the proportional difference in lifetime, compared to the overall thin anvil proportion. Panel (a) shows the change in thin anvil proportion with core cooling rate, and (b) shows the changes with the number of cores. In both panels, the black dotted line shows the total thin anvil proportion over the entire \acrshort{dcc} lifecycle. Error bars show the standard error of the mean of the thin anvil fraction.
     }
     \label{fig:max_area_and_lifetime_contributions}
 \end{figure}
@@ -482,6 +488,12 @@ The convergence of the thin anvil fraction during the dissipating phase of \acrs
 
 Further investigation of how these processes impact anvil structure and lifecycle may be difficult due to the lack of time-resolved observational data that can measure these processes.
 The use of modelling, including both convective resolving models and more idealised experiments, may provide a route to isolate the impacts of each process on \acrshort{dcc} evolution \citep{gasparini_diurnal_2022}.
+Lifecycle analysis, as performed in section~\ref{sec:composite_results}, provides opportunities for new constraints on the representation of \acrshort{dcc}s in convective resolving models.
+Analysis of km-scale models has revealed responses of anvil structure to changes in convection \citep{sokol_greater_2024}, however as this was performed using bulk analysis it does not provide any insight into the processes which cause this response, or why models differ from each other.
+Although geostationary satellite observations cannot observe these processes directly, studying the behaviour of \acrshort{dcc}s over time may provide insight to the relative impacts on different processes.
+For example, in fig.~\ref{fig:cooling_rate_composite}, changes in the anvil structure are seen at two points during the convective lifecycle.
+Firstly, changes to anvil during its initial formation must be linked to the convective dynamics themselves, whereas those during the dissipating phase must instead be a result of in situ anvil processes as by this point in the lifecycle the convective dynamics have stopped.
+Comparing how anvils in convective resolving models evolve over time to observations may help identify which processes are important to anvil structure and their relative influence, even if these processes cannot be observed themselves.
 
 The final element to consider is how these observed changes in anvil structure may impact the anvil \acrshort{cre}.
 Considering the thin anvil fraction alone, it could be expected that more intense \acrshort{dcc}s are more warming due to their thinner structure, and vice versa for more organised convection.
@@ -490,3 +502,8 @@ Both convective intensity and organisation affect the temperature of anvil cloud
 Furthermore, the observed changes in the lifecycle and the timing of the maximum extent of the thick anvil within the \acrshort{dcc} lifetime may impact the \acrshort{sw} \acrshort{cre}, particularly over land due to the pronounced diurnal cycle of convection.
 Observational studies have shown a link between increasing convective organisation and domain mean \acrshort{toa} cooling \citep{bony_observed_2020}.
 While this has traditionally been explained as a result of greater clear sky \acrshort{lw} emissions to space \citep{bony_thermodynamic_2016}, this could also result from the response of anvil \acrshort{cre} to changes in structure.
+
+% Recent studies have highlighted the importance of the feedbacks of anvil optical properties for future climate change \citep{raghuraman_observational_2024, sokol_greater_2024}.
+% However, we do not have a clear understanding of the mechanisms through which these feedbacks occur \citep{mckim_weak_2024}.
+% While the results of this chapter do not measure a climate feedback, they may help develop a theoretical understanding of how an anvil optical feedback may occur.
+% Similarly to \citet{sokol_greater_2024}, the thick anvil extent and lifetime does does respond 
