@@ -32,7 +32,7 @@ Figure~\ref{fig:compare_sat_radar_glm} compares observations of \acrshort{dcc}s 
 Composite \acrfull{rgb} images from a combination of visible and \acrshort{nir} channels aboard the \acrshort{abi} show a.: small, isolated cores during the growing phase; b.: a large area of optically thick anvil during the mature phase, and c.: a large area of optically thin anvil cloud during the dissipating phase.
 \acrshort{bt} imagery from the \acrshort{abi} 10.4\,\unit{\mu m} channel displays d.: cold, small, developing cores; e.: a large, cold anvil cloud, and f.: warmer \acrshort{bt}s caused by thermal radiation from the surface penetrating the optically thin dissipating anvil. 
 Lightning flash locations observed by the \acrfull{glm} aboard \acrshort{goes}-16 show g.: low frequency during the growing phase; h.: high frequency during the mature phase, and i.: no lightning activity in the dissipating phase. 
-Column mean radar reflectivity observed by \acrfull{nexrad} doppler cloud radar shows high radar reflectivity in the convective cores during the j. growing and k. mature phases, and no area of high radar reflectivity during the dissipating phase. 
+Column mean radar reflectivity observed by \acrfull{nexrad} Doppler cloud radar shows high radar reflectivity in the convective cores during the j. growing and k. mature phases, and no area of high radar reflectivity during the dissipating phase. 
 The outline of the region of \acrshort{bt}s below 270\,\unit{K} observed by \acrshort{abi} is shown by the orange dashed contour over the \acrshort{glm} flash locations and \acrshort{nexrad} radar reflectivity to indicate their observations relative to the anvil cloud.
 
 
@@ -42,7 +42,7 @@ The outline of the region of \acrshort{bt}s below 270\,\unit{K} observed by \acr
     \caption[
     Observations of a cluster of \acrshort{dcc}s over North-West Florida throughout three stages of their lifecycle
     ]{
-    Observations of a cluster of \acrshort{dcc}s over North-West Florida throughout three stages of their lifecycle. This cluster of \acrshort{dcc}s occurred on the afternoon of 19\textsuperscript{th} June 2018. The "growing" column was observed at 17:00 \acrshort{utc}, the "mature" column at 19:00 \acrshort{utc}, and the dissipating column at 21:00 \acrshort{utc}. The four rows show observations of \acrshort{abi} visible/\acrshort{nir} composites (a,b,c), and 10.4\,\unit{\mu m} \acrshort{bt} (d,e,f); lightning flash locations observed by \acrshort{glm} (g,h,i), and column mean radar reflectivity observed by \acrshort{nexrad} (j,k,l). Note that, unless otherwise specified, this case study is used for all subsequent figures in this chapter.
+    Observations of a cluster of \acrshort{dcc}s over North-West Florida throughout three stages of their lifecycle. This cluster of \acrshort{dcc}s occurred on the afternoon of 19\textsuperscript{th} June 2018. The `growing' column was observed at 17:00 \acrshort{utc}, the `mature' column at 19:00 \acrshort{utc}, and the `dissipating' column at 21:00 \acrshort{utc}. The four rows show observations of \acrshort{abi} visible/\acrshort{nir} composites (a,b,c), and 10.4\,\unit{\mu m} \acrshort{bt} (d,e,f); lightning flash locations observed by \acrshort{glm} (g,h,i), and column mean radar reflectivity observed by \acrshort{nexrad} (j,k,l). Note that, unless otherwise specified, this case study is used for all subsequent figures in this chapter.
     }
     \label{fig:compare_sat_radar_glm}
 \end{figure}
@@ -53,11 +53,11 @@ This is of particular importance due to the influence of anvil cloud radiative f
 The newest generation of geostationary imaging satellites offers greater opportunities for the study of \acrshort{dcc}s due to their high spatial and temporal resolution -- allowing the detection and tracking of individual convective cores \citep{heikenfeld_tobac_2019} -- and also due to their high signal-to-noise ratio allowing research quality observations \citep{iacovazzi_goes-16_2020}.
 
 The detection and tracking of \acrshort{dcc}s from satellite imagery remains challenging due to the inability to directly observe the convection that drives \acrshort{dcc}s using passive visible and \acrshort{ir} observations.
-This is unlike radar and lightning observations, which can directly observe deep convection due to the strong correlations between core updraft intensity and radar reflectivity and polarisation \citep{austin_relation_1987, rosenfeld_general_1993, zipser_vertical_1994},  and lightning flash occurrence \citep{williams_relationship_1989, deierling_total_2008, wang_relationship_2017}.
+This is unlike radar and lightning observations, which can directly observe deep convection due to the strong correlations between core updraft intensity and radar reflectivity and polarisation \citep{austin_relation_1987,  zipser_vertical_1994},  and lightning flash occurrence \citep{williams_relationship_1989}.
 Instead, a proxy for convective activity must be used to detect deep convection in visible/\acrshort{ir} satellite imagery.
 The approaches used for this can generally be separated into two separate methods. 
-Firstly, the use of thresholds on \acrshort{bt} (\acrshort{bt}) or other observed fields, which are capable of detecting \acrshort{dcc} anvil clouds \citep[e.g.][]{schmetz_monitoring_1997, hong_detection_2005, schroder_deep_2009, liang_integrated_2017, senf_size-resolved_2018}.
-Secondly, the detection of rapidly growing cloud tops by observing changes in the anvil cloud-top radiative cooling, or by other similar approximations of cloud growth \citep{zinner_cb-tram_2008, bedka_objective_2010, muller_novel_2019}.
+Firstly, the use of thresholds on \acrshort{bt} or other observed fields, which are capable of detecting \acrshort{dcc} anvil clouds \citep[e.g.][]{schmetz_monitoring_1997, hong_detection_2005, schroder_deep_2009}.
+Secondly, the detection of rapidly growing cloud tops by observing changes in the anvil cloud-top radiative cooling, or by other similar approximations of cloud growth \citep{zinner_cb-tram_2008, bedka_objective_2010}.
 
 Developing a detection method using either approach is made challenging by the dynamic nature of \acrshort{dcc}s themselves.
 \acrshort{dcc} cores typically have diameters of around 10\,\unit{km}, and updraft velocities on the order of 10\,\unit{m s\textsuperscript{-1}} \citep{weisman_mesoscale_2015}, and exist for 1-3 hours \citep{chen_diurnal_1997}.
@@ -154,14 +154,9 @@ The \acrshort{abi} is a visible and \acrshort{ir} radiometer aboard the \acrshor
 \acrshort{goes}-16, also known as \acrshort{goes}-East, is situated in a geostationary orbit at 75.2\,\textdegree W above the equator, providing a field of view (or `Earth-disc') covering most of the western hemisphere, including all of South America and most of North America.
 \acrshort{abi} has 16 channels operating in a range of spectral bands in the visible, \acrshort{nir} and thermal-\acrshort{ir}.
 The majority of these channels have a resolution of 2\,\unit{km} at the sub-satellite point, although this reduces to approximately 3\,\unit{km} across most of the \acrfull{conus} due to the satellite viewing angle.
-\acrshort{abi} operates in a flexible scan mode, imaging the continental US (\acrshort{conus}) once every 5 minutes, the full disc every 10 minutes (15 minutes prior to April 2019), and two mesoscale regions of approximately 2500 by 2500\,\unit{km} every minute.
+\acrshort{abi} operates in a flexible scan mode, making observations of the continental US (\acrshort{conus}) once every 5 minutes, the full disc every 10 minutes (15 minutes prior to April 2019), and two mesoscale regions of approximately 2500 by 2500\,\unit{km} every minute.
 Additionally, it is capable of scanning the full disc every five minutes if no other scans are performed.
 This combination of high spatial and temporal resolution makes \acrshort{abi} suitable for detecting and tracking small and developing \acrshort{dcc}s, as well as providing the spatial coverage to also track large mesoscale convective systems \citep{heikenfeld_tobac_2019}.
-
-Compared to older geostationary instruments, \acrshort{abi} has higher spatial and temporal resolution, more channels in both the \acrshort{lw} \acrshort{ir} window spectrum and the \acrshort{lw} \acrshort{ir} \acrfull{wv} spectrum, and low noise (table \ref{table:abi_comparison}) \citep{iacovazzi_goes-16_2020}.
-This, combined with many of the channels being derived from those aboard the Visible Infrared Imaging Radiometer Suite, make the data from \acrshort{abi} more suitable for research purposes than that from older instruments \citep{heidinger_chapter_2020}.
-A number of artifacts are known to occur in \acrshort{abi} imagery \citep{gunshor_goes-r_2020}.
-Although the majority of these artifacts are removed using the data quality flag associated with the \acrshort{abi} data, we have found a number of cases in which bad detector stripes (described in section 3.2 of \citealp{gunshor_goes-r_2020}) are not flagged in the data, and so detection and tracking of \acrshort{dcc}s has not been performed during the time periods these artifacts occurred.
 
 
 %t
@@ -175,7 +170,7 @@ Temporal resolution (\unit{minutes})                    & 5     & 15        & 30
 Nadir spatial resolution (\unit{k m})                   & 2     & 3         & 4 (8 for \acrshort{wv}) \\
 Number of \acrshort{ir} \acrshort{lw} window channels                         & 3     & 2         & 2 \\
 Number of \acrshort{ir} \acrshort{wv} channels                                & 3     & 2         & 1 \\
-Noise equivalent temperature  (\unit{K} @ 300\,\unit{K})  & 0.1   & 0.25      & 0.09 \\
+% Noise equivalent temperature  (\unit{K} @ 300\,\unit{K})  & 0.1   & 0.25      & 0.09 \\
 \bottomhline
 \end{tabular}
 \caption[
@@ -186,9 +181,13 @@ Comparison of data from \acrshort{abi} to that from older geostationary instrume
 \label{table:abi_comparison}
 \end{table}
 
+Compared to older geostationary instruments, \acrshort{abi} has higher spatial and temporal resolution, and more channels in both the \acrshort{lw} \acrshort{ir} window spectrum and the \acrshort{lw} \acrshort{ir} \acrfull{wv} spectrum (table \ref{table:abi_comparison}) \citep{iacovazzi_goes-16_2020}.
+This, combined with many of the channels being derived from those aboard the Visible Infrared Imaging Radiometer Suite, make the data from \acrshort{abi} more suitable for research purposes than that from older instruments \citep{heidinger_chapter_2020}.
+A number of artifacts are known to occur in \acrshort{abi} imagery \citep{gunshor_goes-r_2020}.
+Although the majority of these artifacts are removed using the data quality flag associated with the \acrshort{abi} data, we have found a number of cases in which bad detector stripes (described in section 3.2 of \citealp{gunshor_goes-r_2020}) are not flagged in the data, and so detection and tracking of \acrshort{dcc}s has not been performed during the time periods these artifacts occurred.
 
 In this chapter, we have used the \acrshort{abi} level 2 \acrfull{mcmip} which provides calibrated reflectances and \acrshort{bt}s for all \acrshort{abi} channels on a common grid \citep{schmit_chapter_2020}, using the 5-minute frequency imagery provided over the \acrshort{conus} region.
-The case study shown in the figures throughout this paper is for a subset of the \acrshort{conus} scan region centred at 83.7\,\textdegree W, 29.2\,\textdegree N, over the time period of 17:00:00 to 21:00:00 \acrshort{utc} on the 19th June 2018.
+The case study shown in the figures throughout this chapter is for a subset of the \acrshort{conus} scan region centred at 83.7\,\textdegree W, 29.2\,\textdegree N, over the time period of 17:00:00 to 21:00:00 \acrshort{utc} on the 19th June 2018.
 Validation was performed on the \acrshort{conus} scan region over the entirety of 2018.
 All data has been sourced through the \acrshort{noaa} Big Data Program.
 
@@ -230,9 +229,6 @@ It remains important to consider the \acrshort{swd} field due to the difficulty 
 By subtracting the value of the \acrshort{swd} from the \acrshort{wvd}, we can reduce the sensitivity of our detection scheme to thin cirrus clouds, reducing the rate of erroneous detections.
 Additionally, adding the \acrshort{swd} field to the \acrshort{wvd} field can enhance the appearance of cirrus, enabling the detection of thin ice clouds associated with cirrus outflow and dissipating anvils.
 
-Figure~\ref{fig:abi_vertical_weighting} shows the clear sky vertical weighing functions for the 6.2, 7.3, 10.4 and 12.4\,\unit{\mu m} \acrshort{abi} channels.
-The weighting functions are calculated using a radiative transfer model with temperature and humidity profiles observed by rawinsonde observations on 12:00:00 \acrshort{utc} 2020/08/10 at the Tampa RAOB station (KTBW - 72210). 
-
 
 \begin{figure}[tp]
     \includegraphics[width=0.9\textwidth]{figures/chapter1_04.png}
@@ -245,6 +241,40 @@ The weighting functions are calculated using a radiative transfer model with tem
 \end{figure}
 
 
+Figure~\ref{fig:abi_vertical_weighting} shows the clear sky vertical weighing functions for the 6.2, 7.3, 10.4 and 12.4\,\unit{\mu m} \acrshort{abi} channels.
+The weighting functions are calculated using a radiative transfer model with temperature and humidity profiles observed by rawinsonde observations on 12:00:00 \acrshort{utc} 2020/08/10 at the Tampa RAOB station (KTBW - 72210). 
+
+
+%t
+\begin{table}[tb]
+\centering
+\begin{tabular}{lrrr}
+\tophline
+Instrument   & wavelength   & NE$\Delta$T [300\,K]    & NE$\Delta$T [220\,K] \\
+\middlehline
+ABI (GOES--16)         & 6.2\,\unit{\mu m} & 0.013\,K & 0.117\,K\\
+             & 7.4\,\unit{\mu m} & 0.024\,K & 0.137\,K\\
+             & 10.4\,\unit{\mu m} & 0.028\,K & 0.082\,K\\
+             & 12.4\,\unit{\mu m} & 0.023\,K & 0.052\,K\\
+\middlehline
+SEVIRI (MSG--11)       & 6.2\,\unit{\mu m} & 0.05\,K & 0.448\,K\\
+             & 7.3\,\unit{\mu m} & 0.05\,K & 0.294\,K\\
+             & 10.8\,\unit{\mu m} & 0.06\,K & 0.165\,K\\
+             & 12.0\,\unit{\mu m} & 0.10\,K & 0.237\,K\\
+\bottomhline
+\end{tabular}
+\caption[
+Operating noise equivalent $\Delta$T (NE$\Delta$T) for the \acrshort{abi} and \acrshort{seviri} instruments. 
+]{
+Operating noise equivalent $\Delta$T (NE$\Delta$T) for the \acrshort{abi} and \acrshort{seviri} instruments. NE$\Delta$T is shown both at 300\,K and at 220\,K. \acrshort{abi} data is from {https://www.star.nesdis.noaa.gov/GOESCal/G16\_ABI\_INST\_CAL\_daily\_allmode.php}; \acrshort{seviri} data is from \citet{pili_inorbit_2016}.
+} % Table Footnotes
+\label{table:channel_nedt}
+\end{table}
+
+Measured, on-orbit instrument noise for the \acrshort{abi} and \acrshort{seviri} instruments are provided for each of the four channels selected for use in table~\ref{table:channel_nedt}.
+The NE$\Delta$T values are typically provided at a reference temperature of 300\,K.
+However, as 
+
 \subsection{Geostationary Lightning Mapper}
 
 The \acrshort{glm} is also mounted on \acrshort{goes}-16 and detects lightning flashes using an optical transient detector.
@@ -252,7 +282,7 @@ The optical transient detector utilises a single, narrow-band \acrshort{nir} cha
 \acrshort{glm} has the same field of view as the \acrshort{abi} instrument, albeit with a lower spatial resolution of 8\,\unit{km} at the sub-satellite point.
 
 As lightning observations are strongly correlated with \acrshort{dcc}s, data from \acrshort{glm} is used to validate the detection of \acrshort{dcc}s using \acrshort{abi}.
-The level 2 \acrshort{glm} Lightning Cluster-Filter Algorithm product provides a dataset of events, groups and flashes processed from the \acrshort{glm} data \citep{peterson_research_2019}, and filters artifacts from the level 1 \acrshort{glm} data \citep{peterson_removing_2020}.
+The level 2 \acrshort{glm} lightning cluster-filter algorithm product provides a dataset of events, groups and flashes processed from the \acrshort{glm} data \citep{peterson_research_2019}, and filters artifacts from the level 1 \acrshort{glm} data \citep{peterson_removing_2020}.
 From this dataset, we extract detected flashes as evidence of \acrshort{dcc} occurrence.
 These locations are then processed by mapping their frequency onto the \acrshort{abi} grid for validation of the algorithm.
 
@@ -260,7 +290,7 @@ These locations are then processed by mapping their frequency onto the \acrshort
 
 \acrshort{nexrad}, also known by its technical name \acrfull{wsr88d}, is a network of weather radars operated by the National Weather Service across the USA \citep{crum_wsr-88d_1993}.
 \acrshort{wsr88d} operates in the S-band spectrum, between 2700 and 3000\,\unit{MHz}.
-\acrshort{nexrad} stations scan at a range of elevations, typically between 0.5\textdegree and 19.5\textdegree above horizontal, with a typical scan cycle taking between 4\,\sfrac{1}{2} and 6~minutes, comparable to the temporal sampling of \acrshort{abi} over the \acrshort{conus} region.
+\acrshort{nexrad} stations scan at a range of elevations, typically between 0.5\textdegree\ and 19.5\textdegree\ above horizontal, with a typical scan cycle taking between 4\,\sfrac{1}{2} and 6~minutes, comparable to the temporal sampling of \acrshort{abi} over the \acrshort{conus} region.
 
 Cloud radar reflectivity is proportional to the droplet number density and the droplet radius to the sixth power, making it particularly sensitive to convective rainfall \citep{yau_short_1989}.
 As a result, cloud radar observations are ideal for showing the locations of convective cores \citep{austin_relation_1987, rosenfeld_general_1993, zipser_vertical_1994}, and in this chapter it is used to qualitatively assess our ability to detect developing convective cores using \acrshort{abi}.
@@ -491,7 +521,7 @@ Figure~\ref{fig:opt_flow_differences} shows the difference in \acrshort{bt} betw
 The plots are again shown for the time step at 19:00:00~\acrshort{utc}, with the 10.4\,\unit{\mu m} \acrshort{bt} at this time step shown again for reference in fig.~\ref{fig:opt_flow_differences}\,a.
 Figure~\ref{fig:opt_flow_differences}\,b shows the Eulerian difference in \acrshort{bt}; the difference in the \acrshort{bt} observed at the same pixel locations on subsequent time steps.
 We see large cooling rates of the left (downwind) side of the anvil cloud, not because the \acrshort{ctt} is cooling, but because of the expansion of the anvil cloud into previously cloud-free areas.
-Removing these erroneous observations of cloud-top cooling caused by the motion and expansion of the anvil cloud is the main objective of the semi-Lagrangian approach.
+Separating these observations of cooling \acrshort{bt} caused by the motion and expansion of the anvil cloud from those due to the vertical growth of the \acrshort{dcc} is the main objective of the semi-Lagrangian approach.
 
 
 \begin{figure}[tp]
@@ -500,7 +530,7 @@ Removing these erroneous observations of cloud-top cooling caused by the motion 
     \caption[
     The difference in \acrshort{bt} between subsequent \acrshort{abi} observations when taking into account the cloud motion predicted by the different optical flow algorithms.
     ]{
-    The difference in \acrshort{bt} between subsequent \acrshort{abi} observations when taking into account the cloud motion predicted by the different optical flow algorithms. The plots are again shown for the time step at 19:00:00~\acrshort{utc}, with the 10.4\,\unit{\mu m} \acrshort{bt} at this time step shown for reference (a). b: the Eulerian difference in \acrshort{bt}; c--h: the Lagrangian difference in \acrshort{bt} using motion vectors predicted by each of the optical flow algorithms.
+    The difference in \acrshort{bt} between subsequent \acrshort{abi} observations when taking into account the cloud motion predicted by the different optical flow algorithms. The plots are again shown for the time step at 19:00:00~\acrshort{utc}, with the 10.4\,\unit{\mu m} \acrshort{bt} at this time step shown for reference (a). b: the difference in \acrshort{bt} without accounting for cloud motion; c--h: the Lagrangian difference in \acrshort{bt} using motion vectors predicted by each of the optical flow algorithms.
     }
     \label{fig:opt_flow_differences}
 \end{figure}
@@ -585,7 +615,7 @@ Two potential sources of uncertainty are the assumptions made by the Farnebäck 
 For optical flow tracking using \acrshort{bt} images of growing \acrshort{dcc}s, neither of these assumptions are true.
 However, we have taken steps to reduce the impact of both these sources of uncertainty on the tracking algorithm.
 For the first of these assumptions, we find that in the case of small, fast-moving \acrshort{dcc}s -- where the accuracy of the optical flow vectors is most important -- the changes in the size of the \acrshort{dcc} is small compared to the overall motion, and so the uncertainty introduced is small.
-Comparably, for large \acrshort{dcc}s where the changes in size may be large compared to the motion, the uncertainty introduces has less impact on the tracking algorithm.
+Comparably, for large \acrshort{dcc}s where the changes in size may be large compared to the motion, the uncertainty has less impact on the tracking algorithm.
 In the worst-case scenario, the estimated optical flow field will be zero, in which case the "3D" detection and tracking algorithm works in the same manner as that of \citet{fiolleau_algorithm_2013}, which is suitable for use on these larger \acrshort{dcc}s.
 
 \subsection{A Semi-Lagrangian Framework for Morphological Image Processing}
@@ -829,7 +859,7 @@ Note that both the core detection and \acrshort{wvd} threshold approach have sim
 
 Finally, the anvil regions detected using a combination of the detected growth regions and the \acrshort{wvd} field using the semi-Lagrangian framework described in section \ref{sec:anvil_detection} are validated.
 The novel method has a high \acrshort{pod} of 0.98 similar to that of the \acrshort{wvd} threshold, while also maintaining much of the low \acrshort{far} of the detection of growing \acrshort{dcc}s (\acrshort{far}=0.16).
-As a result, the Semi-Lagrangian method displays a high overall F\textsubscript{1}-score of 0.91.
+As a result, the semi-Lagrangian method displays a high overall F\textsubscript{1}-score of 0.91.
 This result highlights the capability of the semi-Lagrangian detection framework to use growth-based detection methods to substantially reduce the compromise between \acrshort{pod} and \acrshort{far} error rates by combining multiple methods for the detection of \acrshort{dcc}s.
 
 
@@ -841,7 +871,7 @@ However, the traditional framework used by such algorithms requires a compromise
 Whereas novel methods have approached this problem for the detection of large, mesoscale convective systems \citep{fiolleau_algorithm_2013}, such approaches do not take advantage of the capability of the latest generation of geostationary imaging satellites to detect individual deep convective cores.
 
 By developing and implementing a novel semi-Lagrangian framework for the detection and tracking of \acrshort{dcc}s we are able to combine the detection of growing \acrshort{dcc} cores \citep{zinner_cb-tram_2008} and \acrshort{dcc} anvils \citep{muller_role_2018} to detect and track \acrshort{dcc}s over their entire lifecycles.
-The novel methods developed here for the Semi-Lagrangian computer vision framework, along with implementations of multiple image processing operations commonly used for object detection, allow the accurate detection and tracking of moving objects utilising both spatial and temporal information.
+The novel methods developed here for the semi-Lagrangian computer vision framework, along with implementations of multiple image processing operations commonly used for object detection, allow the accurate detection and tracking of moving objects utilising both spatial and temporal information.
 These methods may have impacts on applications of computer vision beyond the detection and tracking of \acrshort{dcc}s.
 Furthermore, the novel framework is able to achieve higher levels of accuracy without compromising on the number of \acrshort{dcc}s detected, as with previous algorithms \citep{muller_novel_2019}.
 
