@@ -216,19 +216,11 @@ However, the information contained within this field is used for the optical flo
 Two additional combinations of channels are used to detect areas of \acrshort{dcc} anvil. 
 The \acrfull{wvd} combination (fig.~\ref{fig:abi_channels}\,c) of the upper troposphere \acrshort{wv} channel minus the lower troposphere \acrshort{wv} channel has been shown to provide a high detection rate for \acrshort{dcc}s \citep{muller_role_2018, muller_novel_2019}.
 In clear sky or low cloud conditions, \acrshort{wvd} shows the temperature difference between the upper and lower troposphere of generally around -20\,\unit{K}. 
-However, in the presence of high, thick clouds the 6.2\,\unit{\mu m} has an additional contribution from stratospheric \acrshort{wv} resulting in a warmer, and in extreme cases positive \acrshort{wvd} value \citep{schmetz_monitoring_1997}.
+While the 6.2\,\unit{\mu m} has an additional contribution from stratospheric \acrshort{wv} \citep{schmetz_monitoring_1997}, this does not have a significant effect on the \acrshort{wvd} due to the small size of this absorption (fig.~\ref{fig:abi_vertical_weighting}.
 Because both the \acrshort{wv} channels are strongly absorbed by \acrshort{wv} in the lower troposphere, the \acrshort{wvd} field is not affected by surface and low altitude features and so provides a clear distinction between thick, high clouds and the background across a wide range of situations.
 \citet{muller_novel_2019} found that a threshold of -5\,\unit{K} gave a high detection rate of anvil clouds.
 Furthermore, as the \acrshort{wvd} values are relative to the lower stratosphere temperatures, this field is much less affected by location and meteorology than the \acrshort{lw} \acrshort{ir} channels.
 However, the \acrshort{wvd} is still prone to the false detections of non-convective clouds when using a thresholding method as it cannot directly distinguish between thick, high-altitude clouds that are associated with deep convection and those that are not.
-
-The \acrfull{swd}, consisting of the clean \acrshort{ir} window channel minus the dirty \acrshort{ir} window channel (fig.~\ref{fig:abi_channels}\,d), aids in the detection and separation of optically thin anvil cloud (including cirrus outflow) from optically thick anvil due to the difference in ice particle emissivity between these two channels \citep{heidinger_gazing_2009}.
-As a result, this combination displays warm temperatures of around 10\,\unit{K} for thin, ice clouds, near 0\,\unit{K} for thick clouds, and approximately 5\,\unit{K} for clear skies due to the contribution of boundary layer \acrshort{wv}.
-The \acrshort{swd} is, however, also sensitive to low-level clouds and low-level \acrshort{wv} concentrations, and so cannot be used alone to detect \acrshort{dcc}s.
-It remains important to consider the \acrshort{swd} field due to the difficulty in separating anvil clouds from cirrus when using \acrshort{lw} \acrshort{ir} \acrshort{bt} alone \citep{hong_detection_2005}. 
-By subtracting the value of the \acrshort{swd} from the \acrshort{wvd}, we can reduce the sensitivity of our detection scheme to thin cirrus clouds, reducing the rate of erroneous detections.
-Additionally, adding the \acrshort{swd} field to the \acrshort{wvd} field can enhance the appearance of cirrus, enabling the detection of thin ice clouds associated with cirrus outflow and dissipating anvils.
-
 
 \begin{figure}[tp]
     \includegraphics[width=0.9\textwidth]{figures/chapter1_04.png}
@@ -240,6 +232,12 @@ Additionally, adding the \acrshort{swd} field to the \acrshort{wvd} field can en
     \label{fig:abi_vertical_weighting}
 \end{figure}
 
+The \acrfull{swd}, consisting of the clean \acrshort{ir} window channel minus the dirty \acrshort{ir} window channel (fig.~\ref{fig:abi_channels}\,d), aids in the detection and separation of optically thin anvil cloud (including cirrus outflow) from optically thick anvil due to the difference in ice particle emissivity between these two channels \citep{heidinger_gazing_2009}.
+As a result, this combination displays warm temperatures of around 10\,\unit{K} for thin, ice clouds, near 0\,\unit{K} for thick clouds, and approximately 5\,\unit{K} for clear skies due to the contribution of boundary layer \acrshort{wv}.
+The \acrshort{swd} is, however, also sensitive to low-level clouds and low-level \acrshort{wv} concentrations, and so cannot be used alone to detect \acrshort{dcc}s.
+It remains important to consider the \acrshort{swd} field due to the difficulty in separating anvil clouds from cirrus when using \acrshort{lw} \acrshort{ir} \acrshort{bt} alone \citep{hong_detection_2005}. 
+By subtracting the value of the \acrshort{swd} from the \acrshort{wvd}, we can reduce the sensitivity of our detection scheme to thin cirrus clouds, reducing the rate of erroneous detections.
+Additionally, adding the \acrshort{swd} field to the \acrshort{wvd} field can enhance the appearance of cirrus, enabling the detection of thin ice clouds associated with cirrus outflow and dissipating anvils.
 
 Figure~\ref{fig:abi_vertical_weighting} shows the clear sky vertical weighing functions for the 6.2, 7.3, 10.4 and 12.4\,\unit{\mu m} \acrshort{abi} channels.
 The weighting functions are calculated using a radiative transfer model with temperature and humidity profiles observed by rawinsonde observations on 12:00:00 \acrshort{utc} 2020/08/10 at the Tampa RAOB station (KTBW - 72210). 
@@ -272,8 +270,13 @@ Operating noise equivalent $\Delta$T (NE$\Delta$T) for the \acrshort{abi} and \a
 \end{table}
 
 Measured, on-orbit instrument noise for the \acrshort{abi} and \acrshort{seviri} instruments are provided for each of the four channels selected for use in table~\ref{table:channel_nedt}.
-The NE$\Delta$T values are typically provided at a reference temperature of 300\,K.
-However, as 
+The NE$\Delta$T values are provided at a reference temperature of 300\,K.
+However, as NE$\Delta$T varies with temperature, it is also important to consider the noise at the colder temperatures typical of anvil clouds.
+NE$\Delta$T at 220\,K were calculated by multiplying the NE$\Delta$T at 300\,K by the ratio of the partial derivative of the Planck function at 300\,K to that at 220\,K.
+This results in a noticeably larger NE$\Delta$T at the lower temperature, in particular for the \acrshort{wv} channels due to the difference in the gradient of the Planck function between the two temperatures.
+Propagating these uncertainties provides estimates of the noise in the \acrshort{wvd} and \acrshort{swd} combinations of 0.180\,K and 0.097\,K respectively for \acrshort{abi}, and 0.536\,K and 0.289\,K for \acrshort{seviri}.
+
+
 
 \subsection{Geostationary Lightning Mapper}
 
