@@ -31,6 +31,6 @@ dependencies:
   - siphon
   - pip
   - pip:
-     - "--editable=git+https://github.com/w-k-jones/tobac-flow.git@v1.8.1#egg=tobac_flow"
+     - "--editable=git+https://github.com/w-k-jones/tobac-flow.git@RC_v1.8.2#egg=tobac_flow"
      - "--editable=git+https://github.com/w-k-jones/pyLRT.git#egg=pyLRT"
      - "--editable=git+https://github.com/w-k-jones/tephigram_python.git#egg=tephigram"
