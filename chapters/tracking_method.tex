@@ -276,6 +276,18 @@ NE$\Delta$T at 220\,K were calculated by multiplying the NE$\Delta$T at 300\,K b
 This results in a noticeably larger NE$\Delta$T at the lower temperature, in particular for the \acrshort{wv} channels due to the difference in the gradient of the Planck function between the two temperatures.
 Propagating these uncertainties provides estimates of the noise in the \acrshort{wvd} and \acrshort{swd} combinations of 0.180\,K and 0.097\,K respectively for \acrshort{abi}, and 0.536\,K and 0.289\,K for \acrshort{seviri}.
 
+In addition to the NE$\Delta$T, there are several sources of systematic errors which may affect the observed \acrshort{bt} and channel differences.
+Any bias in the \acrshort{abi} and \acrshort{seviri} channels are accounted for in calibration.
+Limb darkening at larger satellite zenith angles is harder to account for.
+For the channel differences this will have two impacts.
+Firstly, it will increase the height at which \acrshort{wv} emissions are observed in the 6.2 and 7.4\,\unit{\mu m} channels, increasing the height at which clouds can be observed.
+Secondly, for the \acrshort{swd} combination it may reduce the difference between the two channels, as a higher zenith angles the path length through a cloud layer is longer for the same thickness of cloud, and therefore the difference in temperature will be less between the two channels.
+
+In addition, environmental conditions may affect both the \acrshort{wvd} and \acrshort{swd} combinations.
+Changes in humidity may affect the height at which the \acrshort{wvd} is sensitive to clouds, with lower humidity resulting in sensitivity at lower cloud heights.
+In addition, the difference between the surface temperature and the cloud temperature will affect the \acrshort{swd}, as the temperature difference is due to a combination of cloud emission and surface emission with a ratio that varies across the two channels.
+As a result, if the difference between the cloud and surface temperatures is smaller, so too will be the \acrshort{swd}.
+While these biases cannot be removed from the data without retrieving the cloud properties, the choice of methods for cloud detection can limit their impact on the results of detection and tracking.
 
 
 \subsection{Geostationary Lightning Mapper}
@@ -303,6 +315,7 @@ Level 2 \acrshort{nexrad} radar reflectivity observations from multiple sites ar
 
 To better understand how \acrshort{dcc}s appear in \acrshort{goes} \acrshort{abi} observations, a series of experiments were performed using a radiative transfer model.
 These experiments were performed using libRadTran v2.0.4 \citep{emde_libradtran_2016}, utilising the DISORT radiative transfer solver \citep{buras_new_2011} and the REPTRAN absorbtion parameterisation \citep{gasteiger_representative_2014}.
+The experiments were run using the pyLRT wrapper for libRadTran \citep{gryspeerdt_pylrt_2024}.
 A tropical atmospheric profile was used to represent the atmospheric conditions under which deep convection typically occurs.
 A complete list of the options used to set up the radiative transfer model across all simulations is provided in table \ref{table:libradtran}.
 
@@ -323,12 +336,14 @@ umu             & -1.0, 1.0             & downward \& upward            \\
 sza             & 0                     & solar zenith angle            \\
 mol\_abs\_param & reptran fine          & REPTRAN parameterisation      \\
 atmosphere\_file& afglt.dat             & tropical atmosphere profile   \\
+liquid microphysics& Hu                 & \citet{hu_accurate_1993} parameterisation \\
+ice microphysics& Fu                    & \citet{fu_accurate_1996} parameterisation \\
 \bottomhline
 \end{tabular}
 \caption[
     Selected options for the libRadTran simulations
     ]{
-    Selected options for the libRadTran simulations.
+    Selected options for the libRadTran simulations. All other parameters are left as defaults.
     }
 \label{table:libradtran}
 \end{table}
@@ -377,9 +392,8 @@ It has been proposed that this can be used to detect the onset of convection in 
 \end{figure}
 
 
-Figure~\ref{fig:cloud_height_cooling_rates} shows the change in \acrshort{bt} observed over a vertically developing core in units of \unit{K minute^{-1}/m s^{-1}} (i.e. the \acrshort{bt} change per minute, per \unit{m s^{-1}} of vertical \acrshort{cth} growth rate).
-Although this is an odd choice of unit, it is used to better compare the observed change in \acrshort{bt} by a geostationary satellite (measured in \unit{K}, with a typical sampling time on the order of minutes), to the vertical velocity of the cloud top (typically measured in \unit{m s^{-1}}.
-Above 3\,\unit{km}, the 10.4\,\unit{\mu m} \acrshort{bt} shows a consistent cooling rate of 0.4\,\unit{K minute^{-1}}.
+Figure~\ref{fig:cloud_height_cooling_rates} shows the change of observed \acrshort{bt} in units of K$\cdot\mathrm{minute^{-1}}$ for a convective core rising at a rate of 1\,\unit{ms^{-1}}.
+Above 3\,km, the 10.4\,\unit{\mu m} shows a consistent cooling of 0.5\,\unit{K minute^{-1}}.
 \citet{roberts_nowcasting_2003} found a threshold for severe convection of 8\,\unit{K} cooling over 15~minutes, or approximately 0.5\,\unit{K minute^{-1}}, which would represent a cloud top vertical velocity of 1.25\,\unit{m s^{-1}} according to our simulation.
 The \acrshort{wvd} shows a maximum rate of change between 7 and 8\,\unit{k m}, with a warming rate of half the magnitude of the \acrshort{bt} cooling rate.
 
@@ -394,6 +408,8 @@ The \acrshort{wvd} shows a maximum rate of change between 7 and 8\,\unit{k m}, w
     \label{fig:cloud_height_cooling_rates}
 \end{figure}
 
+Using the NE$\Delta$T values provided in table~\ref{table:channel_nedt}, the uncertainty due to sensor noise in the \acrshort{bt} difference over a five--minute period is approximately 0.047\,\unit{K minute^{-1}}, or just less than 10\% of the threshold given by \citet{roberts_nowcasting_2003}.
+By averaging the cooling rates over 5 pixels and a 15--minute time period the uncertainty is reduced to 0.012\,\unit{K minute^{-1}}, or less than 2.5\%.
 
 Overall, we see from this experiment that the 10.4\,\unit{\mu m} \acrshort{bt} channel from \acrshort{abi} can be used to clearly identify a vertically developing core across a wide range of altitudes.
 On the other hand, the \acrshort{wvd} is only sensitive to vertically developing clouds in a narrower range of altitudes, and shows a weaker rate of \acrshort{bt} change.
@@ -548,18 +564,18 @@ This is likely due to the algorithm accounting for changes in brightness between
 The two sparse optical flow algorithms (fig.~\ref{fig:opt_flow_differences}\,g,h) both show worse performance, with the sparse to dense method performing particularly poorly.
 Both algorithms show cooling downwind of the anvil, likely because the region-based methods used to map the sparse motion vectors to the whole image do not detect this region well.
 
-Figure~\ref{fig:opt_flow_mse}\,a shows the \acrfull{mse} of the \acrshort{bt} differences shown in fig.~\ref{fig:opt_flow_differences} for each algorithm.
+Figure~\ref{fig:opt_flow_mse}\,a shows the \acrfull{rmse} of the \acrshort{bt} differences shown in fig.~\ref{fig:opt_flow_differences} for each algorithm.
 As seen in fig.~\ref{fig:opt_flow_differences}, the \acrshort{dualtvl1} algorithm has the smallest differences, the other dense algorithms perform similarly, and the \acrshort{pca}-Flow and sparse to dense algorithms perform the worst.
 It should be noted that we should expect some differences in the \acrshort{bt} due to actual changes in the \acrshort{ctt}.
-Figure~\ref{fig:opt_flow_mse}\,b shows the \acrshort{mse} of the \acrshort{bt} differences for pixels with \acrshort{bt} less than 273\,\unit{K}, representing cold cloud observations.
+Figure~\ref{fig:opt_flow_mse}\,b shows the \acrshort{rmse} of the \acrshort{bt} differences for pixels with \acrshort{bt} less than 273\,\unit{K}, representing cold cloud observations.
 
 
 \begin{figure}[tp]
     \includegraphics[width=0.9\textwidth]{figures/chapter1_12.png}
     \caption[
-    A comparison of the \acrshort{bt} difference and residual vector magnitude \acrshort{mse} for each of the optical flow algorithms
+    A comparison of the \acrshort{bt} difference and residual vector magnitude \acrshort{rmse} for each of the optical flow algorithms
     ]{
-    A comparison of the \acrshort{mse} for each of the optical flow algorithms. a: \acrshort{bt} difference \acrshort{mse} for all pixels and (b) for pixels with \acrshort{bt} $<$ 273\,\unit{K}. c: \acrshort{mse} of the residual vector magnitude for all pixels and (d) for pixels with \acrshort{bt} $<$ 273\,\unit{K}.
+    A comparison of the \acrshort{rmse} for each of the optical flow algorithms. a: \acrshort{bt} difference \acrshort{rmse} for all pixels and (b) for pixels with \acrshort{bt} $<$ 273\,\unit{K}. c: \acrshort{rmse} of the residual vector magnitude for all pixels and (d) for pixels with \acrshort{bt} $<$ 273\,\unit{K}.
     }
     \label{fig:opt_flow_mse}
 \end{figure}
@@ -571,7 +587,7 @@ Then the optical flow algorithms are used to calculate a second set of residual 
 In theory, if the initial motion vectors were calculated perfectly, warping the image by the optical flow vectors should result in the subsequent cloud in the same position as the prior image, and so the second set of motion vectors should calculate as zero.
 The magnitude of the residual motion vectors is therefore considered as the uncertainty in the initial set of motion vectors.
 
-Figure~\ref{fig:opt_flow_mse}\,c,d show the \acrshort{mse} of the residual vector magnitudes for all pixels and pixels less than 273\,\unit{K} respectively.
+Figure~\ref{fig:opt_flow_mse}\,c,d show the \acrshort{rmse} of the residual vector magnitudes for all pixels and pixels less than 273\,\unit{K} respectively.
 The DeepFlow and \acrshort{dualtvl1} algorithms again show the best accuracy, and sparse to dense the worst.
 The Farnebäck algorithm shows good accuracy across all pixels, as seen in the ability to correctly detect zero motion in cloudless skies in fig.~\ref{fig:opt_flow_comparison}.
 However, when considering only cold pixels the Farnebäck algorithm performs slightly worse than \acrshort{dis}.
