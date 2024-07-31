@@ -48,10 +48,11 @@ Further investigation into the response of anvil \acrshort{cre} to changes in th
 % These observations were made with polar orbiting instruments however, and they highlighted the need for geostationary observations to characterise the evolution of individual anvil clouds.
 % Subsequent research used \acrshort{dcc} tracking methods to better characterise the lifecycle of observed anvil clouds \citep{bouniol_life_2021}, but as the radiative flux data was provided by polar-orbiting satellites the \acrshort{cre} could not be measured over the lifetime of the \acrshort{dcc}.
 
-In this chapter, we use a novel cloud tracking methodology in conjunction with derived all-sky and clear-sky radiative fluxes to characterise the \acrshort{cre} over the lifecycles of individual anvil clouds. 
+In this chapter, the novel cloud tracking methodology presented in chapter~\ref{chp:tracking_method} is used in conjunction with derived all-sky and clear-sky radiative fluxes to characterise the \acrshort{cre} over the lifecycles of individual anvil clouds. 
 This methodology is applied to 4 months of data produced for the \acrshort{esa} Cloud-\acrfull{cci}+ project over sub-Saharan Africa. 
 This dataset allows us to investigate both the \acrshort{cre} of individual \acrshort{cre}s, as well as the net anvil \acrshort{cre} over the entire region. 
-We find that the overall distribution of anvil \acrshort{cre} is determined by the relationship between \acrshort{dcc} lifecycle and the diurnal cycle of the \acrshort{sw} \acrshort{cre}, and discuss the implications of this for the response of \acrshort{dcc}s to a changing climate.
+The overall distribution of anvil \acrshort{cre} is found to be determined by the relationship between \acrshort{dcc} lifecycle and the diurnal cycle of the \acrshort{sw} \acrshort{cre}.
+This has important implications for the response of \acrshort{dcc}s to a changing climate, as previously the impact of changes in the diurnal cycle of anvil \acrshort{cre} has seen little study.
 
 
 
@@ -83,8 +84,8 @@ Channel & Wavelength (\unit{\mu m}) & Description & Tracking & Retrieval\tabular
 \label{table:seviri_channels}
 \end{table}
 
-For this case study, we used data from \acrshort{seviri} \citep{aminou_msg_2002} aboard the \acrfull{msg} Meteosat-11 satellite, which is in a geostationary orbit above the equator at 0\textdegree W. 
-We use data from 4 months (May--August 2016) over sub-Saharan Africa (approximately 18\,\textdegree W--46\,\textdegree E, 31\,\textdegree S--15\,\textdegree N) at the full resolution of \acrshort{seviri} (3\,\unit{km} at nadir) as well as retrieved cloud properties and derived broadband fluxes produced by the \acrshort{esa} Cloud-\acrshort{cci}+ project.
+For this case study, data is used from \acrshort{seviri} \citep{aminou_msg_2002} aboard the \acrfull{msg} Meteosat-11 satellite, which is in a geostationary orbit above the equator at 0\textdegree W. 
+Data from 4 months (May--August 2016) over sub-Saharan Africa (approximately 18\,\textdegree W--46\,\textdegree E, 31\,\textdegree S--15\,\textdegree N) is used at the full resolution of \acrshort{seviri} (3\,\unit{km} at nadir), along with retrieved cloud properties and derived broadband fluxes produced by the \acrshort{esa} Cloud-\acrshort{cci}+ project.
 \acrshort{bt} from \acrshort{seviri} is used by the tracking algorithm, and reflectances and \acrshort{bt} are used by the cloud retrieval.
 
 \acrshort{seviri} is a visible and \acrshort{ir} radiometer with a nadir spatial resolution of 3\,\unit{km} and a temporal sampling time of 15 minutes for the full earth disc. 
@@ -93,7 +94,8 @@ A brief overview of these channels, along with which are used for tracking \acrs
 
 An example of observations from \acrshort{seviri} is shown in fig.~\ref{fig:seviri_obs_example} for 15:00:00~\acrshort{utc} on 1\textsuperscript{st} June 2016. 
 A visible composite (fig.~\ref{fig:seviri_obs_example}\,a) is constructed using the 1.64\,\unit{\mu m} and 0.81\,\unit{\mu m} near-infrared and 0.64\,\unit{\mu m} visible channels for the \acrshort{rgb} channels respectively. 
-In this composite, ice clouds (which appear cyan) can be seen over central Africa and the southern Atlantic. fig.~\ref{fig:seviri_obs_example}\,b shows the 10.8\,\unit{\mu m} brightness temperature for the same scene, showing the coldest temperatures for the high ice clouds over central Africa. 
+In this composite, ice clouds (which appear cyan) can be seen over central Africa and the southern Atlantic. 
+Figure~\ref{fig:seviri_obs_example}\,b shows the 10.8\,\unit{\mu m} brightness temperature for the same scene, showing the coldest temperatures for the high ice clouds over central Africa. 
 Two combinations of channels are used for the detection of anvil clouds. 
 The \acrshort{wvd}, shown in fig.~\ref{fig:seviri_obs_example}\,c, consists of the 6.3\,\unit{\mu m} \acrshort{bt} minus the 7.4\,\unit{\mu m} \acrshort{bt}. 
 In clear skies the \acrshort{wvd} is negative, with values around --\,20 to --\,15 K, due to the higher, and thus colder, emission height of the 6.3\,\unit{\mu m} channel. 
@@ -102,7 +104,7 @@ In the cases of the highest clouds, the \acrshort{wvd} can become positive due t
 While the \acrshort{swd} is sensitive to near-surface WV due to absorption in the 12.0\,\unit{\mu m} channel, it is also sensitive to thin ice clouds due to the difference in emissivity of ice particles between the two channels. 
 While for thick clouds the \acrshort{swd} will be 0 K, for thin ice clouds the lower emission height of the 10.8\,\unit{\mu m} \acrshort{bt} channel results in a positive value of 5 K.
 The 10.8\,\unit{\mu m} and 12.0\,\unit{\mu m} channels of \acrshort{seviri} have relatively wide wavebands and as such are less sensitive to the presence of thin ice clouds.
-As a result, we found that the detection of thin anvil is unreliable using this technique with \acrshort{seviri}, and so is not considered within this chapter.
+As a result, it is found that the detection of thin anvil is unreliable using this technique with \acrshort{seviri}, and so is not considered within this chapter.
 
 
 \begin{figure}[tp]
@@ -138,7 +140,7 @@ warming component has a smaller magnitude than the day-time, cooling \acrshort{s
 
 Validation of the \acrshort{seviri} broadband fluxes was performed against monthly-mean observations of \acrshort{toa} broadband \acrshort{cre} from the \acrfull{ceres} \citep{loeb_clouds_2018} \acrfull{ebaf} climate data record. 
 The results of this validation are shown in fig.~\ref{fig:flux_validation}. 
-Monthly mean fluxes were calculated for \acrshort{seviri} by first calculating the mean daily fluxes over each 1\texttimes 1\textdegree grid square for days in which we have over 23 hours of observations, and then averaging these daily means over each month. 
+Monthly mean fluxes were calculated for \acrshort{seviri} by first calculating the mean daily fluxes over each 1\texttimes 1\textdegree grid square for days in which over 23 hours of observations are present, and then averaging these daily means over each month. 
 Comparison of the net \acrshort{toa} \acrshort{cre} to \acrshort{ceres} revealed a bias of --\,3.67\,\unit{W m\textsuperscript{-2}} (fig.~\ref{fig:flux_validation}\,a,b), consisting of a \acrshort{sw} bias of --\,3.04\,\unit{W m^{-2}} (fig.~\ref{fig:flux_validation}\,c,d) and a \acrshort{lw} bias of --\,0.63\,\unit{W m\textsuperscript{-2}} (Fig~\ref{fig:flux_validation}\,e,f). 
 Correction for these biases have been applied uniformly to all further \acrshort{cre} values given in this chapter.
 
@@ -148,42 +150,42 @@ Correction for these biases have been applied uniformly to all further \acrshort
     \caption[
     Validation of derived broadband fluxes against monthly \acrshort{ceres}-\acrshort{ebaf} \acrshort{cre}
     ]{
-    Validation of derived broadband fluxes against monthly \acrshort{ceres}-\acrshort{ebaf} \acrshort{cre}. a.: The mean difference in net \acrshort{toa} \acrshort{cre} by 1\texttimes 1\textdegree grid square. b.: A comparison of observed \acrshort{toa} net \acrshort{cre} for \acrshort{seviri} against \acrshort{ceres}, with all locations in blue, and those where we observe \acrshort{dcc} anvils in red. c.: the mean difference in \acrshort{sw} \acrshort{toa} \acrshort{cre}. d.: comparison of \acrshort{sw} \acrshort{toa} \acrshort{cre} for \acrshort{seviri} and \acrshort{ceres}. e.: the mean difference in \acrshort{lw} \acrshort{cre}. f.: comparison of \acrshort{lw} \acrshort{toa} \acrshort{cre}. The stippling in a, c and e represents the locations in which we observe \acrshort{dcc} anvils, with the size of the dots corresponding to the number of observations. The solid lines in b, d and f show the linear regression for all locations (blue) and the locations where we observe \acrshort{dcc} anvils (red) weighted by the number of observations.
+    Validation of derived broadband fluxes against monthly \acrshort{ceres}-\acrshort{ebaf} \acrshort{cre}. a.: The mean difference in net \acrshort{toa} \acrshort{cre} by 1\texttimes 1\textdegree grid square. b.: A comparison of observed \acrshort{toa} net \acrshort{cre} for \acrshort{seviri} against \acrshort{ceres}, with all locations in blue, and those where \acrshort{dcc} anvils are observed in red. c.: the mean difference in \acrshort{sw} \acrshort{toa} \acrshort{cre}. d.: comparison of \acrshort{sw} \acrshort{toa} \acrshort{cre} for \acrshort{seviri} and \acrshort{ceres}. e.: the mean difference in \acrshort{lw} \acrshort{cre}. f.: comparison of \acrshort{lw} \acrshort{toa} \acrshort{cre}. The stippling in a, c and e represents the locations in which \acrshort{dcc} anvils are observed, with the size of the dots corresponding to the number of observations. The solid lines in b, d and f show the linear regression for all locations (blue) and the locations of\acrshort{dcc} anvils (red) weighted by the number of observations.
     }
     \label{fig:flux_validation}
 \end{figure}
 
 \section{Method}
 
-The detection and tracking of \acrshort{dcc}s was performed using the tobac-flow algorithm \citep{jones_semi-lagrangian_2023}, which has been designed specifically to track both isolated and clustered \acrshort{dcc}s in geostationary satellite imagery over their entire lifecycle. 
+The detection and tracking of \acrshort{dcc}s are performed using the tobac-flow algorithm (see chapter~\ref{chp:tracking_method}, which has been designed specifically to track both isolated and clustered \acrshort{dcc}s in geostationary satellite imagery over their entire lifecycle. 
 While geostationary satellite imagery provides high-resolution observations over large domains and long time periods, which is ideal for studying deep convection, the inability of passive remote sensing to observe convective updrafts directly makes the detection and tracking of \acrshort{dcc}s difficult.
 
-Algorithms for the detection and tracking of \acrshort{dcc}s in satellite imagery have generally been developed for one of two applications: tracking convective cores and isolated convection, or tracking large \acrshort{mcs} anvils.
-Those designed for tracking deep convective cores, or isolated \acrshort{dcc}s, include Cb-TRAM \citep{zinner_cb-tram_2008,zinner_validation_2013} or tobac \citep{heikenfeld_tobac_2019}.
-These algorithms work by detecting regions of convective updraft or a proxy (such as cloud top cooling rate), and then treating these regions as point-like objects that are advected over time. 
-The second group, designed for tracking \acrshort{mcs}s, include algorithms such as PyFLEXTRKR \citep{feng_pyflextrkr_2022}, TAMS \citep{ocasio_tracking_2020} or TOOCAN \citep{fiolleau_algorithm_2013}. 
-These algorithms detect large regions of cold cloud tops which indicate anvil clouds, and then link them over time by overlapping regions at subsequent time steps. 
-There is no `best' method for tracking all types of convection however \citep{lakshmanan_objective_2010}. 
-The algorithms for tracking isolated convective cells perform worse for clustered convection when the motion and shape of the \acrshort{dcc} cannot be adequately represented as a single vector. 
-On the other hand, the \acrshort{mcs} tracking algorithms perform worse for smaller, isolated \acrshort{dcc}s as the motion of the anvil between time steps may mean it does not overlap with the previous step.
+% Algorithms for the detection and tracking of \acrshort{dcc}s in satellite imagery have generally been developed for one of two applications: tracking convective cores and isolated convection, or tracking large \acrshort{mcs} anvils.
+% Those designed for tracking deep convective cores, or isolated \acrshort{dcc}s, include Cb-TRAM \citep{zinner_cb-tram_2008,zinner_validation_2013} or tobac \citep{heikenfeld_tobac_2019}.
+% These algorithms work by detecting regions of convective updraft or a proxy (such as cloud top cooling rate), and then treating these regions as point-like objects that are advected over time. 
+% The second group, designed for tracking \acrshort{mcs}s, include algorithms such as PyFLEXTRKR \citep{feng_pyflextrkr_2022}, TAMS \citep{ocasio_tracking_2020} or TOOCAN \citep{fiolleau_algorithm_2013}. 
+% These algorithms detect large regions of cold cloud tops which indicate anvil clouds, and then link them over time by overlapping regions at subsequent time steps. 
+% There is no `best' method for tracking all types of convection however \citep{lakshmanan_objective_2010}. 
+% The algorithms for tracking isolated convective cells perform worse for clustered convection when the motion and shape of the \acrshort{dcc} cannot be adequately represented as a single vector. 
+% On the other hand, the \acrshort{mcs} tracking algorithms perform worse for smaller, isolated \acrshort{dcc}s as the motion of the anvil between time steps may mean it does not overlap with the previous step.
 
-To approach the challenge of tracking both isolated \acrshort{dcc}s and large, clustered systems, we address the role of cloud motion in the scaling problem. 
-tobac-flow first estimates the motion of \acrshort{dcc}s at each pixel using an optical-flow algorithm. 
-Then, using these estimated motion vectors, we construct a semi-Lagrangian framework in which to perform the detection and tracking. 
-This approach addresses two issues found in traditional cloud tracking approaches.
-First, estimating a motion vector for each pixel allows complex motions (including divergence, rotation, splitting and merging) to be compensated for, rather than just the bulk motion found using the centroid tracking methods.
-Second, by estimating the cloud motion \textit{a priori}, we are able to use this information within the detection step of the algorithm, and can separate changes in cloud properties such as \acrshort{bt} from those observed due to cloud motion.
-This framework removes the problem of \acrshort{dcc} motion, allowing us to track both isolated and large \acrshort{dcc}s at the same time.
+% To approach the challenge of tracking both isolated \acrshort{dcc}s and large, clustered systems, we address the role of cloud motion in the scaling problem. 
+% tobac-flow first estimates the motion of \acrshort{dcc}s at each pixel using an optical-flow algorithm. 
+% Then, using these estimated motion vectors, we construct a semi-Lagrangian framework in which to perform the detection and tracking. 
+% This approach addresses two issues found in traditional cloud tracking approaches.
+% First, estimating a motion vector for each pixel allows complex motions (including divergence, rotation, splitting and merging) to be compensated for, rather than just the bulk motion found using the centroid tracking methods.
+% Second, by estimating the cloud motion \textit{a priori}, this information can be used within the detection step of the algorithm, and can separate changes in cloud properties such as \acrshort{bt} from those observed due to cloud motion.
+% This framework removes the problem of \acrshort{dcc} motion, allowing us to track both isolated and large \acrshort{dcc}s at the same time.
 
-Three channels and channel combinations from \acrshort{seviri} are used for the detection algorithm: the 10.8\,\unit{\mu m} \acrshort{bt} channel; the \acrshort{wvd} (the difference between the 6.2\,\unit{\mu m} and 7.3\,\unit{\mu m} channels), and the \acrshort{swd} (the difference between the 10.8\,\unit{\mu m} and 12.0\,\unit{\mu m} channels).
-Estimation of cloud motion vectors using optical flow in performed using the 10.8\,\unit{\mu m} \acrshort{bt} channel.
-Detection of cores utilises the 10.8\,\unit{\mu m} \acrshort{bt} channel and the \acrshort{wvd}, and detection of anvils uses \acrshort{wvd} and \acrshort{swd}.
+% Three channels and channel combinations from \acrshort{seviri} are used for the detection algorithm: the 10.8\,\unit{\mu m} \acrshort{bt} channel; the \acrshort{wvd} (the difference between the 6.2\,\unit{\mu m} and 7.3\,\unit{\mu m} channels), and the \acrshort{swd} (the difference between the 10.8\,\unit{\mu m} and 12.0\,\unit{\mu m} channels).
+% Estimation of cloud motion vectors using optical flow in performed using the 10.8\,\unit{\mu m} \acrshort{bt} channel.
+% Detection of cores utilises the 10.8\,\unit{\mu m} \acrshort{bt} channel and the \acrshort{wvd}, and detection of anvils uses \acrshort{wvd} and \acrshort{swd}.
 
-We detect growing convective cores where we observe regions of rapid cooling in the 10.8\,\unit{\mu m} \acrshort{bt} channel of greater than 0.5\,\unit{Ks\textsuperscript{-1}} and the \acrshort{wvd} of greater than 0.25\,\unit{Ks\textsuperscript{-1}}.
-In both cases
-\acrshort{dcc}s close to the surface and continue tracking them into the upper troposphere. 
-We classify a core as a region of cooling temperature that has existed for at least 15 minutes and has cooled by at least 8\,\unit{K} in a 15-minute period. 
-This threshold provides a strong indicator of intense convective activity \citep{roberts_nowcasting_2003}, and so provides an accurate detection of growing \acrshort{dcc}s.
+% We detect growing convective cores where we observe regions of rapid cooling in the 10.8\,\unit{\mu m} \acrshort{bt} channel of greater than 0.5\,\unit{Ks\textsuperscript{-1}} and the \acrshort{wvd} of greater than 0.25\,\unit{Ks\textsuperscript{-1}}.
+% In both cases
+% \acrshort{dcc}s close to the surface and continue tracking them into the upper troposphere. 
+% We classify a core as a region of cooling temperature that has existed for at least 15 minutes and has cooled by at least 8\,\unit{K} in a 15-minute period. 
+% This threshold provides a strong indicator of intense convective activity \citep{roberts_nowcasting_2003}, and so provides an accurate detection of growing \acrshort{dcc}s.
 
 
 \begin{figure*}[tp]
@@ -197,12 +199,12 @@ This threshold provides a strong indicator of intense convective activity \citep
     \label{fig:S_anvil_sensitivity}
 \end{figure*}
 
-Starting from these convective cores, we then detect the surrounding anvil cloud using the \acrshort{wvd} field \citep{muller_role_2018, muller_novel_2019} and continue to detect the anvil until its dissipation, even after the core is no longer visible. 
-A core and anvil are linked with each other if the two overlap at a time when the core has mean \acrshort{wvd} of \textgreater\,5\,\unit{K}, indicating that it has reached the upper troposphere.
-Each anvil cloud can be associated with multiple cores, allowing us to identify cases of clustered convection. 
-As we detect the cores based on cloud-top cooling, however, we can only detect the cores themselves during the growing phase, and cannot detect cores that occur underneath cold, high, anvil clouds.
-When determining the number of cores associated with an anvil, we count the total number of cores observed over the entire lifetime, even if they do not occur at the same time, and including all merges and splits of the anvil cloud.
-This flexibility allows for a wide range of different organised systems to be analysed.
+% Starting from these convective cores, we then detect the surrounding anvil cloud using the \acrshort{wvd} field \citep{muller_role_2018, muller_novel_2019} and continue to detect the anvil until its dissipation, even after the core is no longer visible. 
+% A core and anvil are linked with each other if the two overlap at a time when the core has mean \acrshort{wvd} of \textgreater\,5\,\unit{K}, indicating that it has reached the upper troposphere.
+% Each anvil cloud can be associated with multiple cores, allowing us to identify cases of clustered convection. 
+% As we detect the cores based on cloud-top cooling, however, we can only detect the cores themselves during the growing phase, and cannot detect cores that occur underneath cold, high, anvil clouds.
+% When determining the number of cores associated with an anvil, we count the total number of cores observed over the entire lifetime, even if they do not occur at the same time, and including all merges and splits of the anvil cloud.
+% This flexibility allows for a wide range of different organised systems to be analysed.
 
 \begin{figure}[tp]
     \includegraphics[width=\textwidth]{figures/chapter4_05.png}
@@ -226,16 +228,17 @@ This flexibility allows for a wide range of different organised systems to be an
 \end{figure}
 
 
-Due to the lack of sensitivity of the \acrshort{seviri} \acrshort{swd} to thin ice clouds, we only detect and track the thick portion of the anvil in this chapter.
-The \acrshort{wvd} channel of \acrshort{seviri} is capable of detecting anvils with optical thicknesses of approximately 1--1.5 (see fig.~\ref{fig:S_anvil_sensitivity}).
+Due to the lack of sensitivity of the \acrshort{seviri} \acrshort{swd} to thin ice clouds, only the thick portion of the anvil is tracked in this chapter.
+The \acrshort{wvd} channel of \acrshort{seviri} is capable of detecting anvils with optical thicknesses of approximately 1.5$\pm$0.5 (see fig.~\ref{fig:S_anvil_sensitivity}).
 However, the closer spacing and narrower bandwidth of the \acrshort{seviri} \acrshort{lw} window channels (see fig.~\ref{fig:S_abi_seviri_rsr}), along with the higher noise means that the \acrshort{swd} is less sensitive to thin cirrus compared to instruments such as the \acrshort{goes}-16 \acrshort{abi} (see fig.~\ref{fig:S_abi_seviri_anvil_sensitivity}).
-The anvils tracked in this paper have a median retrieved minimum optical depth of 1.45, although this value is likely biased high as many anvils dissipate at night when accurate satellite retrievals of optical depth are not available.
+The anvils tracked in this chapter have a median retrieved minimum optical depth of 1.45, although this value may be biased high as many anvils dissipate at night when accurate satellite retrievals of optical depth are not available.
 While this sensitivity captures much of the \acrshort{cre} of \acrshort{dcc} anvils \citep{berry_cloud_2014} the long lifetimes of dissipating thin anvils may have a significant warming contribution to net anvil \acrshort{cre} \citep{horner_evolution_2023}.
 As a result, it is expected that the anvil \acrshort{cre} measured in this study is biased low.
 
-An example of the cores and anvils detected by the tobac-flow algorithm is shown in fig.~\ref{fig:seviri_detection}, at 3-hour intervals. In fig.~\ref{fig:seviri_detection}\,a, we see a large number of developing cores over central Africa. 
-In fig.~\ref{fig:seviri_detection}\,b, we see more developing cores over Western Africa as the pattern of initiation has shifted with the diurnal cycle.
-In fig.~\ref{fig:seviri_detection}\,c,d we observe fewer new developing cores later in the day, but the larger anvil clouds persist into the night-time.
+An example of the cores and anvils detected by the tobac-flow algorithm is shown in fig.~\ref{fig:seviri_detection}, at 3-hour intervals. 
+In fig.~\ref{fig:seviri_detection}\,a, a large number of developing cores are seen over central Africa. 
+In fig.~\ref{fig:seviri_detection}\,b, there are more developing cores over Western Africa as the pattern of initiation has shifted with westward with the diurnal cycle.
+In fig.~\ref{fig:seviri_detection}\,c,d fewer newly developing cores are observed later in the day, but the larger anvil clouds persist into the night-time.
 
 
 \begin{figure}[tp]
@@ -249,10 +252,10 @@ In fig.~\ref{fig:seviri_detection}\,c,d we observe fewer new developing cores la
 \end{figure}
 
 
-Over the 4-month period of the case study we track a total of 145,463 cores (of which 79,592 are associated with anvil clouds) and 35,941 anvils. 
+Over the 4-month period of the case study a total of 145,463 cores (of which 79,592 are associated with anvil clouds) and 35,941 anvils are tracked. 
 Using the detected regions of both core and anvil components of tracked \acrshort{dcc}s, the cloud properties and \acrshort{cre} are calculated for each \acrshort{dcc} at each time step from the retrieval and broadband fluxes data. 
 The resulting dataset allows us to analyse the properties of each \acrshort{dcc} over their lifetimes from a Lagrangian perspective.
-While the studied domain contains both land and sea regions, only a small proportion of tracked \acrshort{dcc}s occurred over sea (11\%), and so we have not separated the analysis of land and oceanic \acrshort{dcc}s in this chapter.
+While the studied domain contains both land and sea regions, only a small proportion of tracked \acrshort{dcc}s occurred over sea (11\%), and so analysis of land and oceanic \acrshort{dcc}s are not separated in this chapter.
 
 \section{Results}
 
@@ -262,8 +265,9 @@ Figure~\ref{fig:seviri_map_dists}\,a shows the frequency of core detections for 
 The majority of observed convection occurs over the tropical rainforest regions. 
 During the months of May-August, the \acrfull{itcz} is at its northernmost extent over Africa \citep{nicholson_itcz_2018}. 
 The West African monsoon occurs during these months, with the primary band of convection located between 5-15\textdegree N \citep{nicholson_revised_2009}, which our observations agree with. 
-We observed the maximum frequency of convection at around 6\textdegree N, 12\textdegree E over the Western High Plateau of Cameroon, with high frequencies of convection also observed over the Nigerian coastal plains to the West and the Jos Plateau in Northern Nigeria. 
+The maximum frequency of convection is observed at around 6\textdegree N, 12\textdegree E over the Western High Plateau of Cameroon, with high frequencies of convection also observed over the Nigerian coastal plains to the West and the Jos Plateau in Northern Nigeria. 
 High rates of convection are also observed over the coastal plains and inland highlands of Guinea, Sierra Leone and Liberia (5--12\,\textdegree N, 5--15\,\textdegree W)
+Almost no convective activity is observed between 10\textdegree S and 20\textdegree S as during the Northern hemisphere summer this is the location of the descending branch of the Hadley cell which suppresses convection.
 
 
 \begin{figure}[tp]
@@ -285,24 +289,24 @@ Convection over the land tends to occur in the afternoon (15:00--18:00), whereas
 Furthermore, convection over land tends to occur in a fairly narrow range of times whereas over the ocean convection occurs throughout the diurnal cycle, resulting in the hatching applied to much of the ocean region. 
 There is also a noticeable lake effect on the time of convection occurring over Lake Victoria (2\textdegree S, 34\textdegree E) and Lake Tanganyika (7\textdegree S, 31\textdegree E), with convection typically observed in the early morning.
 
-When we compare the regions of Cameroon and Nigeria (4--10\textdegree N, 6--14\textdegree E), where we detect the most cores in fig.~\ref{fig:seviri_map_dists}\,a, with the average time of detection in fig.~\ref{fig:seviri_map_dists}\,b, we see that the grid squares with more cores also tend to have an earlier average time of detection than the surrounding grid squares. 
+When comparing the regions of Cameroon and Nigeria (4--10\textdegree N, 6--14\textdegree E), where the most growing cores were detected in fig.~\ref{fig:seviri_map_dists}\,a, with the average time of detection in fig.~\ref{fig:seviri_map_dists}\,b, it appears that the grid squares with more cores also tend to have an earlier average time of detection than the surrounding grid squares. 
 Precipitation over the Nigerian plains and the Jos Plateau is linked to South-westerly winds bringing moist, warm air from the Gulf of Guinea \citep{vondou_seasonal_2010}. 
 This warm air may then trigger convection both through the sea breeze effect and orographic lifting when it reaches the highlands, explaining both the higher frequency and earlier timing of convection compared to surrounding regions. 
 A similar relationship between the high frequency of convection and earlier time of detection is also seen over the coastal region and adjacent highlands of Guinea, Sierra Leone and Liberia (5--12\textdegree N, 5--15\textdegree W) which may be due to the same mechanism.
 
 It should be noted that due to the method of detection, cores that develop under existing anvils are less likely to be detected than those in clear sky regions. 
-As a result, we may underestimate the occurrence of later occurring cores, particularly in regions such as the Northern Sahel where a second, night-time peak of precipitation has been observed.
+As a result, the occurrence of subsequent developing cores in organised systems may be underestimated, particularly in regions such as the Northern Sahel where a second, night-time peak of precipitation has been observed.
 
-For all further analysis, we consider only cores and anvils that are detected north of 15\textdegree S in order to constrain our analysis to tropical \acrshort{dcc}s.
+For all further analysis, only cores and anvils that are detected north of 15\textdegree S are considered in order to constrain our analysis to tropical \acrshort{dcc}s.
 
 \subsection{Anvil Cloud Properties}
 
-To investigate how the behaviour of \acrshort{dcc} anvils is affected by their organisation, we group observed anvils based on how many cores are associated with them, from isolated \acrshort{dcc}s with one core to highly-clustered \acrshort{dcc}s (such as tropical cloud clusters and \acrshort{mcs}s) with 10 or more cores. 
+To investigate how the behaviour of \acrshort{dcc} anvils is affected by their organisation, observed anvils are grouped based on how many cores are associated with them, from isolated \acrshort{dcc}s with one core to highly-clustered \acrshort{dcc}s (such as tropical cloud clusters and \acrshort{mcs}s) with 10 or more cores. 
 Anvils with 6--9 cores, and with 10 or more cores, are grouped together to ensure that these groups have a comparable number of members for analysis.
 
 Figure~\ref{fig:seviri_anvil_stats} shows properties related to the anvil area and lifetime linked to the number of cores. 
-In fig.~\ref{fig:seviri_anvil_stats}\,a we show the average anvil maximum area for each group. 
-We find that the maximum area increases approximately linearly with the number of cores, with increasingly clustered anvils having increasingly larger maximum areas, and highly clustered anvils having substantially larger anvils. 
+In fig.~\ref{fig:seviri_anvil_stats}\,a the average anvil maximum area is shown for each group. 
+The maximum area increases approximately linearly with the number of cores, with increasingly clustered anvils having increasingly larger maximum areas, and highly clustered anvils having substantially larger anvils. 
 Figure~\ref{fig:seviri_anvil_stats}\,b shows the average anvil lifetime compared to the number of cores. 
 While the lifetime also increases with the number of cores, the difference between isolated and highly clustered anvils is proportionately smaller.
 
@@ -319,7 +323,7 @@ While the lifetime also increases with the number of cores, the difference betwe
 
 
 Figure~\ref{fig:seviri_anvil_stats}\,c shows the number of anvils observed with differing numbers of cores. 
-We see that the vast majority of all anvils observed are isolated \acrshort{dcc}s, with over 80\% having a single detected core. 
+The vast majority of all anvils observed are isolated \acrshort{dcc}s, with over 80\% having a single detected core. 
 As the number of cores increases, the number of anvils detected decreases rapidly. 
 However, when considering the large increase in both anvil area and lifetime with the number of cores, the total anvil coverage for highly clustered anvils is much larger (see fig.~\ref{fig:seviri_anvil_stats}\,d). 
 Despite their high frequency, isolated \acrshort{dcc}s only account for 12\% of total anvil coverage, whereas highly clustered (10+ cores) account for over 50\%. 
@@ -344,7 +348,7 @@ Care should be taken when interpreting such low retrieved \acrshort{ctt} values 
 
 
 \citet{futyan_deep_2007} divide the \acrshort{dcc} lifecycle into growing, mature and dissipating phases based on the time of observation of the coldest anvil \acrshort{ctt}, maximum anvil area and dissipation of the anvil. 
-In fig.~\ref{fig:seviri_lifetime_dists} we show the distribution of the time taken to reach each of these lifecycle milestones for anvils separated by the number of associated cores. 
+Figure~\ref{fig:seviri_lifetime_dists} shows the distribution of the time taken to reach each of these lifecycle milestones for anvils separated by the number of associated cores. 
 For all cases, the average time of minimum anvil \acrshort{ctt} occurs before the maximum area, indicating that the anvils continue to grow beyond the maximum of convective activity. 
 As the number of cores associated with each anvil increases, the time of the coldest \acrshort{ctt} and largest area occur proportionately earlier during the lifetime of the anvil. 
 As a result, these more clustered anvils spend more of their lifetime existing with warming, shrinking anvils than the isolated \acrshort{dcc}s.
@@ -361,7 +365,7 @@ As a result, these more clustered anvils spend more of their lifetime existing w
 \end{figure}
 
 
-In fig.~\ref{fig:seviri_lifetime_proportions}, we compare the proportion of the overall anvil lifetime spent in each of the lifecycle phases defined by \citet{futyan_deep_2007} to the number of cores associated with the anvil. 
+Figure~\ref{fig:seviri_lifetime_proportions}, compares the proportion of the overall anvil lifetime spent in each of the lifecycle phases defined by \citet{futyan_deep_2007} to the number of cores associated with the anvil. 
 There is a clear trend that, as the number of cores increases, the proportion of the lifecycle spent in the growing phase decreases, and the proportion spent in the mature and dissipating phases increases.
  Although this approach to classifying the lifecycle of anvil clouds is simplistic and does not capture the complexities of large, long-lived \acrshort{dcc}s which may go through multiple cycles of growth, dissipation and re-invigoration, it can provide a useful perspective when considering the \acrshort{lw} \acrshort{cre} of \acrshort{dcc}s. 
  The time of the coldest average \acrshort{ctt} will be when the \acrshort{lw} \acrshort{cre} of the anvil cloud is at its greatest, and so can help understand the evolution of the anvil \acrshort{cre} over its lifetime.
@@ -380,7 +384,7 @@ There is a clear trend that, as the number of cores increases, the proportion of
 
 \subsection{Anvil \acrshort{cre}}
 
-Using the broadband fluxes data in conjunction with the tracked \acrshort{dcc} dataset, we are able to track how the \acrshort{sw}, \acrshort{lw} and net \acrshort{cre} evolve over the lifetime of each tracked anvil.
+Using the broadband fluxes data in conjunction with the tracked \acrshort{dcc} dataset enables tracking of how the \acrshort{sw}, \acrshort{lw} and net \acrshort{cre} evolve over the lifetime of each tracked anvil.
 Figure~\ref{fig:cre_lifecycle_examples} shows the time series of \acrshort{sw}, \acrshort{lw} and net \acrshort{cre} as well as the cumulative average \acrshort{cre} (the average of net \acrshort{cre} over anvil area and lifetime up until that point in time) for several different anvil lifecycles.
 Note that all fluxes are \acrshort{toa} and measured in the downward direction, so a positive value represents warming and a negative value represents cooling.
 
@@ -407,10 +411,10 @@ It initiates in the morning, and so the \acrshort{sw} cooling dominates for the 
 Compared to the isolated \acrshort{dcc}, it exists for much longer during the night time, and so the cumulative average becomes positive over the full lifetime of the anvil cloud.
 
 Figure~\ref{fig:cre_lifecycle_examples}\,c shows the case of a four-day, highly clustered convective event. 
-In this case, we see the net \acrshort{cre} alternates between warming and cooling throughout the diurnal cycle. 
+In this case, the net \acrshort{cre} alternates between warming and cooling throughout the diurnal cycle. 
 The cumulative \acrshort{cre} also alternates between overall warming and cooling throughout the lifetime of the anvil and results in a small net cooling effect.
 
-We see in both the longer-lived cases (fig.~\ref{fig:cre_lifecycle_examples}\,b, c) that the \acrshort{lw} \acrshort{cre} reduces towards the end of the anvil cloud lifetime. 
+In both the longer-lived cases (fig.~\ref{fig:cre_lifecycle_examples}\,b, c) the \acrshort{lw} \acrshort{cre} reduces towards the end of the anvil cloud lifetime. 
 This may be reflective of the findings from fig.~\ref{fig:seviri_lifetime_dists} that the minimum average \acrshort{ctt} occurs before the mid-point of the cloud lifecycle for longer-lived systems. 
 This reduction in \acrshort{lw} \acrshort{cre} may be due to a thinning of the anvil cloud (allowing increased \acrshort{lw} emission from the surface), or due to heating and stabilisation of the upper troposphere by the \acrshort{dcc}.
 In addition, the cumulative radiative cooling of the anvil top may drive subsidence and reduce the cloud-top height of the anvil over time \citep{sokol_tropical_2020}
@@ -434,7 +438,7 @@ The centre of the distribution---with average \acrshort{cre}s close to zero---sh
 \end{figure}
 
 
-In fig.~\ref{fig:anvil_sw_lw_cre} we break down the \acrshort{cre} distribution into that of the \acrshort{sw} (fig.~\ref{fig:anvil_sw_lw_cre}\,a) and \acrshort{lw} (fig.~\ref{fig:anvil_sw_lw_cre}\,b) components. 
+In fig.~\ref{fig:anvil_sw_lw_cre} the \acrshort{cre} distribution is broken down into that of the \acrshort{sw} (fig.~\ref{fig:anvil_sw_lw_cre}\,a) and \acrshort{lw} (fig.~\ref{fig:anvil_sw_lw_cre}\,b) components. 
 The \acrshort{sw} \acrshort{cre} shows a similar bimodal distribution to that of the net \acrshort{cre}, whereas the \acrshort{lw} distribution shows a normal distribution. 
 The \acrshort{sw} \acrshort{cre} has a large peak at 0\,\unit{W m^{-2}} for \acrshort{dcc}s that occur during the night-time, and a broad peak centred around --\,300\,\unit{W m^{-2}} consisting of daytime \acrshort{dcc}s, with the average falling between the two. 
 Note that the average for the \acrshort{lw} falls to the right of the peak of the distribution because the average is integrated over the anvil area and lifetime, and the largest and longest-lived anvils tend to have colder \acrshort{ctt} and hence larger \acrshort{lw} \acrshort{cre}.
@@ -452,7 +456,7 @@ Note that the average for the \acrshort{lw} falls to the right of the peak of th
 
 
 Figure~\ref{fig:anvil_cre_time_vs_ctt} shows (a) the average instantaneous anvil \acrshort{cre} binned by the time of observation (local solar time) and mean anvil \acrshort{ctt}, and (b) the average lifetime anvil \acrshort{cre} binned by time of initial detection (local solar time) and mean anvil \acrshort{ctt}.
-We see that, as expected, mean anvil \acrshort{cre} becomes more positive with decreasing \acrshort{ctt} due to increased \acrshort{lw} warming. 
+As expected, mean anvil \acrshort{cre} becomes more positive with decreasing \acrshort{ctt} due to increased \acrshort{lw} warming. 
 However, the diurnal cycle of detection shows a much stronger contrast, with anvils detected during the daytime having a net cooling effect compared to those at night which have a net warming \acrshort{cre}. 
 This diurnal cycle effect is stronger for those anvils with warmer average \acrshort{ctt}, generally representing isolated, shorter-lived \acrshort{dcc}s, and is weaker for colder anvil \acrshort{ctt}. 
 Note also that in fig.~\ref{fig:seviri_anvil_ctt_stats}\,b that the phase of the diurnal cycle shifts to earlier times of detection as average anvil \acrshort{ctt} become colder, as these \acrshort{dcc}s tend to have longer lifetimes.
@@ -470,27 +474,27 @@ Note also that in fig.~\ref{fig:seviri_anvil_ctt_stats}\,b that the phase of the
 
 
 It is apparent from figs.~\ref{fig:anvil_cre_dist} and \ref{fig:anvil_sw_lw_cre} that the observed neutral net anvil \acrshort{cre} is not only due to a balance between the \acrshort{sw} and \acrshort{lw}, but also from a balance of the cooling effect of daytime \acrshort{dcc}s and the warming effect of those occurring at night. 
-If the number of \acrshort{dcc}s occurring during the daytime were to reduce we would expect a net warming effect without any change to the \acrshort{cre} of individual \acrshort{dcc}s.
-As the diurnal cycle of convection over the ocean is nearly uniform, we should expect little impact on anvil \acrshort{cre} from changes in the time of convective initiation.
+If the number of \acrshort{dcc}s occurring during the daytime were to reduce then there could be a net warming effect without any change to the \acrshort{cre} of individual \acrshort{dcc}s.
+As the diurnal cycle of convection over the ocean is nearly uniform, little impact on anvil \acrshort{cre} should be expected from changes in the time of convective initiation.
 However, over land, where convective activity is much more common in the afternoon, changes in the diurnal cycle may have a much larger effect on anvil \acrshort{cre}.
 
 Furthermore, fig.~\ref{fig:anvil_cre_time_vs_ctt}\,b highlights that differences in anvil temperature are linked to the diurnal cycle of anvil \acrshort{cre} as colder anvils tend to have longer lifetimes.
-As a result, if warming surface temperatures lead to the invigoration of \acrshort{dcc}s, the warming effect we would see would be larger than the \acrshort{lw} effect from the change in anvil temperature alone. 
+As a result, if warming surface temperatures lead to the invigoration of \acrshort{dcc}s, the warming effect would be larger than the \acrshort{lw} effect from the change in anvil temperature alone. 
 Surface warming may also result in an earlier time of convective initiation, resulting in a cooling feedback.
 
 
 \section{Summary}  %% \conclusions[modified heading if necessary]
 
-By combining a novel cloud tracking algorithm with a new dataset of derived all-sky and clear-sky fluxes from geostationary satellite observations, we were able to detect and track \acrshort{dcc} anvils and their associated cores for both isolated and clustered \acrshort{dcc}s and investigate their properties, lifecycle and \acrshort{cre}. 
-As this study was performed using data from May-August (Northern hemisphere summer), we observed the majority of convective activity over the Guinea-Congo rainforest and Savanna regions, as the \acrshort{itcz} is at its northernmost extent.
+By combining a novel cloud tracking algorithm with a new dataset of derived all-sky and clear-sky fluxes from geostationary satellite observations, \acrshort{dcc} anvils were detected and tracked along with their associated cores for both isolated and clustered \acrshort{dcc}s, and their properties, lifecycle and \acrshort{cre} investigated. 
+As this study was performed using data from May-August (Northern hemisphere summer), the majority of convective activity was observed over the Guinea-Congo rainforest and Savanna regions, as the \acrshort{itcz} is at its northernmost extent.
 
-We evaluate the degree of convective clustering of each anvil by measuring the number of cores it is associated with. 
-We find that, as expected, anvils with the greatest number of cores---including \acrshort{mcs}s---have larger anvil areas, longer lifetimes and the coldest cloud tops. 
+The degree of convective clustering of each anvil is evaluted by measuring the number of cores it is associated with. 
+As expected, anvils with the greatest number of cores---including \acrshort{mcs}s---have larger anvil areas, longer lifetimes and the coldest cloud tops. 
 As a result, despite the majority of observed \acrshort{dcc}s being isolated, the highly clustered anvils make up most of the anvil coverage, and so cause most of the anvil impact over this region. 
-We also find that the proportion of the lifecycle spent in the mature and dissipating phases increases with the number of cores, and the proportion spent in the growing phase decreases.
+In addition, the proportion of the lifecycle spent in the mature and dissipating phases increases with the number of cores, and the proportion spent in the growing phase decreases.
 
-When looking into the net \acrshort{cre} of anvils, we find that, although the average \acrshort{cre} across all observed anvils is close to zero, few anvils have near zero \acrshort{cre} themselves. 
-We find a bimodal distribution of anvil \acrshort{cre}, with isolated \acrshort{dcc}s that exist during the daytime causing the negative (cooling) peak, and those that exist during the night-time causing the positive (warming) peak. 
+When investigating the net \acrshort{cre} of anvils, although the average \acrshort{cre} across all observed anvils is close to zero, few individual anvils have near zero \acrshort{cre} themselves. 
+There exists a bimodal distribution of anvil \acrshort{cre}, with isolated \acrshort{dcc}s that exist during the daytime causing the negative (cooling) peak, and those that exist during the night-time causing the positive (warming) peak. 
 The systems with near zero \acrshort{cre} tend to live longer with more cores, and exist during both the day- and night-time. 
 As a result, when considering the magnitude of the anvil \acrshort{cre}, isolated \acrshort{dcc}s have an outsized contribution to the overall average anvil \acrshort{cre} of 21.4\% compared to their proportion of all anvil coverage (15.3\%) (see fig.~\ref{fig:S_contribution_to_net_cre}).
 
@@ -522,7 +526,7 @@ Disentangling the impacts of convective processes and anvil cirrus processes on 
 Here, the use of model experiments such as \citet{gasparini_diurnal_2022} may help understand the impacts of each process on anvil \acrfull{cre} and the potential climate feedbacks.
 
 There are, however, a number of limitations in this study which present opportunities for future research. 
-Firstly, as this study only involved 4 months of data during the Northern Hemisphere summer, we were not able to investigate the impact of the seasonal cycle on the behaviour of \acrshort{dcc}s and their \acrshort{cre}. 
+Firstly, as this study only involved 4 months of data during the Northern Hemisphere summer, the impact of the seasonal cycle on the behaviour of \acrshort{dcc}s and their \acrshort{cre} could not be studied. 
 Furthermore, extending to a larger domain would allow investigation of regional differences, in particular the important land--sea contrast of deep convection \citep{takahashi_revisiting_2023}. 
 A major limitation of the \acrshort{seviri} data is its poor sensitivity to thin anvil cirrus, which has an important impact on net anvil \acrshort{cre} \citep{protopapadaki_upper_2017, horner_evolution_2023}.
 The flexible combined imager \citep{martin_fci_2021} aboard the third-generation Meteosat may allow better detection and study of thin anvil cirrus over tropical Africa in the near future.
