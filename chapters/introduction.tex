@@ -137,9 +137,9 @@ Heterogeneous freezing occurs due to the presence of \acrfullpl{inp} \citep{kanj
 However, \acrshort{inp}s are somewhat rare in the atmosphere \citep{burrows_icenucleating_2022a}, and so heterogeneous freezing tends to result in fewer ice cloud particles, and, in some cases, mixed-phase clouds which consist of both ice and liquid droplets.
 
 Ice particles may grow through deposition; the direct freezing of water vapour onto the surface of the crystal.
-Similarly, ice crystals may lose mass due to sublimation, although due to the low rates of sublimation at cold temperatures this process is slow at high altitudes \citep{seeley_formation_2019}.
-Ice crystals may grow through aggregation, where multiple crystals join together, or through riming, where super-cooled water droplets freeze on contact with an ice crystal \citep{taylor_observations_2016}.
-In some conditions, additional, smaller ice crystals are produced through secondary ice production processes including rime-splintering, droplet shattering and collision fragmentation \citep{field_secondary_2017a}.
+Similarly, ice crystals may lose mass due to sublimation, although due to the low rates of sublimation at cold temperatures this process is slow at high altitudes \citep{boehm_maintenance_1999, seeley_formation_2019}.
+Ice crystals may grow through aggregation, where multiple crystals join together, or through riming, where super-cooled water droplets freeze on contact with an ice crystal \citep{ryan_growth_1976}.
+In some conditions, additional, smaller ice crystals are produced through secondary ice production processes including rime-splintering \citep{hallett_production_1974}, droplet shattering and collision fragmentation \citep{field_secondary_2017a}.
 These processes are common in deep convection due to strong updrafts, turbulence and the occurrence of homogeneous freezing, and so the most intense \acrshort{dcc}s tend to create anvils with smaller ice particles than those formed in in-situ cirrus.
 Ice crystals are commonly removed from the atmosphere via sedimentation, which plays an important role in precipitation \citep{mulmenstadt_frequency_2015}.
 
@@ -212,7 +212,7 @@ The build-up of instability is measured as the \acrfull{cape} of an air parcel (
     \end{equation}
 \end{eqfloat}
 
-The properties of a convective airmass are commonly derived using parcel theory \citep{stull_practical_2016}. 
+The properties of a convective airmass are commonly derived using parcel theory \citep[][e.g.]{emanuel1983lagrangian}. 
 This approach approximates the air parcel as undergoing adiabatic processes while it is lifted from the lower to the upper troposphere. 
 The buoyancy of the air parcel along this trajectory is dependent on the initial height and moisture content of the parcel as well as the temperature profile of the environment it exists in. 
 Analysis of these trajectories can be performed by plotting them on a thermodynamic diagram. 
@@ -241,23 +241,23 @@ Although the air parcel may continue to rise above this point due to its momentu
 
 Two further properties related to convection are also shown on the tephigram. 
 \acrshort{cape} can be calculated as the area between the parcel temperature profile and the environment profile between the \acrshort{lfc} and the \acrshort{lnb}, showing clearly how \acrshort{cape} is the total work exerted by positive buoyancy forces between these two levels. 
-From this, \acrshort{cape} can be used to calculate the theoretical maximum updraft velocity if all \acrshort{cape} is converted to kinetic energy, although typical maximum updraft velocities are half of this amount due to the dilution of updraft plumes through mixing with the surrounding environment \citep{romps_undiluted_2010}. 
+From this, \acrshort{cape} can be used to calculate the theoretical maximum updraft velocity if all \acrshort{cape} is converted to kinetic energy, although typical maximum updraft velocities are half of this amount due to the dilution of updraft plumes through mixing with the surrounding environment \citep{lemone_cumulonimbus_1980, romps_undiluted_2010}. 
 Similarly, \acrfull{cin} can be calculated as the area between the temperature profiles between the initial parcel location and the \acrshort{lfc}. 
 \acrshort{cin} measures the work required to lift the parcel, overcoming negative buoyancy forces, in order to reach the \acrshort{lfc}.
 
 There are a number of caveats with the parcel approach for deep convection that must be considered. 
 The convective profile of a parcel depends upon its starting conditions including initial height, temperature and humidity. 
 As a result, for even a single atmospheric column, a whole ensemble of parcels initialised at different locations within the PBL can be considered, each with different values of \acrshort{lcl}, \acrshort{lfc}, \acrshort{lnb}, \acrshort{cape} and \acrshort{cin}. 
-To account for this, the mixed-layer \acrshort{cape} is often calculated from the average for parcels initiated in the \acrshort{pbl} \citep{stull_practical_2016}. 
+To account for this, the mixed-layer \acrshort{cape} is often calculated from the average for parcels initiated in the \acrshort{pbl} \citep{stevens_atmospheric_2005}. 
 In addition, the properties of the most unstable parcel may also be found in the same manner, which may provide useful information for predicting convective initiation.
 
-Secondly, it is generally assumed that above the \acrshort{lcl} the parcel follows the moist pseudo-adiabat \citep{peters_generalized_2022}, which approximates that all condensed water is removed from the parcel immediately via precipitation \citep{emanuel_atmospheric_1994}. 
+Secondly, it is generally assumed that above the \acrshort{lcl} the parcel follows the moist pseudo-adiabat, which approximates that all condensed water is removed from the parcel immediately via precipitation \citep{emanuel_atmospheric_1994}. 
 Although this approximation may seem to agree with the high precipitation rates of \acrshort{dcc}s, observed profiles of convective updrafts more closely match the moist adiabatic lapse rate (which assumes that all condensed water remains within the parcel) \citep{xu_is_1989}. 
 In addition, while it is often considered that MSE is conserved in convective processes this is only correct in the case of environments in hydrostatic balance \citep{peters_evaluating_2021}. 
 In deep convection, where this is not the case, it is a better approximation that MSE minus \acrshort{cape} is conserved \citep{romps_mse_2015}.
 
 Finally, and arguably most importantly, is that the parcel model assumes that there is no mixing between the air parcel and the surrounding environment, a state that is referred to as undiluted. 
-In the dynamic and turbulent environment of deep convection mixing does occur, however, and it is very rare for an undiluted state to occur \citep{romps_undiluted_2010}. 
+In the dynamic and turbulent environment of deep convection mixing does occur, however, and it is very rare for an undiluted state to occur \citep{zipser_cumulonimbus_1980, romps_undiluted_2010}. 
 The entrainment of dry air into convective updrafts due to mixing reduces both \acrshort{cape} \citep{zhang_effects_2009} and the \acrshort{lnb} \citep{masunaga_convective_2016} as it adjusts the parcel profile closer to the background temperature profile, reducing the buoyancy forces. 
 Observations of \acrshort{dcc}s have shown that while the highest cloud tops of \acrshort{dcc}s reach or even exceed the \acrshort{lnb}, the majority of the anvil cloud is detrained at a level substantially below the \acrshort{lnb} \citep{takahashi_where_2012, takahashi_level_2017}.
 
@@ -270,7 +270,7 @@ Wind shear plays an important role in the behaviour of \acrshort{dcc}s which wil
 \subsection{Lifecycle and structure of \acrshort{dcc}s}
 
 The lifecycle of deep convection begins with the development of instability throughout the troposphere. 
-The primary driver of instability is cooling through \acrshort{lw} emissions from water vapour, which cools the troposphere at around 2\,\unit{K} per day \citep{jeevanjee_simple_2020}. 
+The primary driver of instability is cooling through \acrshort{lw} emissions from water vapour, which cools the troposphere at around 2\,\unit{K} per day \citep{mapes_water_2001, jeevanjee_simple_2020}. 
 \acrshort{sw} heating also affects instability which leads to diurnal differences which show large land--sea contrasts. 
 Over land, \acrshort{sw} absorption warms the surface during the daytime, which sensible heating transfers to the lower troposphere. 
 This \acrshort{sw} heating leads to an increase in \acrshort{cape} throughout the day, and, in particular, a peak in convective initiation in the afternoon due to surface heating and the resulting enthalpy flux into the \acrshort{pbl} \citep{hendon_diurnal_1993}.
@@ -317,7 +317,6 @@ Freezing releases additional latent heat of fusion, however this may not contrib
 Due to the large vertical velocities and high supersaturation present in deep convective updrafts, freezing is dominated by homogeneous freezing processes.
 Furthermore, the intense dynamics result in a high rate of secondary ice production through the collision of droplets and rime--splintering.
 As a result, \acrshort{dcc}s tend to form with a large number of small ice particles.
-
 In convective updrafts with large vertical velocity, the momentum of the growing cloud may propel it above the \acrshort{lnb}.
 This produces a phenomenon known as an overshooting top.
 As the cloud will continue to cool adiabatically as they rise, the tops of these updrafts can reach substantially colder temperatures than the surrounding environment \citep{proud_recordlow_2021}.
@@ -338,6 +337,7 @@ The dissipating stage may also be split into two separate periods; those before 
 Firstly, the core region, in which the convective updraught and convective precipitation occur.
 Secondly, the anvil or cloud shield, which consists of a large area of thick cloud surrounding the core at the level of neutral buoyancy, and within which stratiform precipitation may occur.
 Finally, the area of cirrus outflow, where thin ice cloud extends beyond the edge of the anvil cloud, particularly within the dissipating phase \citep{lilly_cirrus_1988}.
+This structure of an isolated \acrshort{dcc} is also referred to as a `hot tower' \citep{riehl_northeast_1951}.
 
 Radiative heating of the anvil cloud base and cooling of the anvil cloud top causes two regions of instability to occur. 
 These unstable profiles drive circulations at the cloud base and top which increase the entrainment of dry air into the anvil while also lifting the anvil higher in the troposphere. 
@@ -350,8 +350,8 @@ Further thinning of the cirrus anvil results in uniform radiative heating throug
 
 \subsection{Convective organisation}
 
-While the majority of \acrshort{dcc}s form as isolated storms, with a single convective core that detrains its own anvil cloud.
-In other cases, \acrshort{dcc}s exist with multiple convective cores feeding a single anvil cloud.
+While the majority of \acrshort{dcc}s form as isolated storms, with a single convective core that detrains its own anvil cloud \citep{riehl_northeast_1951}.
+In other cases, \acrshort{dcc}s exist with multiple convective cores feeding a single anvil cloud \citep{zipser_role_1969, nakazawa_tropical_1988}.
 At the largest end of this progression are \acrfullpl{mcs}, which occur when a cluster of deep convective cores form a single large area of anvil referred to as a cloud shield \citep{roca_simple_2017}.
 These \acrshort{mcs} cloud shields can cover an area of greater than 10,000~km\textsuperscript{2}, several orders of magnitude greater than that of individual \acrshort{dcc}s \citep{houze_mesoscale_2004}.
 
@@ -383,6 +383,7 @@ The processes through which \acrshort{mcs}s form in the first place are still un
 Convective organisation processes have been observed in satellite remote sensing, radiative-convective equilibrium models and cloud-resolving models \citep{holloway_observing_2017}. 
 The formation and lifetime of \acrshort{mcs}s are strongly linked to the dynamics of the surrounding environment through the convergence of moist, low-level air and the divergence of air at the top of the \acrshort{mcs}  \citep{houze_chapter_2014}. 
 Cold pools have a strong influence on the organisation of convective cores, and set the scales over which organisation occurs \citep{jeevanjee_convective_2013}, as their gust fronts, transport of moisture and collisions are vital to triggering new convection within \acrshort{mcs}s \citep{feng_mechanisms_2015}.
+\acrshort{mcs}s have a tendency to trigger additional convection around the storm, blurring the boundary between the \acrshort{mcs} and isolated convection \citep{mapes_gregarious_1993}.
 
 \acrshort{mcs}s are, in general, poorly represented in large-scale climate models due to the inability of the parameterised convection to organise between grid squares \citep{houze_100_2018}.
 While convective resolving models have been proposed as a solution to this issue \citep{stevens_added_2020}, these models still do not represent \acrshort{mcs}s accurately with a tendency towards too little organisation \citep{prein_sensitivity_2021}.
