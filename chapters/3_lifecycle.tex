@@ -33,7 +33,7 @@ The impacts of extreme weather across North America drive interest in the resear
 Furthermore, global warming is expected to drive an increase in a number of factors affecting convection, including \acrshort{cape} \citep{seeley_why_2015}, with a corresponding increase in the intensity of deep convective storms \citep{trapp_changes_2007, seeley_effect_2015}.
 However, many models generally do a poor job of representing convective storms, particularly \acrshort{mcs}s, over much of North America \citep{pinto_assessment_2015}.
 Although convective resolving models have improved this \citep{stevens_added_2020}, there are still shortcomings in their representation of convective cloud processes which limit their capabilities \citep{jeevanjee_vertical_2017, prein_sensitivity_2021}.
-As a result, studying the distribution of convective systems and their properties remains an important task both more understanding these processes, improving models and forecasting the weather \citep{brooks_century_2019}.
+As a result, studying the distribution of convective systems and their properties remains an important task for understanding these processes, improving models and forecasting the weather \citep{brooks_century_2019}.
 
 Geostationary satellite observations have provided a key tool for studying the behaviour of \acrshort{dcc}s over North America due to the large spatial coverage of their observations.
 Early studies focused on the behaviour of mesoscale convective complexes; large, elliptical \acrshort{mcs}s which propagate eastward from the Rocky Mountains \citep{maddox_mesoscale_1980, augustine_mesoscale_1988, augustine_mesoscale_1991}.
@@ -115,10 +115,10 @@ The quality criteria are split into two groups.
 The first set of criteria---for core or anvil removal---removes features that cannot be verified as correctly tracked \acrshort{dcc}s due to bad data or a failure to meet the basic requirements for tracking described in chapter~\ref{chp:tracking_method}.
 This may happen because there are large time gaps in the dataset, or missing data due to artifacts in the \acrshort{abi} observations.
 Detected features which flag any of these criteria are removed from the aggregated dataset in their entirety.
-This step in particular removes anvils which have no cores associated with them, or are not detected as initiating with a developing core.
+This step in particular removes anvils which have no associated cores, or are not detected as initiating with a developing core.
 
-The second set of criteria is used to identify detected cores or anvils which are not observed over their entire extent or lifecycle.
-Cores and anvils which flag are of these criteria are still included within the aggregated properties dataset, but are removed from the analysis \acrshort{dcc} properties throughout this chapter.
+The second set of criteria is used to identify detected cores or anvils that have not been observed over their entire extent or lifecycle.
+Cores and anvils which flag any of these criteria are still included within the aggregated properties dataset, but are removed from the analysis \acrshort{dcc} properties throughout this chapter.
 Quality criteria for cores are listed in table \ref{table:core_validity_criteria}, and those for anvils in table \ref{table:anvil_validity_criteria}.
 
 
@@ -170,11 +170,11 @@ The second, consisting of aggregated monthly core and anvil properties, is produ
 \end{figure}
 
 Figure~\ref{fig:conus_detected_dccs} shows an example of detected cores and anvils over the \acrshort{conus} region, against backgrounds of composite visible imagery (fig.~\ref{fig:conus_detected_dccs}\,a) and 10.4\,\unit{\mu m} \acrshort{bt} (fig.~\ref{fig:conus_detected_dccs}\,b).
-Cores and anvils which are removed from the aggregated dataset are outlined with dotted lines, and those which are marker invalid are shown with dashed outlines.
+Cores and anvils which are removed from the aggregated dataset are outlined with dotted lines, and those which are considered invalid are shown with dashed outlines.
 The large, organised convective system centred at 95\,\textdegree W, 27\,\textdegree N has been removed as it is intersected by a scan-line artifact later in its lifetime.
 The \acrshort{dcc}s observed along the eastern edge of the domain have been marked invalid as, while they are considered true detections of \acrshort{dcc}s, they intersect the edge of the domain.
 
-Over the five-year observing period a total of 3,877,130 cores are detected, of which 3,615,533 are consider valid, and 1,643,030 are linked with an anvil cloud. 
+Over the five-year observing period a total of 3,877,130 cores are detected, of which 3,615,533 are considered valid, and 1,643,030 are linked with an anvil cloud. 
 A total of 648,345 anvils are detected, of which 391,050 are valid, and these valid anvils contain 792,522 cores.
 The disparity in the number of valid cores and the number of cores contained with valid anvils is due to additional filtering applied to the anvils.
 As the larger and longer-lived anvils are more likely to intersect the edges of the domain, they are more likely to be marked invalid than the cores.
@@ -220,11 +220,11 @@ In winter (fig.~\ref{fig:core_density_by_season}\,a) the majority of convection 
 In spring (fig.~\ref{fig:core_density_by_season}\,b), a similar pattern shows over the ocean, and there is also an increase in convection detected over land in the Caribbean, Mexico and the central and southern \acrshort{usa}.
 In summer (fig.~\ref{fig:core_density_by_season}\,c) there is a large increase in convection over land and ocean, with the highest rates of convection of any season.
 There are, in particular, high rates of convection over Mexico, the Caribbean, the southern \acrshort{usa} (Florida in particular) and adjacent ocean regions.
-In Autumn (fig.~\ref{fig:core_density_by_season}\,d) there is a large reduction in the number of convective cores detected over land regions.
+In autumn (fig.~\ref{fig:core_density_by_season}\,d) there is a large reduction in the number of convective cores detected over land regions.
 The number of detections over the ocean remains high, however, indicating a possible lag in the seasonal cycle of convection over oceans compared to that over land.
 
 Figure~\ref{fig:core_annual_land_sea} shows the proportion of cores detected in each month over the annual cycle for land and sea regions.
-Both land and sea regions show a peak of convective activity in the summer, and a low in the winter months.
+Both land and sea regions show a peak of convective activity in the summer and a low in the winter months.
 However, as suggested by fig.~\ref{fig:core_density_by_season}, there is a time lag of about 1 month between the annual cycle of convection over land and that over the ocean, likely due to the time lag in ocean heating.
 Comparing the tropics and mid-latitudes, the monthly distribution of convection is much more sharply focused on July--August in the mid-latitudes compared to the broader distribution seen in the tropics.
 
@@ -306,11 +306,11 @@ Figure~\ref{fig:core_properties}\,c shows that the core cooling rate peaks at va
 The distribution is slightly truncated by the requirement for detected cores to have a cooling rate of at least 0.5\,\unit{K minute\textsuperscript{-1}}.
 
 The minimum core \acrshort{bt} distribution (fig.~\ref{fig:core_properties}\,d) peaks at around 220\,\unit{K}, supporting the theory that the radiative tropopause sets the height of the convectively active layer of the atmosphere.
-Many cores only reach temperatures warming than 220\,K, indicating either a lower \acrshort{lnb} or dilution of the convective updraft leading to reduced bouyancy.
+Many cores only reach temperatures warming than 220\,K, indicating either a lower \acrshort{lnb} or dilution of the convective updraft leading to reduced buoyancy.
 In addition, a large number of cores reach \acrshort{bt} colder than 220\,K, which, for the coldest cases, likely indicates the occurrence of overshooting tops.
 
 The hatched areas in fig.~\ref{fig:core_properties} show the proportion of each distribution consisting of the initial cores of tracked \acrshort{dcc}s.
-For these initial cores there is no possibility of the observations being masked by an overlaying anvil cloud, these are expected to provide the most complete measurements of developing core properties.
+As their development will not be masked by an overlaying anvil cloud, these cores are expected to provide the most complete measurements of developing core properties.
 For the lifetime, maximum area and cooling rate these show close similarities to the shape of the distribution for all cores, indicating that masking due to anvils does not significantly affect the ability to observe the core properties.
 For the minimum core \acrshort{bt}, the initial cores tend to have warmer \acrshort{bt} than later cores, indicating an increased presence of cold cores and overshooting tops in organised convection.
 
@@ -377,7 +377,7 @@ Beyond a certain intensity, the lifetime of the growing phase of a convective co
     \centering
     \includegraphics[width=\textwidth]{figures/chapter2_11.png}
     \caption[
-    A map of average time of day of initiation of detected cores
+    A map of the average time of day of initiation of detected cores
     ]{
     The average time of day of initiation of cores observed within each 1\texttimes1\textdegree\ grid box. The time of initiation is calculated as the local solar time based on longitude, and the mean is calculated as the circular mean over a 24-hour period to account for the cyclical aspect of the hour of day.
     }
@@ -616,7 +616,7 @@ Figure~\ref{fig:anvil_cores_and_coverage}\,e and f show the distribution of the 
 Overall, the vast majority of anvils detected are isolated \acrshort{dcc}s with only a single core.
 For anvils with greater than five cores, the number of systems observed drops to such a level that grouping of these \acrshort{dcc}s into bins of 6--9 cores and 10 or more is performed to ensure that there is a representative sample size of each group.
 Despite making up the majority of observed \acrshort{dcc}s, single core systems only make up 12\% of the total anvil coverage.
-Instead, despite being few in number, it is the most organised \acrshort{dcc}s---those with ten or more cores---which are responsible for the majority of anvil coverage due to their large area and lifetime.
+Instead, despite being few in number, the most organised \acrshort{dcc}s with ten or more cores are responsible for the majority of anvil coverage due to their large area and lifetime.
 The large area and lifetime of these systems---seen in the long tails of those distributions in fig.~\ref{fig:anvil_properties}---compound to result in this large coverage.
 
 %f
@@ -634,7 +634,8 @@ The large area and lifetime of these systems---seen in the long tails of those d
 Figure~\ref{fig:anvil_properties_regions} shows how the averages of the maximum areas, lifetimes, \acrshort{bt} and number of cores vary between different regions.
 For both isolated and multi-core convection, the average areas and lifetimes shown in fig.~\ref{fig:anvil_properties_regions}\,a and b respectively are larger over land than sea, and in the mid-latitudes than in the tropics.
 For the anvil \acrshort{bt} shown in fig.~\ref{fig:anvil_properties_regions}\,c, both the mean and minimum \acrshort{bt} of anvils is colder over land than sea, and also colder in the tropics than in the mid-latitudes.
-\acrshort{dcc}s over land tend to have more cores than those over sea, however is is clear that as these differences also apply to isolated \acrshort{dcc}s, they are connected to changes in the convective processes and anvil evolution in the different regions, rather than simply a sampling bias.
+\acrshort{dcc}s over land tend to have more cores than those over the sea.
+These differences also apply to isolated \acrshort{dcc}s, indicating that they are connected to changes in the convective processes and anvil evolution in the different regions rather than a sampling bias.
 
 \subsection{Diurnal cycle of anvils}
 
@@ -652,7 +653,7 @@ For the anvil \acrshort{bt} shown in fig.~\ref{fig:anvil_properties_regions}\,c,
 
 Figure~\ref{fig:anvil_detection_time_map} shows the average local time of day of anvil detection.
 Similar to fig.~\ref{fig:core_detection_time_map} a strong land--sea contrast is seen.
-However, over parts of the Caribbean Sea the average time of anvil detection is in the afternoon rather than in the morning, which may be linked to anvils that initiate over land but are advected over the ocean.
+However, over parts of the Caribbean Sea, the average time of anvil detection is in the afternoon rather than in the morning, which may be linked to \acrshort{dcc}s that initiate over land but have anvils which are advected over the ocean.
 There is also a later average time of detection of anvils over the \acrshort{ngp} region, although this shows less of a contrast with surrounding land regions than that of the core initiation times.
 This indicates that the second peak of core convective activity during the nighttime and early morning in fig.~\ref{fig:core_ngp_contrast} is linked to long-lived, multiple core systems including \acrshort{mcs}s, similar to what was found by \citet{feng_spatiotemporal_2019}.
 

@@ -153,7 +153,7 @@ The understanding of ice cloud microphysics, along with its parameterisations in
 Cloud droplets interact with radiation both through the reflectance and scattering of solar visible and \acrfull{nir} radiation, and also through the absorbance and emission in the \acrshort{lw} spectrum.
 While the reflection of incoming radiation has a cooling effect on the \acrfull{toa} atmospheric energy balance, the \acrshort{lw} effect of clouds is warming.
 As a result, a cloud may have a net warming or cooling effect depending on the balance of these two factors.
-The difference between the \acrshort{toa} radiative flux with clouds versus that for a clear sky is referred to as the \acrshort{cre}.
+The difference between the \acrshort{toa} radiative flux with clouds versus that for a clear sky is referred to as the \acrfull{cre}.
 
 The \acrshort{sw} reflectance of a cloud depends upon both the microphysical properties of the cloud particles and the bulk properties of the cloud, including the number of droplets and the amount of liquid or ice.
 The optical properties of a cloud are generally measured by two variables: the \acrfull{re} and the cloud optical thickness ($\tau$).
@@ -161,7 +161,8 @@ The optical properties of a cloud are generally measured by two variables: the \
 While this is relatively straightforward for liquid cloud droplets, for ice clouds this is complicated by their non-spherical geometries \citep{wyser_effective_1998}.
 $\tau$ is the negative logarithm of the transmittance through a cloud layer, and clouds with high optical thickness reflect more \acrshort{sw} radiation.
 While $\tau$ varies with wavelength, it is mostly uniform throughout the visible wavelengths for cloud droplets and so tends to be provided with a specified wavelength.
-All values for $\tau$ provided in this thesis are taken at 550\,\unit{nm} unless stated otherwise.
+All values for $\tau$ provided in this thesis are taken at 550\,\unit{nm}, unless stated otherwise.
+As $\tau$ varies very little in the range of visible wavelengths \citep{hu_accurate_1993}, the values are considered directly comparable with those retrieved using geostationary satellite observations at 640\,\unit{nm}.
 
 The \acrshort{lw} effect depends upon both the temperature (and hence height) of the cloud as well as their thickness and microphysics.
 Clouds that are colder than the surface will emit less \acrshort{lw} radiation than they absorb and hence have a warming effect.
@@ -408,8 +409,8 @@ While satellite observations have shown a trend in anvil cloud height \citep{nor
 Furthermore, as anvils tend to detrain below the tropopause, \citep{takahashi_level_2017, wang_observational_2020}, anvil temperature and the tropopause temperature may only be weakly connected.
 \citet{seidel_temperatures_2022} however found the inclusion of CO\textsubscript{2} radiative heating produces anvil temperatures consistent with \acrshort{fat}.
 
-While the iris and \acrshort{fat} feedbacks may act to cancel each other out, and hence maintain the neutral \acrshort{cre} of tropical anvil clouds, there are other potential feedback mechanisms that may influence this balance.
-\citet{hill_climate_2023} showed recently that climate models underestimate dynamically driven cloud feedbacks.
+While the iris and \acrshort{fat} feedbacks may act to cancel each other out, and hence maintain the neutral \acrshort{cre} of tropical anvil clouds, other important feedback mechanisms may influence this balance.
+\citet{hill_climate_2023} recently showed that climate models underestimate dynamically driven cloud feedbacks including changes in convective intensity.
 Furthermore, convective instability is expected to scale with temperature in the same manner as the Clausius-Clapeyron relation \citep{seeley_why_2015, agard_clausius_2017}, and some observations of tropical anvil clouds have instead suggested that warming of the surface invigorates convection \citep{igel_cloudsat_2014}.
 This invigoration effect may result in colder anvil \acrfull{ctt}, and hence a stronger warming feedback.
 Multi-decadal satellite observations have shown a cooling of upper tropospheric cloud temperature over land \citep{liu_observed_2023}, indicating that changes in convective processes may lead to stronger cooling feedbacks.
@@ -459,7 +460,7 @@ As a result, for small, fast-moving objects (such as convective cells), or obser
 Early detection and tracking algorithms were strongly limited by the available computational power which restricted tracking to only a small number of \acrshort{dcc}s. 
 Furthermore, the accuracy of early algorithms was such that human verification of tracked objects was still required. 
 The majority of algorithms were designed with only a single source of observations, which, in particular for weather radars, reduced the area over which tracking could be performed. 
-While geostationary satellites provided larger areas of observations, the low spatial and temporal resolution of early sensors limited studies to only large and long-lived \acrshort{mcs}s. 
+While geostationary satellites provided larger areas of observations, the low spatial and temporal resolution of early sensors limited studies to large and long-lived \acrshort{mcs}s only. 
 \citet{maddox_mesoscale_1980a} tracked mesoscale convective complexes over the US, and subsequent studies showed their distributions globally \citep{laing_global_1997}.
 
 Subsequent development produced trends in both those algorithms used to track \acrshort{dcc}s in satellite imagery, and those using weather radar.
