@@ -40,7 +40,7 @@ As a result, the effects of aerosols on \acrshort{dcc}s are not considered withi
 \acrshort{dcc}s occur over a wide range of scales, and this limits the sources of observations which can fully capture their behaviour.
 The processes of individual \acrshort{dcc}s span a scale from single kilometres and minutes, to hundreds of km and multiple days for large, organised convective systems.
 When considering the response of the global circulation and atmospheric energy balance, it may take multiple years of observations for an equilibrium state to be observed \citep{muller_energetic_2011}.
-Geostationary weather satellites, such as the \acrfull{noaa} \acrfull{goes} series and the \acrfull{eumetsat} Meteosat series have provided imagery of \acrshort{dcc}s over many decades for the purpose of monitoring and predicting the weather.
+Geostationary weather satellites, such as the \acrfull{noaa} \acrfull{goes} series and the \acrfull{eumetsat} Meteosat series have provided imagery of \acrshort{dcc}s over many decades for monitoring and predicting the weather.
 However, these instruments have not traditionally supported the accuracy required for scientific studies, and it is only with the latest generation that the capability of this imagery for studying the behaviour of deep convection is being fully realised.
 
 The study of \acrshort{dcc}s is made difficult by their complex, dynamic behaviours.
@@ -50,7 +50,7 @@ Lagrangian methods---those which follow the \acrshort{dcc}s' motion---provide vi
 While particle trajectory models have been successfully utilised to study boundary layer clouds from a Lagrangian perspective \citep[e.g][]{eastman_competing_2018, christensen_aerosols_2020a}, these techniques are not easily applicable due to the complex wind environment of \acrshort{dcc}s, and the low accuracy of reanalysis models and derived \acrfullpl{amv} in these environments.
 Instead, image processing methods that detect and track \acrshort{dcc}s are used to study their behaviour from a Lagrangian perspective.
 These methods have seen a renaissance in recent years for studying deep convection, with applications including convective resolving models, weather radars and geostationary satellite imagery.
-There remain a number of limitations in existing tracking models, and so the development of novel techniques is required to better understand the full spectrum of \acrshort{dcc}s.
+There remain several limitations in existing tracking models, and so the development of novel techniques is required to better understand the full spectrum of \acrshort{dcc}s.
 
 Overall, understanding the behaviour of \acrshort{dcc}s and their response to climate change is vital both to predicting extreme weather events and climate feedbacks.
 This introductory chapter will explore a range of topics regarding the behaviour of \acrshort{dcc}s and their further impacts.
@@ -287,10 +287,10 @@ Triggering can occur through perturbations of the first three terms in the buoya
 \acrshort{sw} heating of the surface can cause an increase in surface air temperature through sensible heat fluxes, leading to dry convection and convective initiation.
 Surface heating also causes latent heat fluxes, increasing the enthalpy and moisture content of the boundary layer.
 In addition, the convergence of air masses within the boundary layer can also increase buoyancy by convergences of moisture and positive pressure perturbations.
-A number of mechanical lifting mechanisms are also involved in the initiation of convection.
+Mechanical lifting mechanisms may also be involved in the initiation of convection.
 Orographic lifting can occur when warm, moist air is blown towards mountains and cools as it ascends \citep{hodges_distribution_1997}. 
 Gust fronts of cold, dense air may also act to lift warmer, moist air masses above them. 
-These gust fronts may be caused by a number of processes, including synoptic frontal systems \citep{wilson_initiation_1986, jirak_observational_2007}, sea breeze \citep{tripoli_numerical_1979, park_environmental_2020}, and cold pools caused by precipitation \citep{grant_cold_2016}.
+These gust fronts may be caused by several processes, including synoptic frontal systems \citep{wilson_initiation_1986, jirak_observational_2007}, sea breeze \citep{tripoli_numerical_1979, park_environmental_2020}, and cold pools caused by precipitation \citep{grant_cold_2016}.
 
 The occurrence of cumulus and cumulus congestus clouds (convective clouds in the low- and mid-troposphere \citep{johnson_trimodal_1999}) may also lead to deep convection. 
 These lower-level convective clouds cause convergences of warm, moist air near the surface, building instability, and may also act to `condition’ the lower troposphere to convection by adjusting the environmental temperature profile closer to that of an ascending air parcel and hence reducing \acrshort{cin} \citep{masunaga_mechanism_2014, schulz_observing_2018}.
@@ -301,7 +301,7 @@ These lower-level convective clouds cause convergences of warm, moist air near t
     \caption[
     An illustration of the three lifecycle phases of an isolated \acrshort{dcc}
     ]{
-    An illustration of the three lifecycle phases of an isolated \acrshort{dcc}: the growing (a), mature (b) and dissipating (c) phases. In the growing phase the formation of a convective updraft (1) through positive buoyancy and convergence of warm, moist air at the cloud base (2) lead to a convective core that rapidly increases in. Turbulent mixing with the surrounding environment (3) dilutes the updraft, reducing the buoyancy and hence vertical velocity. In the mature phase, the updraft reaches its \acrshort{lnb} resulting in divergence (4) and the formation of an anvil cloud. The momentum of the updraft within the core may result in it reaching the stratosphere, leading to an overshooting top (5). The onset of precipitation leads to downdrafts (6) due to hydrometeor drag and evaporative cooling, compensation for the downdraft. At the surface, this causes cold pools (7) which disrupt the inflow of air to the base of the storm, preventing further convective activity. In the dissipating phase there are no more convective dynamics, but radiative driven circulations (8) act to thin the thicker anvils due to entrainment of surrounding, dry air, but increase the lifetime of thinner anvils.
+    An illustration of the three lifecycle phases of an isolated \acrshort{dcc}: the growing (a), mature (b) and dissipating (c) phases. In the growing phase, the formation of a convective updraft (1) through positive buoyancy and convergence of warm, moist air at the cloud base (2) leads to a convective core that rapidly increases in height. Turbulent mixing with the surrounding environment (3) dilutes the updraft, reducing the buoyancy and hence vertical velocity. In the mature phase, the updraft reaches its \acrshort{lnb} resulting in divergence (4) and the formation of an anvil cloud. The momentum of the updraft within the core may result in it reaching the stratosphere, leading to an overshooting top (5). The onset of precipitation leads to downdrafts (6) due to hydrometeor drag and evaporative cooling, compensation for the downdraft. At the surface, this causes cold pools (7) which disrupt the inflow of air to the base of the storm, preventing further convective activity. In the dissipating phase there are no more convective dynamics, but radiative driven circulations (8) act to thin the thicker anvils due to entrainment of surrounding dry air, but increase the lifetime of thinner anvils.
     }
     \label{fig:dcc_lifecycle_illustration}
 \end{figure}
@@ -351,15 +351,15 @@ Further thinning of the cirrus anvil results in uniform radiative heating throug
 
 \subsection{Convective organisation}
 
-While the majority of \acrshort{dcc}s form as isolated storms, with a single convective core that detrains its own anvil cloud \citep{riehl_northeast_1951}.
+While the majority of \acrshort{dcc}s form as isolated storms, with a single convective core that detrains an anvil cloud separated from its neighbours \citep{riehl_northeast_1951}.
 In other cases, \acrshort{dcc}s exist with multiple convective cores feeding a single anvil cloud \citep{zipser_role_1969, nakazawa_tropical_1988}.
 At the largest end of this progression are \acrfullpl{mcs}, which occur when a cluster of deep convective cores form a single large area of anvil referred to as a cloud shield \citep{roca_simple_2017}.
 These \acrshort{mcs} cloud shields can cover an area of greater than 10,000~km\textsuperscript{2}, several orders of magnitude greater than that of individual \acrshort{dcc}s \citep{houze_mesoscale_2004}.
 
-The convective cores that form \acrshort{mcs}s do not group together at random, but are instead clustered by a complex group of processes that are referred to as convective organisation.
+The convective cores that form \acrshort{mcs}s do not group together randomly, but are instead clustered by a complex group of processes that are referred to as convective organisation.
 In general, these processes tend to lead to the triggering of new convective cores that feed the same cloud shield, expanding and extending the life of the system as they do.
-\acrshort{mcs}s occur in a number of shapes and sizes, including mesoscale convective complexes, squall lines and tropical cloud clusters \citep{tsakraklides_global_2003a} which each have their own unique properties.
-However, all \acrshort{mcs}s display large-scale processes that initiate new cores, and increase the size and lifetime of the anvil
+\acrshort{mcs}s occur in many shapes and sizes, including mesoscale convective complexes, squall lines and tropical cloud clusters \citep{tsakraklides_global_2003a} which each have unique properties.
+However, all \acrshort{mcs}s display large-scale processes that initiate new convective updrafts, and increase the size and lifetime of the anvil.
 
 The lifecycle of \acrshort{mcs}s can be described similarly to that of isolated \acrshort{dcc}s through the three-phase growing, mature, dissipating structure \citep{futyan_deep_2007}.
 It should be kept in mind however that when applied to \acrshort{mcs}s, these lifecycle stages do not represent the changes in convective processes as described for isolated \acrshort{dcc}s, but the mesoscale development and decay of the entire system.
@@ -369,7 +369,7 @@ The total lifetime of \acrshort{mcs}s is determined by the rate at which new cor
 
 A key feature that distinguishes \acrshort{mcs}s from smaller \acrshort{dcc}s is the development of large, mesoscale circulations that occur on larger scales than that of individual convective cores.
 As well as the convergence of heat and moisture at low levels due to the convective cores, this mesoscale circulation draws in additional air from the surrounding areas at the mid-levels of the atmosphere.
-This mid-level air does enter the cloud shield through the convective cores, but instead condenses at higher altitudes, leading to a top-heavy latent heating profile within the cloud shield \citep{schumacher_tropical_2004}.
+This mid-level air does not enter the cloud shield through the convective cores, but instead condenses at higher altitudes, leading to a top-heavy latent heating profile within the cloud shield \citep{schumacher_tropical_2004}.
 These organised convective cloud systems have thermodynamic impacts on the environment to a much greater extent than isolated \acrshort{dcc}s.
 The large cloud shields of the \acrshort{mcs} s result in much larger amounts of stratiform precipitation than individual \acrshort{dcc}s, which is distributed over a much wider area \citep{houze_chapter_2014}.
 These organised convective cloud systems have thermodynamic impacts on the environment to a much greater extent than isolated \acrshort{dcc}s, with idealised simulations showing that the thermodynamic interactions of organised convective systems can propagate thousands of kilometres within the troposphere \citep{beucler_budget_2019}.
@@ -466,8 +466,8 @@ While geostationary satellites provided larger areas of observations, the low sp
 Subsequent development produced trends in both those algorithms used to track \acrshort{dcc}s in satellite imagery, and those using weather radar.
 Algorithms using geostationary satellite imagery focused on the study of \acrshort{mcs}s, and tended to use overlap-based tracking methods \citep{arnaud_automatic_1992, evans_procedure_1996, carvalho_satellite_2001, morel_climatology_2002}.
 On the other hand, tracking algorithms using radar reflectivity tended to focus on the tracking of convective cells, and favoured centroid-based tracking approaches \citep{dixon_titan_1993, johnson_storm_1998, handwerker_cell_2002}.
-Across both sets of algorithms, the use of fixed thresholds rather than extrema for locating features became favoured both due to the low computational cost, ease of customisation and resilience to noise \citep{augustine_mesoscale_1988}.
-While the majority of approaches used a single threshold, a number of algorithms introduced the use of multiple thresholds to better characterise the detected features of \acrshort{dcc}s.
+Across both sets of algorithms, the use of fixed thresholds rather than extrema for locating features became favoured due to the low computational cost, ease of customisation and resilience to noise \citep{augustine_mesoscale_1988}.
+While the majority of approaches used a single threshold, some algorithms began using multiple thresholds to better characterise the detected features of \acrshort{dcc}s.
 \citet{johnson_storm_1998} used a sequence of increasingly larger thresholds to better distinguish individual convective cells, and classify them according the intensity.
 For \acrshort{mcs} detection, the `detect-and-spread' approach was used by \citet{evans_procedure_1996} and \citet{boer_lagrangian_1997} to better measure the area of \acrshort{mcs}s by first detecting the `core' using a cold \acrshort{bt} threshold and then detecting the surrounding cloud area using a warmer threshold.
 It should be noted however that \citet{augustine_mesoscale_1988} argued that the area estimated using the warmer threshold is highly subjective.
@@ -476,15 +476,15 @@ It should be noted however that \citet{augustine_mesoscale_1988} argued that the
 The low spatial and temporal resolution of \acrshort{gcm}s of the time however meant that detection and tracking of individual \acrshort{dcc}s was not possible.
 Other data, such as rainfall measurements and lightning flash observations, were also used to develop detection and tracking algorithms \citep{steinacker_automatic_2000}, however the vast majority of algorithms continued to use either radar reflectivity or geostationary satellite \acrshort{bt} observations.
 
-The development of radar detection and tracking algorithms was strongly driven by the needs for nowcasting (short-term, 30- to 60-minute forecasts) of convective activity \citep{wilson_nowcasting_1998}.
+The development of radar detection and tracking algorithms was strongly driven by the need for nowcasting (short-term, 30- to 60-minute forecasts) of convective activity \citep{wilson_nowcasting_1998}.
 As these algorithms are required to predict the future motion of observed \acrshort{dcc}s, good estimates of the storm motion, including growth and decay, are required.
 Development of these algorithms, therefore, focused primarily on the tracking aspect rather than the detection of \acrshort{dcc}s \citep{lakshmanan_objective_2010}.
-The Sydney 2000 Olympics provided both a demonstration of, and comparison between, the capabilities of multiple tracking algorithms \citep{keenan_sydney_2003}.
+The Sydney 2000 Olympics provided both a demonstration of, and a comparison between, the capabilities of multiple tracking algorithms \citep{keenan_sydney_2003}.
 The study into the performance of these algorithms found that no particular tracking approach worked best overall, and that each had strengths and weaknesses in different situations \citep{wilson_sydney_2004}.
 In response, subsequent algorithms used hybrid approaches which combined multiple tracking methods to provide better performance over a range of scenarios \citep{lakshmanan_warning_2007, han_3d_2009}.
 
 The second generation of geostationary weather satellites provided greater capability to track individual \acrshort{dcc}s due to both their higher spatial and temporal resolutions and increased number of channels across the visible and \acrshort{ir} spectrum.
-\citet{roberts_nowcasting_2003} showed that these observations could be use to detect initiating \acrshort{dcc}s up to 30 minutes before they appear in weather radar observations.
+\citet{roberts_nowcasting_2003} showed that these observations could be used to detect initiating \acrshort{dcc}s up to 30 minutes before they appear in weather radar observations.
 Because of their use of a single \acrshort{bt} threshold, existing methods could only track \acrshort{dcc}s once they had matured.
 While this was generally acceptable for tracking \acrshort{mcs}s, this limited their capability for tracking isolated \acrshort{dcc}s.
 \citet{mecikalski_forecasting_2006} developed an algorithm which combined visible imagery, estimates of \acrshort{bt} cooling rate over multiple observations and \acrshort{amv}s to indicate convective initiation.
@@ -493,12 +493,12 @@ While this was generally acceptable for tracking \acrshort{mcs}s, this limited t
 A common theme throughout all the algorithms described so far is the separation of feature detection and tracking into separate procedures, with features detected independently at each time step.
 While this allows for simplification of the overall process, the independent detection of features at each time step introduces a large degree of inconsistency in the area and location of features detected over time.
 Furthermore, when using a fixed threshold, this also prevents the detection of features before or after they reach the threshold, limiting the detection of growing or decaying \acrshort{dcc}s.
-A number of recent algorithms have sought to address this by combining both feature detection and tracking into a single process.
+Some recent algorithms have sought to address this by combining both feature detection and tracking into a single process.
 \citet{fiolleau_algorithm_2013} applied the `detect-and-spread' approach to a `3-D' stack of images over time.
 By first detecting the core region using a cold \acrshort{bt} threshold, and then detecting the surrounding cloud volume using a warmer threshold, the algorithm is better able to detect the growing and decaying phases of \acrshort{dcc}s without erroneously detecting warmer clouds.
 However, the algorithm does not consider the motion of the tracked objects in any manner, and so is only suitable for detecting \acrshort{mcs}s whose areas are large compared to the distance moved between observations.
 \citet{thomas_data_2010} used a variational-data-assimilation model to both detect and track \acrshort{dcc}s in geostationary satellite images.
-This approach not only allowed detection and tracking in a single step, but was also resilient to cases of noisy or missing data.
+This approach not only allowed detection and tracking as a single process, but was also resilient to cases of noisy or missing data.
 
 Improvements in climate modelling have led to new applications of cloud detection and tracking algorithms in cloud-resolving models \citep{plant_statistical_2009}, large eddy simulations \citep{dawe_statistical_2012a, heus_automated_2013} and for the evaluation of  \acrshort{gcm}s \citep{clark_application_2014}.
 A wide range of modern algorithms have been developed specifically for general application to radar, satellite and model data \citep{heikenfeld_tobac_2019, ullrich_tempestextremes_2017, ullrich_tempestextremes_2021, raut_adaptive_2021, feng_pyflextrkr_2023}.

@@ -5,7 +5,7 @@
 
 
 Sequences of images from satellite instruments have been used to detect and track the motion of \acrshort{dcc}s and tropical storms since the earliest geostationary weather satellites \citep{menzel_cloud_2001}.
-Whereas early detection and tracking were performed by hand, numerous algorithms have been developed for the purpose of performing this task automatically, and are widely used for both forecasting and research purposes \citep[e.g.][]{mecikalski_use_2011, senf_characterization_2015, senf_satellite-based_2017, feng_life_2012, feng_spatiotemporal_2019, zinner_cb-tram_2008}.
+Whereas early detection and tracking were performed by hand, numerous algorithms have been developed to perform this task automatically, and are widely used for both forecasting and research purposes (section~\ref{sec:tracking_timeline}).
 There is a continual effort both to improve existing algorithms and develop new methods to support these activities.
 However, it is important to understand the differences in observations of \acrshort{dcc}s from satellite imagery to those of other sources, particularly radar and lightning observations.
 
@@ -77,7 +77,7 @@ Instead \citet{fiolleau_algorithm_2013} implemented a single-step framework for 
 Whereas this approach was successful for large, mesoscale systems, where the advection of the anvil is small compared to the overall anvil area, it is less capable of tracking small, rapidly moving convective cores.
 To improve the tracking of small \acrshort{dcc}s, we have developed a semi-Lagrangian framework for single-step detection and tracking which accounts for the motion of \acrshort{dcc}s using optical flow.
 
-By utilising the semi-Lagrangian framework, we are able to combine the best elements of both growth-based and threshold-based detection methods.
+By utilising the semi-Lagrangian framework, we can combine the best elements of both growth-based and threshold-based detection methods.
 We show that it is possible to detect growing \acrshort{dcc}s to a high degree of accuracy using methods similar to those of \citet{zinner_cb-tram_2008}, and then extend the detected \acrshort{dcc} over the entire anvil cloud using the 3-D watershed method of \citet{fiolleau_algorithm_2013}.
 This framework reduces the compromise required between the rate of missed \acrshort{dcc}s and falsely detected \acrshort{dcc}s, improving the overall accuracy of our detection method compared to existing approaches.
 Furthermore, this method allows the anvil cloud to be detected and tracked even after the region of cloud top cooling is no longer detected.
@@ -127,8 +127,9 @@ Comparison of data from \acrshort{abi} to that from older geostationary instrume
 
 Compared to older geostationary instruments, \acrshort{abi} has higher spatial and temporal resolution, and more channels in both the \acrshort{lw} \acrshort{ir} window spectrum and the \acrshort{lw} \acrshort{ir} \acrfull{wv} spectrum (table \ref{table:abi_comparison}) \citep{iacovazzi_goes-16_2020}.
 This, combined with many of the channels being derived from those aboard the Visible Infrared Imaging Radiometer Suite, make the data from \acrshort{abi} more suitable for research purposes than that from older instruments \citep{heidinger_chapter_2020}.
-A number of artifacts are known to occur in \acrshort{abi} imagery \citep{gunshor_goes-r_2020}.
-Although the majority of these artifacts are removed using the data quality flag associated with the \acrshort{abi} data, we have found a number of cases in which bad detector stripes (described in section 3.2 of \citealp{gunshor_goes-r_2020}) are not flagged in the data, and so detection and tracking of \acrshort{dcc}s has not been performed during the time periods these artifacts occurred.
+Several artifacts are known to occur in \acrshort{abi} imagery \citep{gunshor_goes-r_2020}.
+Although the majority of these artifacts are removed using the data quality flag associated with the \acrshort{abi} data, we have found a number of cases in which bad detector stripes (described in section 3.2 of \citealp{gunshor_goes-r_2020}) are not flagged in the data. 
+These regions are detected separately, and replaced with missing data prior to cloud tracking.
 
 In this chapter, we have used the \acrshort{abi} level 2 \acrfull{mcmip} which provides calibrated reflectances and \acrshort{bt}s for all \acrshort{abi} channels on a common grid \citep{schmit_chapter_2020}, using the 5-minute frequency imagery provided over the \acrshort{conus} region.
 The case study shown in the figures throughout this chapter is for a subset of the \acrshort{conus} scan region centred at 83.7\,\textdegree W, 29.2\,\textdegree N, over the time period of 17:00:00 to 21:00:00 \acrshort{utc} on the 19th June 2018.
@@ -223,7 +224,7 @@ Propagating these uncertainties provides estimates of the noise in the \acrshort
 In addition to the \acrshort{nedt}, there are several sources of systematic errors which may affect the observed \acrshort{bt} and channel differences.
 Any bias in the \acrshort{abi} and \acrshort{seviri} channels are accounted for in calibration.
 Limb darkening at larger satellite zenith angles is harder to account for.
-For the channel differences this will have two impacts.
+This will have two impacts on the channel differences.
 Firstly, it will increase the height at which \acrshort{wv} emissions are observed in the 6.2 and 7.4\,\unit{\mu m} channels, increasing the height at which clouds can be observed.
 Secondly, for the \acrshort{swd} combination it may reduce the difference between the two channels, as a higher zenith angles the path length through a cloud layer is longer for the same thickness of cloud, and therefore the difference in temperature will be less between the two channels.
 
@@ -357,7 +358,7 @@ By averaging the cooling rates over 5 pixels and a 15--minute time period the un
 
 Overall, we see from this experiment that the 10.4\,\unit{\mu m} \acrshort{bt} channel from \acrshort{abi} can be used to clearly identify a vertically developing core across a wide range of altitudes.
 On the other hand, the \acrshort{wvd} is only sensitive to vertically developing clouds in a narrower range of altitudes, and shows a weaker rate of \acrshort{bt} change.
-However, this sensitivity to vertical development at a mid to high altitude may be helpful in distinguishing between \acrshort{dcc}s and other, vertically developed clouds at lower altitudes, such as cumulus congestus.
+However, this sensitivity to vertical development at a mid to high altitude may help distinguish between \acrshort{dcc}s and other, vertically developed clouds at lower altitudes, such as cumulus congestus.
 
 It should be noted that these simulations were performed with the cloud temperature in equilibrium with the surrounding environment, this is not the case for a convective core which will be warmer than the surrounding air.
 Taking 6\,\unit{K/km} as a typical value for the moist pseudo--adiabatic lapse rate, the cooling rate for a convective cloud top rising at 1\,\unit{ms^{-1}} is 0.36\,$\mathrm{K \cdot minute^{-1}}$.
@@ -449,11 +450,11 @@ Optical flow, and similar motion vector techniques, have also been successfully 
 
 It should be noted that we are using optical flow to estimate the apparent motion of the cloud field between subsequent images, with the aim of using these vectors to map the locations of \acrshort{dcc}s from one step to the next, instead of calculating actual \acrshort{amv}s corresponding to winds.
 This approach avoids a number of challenges with the use of optical flow for calculating \acrshort{amv}s including the estimation of the height of estimated flow vectors and the detection of diverging or converging motion vector fields in situations of growing and dissipating clouds respectively.
-In the latter case, we in fact aim to include the divergence and convergence within the optical flow vector field to map both the location and shape of observed clouds between time steps.
+In the latter case, we aim to include the divergence and convergence within the optical flow vector field to map both the location and shape of observed clouds between time steps.
 
 \subsubsection{Evaluation of Optical Flow Methods}
 
-As different optical flow algorithms may provide better accuracy in different situations \citep{baker_database_2011}, we compare a number of different algorithms to assess their suitability for tracking the motions of \acrshort{dcc}s.
+As different optical flow algorithms may provide better accuracy in different situations \citep{baker_database_2011}, we compare several algorithms to assess their suitability for tracking the motions of \acrshort{dcc}s.
 We consider six different optical flow algorithms implemented in the OpenCV library \citep{opencv_library}, which are listed below:
 
 \begin{itemize}
@@ -473,12 +474,12 @@ Each algorithm was applied to a sequence of images from the 10.4\,\unit{\mu m} c
 As the methods require 8-bit images, a linear normalisation was applied to the \acrshort{bt} images between each pair's minimum and maximum values.
 To improve the accuracy of the detected motion vectors, a variational refinement process \citep{brox_high_2004} is applied to the calculated flow vectors.
 This process minimises the energy functional of the pixel value, pixel gradient, and local smoothness to reduce the angular error of the detected flow vectors.
-Finally, vectors are calculated both forwards and backward in time between each pair of images, and these two sets of vectors are interpolated to each others locations and averaged to ensure that they are equal and opposite.
+Finally, vectors are calculated both forwards and backward in time between each pair of images, and these two sets of vectors are interpolated to each other's locations and averaged to ensure that they are equal and opposite.
 
 Figure~\ref{fig:opt_flow_comparison} shows the \acrshort{abi} \acrshort{bt} at 19:00:00~\acrshort{utc} (fig.~\ref{fig:opt_flow_comparison}\,a), along with the optical flow vectors calculated by each of the algorithms with the subsequent time step.
 For each set of optical flow vectors, the average vector over each 5\texttimes 5-pixel area is plotted by the red arrows, and the vector velocity magnitude is plotted in the background.
 The two sparse methods (fig.~\ref{fig:opt_flow_comparison}\,f,g) show a closer match of the areas where optical flow vectors to the edge of the anvil cloud than the dense methods (fig.~\ref{fig:opt_flow_comparison}\,b--e), which have a tendency to smooth the detected vectors over a large area.
-Of all the methods, the Farnebäck algorithm tends to produce larger magnitudes, but correctly detects zero flow in areas without clouds, unlike most of the algorithms.
+Of all the methods, the Farnebäck algorithm tends to produce larger magnitudes, but correctly detects zero flow in areas without clouds, unlike most of the other algorithms.
 
 
 \begin{figure}[tp]
@@ -553,7 +554,7 @@ The results shown in fig.~\ref{fig:opt_flow_mse} suggest that the \acrshort{dual
 However, due to the large size and long sequences of images produced by \acrshort{abi}, it is also important to consider the computational cost of each algorithm.
 Figure~\ref{fig:opt_flow_cost} shows the run time in seconds for each algorithm applied to a sequence of 48 300\texttimes300~pixel \acrshort{abi} \acrshort{bt} images.
 Both the DeepFlow and \acrshort{dualtvl1} algorithms show significantly longer run times than any of the other algorithms.
-As a result, we have selected the Farnebäck algorithm for out tracking method as it offers the best balance of accuracy and computational performance for running on large datasets.
+As a result, we have selected the Farnebäck algorithm for our tracking method as it offers the best balance of accuracy and computational performance for running on large datasets.
 
 
 \begin{figure}[tp]
@@ -569,10 +570,10 @@ As a result, we have selected the Farnebäck algorithm for out tracking method a
 
 An example of the motion vectors calculated by the Farnebäck algorithm when applied to the 10.4\,\unit{\mu m} \acrshort{bt} field is shown in fig.~\ref{fig:optical_flow}.
 Figure~\ref{fig:optical_flow}\,c shows the residual flow vectors, which are small compared to the detected cloud motion vectors (fig.~\ref{fig:optical_flow}\,b).
-The main areas in which residual flow vectors can be seen are the regions around the edge of anvil clouds and in the center of thick anvil clouds where there are no clear features to track.
+The main areas in which residual flow vectors can be seen are the regions around the edge of anvil clouds and in the centre of thick anvil clouds where there are no clear features to track.
 Figure~\ref{fig:optical_flow}\,d shows the distribution of residual vector errors proportional to the detected cloud motion vectors.
 The majority of the residual errors are close to zero, and very few exceed 0.5.
-As in the majority of applications for the semi-Lagrangian we are only interested in the motion to the nearest pixel, these errors are acceptable.
+As in the majority of applications for the semi-Lagrangian framework we are only interested in the motion to the nearest pixel, these errors are considered acceptable.
 
 
 %f
@@ -619,9 +620,9 @@ As a result, it is important to include the effects of advection when comparing 
 
 To perform morphological operations which take into account this advection, we have developed a novel Lagrangian convolution method.
 For spatial operations, the Lagrangian stencil operates identically to that of a classical convolution method.
-However, when sampling points at prior or subsequent time steps, the location of the stencil are offset by the relevant optical flow vectors (fig.~\ref{fig:convolution_kernels}\,b).
+However, when sampling points at prior or subsequent time steps, the location of the stencil points are offset by the relevant optical flow vectors (fig.~\ref{fig:convolution_kernels}\,b).
 Values at the offset stencil locations are interpolated, providing a Lagrangian reference frame for changes in the observations over time.
-When applying the convolution stencil to every pixel in a sequence of images, this provides a semi-Lagrangian framework for morphological operations, combining the Lagrangian reference frame for evaluating changes over time while maintaining the regular grid of the images.
+Applying the convolution stencil to every pixel in a sequence of images provides a semi-Lagrangian framework for morphological operations, combining the Lagrangian reference frame for evaluating changes over time while maintaining the regular grid of the images.
 
 We have developed new implementations of several existing image processing operations within the Lagrangian convolution framework, including:
 \begin{itemize}
@@ -635,7 +636,7 @@ These operations are used in this method to detect the full extent of the anvil 
 The Sobel method detects edges in an image using the magnitude of the local gradient at each pixel.
 Edge detection enables the segmentation of an image into separate regions without pre-defined thresholds (such as in \acrshort{bt}) to separate them.
 
-Watershed algorithms are a method of image segmentation that equate an image to a topographical map, with elevation according to the value of the pixel.
+Watershed algorithms are a method of image segmentation that equates an image to a topographical map, with elevation according to the value of the pixel.
 Each pixel is then descended towards its local minima until it reaches a predefined marker region.
 The method takes its name from the geographical feature of the same name, which refers to the separation between adjacent drainage basins.
 Although this physical interpretation of the algorithm applies to two-dimensional images, the method can be applied to arrays with any number of dimensions, such as the method used by \citet{fiolleau_algorithm_2013} which applied watershedding to a three-dimensional field.
@@ -652,7 +653,7 @@ The \acrshort{bt} field shows cooling cloud tops throughout the troposphere, whi
 
 We classify a region of growing deep convection as a region of either continuous cooling of greater than 0.5\,\unit{K} per minute in the 10.4\,\unit{\mu m} \acrshort{bt} field, or continuous warming of the \acrshort{wvd} field of at least 0.25\,\unit{K} per minute.
 These growth rates must be detected over a minimum 15-minute period, covering an area of at least 3 by 3 pixels (approximately 7.5 by 7.5\,\unit{km}) at each time step.
-Each region of detected growth is given a unique label, the average \acrshort{bt} of the detected cloud at each time step is calculated, and any label which fail to meet the cooling rate thresholds of 8\,\unit{K} over a 15-minute period (from \citep{roberts_nowcasting_2003, hartung_intercomparison_2013}) are removed.
+Each region of detected growth is given a unique label, the average \acrshort{bt} of the detected cloud at each time step is calculated, and any label which fails to meet the cooling rate thresholds of 8\,\unit{K} over a 15-minute period (from \citep{roberts_nowcasting_2003, hartung_intercomparison_2013}) are removed.
 Finally, each label is checked to ensure that the growth region ends with a \acrshort{wvd} field with a value of greater than -5, indicating that the growing core reaches a high altitude \citep{muller_role_2018}.
 While threshold detection methods are sensitive to noise, the uncertainty in the \acrshort{bt} cooling rates due to sensor noise, combined with the uncertainty in the optical flow vectors, is not expected to exceed 5\% of the threshold.
 A simple threshold method applied to the \acrshort{bt} cooling rate is, therefore, suitable for the detection of developing deep convection.
@@ -716,18 +717,18 @@ Furthermore, due to the application of the watershed algorithm to both the spati
 Figure~\ref{fig:detected_anvils} shows an example of the results of detecting and tracking \acrshort{dcc} cores (outlined in red) and the associated anvils (outlined in orange and blue for the thick and thin anvil regions respectively).
 During the growing phase (fig.~\ref{fig:detected_anvils}\,a,b) we see a number of developing cores, as well as the initial growth of primarily thick anvil cloud.
 In fig.~\ref{fig:detected_anvils}\,c--e we see the mature phase of the \acrshort{dcc}, where we see the thick anvil expand and the thin anvil cirrus start to detrain towards the top-left side of the figure.
-Due to the anvil cloud reaching its maximum height, we no longer observed the initial developing cores seen in fig.~\ref{fig:detected_anvils}\,a,b as we can no longer observed the cloud-top cooling.
+Due to the anvil cloud reaching its maximum height, we no longer observed the initial developing cores seen in fig.~\ref{fig:detected_anvils}\,a,b as we can no longer observe the cloud-top cooling.
 Instead, we observe new cores developing on the edges of the anvil cloud.
 In fig.~\ref{fig:detected_anvils}\,f--h, we see the detected anvil cloud beginning to dissipate.
 The thick anvil area decreases, however the thin anvil area continues to increase as the anvil dissipates and detrains.
-At this point in the lifetime of the tracked \acrshort{dcc} we stop observing new growing core, however the "3D" approach allows the continued tracking of the anvil cloud until it dissipates.
+At this point in the lifetime of the tracked \acrshort{dcc} we stop observing new growing cores, however the "3D" approach allows the continued tracking of the anvil cloud until it dissipates.
 
 
 %f
 \begin{figure}[tp]
     \centering\includegraphics[width=0.8\textwidth]{figures/chapter1_18.png}
     \caption[
-    Detected regions of thin anvil cloud, thick anvil cloud , and developing cores through the growing, mature and dissipating phases of the \acrshort{dcc} lifecycle
+    Detected regions of thin anvil cloud, thick anvil cloud, and developing cores through the growing, mature and dissipating phases of the \acrshort{dcc} lifecycle
     ]{
     Detected regions of thin anvil cloud (blue), thick anvil cloud (orange), and developing cores (red) overlaid on the \acrshort{goes}-16 \acrshort{abi} 10.4\,\unit{\mu m} \acrshort{bt} field for the \acrshort{dcc} cluster from figure~\ref{fig:compare_sat_radar_glm}. The three stages of the \acrshort{dcc} lifecycle are shown; the growth phase (a,b), the mature phase (c--e), and the dissipating phase (f--g).
     }
@@ -768,8 +769,8 @@ The distance between a \acrshort{glm} lightning flash and detected cloud region 
 When considering that the resolution of \acrshort{glm} is a factor of four less than that of \acrshort{abi}, we consider that the same justification for the margin of error used by \citet{muller_novel_2019} is also applicable to collocated observations from \acrshort{abi} and \acrshort{glm}.
 
 Validation was performed using \acrshort{goes}-16 \acrshort{abi} data from the \acrshort{conus} scan region for the entirety of 2018, which was processed using the method described in this chapter.
-In total validation was performed for 319 days of \acrshort{abi} data, the remaining 46 days being excluded due to missing observations from either the \acrshort{abi} (1 day) or \acrshort{glm} (45 days) instruments aboard \acrshort{goes}-16..
-Detection and tracking of \acrshort{dcc}s was performed the \acrshort{conus} scan region of \acrshort{abi} for each 24-hour period. 
+In total validation was performed for 319 days of \acrshort{abi} data, the remaining 46 days being excluded due to missing observations from either the \acrshort{abi} (1 day) or \acrshort{glm} (45 days) instruments aboard \acrshort{goes}-16.
+Detection and tracking of \acrshort{dcc}s was performed over the \acrshort{conus} scan region of \acrshort{abi} for daily periods. 
 By performing validation over both a large region, including a range of both land and ocean domains, and a full year time period, we aim to avoid any bias in the validation associated with the variability of the accuracy of the method with location and season.
 
 %t
@@ -787,7 +788,7 @@ Semi-Lagrangian             & 145,969   & 0.9837            & 0.1611            
 \caption[
 \acrshort{pod}, \acrshort{far} and F\textsubscript{1}-score for three different detection methods validated against observed \acrshort{glm} flashes
 ]{
-\acrshort{pod}, \acrshort{far} and F\textsubscript{1}-score for three different detection methods validated against observed \acrshort{glm} flashes (n=116,671,289). Growth-based refers to the detection of growing \acrshort{dcc}s using the method described in section \ref{sec:core_detection} \acrshort{wvd} threshold uses the threshold method developed by \citet{muller_role_2018}. Semi-Lagrangian refers to the detection of anvils clouds connected to growing cores using the edge-based watershedding method described in section \ref{sec:anvil_detection}.
+\acrshort{pod}, \acrshort{far} and F\textsubscript{1}-score for three different detection methods validated against observed \acrshort{glm} flashes (n=116,671,289). Growth-based refers to the detection of growing \acrshort{dcc}s using the method described in section \ref{sec:core_detection} \acrshort{wvd} threshold uses the threshold method developed by \citet{muller_role_2018}. Semi-Lagrangian refers to the detection of anvil clouds connected to growing cores using the edge-based watershedding method described in section \ref{sec:anvil_detection}.
 } % Table Footnotes
 \label{table:validation}
 \end{table}
@@ -819,7 +820,7 @@ Whereas novel methods have approached this problem for the detection of large, m
 By developing and implementing a novel semi-Lagrangian framework for the detection and tracking of \acrshort{dcc}s we are able to combine the detection of growing \acrshort{dcc} cores \citep{zinner_cb-tram_2008} and \acrshort{dcc} anvils \citep{muller_role_2018} to detect and track \acrshort{dcc}s over their entire lifecycles.
 The novel methods developed here for the semi-Lagrangian computer vision framework, along with implementations of multiple image processing operations commonly used for object detection, allow the accurate detection and tracking of moving objects utilising both spatial and temporal information.
 These methods may have impacts on applications of computer vision beyond the detection and tracking of \acrshort{dcc}s.
-Furthermore, the novel framework is able to achieve higher levels of accuracy without compromising on the number of \acrshort{dcc}s detected, as with previous algorithms \citep{muller_novel_2019}.
+Furthermore, the novel framework can achieve higher levels of accuracy without compromising on the number of \acrshort{dcc}s detected, as with previous algorithms \citep{muller_novel_2019}.
 
 Using this novel methodology, both small, isolated \acrshort{dcc}s and large, mesoscale convective systems can be detected and tracked with a high degree of accuracy, high spatial and temporal resolution and across large domains such as the \acrshort{conus}.
 The data provided about the behaviour of \acrshort{dcc}s over their entire lifetime will allow new research into vital topics such as the response of deep convection and climate change, and the interactions and feedbacks between \acrshort{dcc}s and large-scale atmospheric thermodynamics \citep{varble_erroneous_2018}.
