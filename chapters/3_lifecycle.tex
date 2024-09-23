@@ -44,7 +44,7 @@ However, the low temporal resolution of 1 hour limits the ability to the propert
 By leveraging the full temporal and spatial resolution of \acrshort{goes} \acrshort{abi} observations over the \acrshort{conus}, a 5-year dataset of observed \acrshort{dcc}s has been created, tracking both cores and anvils.
 Analysis of this dataset can show new discoveries about the lifecycle of \acrshort{dcc}s, and how their properties correspond to those of their cores.
 
-\section{Data}
+\section{Data} \label{sec:lifecycle_data}
 
 \begin{figure}[tp]
     \centering
@@ -321,7 +321,7 @@ For the minimum core \acrshort{bt}, the initial cores tend to have warmer \acrsh
     \caption[
     The mean observed lifetimes, maximum areas, cooling rates and \acrshort{bt} for cores detected over land, sea, tropics and mid-latitudes
     ]{
-    The mean observed (a) lifetime, (b) maximum area, (c) maximum cooling rate, (d) and minimum \acrshort{bt} for cores detected over land, sea, tropics and mid-latitudes. Error bars show to standard error of each point.
+    The mean observed (a) lifetime, (b) maximum area, (c) maximum cooling rate, (d) and minimum \acrshort{bt} for cores detected over land, sea, tropics and mid-latitudes. Error bars are not shown as the standard error of the mean is too small to be visible.
     }
     \label{fig:core_region_mean_properties}
 \end{figure}
@@ -334,7 +334,13 @@ There is a small difference in the minimum \acrshort{bt} of cores observed over 
 A more noticeable difference is seen with latitude, with cores in the tropics having, on average, minimum \acrshort{bt} $\sim$3\,\unit{K} colder than those in the mid-latitudes.
 
 Overall, fig.~\ref{fig:core_region_mean_properties} show differences in core intensity between land and ocean, and between the tropics and mid-latitudes, with these differences most prominent in the minimum \acrshort{bt}.
-However, these differences may result from changes in different properties of the cores as the difference in cooling rate between tropics and mid-latitudes is not seen when comparing sea and land.
+Due to the large number of tracked cores, the standard error of the mean for each point is very small, and so from a simple perspective these differences appear significant.
+However, the impact of systematic bias on these properties must also be considered, in particular the impact of the sensor zenith angle as discussed in sections~\ref{sec:abi_channels} and \ref{sec:lifecycle_data}, which may impact the detection accuracy and measured properties of tracked \acrshort{dcc}s.
+As more of the ocean observations are in the tropics, and more of the land \acrshort{dcc}s observed in the mid-latitudes, covariance should be expected between the average properties of \acrshort{dcc}s in these regions.
+In fig.~\ref{fig:core_region_mean_properties}\,b larger average areas are seen for both land over ocean and mid-latitudes over the tropics, indicating that the differences may be the result of the expected systematic bias in area caused by sensor zenith angle.
+However, for the other three properties, while convective cores over land have longer lifetimes, higher cooling rates and colder minimum \acrshort{bt} than those over the ocean, cores in the tropics also have the same indicators of more intense convection when compared to the mid-latitudes.
+This opposes the expected covariance between these regions, and indicates that the differences seen are likely to be real and significant, and that the systematic error is smaller than the differences seen between land and ocean and between tropics and mid-latitudes.
+These differences may result from changes in different convective processes as the difference in cooling rate between tropics and mid-latitudes is as large when comparing sea and land.
 
 %f
 \begin{figure}[tp]
@@ -343,7 +349,7 @@ However, these differences may result from changes in different properties of th
     \caption[
     Average core lifetime and minimum \acrshort{bt} with increasing core cooling rate
     ]{
-    Average core lifetime (a) and minimum \acrshort{bt} (b) with increasing core cooling rate. Error bars show the variance of the data, while the shaded area shows the standard error of the mean.
+    Average core lifetime (a) and minimum \acrshort{bt} (b) with increasing core cooling rate. Error bars show the standard error of the mean, and are large enough to the visible only for the largest cooling rates.
     }
     \label{fig:core_cooling_rate_relations}
 \end{figure}
@@ -437,7 +443,7 @@ Previous studies have found a similar bimodal distribution in convective precipi
     \caption[
     The change in average time of core detection with distance from the coastline
     ]{
-    The change in average time of core detection with distance from the coastline. Negative distances along the x axis show cores detected further to sea, and positive distances show cores detected further inland. Error bars show the circular standard error of the local solar hour of detection.
+    The change in average time of core detection with distance from the coastline. Negative distances along the x axis show cores detected further to sea, and positive distances show cores detected further inland. Error bars are not shown as the standard error of the mean is too small to be visible.
     }
     \label{fig:core_coast_effect}
 \end{figure}
@@ -457,7 +463,7 @@ Cores over land see a reduction in the variance of the time of detection between
     \caption[
     The diurnal cycle of the maximum cooling rate of cores detected over land, sea, tropics and mid-latitudes
     ]{
-    The diurnal cycle of the maximum cooling rate of cores detected over (a) sea, (b) land, (c) tropics (\textless 30\,\textdegree N) and (d) mid-latitudes (\textgreater 30\,\textdegree N). Each point shows the mean of the maximum cooling rate of cores detected during that hour. Error bars show the standard error of the maximum cooling rate.
+    The diurnal cycle of the maximum cooling rate of cores detected over (a) sea, (b) land, (c) tropics (\textless 30\,\textdegree N) and (d) mid-latitudes (\textgreater 30\,\textdegree N). Each point shows the mean of the maximum cooling rate of cores detected during that hour. Error bars are not shown as the standard error of the mean is too small to be visible.
     }
     \label{fig:core_diurnal_cooling_rate}
 \end{figure}
@@ -626,7 +632,7 @@ The large area and lifetime of these systems---seen in the long tails of those d
     \caption[
     The change in the average areas, lifetimes, \acrshort{bt} and number of cores of anvils observed over sea, land, tropics and mid-latitudes.
     ]{
-    The change in the average (a) areas, (b) lifetimes, (c) \acrshort{bt} and (d) number of cores of anvils observed over sea, land, tropics and mid-latitudes. The points with no fill show the average across all \acrshort{dcc}s, whereas the points with the black fill show the average for isolated \acrshort{dcc}s (with one core) only. Error bars show the standard error of the mean.
+    The change in the average (a) areas, (b) lifetimes, (c) \acrshort{bt} and (d) number of cores of anvils observed over sea, land, tropics and mid-latitudes. The points with no fill show the average across all \acrshort{dcc}s, whereas the points with the black fill show the average for isolated \acrshort{dcc}s (with one core) only. Error bars are not shown as the standard error of the mean is too small to be visible.
     }
     \label{fig:anvil_properties_regions}
 \end{figure}
@@ -635,7 +641,14 @@ Figure~\ref{fig:anvil_properties_regions} shows how the averages of the maximum 
 For both isolated and multi-core convection, the average areas and lifetimes shown in fig.~\ref{fig:anvil_properties_regions}\,a and b respectively are larger over land than sea, and in the mid-latitudes than in the tropics.
 For the anvil \acrshort{bt} shown in fig.~\ref{fig:anvil_properties_regions}\,c, both the mean and minimum \acrshort{bt} of anvils is colder over land than sea, and also colder in the tropics than in the mid-latitudes.
 \acrshort{dcc}s over land tend to have more cores than those over the sea.
-These differences also apply to isolated \acrshort{dcc}s, indicating that they are connected to changes in the convective processes and anvil evolution in the different regions rather than a sampling bias.
+
+As discussed in section~\ref{sec:core_properties} regarding fig.~\ref{fig:core_region_mean_properties}, it is expected that there will be some systematic bias in these mean properties, and that this error will be covariant for land and mid-latitude, and for sea and tropics regions due to their overlap.
+For both the average maximum area and the average lifetime of anvils shown in fig.~\ref{fig:anvil_properties_regions}\,a and b, evidence of this bias is seen as both land and mid-latitude regions display larger areas and longer lifetimes than sea and tropics respectively.
+On the contrary, similarly to fig.~\ref{fig:core_region_mean_properties}\,d while anvils over land have colder mean and minimum \acrshort{bt} than those over the ocean, anvils in the tropics tend to be colder than those in the mid-latitudes.
+This both indicates that these differences are real, and are as expected as the higher tropopause in the tropics can result in colder anvil clouds.
+While a difference in the average number of cores is seen between land and ocean, little difference is seen between tropics and mid-latitudes in this regard.
+The increased tendency of anvils to have multiple cores over land may influence the other differences seen in fig.~\ref{fig:anvil_properties_regions}, as more organised \acrshort{dcc}s tend to have large areas, longer lifetimes and colder \acrshort{ctt}.
+However, these differences also apply to isolated \acrshort{dcc}s (those indicated by the black points in fig.~\ref{fig:anvil_properties_regions}), indicating that they are connected to changes in the convective processes and anvil evolution in the different regions rather than a sampling bias.
 
 \subsection{Diurnal cycle of anvils}
 
@@ -718,7 +731,7 @@ Previous research has shown that solar heating during the daytime increases the 
     \caption[
     The average age of anvils observed over sea, land, tropics and mid-latitudes throughout the diurnal cycle.
     ]{
-    The average age of anvils observed over (a) sea, (b) land, (c) tropics (\textless 30\,\textdegree N) and (d) mid-latitudes (\textgreater 30\,\textdegree N) throughout the diurnal cycle. Error bars show the standard error of the mean.
+    The average age of anvils observed over (a) sea, (b) land, (c) tropics (\textless 30\,\textdegree N) and (d) mid-latitudes (\textgreater 30\,\textdegree N) throughout the diurnal cycle. Error bars are not shown as the standard error of the mean is too small to be visible.
     }
     \label{fig:anvil_diurnal_age}
 \end{figure}
