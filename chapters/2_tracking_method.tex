@@ -262,7 +262,8 @@ To better understand how \acrshort{dcc}s appear in \acrshort{goes} \acrshort{abi
 These experiments were performed using libRadTran v2.0.4 \citep{emde_libradtran_2016}, utilising the DISORT radiative transfer solver \citep{buras_new_2011} and the REPTRAN absorbtion parameterisation \citep{gasteiger_representative_2014}.
 The experiments were run using the pyLRT wrapper for libRadTran \citep{gryspeerdt_pylrt_2024}.
 A tropical atmospheric profile was used to represent the atmospheric conditions under which deep convection typically occurs.
-A complete list of the options used to set up the radiative transfer model across all simulations is provided in table \ref{table:libradtran}.
+A list of the options used to set up the radiative transfer model across all simulations is provided in table \ref{table:libradtran}.
+All other options have been left as the default settings, including the treatment of relativity humidity which is set to 100\,\% within clouds.
 
 \begin{table}[tb]
 \centering
@@ -294,7 +295,8 @@ ice microphysics& Fu                    & \citet{fu_accurate_1996} parameterisat
 \end{table}
 
 In each of the simulations, a cloud layer is included in addition to these options to represent a \acrshort{dcc} in different phases of the lifecycle.
-For liquid cloud droplets we use the Hu parameterisation \citep{hu_accurate_1993}, and for ice particles we use the Fu scheme \citep{fu_accurate_1996, fu_accurate_1998}. To show how the simulated clouds are observed by \acrshort{goes}-16, we calculate \acrshort{bt} from the simulated radiances, and then integrate over the spectral response function of each of the \acrshort{abi} channels.
+For liquid and ice cloud droplets the Hu parameterisation \citep{hu_accurate_1993} and the Fu scheme \citep{fu_accurate_1996, fu_accurate_1998} are used respectively. 
+To show how the simulated clouds are observed by \acrshort{goes}-16, \acrshort{bt} are simulated from the simulated radiances, and then integrated over the spectral response function of each of the \acrshort{abi} channels.
 
 \subsection{Observing growing convective cores}\label{sec:theory_core}
 
@@ -363,9 +365,15 @@ However, this sensitivity to vertical development at a mid to high altitude may 
 It should be noted that these simulations were performed with the cloud temperature in equilibrium with the surrounding environment, this is not the case for a convective core which will be warmer than the surrounding air.
 Taking 6\,\unit{K/km} as a typical value for the moist pseudo--adiabatic lapse rate, the cooling rate for a convective cloud top rising at 1\,\unit{ms^{-1}} is 0.36\,$\mathrm{K \cdot minute^{-1}}$.
 This is similar to the value shown in fig.~\ref{fig:cloud_height_cooling_rates} for the 10.4\,\unit{\mu m} \acrshort{bt}.
-In addition, due to mixing of surrounding air with the convective cloud top, we expect that the observed temperature profile of the core will be somewhere between that of the environment profile and the moist pseudo--adiabatic lapse rate.
-In general the temperature of the top of convective cores varies very little from the surrounding environment \citep{zipser_cumulonimbus_1980}.
-Furthermore, overshooting tops should continue to cool with the moist pseudo--adiabatic lapse rate, indicating that the \acrshort{bt} difference is also capable of detecting overshooting convective cores.
+In addition, due to the mixing of surrounding air with the convective cloud top, we expect that the observed temperature profile of the core will be somewhere between that of the environment profile and the moist pseudo--adiabatic lapse rate.
+In general, the temperature of the top of convective cores varies very little from the surrounding environment \citep{zipser_cumulonimbus_1980}.
+
+As overshooting tops also cool according to the moist adiabatic lapse rate, the \acrshort{bt} difference method may also detect convective cores that overshoot underlying anvil clouds.
+While mixing with the warmer stratospheric air will reduce the cooling rate of the cloud top, the intense convection required to form overshooting tops means that they are still likely to be detected using the same thresholds.
+By basing further analysis of convective intensity on the most intense period of the observed cooling rate, the low bias on measurements of convective cores can be reduced.
+Detection of overshooting tops may also result in a bias on the number of cores associated with an anvil cloud, as more intense convection may result in detected overshooting tops whereas less intense convection may not be visible above the anvil.
+Previous case studies \citep{churchill_development_1984} have shown that the majority of subsequent convection in organised \acrshort{dcc}s tends to occur around the edge of the storm, so we expect the masking of developing cores by existing anvil clouds to only have a small impact on the detected number of cores.
+In future, research into methods for detecting convective cores under anvil clouds \citep[][e.g.]{apke_relationships_2018} could avoid this bias along with enabling tracking of the full extent of convective core lifetimes.
 
 \subsection{Observing anvil clouds} \label{sec:theory_anvil}
 

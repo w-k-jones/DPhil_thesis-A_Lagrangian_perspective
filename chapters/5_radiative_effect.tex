@@ -6,10 +6,6 @@ Forming the ascending branch of the Hadley cells near the equator, \acrshort{dcc
 The \acrshort{itcz} and its location is vital in determining the seasonal cycles of rainfall over central and western Africa \citep{nicholson_revised_2009, nicholson_itcz_2018}.
 Understanding the behaviour of \acrshort{dcc}s over Africa has the potential for major impacts on the atmosphere, weather and society.
 
-% \acrshort{dcc}s are also a cause of extreme weather events including floods, lightning and hail \citep{westra_future_2014}. 
-% \acrshort{mcs}s---large, long-lived convective systems in which the anvils of multiple convective cores combine into a single, large `cloud shield' \citep{chen_diurnal_1997, houze_mesoscale_2004, roca_simple_2017}---are responsible for the majority of precipitation in the tropics \citep{feng_global_2021}. 
-% 
-
 \acrshort{dcc}s also exert a key influence on the temperature of the tropics through their \acrshort{cre}. 
 Due to their size, height and depth, \acrshort{dcc} anvils have large radiative effects in both the \acrshort{sw} and \acrshort{lw}, with both having average magnitudes that exceed 100\,\unit{W m^{-2}} \citep{hartmann_tropical_2016, wall_balanced_2018}. 
 Due to the opposite signs of these two components, the average anvil \acrshort{cre} in the tropics is approximately zero \citep{ramanathan_cloud-radiative_1989, hartmann_effect_1992, stephens_cloudsat_2018}. 
@@ -164,44 +160,7 @@ Corrections for these biases have been applied uniformly to all further \acrshor
     \label{fig:S_anvil_sensitivity}
 \end{figure*}
 
-The detection and tracking of \acrshort{dcc}s are performed using the tobac-flow algorithm (see chapter~\ref{chp:tracking_method}, which has been designed specifically to track both isolated and clustered \acrshort{dcc}s in geostationary satellite imagery over their entire lifecycle. 
-% While geostationary satellite imagery provides high-resolution observations over large domains and long time periods, which is ideal for studying deep convection, the inability of passive remote sensing to observe convective updrafts directly makes the detection and tracking of \acrshort{dcc}s difficult.
-
-% Algorithms for the detection and tracking of \acrshort{dcc}s in satellite imagery have generally been developed for one of two applications: tracking convective cores and isolated convection, or tracking large \acrshort{mcs} anvils.
-% Those designed for tracking deep convective cores, or isolated \acrshort{dcc}s, include Cb-TRAM \citep{zinner_cb-tram_2008,zinner_validation_2013} or tobac \citep{heikenfeld_tobac_2019}.
-% These algorithms work by detecting regions of convective updraft or a proxy (such as cloud top cooling rate), and then treating these regions as point-like objects that are advected over time. 
-% The second group, designed for tracking \acrshort{mcs}s, include algorithms such as PyFLEXTRKR \citep{feng_pyflextrkr_2022}, TAMS \citep{ocasio_tracking_2020} or TOOCAN \citep{fiolleau_algorithm_2013}. 
-% These algorithms detect large regions of cold cloud tops which indicate anvil clouds, and then link them over time by overlapping regions at subsequent time steps. 
-% There is no `best' method for tracking all types of convection however \citep{lakshmanan_objective_2010}. 
-% The algorithms for tracking isolated convective cells perform worse for clustered convection when the motion and shape of the \acrshort{dcc} cannot be adequately represented as a single vector. 
-% On the other hand, the \acrshort{mcs} tracking algorithms perform worse for smaller, isolated \acrshort{dcc}s as the motion of the anvil between time steps may mean it does not overlap with the previous step.
-
-% To approach the challenge of tracking both isolated \acrshort{dcc}s and large, clustered systems, we address the role of cloud motion in the scaling problem. 
-% tobac-flow first estimates the motion of \acrshort{dcc}s at each pixel using an optical-flow algorithm. 
-% Then, using these estimated motion vectors, we construct a semi-Lagrangian framework in which to perform the detection and tracking. 
-% This approach addresses two issues found in traditional cloud tracking approaches.
-% First, estimating a motion vector for each pixel allows complex motions (including divergence, rotation, splitting and merging) to be compensated for, rather than just the bulk motion found using the centroid tracking methods.
-% Second, by estimating the cloud motion \textit{a priori}, this information can be used within the detection step of the algorithm, and can separate changes in cloud properties such as \acrshort{bt} from those observed due to cloud motion.
-% This framework removes the problem of \acrshort{dcc} motion, allowing us to track both isolated and large \acrshort{dcc}s at the same time.
-
-% Three channels and channel combinations from \acrshort{seviri} are used for the detection algorithm: the 10.8\,\unit{\mu m} \acrshort{bt} channel; the \acrshort{wvd} (the difference between the 6.2\,\unit{\mu m} and 7.3\,\unit{\mu m} channels), and the \acrshort{swd} (the difference between the 10.8\,\unit{\mu m} and 12.0\,\unit{\mu m} channels).
-% Estimation of cloud motion vectors using optical flow in performed using the 10.8\,\unit{\mu m} \acrshort{bt} channel.
-% Detection of cores utilises the 10.8\,\unit{\mu m} \acrshort{bt} channel and the \acrshort{wvd}, and detection of anvils uses \acrshort{wvd} and \acrshort{swd}.
-
-% We detect growing convective cores where we observe regions of rapid cooling in the 10.8\,\unit{\mu m} \acrshort{bt} channel of greater than 0.5\,\unit{Ks\textsuperscript{-1}} and the \acrshort{wvd} of greater than 0.25\,\unit{Ks\textsuperscript{-1}}.
-% In both cases
-% \acrshort{dcc}s close to the surface and continue tracking them into the upper troposphere. 
-% We classify a core as a region of cooling temperature that has existed for at least 15 minutes and has cooled by at least 8\,\unit{K} in a 15-minute period. 
-% This threshold provides a strong indicator of intense convective activity \citep{roberts_nowcasting_2003}, and so provides an accurate detection of growing \acrshort{dcc}s.
-
-
-% Starting from these convective cores, we then detect the surrounding anvil cloud using the \acrshort{wvd} field \citep{muller_role_2018, muller_novel_2019} and continue to detect the anvil until its dissipation, even after the core is no longer visible. 
-% A core and anvil are linked with each other if the two overlap at a time when the core has mean \acrshort{wvd} of \textgreater\,5\,\unit{K}, indicating that it has reached the upper troposphere.
-% Each anvil cloud can be associated with multiple cores, allowing us to identify cases of clustered convection. 
-% As we detect the cores based on cloud-top cooling, however, we can only detect the cores themselves during the growing phase, and cannot detect cores that occur underneath cold, high, anvil clouds.
-% When determining the number of cores associated with an anvil, we count the total number of cores observed over the entire lifetime, even if they do not occur at the same time, and including all merges and splits of the anvil cloud.
-% This flexibility allows for a wide range of different organised systems to be analysed.
-
+The detection and tracking of \acrshort{dcc}s are performed using the tobac-flow algorithm (see chapter~\ref{chp:tracking_method}, which has been designed specifically to track both isolated and clustered \acrshort{dcc}s in geostationary satellite imagery over their entire lifecycle.
 
 Due to the lack of sensitivity of the \acrshort{seviri} \acrshort{swd} to thin ice clouds, only the thick portion of the anvil is tracked in this chapter.
 The \acrshort{wvd} channel of \acrshort{seviri} is capable of detecting anvils with optical thicknesses of approximately 1.5$\pm$0.5 (see fig.~\ref{fig:S_anvil_sensitivity}).
@@ -240,8 +199,8 @@ The majority of observed convection occurs over the tropical rainforest regions.
 During the months of May-August, the \acrfull{itcz} is at its northernmost extent over Africa \citep{nicholson_itcz_2018}. 
 The West African monsoon occurs during these months, with the primary band of convection located between 5-15\textdegree N \citep{nicholson_revised_2009}, which our observations agree with. 
 The maximum frequency of convection is observed at around 6\textdegree N, 12\textdegree E over the Western High Plateau of Cameroon, with high frequencies of convection also observed over the Nigerian coastal plains to the West and the Jos Plateau in Northern Nigeria. 
-High rates of convection are also observed over the coastal plains and inland highlands of Guinea, Sierra Leone and Liberia (5--12\,\textdegree N, 5--15\,\textdegree W)
-Almost no convective activity is observed between 10\textdegree S and 20\textdegree S as during the Northern hemisphere summer this is the location of the descending branch of the Hadley cell which suppresses convection.
+High rates of convection are also observed over the coastal plains and inland highlands of Guinea, Sierra Leone and Liberia (5--12\,\textdegree N, 5--15\,\textdegree W).
+Almost no convective activity is observed between 10\textdegree S and 20\textdegree S as, during the Northern hemisphere summer, this is the location of the descending branch of the Hadley cell which suppresses convection.
 
 
 \begin{figure}[tp]
