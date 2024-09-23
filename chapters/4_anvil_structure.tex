@@ -108,6 +108,12 @@ This may lead to biases in the calculation of the thin anvil fraction, as while 
 This could lead to an underestimate of the thin anvil area and fraction in anvils where the \acrshort{od} distribution shows a large frequency of very thin cirrus.
 Such thin anvil cirrus will have a small radiative effect on the climate, and, therefore, this bias in the thin anvil fraction may not result in a large uncertainty in the climate impacts due to the low contribution to anvil \acrshort{cre} from the unobserved cirrus.
 
+A limitation of the simple separation of thick and thin anvil is that uniform changes in anvil thickness cannot be distinguished from changes in the anvil thickness distribution.
+An anvil that is uniformly thicker will result in a larger thick anvil area and a smaller thin anvil fraction.
+For a straightforward analysis of the impact of changes in anvil structure on the climate this is not a significant difference, as anvil \acrshort{cre} is most sensitive to changes in thickness at \acrshort{od} around 2 \citep{berry_cloud_2014}, and so the cutoff value for thick anvil is ideal.
+More detailed analysis of the mechanisms through which anvil structure changes may, however, require more information about the overall distribution of anvil thickness that is not provided by these metrics.
+Use of retrieved cloud properties, or colocation with cloud radar instruments that can resolve the vertical structure of anvil clouds, may be important for further understanding of processes affecting anvil thickness.
+
 It should be noted that the simulations shown in fig.~\ref{fig:bt_wvd_swd_height_od} were calculated using a standard tropical atmospheric profile to best represent the moist environment in which deep convection occurs.
 While anvils occurring in the extra-tropical parts of the \acrshort{conus} domain are expected to have lower cloud top heights, there is also expected to be a colder temperature profile.
 As a result, the observed \acrshort{bt} of extra-tropical \acrshort{dcc}s behave more like that of the 12 and 14\,\unit{km} simulations shown in fig.~\ref{fig:bt_wvd_swd_height_od}, rather than that at 10\,\unit{km}.
@@ -485,6 +491,12 @@ Unlike isolated systems, organised \acrshort{dcc}s involve the continuous develo
 It is possible that the thickening is a result of the mesoscale circulations associated with large, organised \acrshort{mcs}s, which transports additional moisture directly into the anvil where it increases the cloud water content at high levels.  
 Alternatively, convective aggregation may result in moister environments surrounding the cores of these organised \acrshort{dcc}s, slowing the dissipation of the thick anvil, and also drying the surrounding regions resulting in faster decay of the thin anvil further from the core.
 The convergence of the thin anvil fraction during the dissipating phase of \acrshort{dcc}s is indicative of the characteristic decay patterns seen in convective anvils across scales \citep{roca_simple_2017, elsaesser_simple_2022}.
+
+Care should be taken when interpreting these results to consider covariance in the metrics used to measure convective intensity and organisation with the measured anvil structure.
+In particular, the occurrence of thicker anvil clouds may result in the detection algorithm considering two neighbouring \acrshort{dcc}s as forming a single cloud shield, when otherwise they would be considered isolated.
+This may result in a confounding factor where the anvil structure is affecting the number of cores, rather than the other way around.
+However, the time series of thin anvil fraction shown in fig.~\ref{fig:number_of_cores_composite} suggests that this is not the case, as on average the anvils of \acrshort{dcc}s with different numbers of cores tend to begin with similar thin anvil fraction and only diverged later in their lifetimes.
+Further analysis into the observations of organised convection and their dynamics could reveal more about the processes affecting the structure of these clouds, as well as examine differences in different modes of organised convection (such as tropical cloud clusters vs linear squall lines) which may show different behaviours regarding their structure.
 
 Further investigation of how these processes impact anvil structure and lifecycle may be difficult due to the lack of time-resolved observational data that can measure these processes.
 The use of modelling, including both convective resolving models and more idealised experiments, may provide a route to isolate the impacts of each process on \acrshort{dcc} evolution \citep{gasparini_diurnal_2022}.
