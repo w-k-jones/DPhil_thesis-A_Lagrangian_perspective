@@ -164,6 +164,18 @@
 \vspace{0.5cm}}
 {\end{alwayssingle}}
 
+
+\newenvironment{funding}
+{\begin{alwayssingle} \thispagestyle{empty}
+\begin{center}
+\vspace*{1.5cm}
+{\Large \bfseries Funding}
+\end{center}
+\vspace{0.5cm}
+\begin{quote}}
+{\end{quote}\end{alwayssingle}}
+
+
 % STATEMENT OF ORIGINALITY (AS SUGGESTED BY GSW)
 %
 % The originality environment puts a large, bold, centered 
