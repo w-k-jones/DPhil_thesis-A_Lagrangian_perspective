@@ -3,8 +3,8 @@
 
 \section{Introduction}  %% \introduction[modified heading if necessary]
 
-Understanding the relationships between the properties of deep convective cores and anvils is vital to understanding the behaviour of \acrshort{dcc}s in both the present day and future climate.
-Our ability to study these relationships is limited, however, by a lack of datasets connecting convective processes to anvil properties over the entire \acrshort{dcc} lifetime \citep{gasparini_opinion_2023}.
+Understanding the relationships between the properties of deep convective cores and anvils is vital to understanding the behaviour of \acrshort{dcc}s in both the present and future climate.
+Our ability to study these relationships is limited by a lack of datasets connecting convective processes to anvil properties over the entire \acrshort{dcc} lifetime \citep{gasparini_opinion_2023}.
 The capabilities of the newest generation of geostationary satellite instruments provide opportunities to address this issue.
 Data from the \acrshort{goes}-16 \acrshort{abi} instrument's \acrshort{conus} domain provide many advantages for investigating convective processes.
 The higher spatial and temporal resolutions and number of channels allow us to move beyond the traditional tracking of large, cold cloud shields to instead track \acrshort{dcc}s from the initial development of the core to the final dissipation of the anvil across scales spanning isolated \acrshort{dcc}s to large \acrshort{mcs}s.
@@ -30,10 +30,10 @@ Warm, moist air from the Eastern Pacific and Gulf of Mexico is lifted and conver
 Unlike in the \acrshort{usa}, there is typically less shear in this environment, and so there is a lower tendency for the production of supercell convection (and the associated risks) except in the North of Mexico \citep{weiss_supercells_2008}.
 
 The impacts of extreme weather across North America drive interest in the research of convective systems and their behaviour.
-Furthermore, global warming is expected to drive an increase in a number of factors affecting convection, including \acrshort{cape} \citep{seeley_why_2015}, with a corresponding increase in the intensity of deep convective storms \citep{trapp_changes_2007, seeley_effect_2015}.
+Furthermore, global warming is expected to drive an increase in several factors affecting convection, including \acrshort{cape} \citep{seeley_why_2015}, with a corresponding increase in the intensity of deep convective storms \citep{trapp_changes_2007, seeley_effect_2015}.
 However, many models generally do a poor job of representing convective storms, particularly \acrshort{mcs}s, over much of North America \citep{pinto_assessment_2015}.
 Although convective resolving models have improved this \citep{stevens_added_2020}, there are still shortcomings in their representation of convective cloud processes which limit their capabilities \citep{jeevanjee_vertical_2017, prein_sensitivity_2021}.
-As a result, studying the distribution of convective systems and their properties remains an important task both more understanding these processes, improving models and forecasting the weather \citep{brooks_century_2019}.
+As a result, studying the distribution of convective systems and their properties remains an important task for understanding these processes, improving models and forecasting the weather \citep{brooks_century_2019}.
 
 Geostationary satellite observations have provided a key tool for studying the behaviour of \acrshort{dcc}s over North America due to the large spatial coverage of their observations.
 Early studies focused on the behaviour of mesoscale convective complexes; large, elliptical \acrshort{mcs}s which propagate eastward from the Rocky Mountains \citep{maddox_mesoscale_1980, augustine_mesoscale_1988, augustine_mesoscale_1991}.
@@ -42,9 +42,9 @@ More recently, \citet{feng_spatiotemporal_2019} and \citet{li_high-resolution_20
 However, the low temporal resolution of 1 hour limits the ability to the properties of individual cores, and the reliance on ground-based radar restricts the study to \acrshort{dcc}s which occur over land over the USA.
 
 By leveraging the full temporal and spatial resolution of \acrshort{goes} \acrshort{abi} observations over the \acrshort{conus}, a 5-year dataset of observed \acrshort{dcc}s has been created, tracking both cores and anvils.
-Analysing of this dataset can show new discoveries about the lifecycle of \acrshort{dcc}s, and how their properties correspond to those of their cores.
+Analysis of this dataset can show new discoveries about the lifecycle of \acrshort{dcc}s, and how their properties correspond to those of their cores.
 
-\section{Data}
+\section{Data} \label{sec:lifecycle_data}
 
 \begin{figure}[tp]
     \centering
@@ -70,16 +70,16 @@ This period spans all complete years of operational data from \acrshort{goes}-16
 To improve to continuity of observations a gap-filling procedure is implemented.
 If time gaps between observations of greater than 15 minutes are present, observations from the full-disc \acrshort{abi} scan are used to fill these gaps.
 Full disc imagery is typically available every 10 or 15 minutes depending on the operating mode.
-This gap filling is particularly important during the periods in which \acrshort{abi} uses its mode 4 scan pattern, in which no \acrshort{conus} domain scans are made, but the full-disc is scanned every 5 minutes.
+This gap filling is particularly important during the periods in which \acrshort{abi} uses its mode 4 scan pattern, in which no \acrshort{conus} domain scans are made, but the full disc is scanned every 5 minutes.
 Using the full-disc observations allows us to maintain temporal sampling throughout these periods.
 
 
 \section{Method} \label{sec:conus_method}
 
-Detection and tracking of convective cores and anvil cloud is performed using the \textit{tobac-flow} method \citep{jones_semi-lagrangian_2023} described in section~\ref{sec:tracking_method}.
-Initial detection of \acrshort{dcc}s is performed separately over 24-hour periods spanning from 12:00:00~\acrshort{utc} (approximately 6am local time over North America) to the same time the next day.
+Detection and tracking of convective cores and anvil clouds are performed using the \textit{tobac-flow} method \citep{jones_semi-lagrangian_2023} described in section~\ref{sec:tracking_method}.
+Initial detection of \acrshort{dcc}s is performed separately over 24-hour periods spanning from 12:00:00~\acrshort{utc} (approximately 6~am local time over North America) to the same time the next day.
 This 24-hour period was dictated due to performance constraints, as the large domain combined with the high spatial and temporal resolution of \acrshort{abi} data results in a large memory requirement.
-The start time corresponds with the minima of convective activity over land, and so was chosen in order to minimise the number of \acrshort{dcc}s missed at the start and end of the detection period.
+The start time corresponds with the minima of convective activity over land, and so was chosen to minimise the number of \acrshort{dcc}s missed at the start and end of the detection period.
 Each period is extended by six \acrshort{abi} observations at each end to ensure at least one hour of overlap between successive days.
 
 To track long-lived \acrshort{dcc}s that last beyond one day, a linking algorithm is used to combine \acrshort{dcc}s observed across multiple days.
@@ -115,10 +115,10 @@ The quality criteria are split into two groups.
 The first set of criteria---for core or anvil removal---removes features that cannot be verified as correctly tracked \acrshort{dcc}s due to bad data or a failure to meet the basic requirements for tracking described in chapter~\ref{chp:tracking_method}.
 This may happen because there are large time gaps in the dataset, or missing data due to artifacts in the \acrshort{abi} observations.
 Detected features which flag any of these criteria are removed from the aggregated dataset in their entirety.
-This step in particular removes anvils which have no cores associated with them, or are not detected as initiating with a developing core.
+This step in particular removes anvils which have no associated cores, or are not detected as initiating with a developing core.
 
-The second set of criteria is used to identify detected cores or anvils which are not observed over their entire extent or lifecycle.
-Cores and anvils which flag are of these criteria are still included within the aggregated properties dataset, but are removed from the analysis \acrshort{dcc} properties throughout this chapter.
+The second set of criteria is used to identify detected cores or anvils that have not been observed over their entire extent or lifecycle.
+Cores and anvils which flag any of these criteria are still included within the aggregated properties dataset, but are removed from the analysis \acrshort{dcc} properties throughout this chapter.
 Quality criteria for cores are listed in table \ref{table:core_validity_criteria}, and those for anvils in table \ref{table:anvil_validity_criteria}.
 
 
@@ -170,15 +170,15 @@ The second, consisting of aggregated monthly core and anvil properties, is produ
 \end{figure}
 
 Figure~\ref{fig:conus_detected_dccs} shows an example of detected cores and anvils over the \acrshort{conus} region, against backgrounds of composite visible imagery (fig.~\ref{fig:conus_detected_dccs}\,a) and 10.4\,\unit{\mu m} \acrshort{bt} (fig.~\ref{fig:conus_detected_dccs}\,b).
-Cores and anvils which are removed from the aggregated dataset are outlined with dotted lines, and those which are marker invalid are shown with dashed outlines.
+Cores and anvils which are removed from the aggregated dataset are outlined with dotted lines, and those which are considered invalid are shown with dashed outlines.
 The large, organised convective system centred at 95\,\textdegree W, 27\,\textdegree N has been removed as it is intersected by a scan-line artifact later in its lifetime.
 The \acrshort{dcc}s observed along the eastern edge of the domain have been marked invalid as, while they are considered true detections of \acrshort{dcc}s, they intersect the edge of the domain.
 
-Over the five-year observing period a total of 3,877,130 cores are detected, of which 3,615,533 are consider valid, and 1,643,030 are linked with an anvil cloud. 
+Over the five-year observing period a total of 3,877,130 cores are detected, of which 3,615,533 are considered valid, and 1,643,030 are linked with an anvil cloud. 
 A total of 648,345 anvils are detected, of which 391,050 are valid, and these valid anvils contain 792,522 cores.
 The disparity in the number of valid cores and the number of cores contained with valid anvils is due to additional filtering applied to the anvils.
 As the larger and longer-lived anvils are more likely to intersect the edges of the domain, they are more likely to be marked invalid than the cores.
-In these cases, the cores themselves are valid for analysis, as their evolution is observed in its entirety, but exclude the anvil itself from analysis as we do not capture its entire extent and lifetime.
+In these cases, the cores themselves are valid for analysis, but the anvil itself is excluded from analysis as its entire extent and lifetime are not captured.
 The exclusion of anvils that intersect the edges of the domain introduces a bias towards removing larger, long-lived systems near the edge of the domain, which should be considered when assessing the properties of the observed \acrshort{dcc}s.
 
 
@@ -220,11 +220,11 @@ In winter (fig.~\ref{fig:core_density_by_season}\,a) the majority of convection 
 In spring (fig.~\ref{fig:core_density_by_season}\,b), a similar pattern shows over the ocean, and there is also an increase in convection detected over land in the Caribbean, Mexico and the central and southern \acrshort{usa}.
 In summer (fig.~\ref{fig:core_density_by_season}\,c) there is a large increase in convection over land and ocean, with the highest rates of convection of any season.
 There are, in particular, high rates of convection over Mexico, the Caribbean, the southern \acrshort{usa} (Florida in particular) and adjacent ocean regions.
-In Autumn (fig.~\ref{fig:core_density_by_season}\,d) there is a large reduction in the number of convective cores detected over land regions.
+In autumn (fig.~\ref{fig:core_density_by_season}\,d) there is a large reduction in the number of convective cores detected over land regions.
 The number of detections over the ocean remains high, however, indicating a possible lag in the seasonal cycle of convection over oceans compared to that over land.
 
 Figure~\ref{fig:core_annual_land_sea} shows the proportion of cores detected in each month over the annual cycle for land and sea regions.
-Both land and sea regions show a peak of convective activity in the summer, and a low in the winter months.
+Both land and sea regions show a peak of convective activity in the summer and a low in the winter months.
 However, as suggested by fig.~\ref{fig:core_density_by_season}, there is a time lag of about 1 month between the annual cycle of convection over land and that over the ocean, likely due to the time lag in ocean heating.
 Comparing the tropics and mid-latitudes, the monthly distribution of convection is much more sharply focused on July--August in the mid-latitudes compared to the broader distribution seen in the tropics.
 
@@ -281,10 +281,10 @@ This again may be linked to the reduction in the depth of the convective cores, 
 \end{figure}
 
 Figure~\ref{fig:core_cooling_rate_map} shows the average cooling rate of observed cores.
-The contrasts here are more pronounced that those shown in fig.~\ref{fig:core_lifetime_map}.
+The contrasts here are more pronounced than those shown in fig.~\ref{fig:core_lifetime_map}.
 There is a reduction in the average cooling rate with latitude, likely due to the reduction in solar heating and hence lower \acrshort{cape}.
 Orography also has a factor, with lower cooling rates observed over the mountains of Mexico and the North American Rockies.
-The largest average core cooling rates are observed in in coastal regions, indicating potential land--sea interactions.
+The largest average core cooling rates are observed in coastal regions, indicating potential land--sea interactions.
 
 %f
 \begin{figure}[tp]
@@ -306,11 +306,11 @@ Figure~\ref{fig:core_properties}\,c shows that the core cooling rate peaks at va
 The distribution is slightly truncated by the requirement for detected cores to have a cooling rate of at least 0.5\,\unit{K minute\textsuperscript{-1}}.
 
 The minimum core \acrshort{bt} distribution (fig.~\ref{fig:core_properties}\,d) peaks at around 220\,\unit{K}, supporting the theory that the radiative tropopause sets the height of the convectively active layer of the atmosphere.
-Many cores only reach temperatures warming than 220\,K, indicating either a lower \acrshort{lnb} or dilution of the convective updraft leading to reduced bouyancy.
+Many cores reach temperatures warmer than 220\,K, indicating either a lower \acrshort{lnb} or dilution of the convective updraft leading to reduced buoyancy.
 In addition, a large number of cores reach \acrshort{bt} colder than 220\,K, which, for the coldest cases, likely indicates the occurrence of overshooting tops.
 
 The hatched areas in fig.~\ref{fig:core_properties} show the proportion of each distribution consisting of the initial cores of tracked \acrshort{dcc}s.
-For these initial cores there is no possibility of the observations being masked by an overlaying anvil cloud, these are expected to provide the most complete measurements of developing core properties.
+As their development will not be masked by an overlaying anvil cloud, these cores are expected to provide the most complete measurements of developing core properties.
 For the lifetime, maximum area and cooling rate these show close similarities to the shape of the distribution for all cores, indicating that masking due to anvils does not significantly affect the ability to observe the core properties.
 For the minimum core \acrshort{bt}, the initial cores tend to have warmer \acrshort{bt} than later cores, indicating an increased presence of cold cores and overshooting tops in organised convection.
 
@@ -321,7 +321,7 @@ For the minimum core \acrshort{bt}, the initial cores tend to have warmer \acrsh
     \caption[
     The mean observed lifetimes, maximum areas, cooling rates and \acrshort{bt} for cores detected over land, sea, tropics and mid-latitudes
     ]{
-    The mean observed (a) lifetime, (b) maximum area, (c) maximum cooling rate, (d) and minimum \acrshort{bt} for cores detected over land, sea, tropics and mid-latitudes. Error bars show to standard error of each point.
+    The mean observed (a) lifetime, (b) maximum area, (c) maximum cooling rate, (d) and minimum \acrshort{bt} for cores detected over land, sea, tropics and mid-latitudes. Error bars are not shown as the standard error of the mean is too small to be visible.
     }
     \label{fig:core_region_mean_properties}
 \end{figure}
@@ -334,7 +334,13 @@ There is a small difference in the minimum \acrshort{bt} of cores observed over 
 A more noticeable difference is seen with latitude, with cores in the tropics having, on average, minimum \acrshort{bt} $\sim$3\,\unit{K} colder than those in the mid-latitudes.
 
 Overall, fig.~\ref{fig:core_region_mean_properties} show differences in core intensity between land and ocean, and between the tropics and mid-latitudes, with these differences most prominent in the minimum \acrshort{bt}.
-However, these differences may result from changes in different properties of the cores as the difference in cooling rate between tropics and mid-latitudes is not seen when comparing sea and land.
+Due to the large number of tracked cores, the standard error of the mean for each point is very small, and so from a simple perspective these differences appear significant.
+However, the impact of systematic bias on these properties must also be considered, in particular the impact of the sensor zenith angle as discussed in sections~\ref{sec:abi_channels} and \ref{sec:lifecycle_data}, which may impact the detection accuracy and measured properties of tracked \acrshort{dcc}s.
+As more of the ocean observations are in the tropics, and more of the land \acrshort{dcc}s observed in the mid-latitudes, covariance should be expected between the average properties of \acrshort{dcc}s in these regions.
+In fig.~\ref{fig:core_region_mean_properties}\,b larger average areas are seen for both land over ocean and mid-latitudes over the tropics, indicating that the differences may be the result of the expected systematic bias in area caused by sensor zenith angle.
+However, for the other three properties, while convective cores over land have longer lifetimes, higher cooling rates and colder minimum \acrshort{bt} than those over the ocean, cores in the tropics also have the same indicators of more intense convection when compared to the mid-latitudes.
+This opposes the expected covariance between these regions, and indicates that the differences seen are likely to be real and significant, and that the systematic error is smaller than the differences seen between land and ocean and between tropics and mid-latitudes.
+These differences may result from changes in different convective processes as the difference in cooling rate between tropics and mid-latitudes is as large when comparing sea and land.
 
 %f
 \begin{figure}[tp]
@@ -343,7 +349,7 @@ However, these differences may result from changes in different properties of th
     \caption[
     Average core lifetime and minimum \acrshort{bt} with increasing core cooling rate
     ]{
-    Average core lifetime (a) and minimum \acrshort{bt} (b) with increasing core cooling rate. Error bars show the variance of the data, while the shaded area shows the standard error of the mean.
+    Average core lifetime (a) and minimum \acrshort{bt} (b) with increasing core cooling rate. Error bars show the standard error of the mean, and are large enough to the visible only for the largest cooling rates.
     }
     \label{fig:core_cooling_rate_relations}
 \end{figure}
@@ -353,7 +359,7 @@ Figure~\ref{fig:core_cooling_rate_relations}\,a compares how the average lifetim
 The observed core cooling rates range from 0.5\,K$\mathrm{\cdot minute^{-1}}$ to 4\,K$\mathrm{\cdot minute^{-1}}$, representing cloud top growth rates between 1.25\,\unit{ms^{-1}} to 10\,\unit{ms^{-1}}.
 For low values of core cooling rate, there is a similar, positive linear relationship between cooling rate and lifetime between all regions, indicating that more intense convection leads to longer periods of cores being observed.
 However, beyond cooling rates of around 1.5\,\unit{K minute\textsuperscript{-1}} there is a peak in the core intensity--height relationship, with larger cooling rates leading to shorter lifetimes.
-This may be explained by the cores with faster cooling rates reaching their level of neutral buoyancy faster, and therefore showing cooling cloud tops for a shorter period of time.
+This may be explained that the cores with faster cooling rates reach their level of neutral buoyancy faster, and therefore show cooling cloud tops for a shorter time period.
 The inflexion in the core lifetime may also explain why there are no apparent differences in average lifetime between different regions, despite differences in other convective properties.
 
 Figure~\ref{fig:core_cooling_rate_relations}\,b shows how the minimum \acrshort{bt} changes with the maximum cooling rate of the core.
@@ -364,10 +370,10 @@ Although this continues to increase with the cooling rate, the proportional chan
 As the core lifetime can be approximated as the core \acrshort{bt} change divided by the cooling rate, the larger proportional change in cooling rate will result in a shorter lifetime for more rapidly cooling cores.
 
 By multiplying the average core lifetime by the vertical velocity estimation from the cooling rate, an estimate for the convective layer height be can found.
-For the, on average, longest lived cores with cooling rates around 1.5\,K$\mathrm{\cdot minute^{-1}}$ this results in an estimated convective layer height of 6.3\,km.
+For the longest lived cores with cooling rates around 1.5\,K$\mathrm{\cdot minute^{-1}}$ this results in an estimated convective layer height of 6.3\,km.
 Using the moist pseudo-adiabatic lapse rate a total temperature difference across the observed lifetime of these cores can be calculated as 38\,K., resulting in an average initial detection temperature of approximately 255\,K.
 For the most intense observed cores, with cooling rates greater than 3\,K$\mathrm{\cdot minute^{-1}}$ (7.5\,\unit{ms^{-1}}), the convective layer height is estimated as 11\,km, resulting in an initial temperature of 270\,K.
-While in both cases the estimate for the initial temperature of observations are above the freezing level, this still agrees with the explanation for the inflexion in the growing core lifetime proposed in the previous paragraph.
+While in both cases the estimate for the initial temperature of observations is above the freezing level, this still agrees with the explanation for the inflexion in the growing core lifetime proposed in the previous paragraph.
 Beyond a certain intensity, the lifetime of the growing phase of a convective core is constrained more by the convectively active layer height than the updraft intensity.
 
 \subsection{Diurnal cycle of convective cores}
@@ -377,7 +383,7 @@ Beyond a certain intensity, the lifetime of the growing phase of a convective co
     \centering
     \includegraphics[width=\textwidth]{figures/chapter2_11.png}
     \caption[
-    A map of average time of day of initiation of detected cores
+    A map of the average time of day of initiation of detected cores
     ]{
     The average time of day of initiation of cores observed within each 1\texttimes1\textdegree\ grid box. The time of initiation is calculated as the local solar time based on longitude, and the mean is calculated as the circular mean over a 24-hour period to account for the cyclical aspect of the hour of day.
     }
@@ -388,7 +394,7 @@ Figure~\ref{fig:core_detection_time_map}, shows the mean time of detection for c
 The most notable feature in fig.~\ref{fig:core_detection_time_map} is the strong land-sea contrast, with the majority of land regions showing convective activity occurring during the afternoon, and the majority of ocean regions showing activity before midday.
 In addition, there are a few major features of the detected time of initiation across both land and sea regions.
 In coastal regions in the Gulf of Mexico and the Caribbean Sea, earlier initiation times are seen closer to coastlines, while regions further from land have average times of detection closer to midday.
-Over the land there is also see a later time of initiation over the Northern Great Plains (90--100\,\textdegree W, 37--47\,\textdegree N).
+Over land there is also a later time of initiation over the Northern Great Plains (90--100\,\textdegree W, 37--47\,\textdegree N).
 
 % \subsubsection{Regional differences in the time of core detection}
 
@@ -411,7 +417,7 @@ Over land there is a sharp peak in convective activity initiating in the mid-aft
 Over the sea, the distribution of core detections is much more uniform across the diurnal cycle.
 There is still a peak observed in the early hours of the morning (3--6\,am), and a low in the evening (6\,pm), but the difference between these is much less pronounced than that over land.
 Both the tropics and mid-latitudes have peaks in convection at the same time as that seen for all land regions in fig.~\ref{fig:core_diurnal_land_sea}\,b.
-The peak for mid-latitudes is slightly broader however, with more convection occurring later in the day.
+The peak for mid-latitudes is slightly broader, with more convection occurring later in the day.
 
 %f
 \begin{figure}[tp]
@@ -437,7 +443,7 @@ Previous studies have found a similar bimodal distribution in convective precipi
     \caption[
     The change in average time of core detection with distance from the coastline
     ]{
-    The change in average time of core detection with distance from the coastline. Negative distances along the x axis show cores detected further to sea, and positive distances show cores detected further inland. Error bars show the circular standard error of the local solar hour of detection.
+    The change in average time of core detection with distance from the coastline. Negative distances along the x axis show cores detected further to sea, and positive distances show cores detected further inland. Error bars are not shown as the standard error of the mean is too small to be visible.
     }
     \label{fig:core_coast_effect}
 \end{figure}
@@ -457,14 +463,14 @@ Cores over land see a reduction in the variance of the time of detection between
     \caption[
     The diurnal cycle of the maximum cooling rate of cores detected over land, sea, tropics and mid-latitudes
     ]{
-    The diurnal cycle of the maximum cooling rate of cores detected over (a) sea, (b) land, (c) tropics (\textless 30\,\textdegree N) and (d) mid-latitudes (\textgreater 30\,\textdegree N). Each point shows the mean of the maximum cooling rate of cores detected during that hour. Error bars show the standard error of maximum cooling rate.
+    The diurnal cycle of the maximum cooling rate of cores detected over (a) sea, (b) land, (c) tropics (\textless 30\,\textdegree N) and (d) mid-latitudes (\textgreater 30\,\textdegree N). Each point shows the mean of the maximum cooling rate of cores detected during that hour. Error bars are not shown as the standard error of the mean is too small to be visible.
     }
     \label{fig:core_diurnal_cooling_rate}
 \end{figure}
 
 Figure~\ref{fig:core_diurnal_cooling_rate} shows how the mean maximum cooling rate of cores changes across the diurnal cycle.
-While over sea there is little change in cooling rate, over land there is a noticeable increase in the cooling rate throughout the daylight hours.
-This leads to a peak at around 4\,pm, before cooling rate falls back to its nighttime levels which are lower than that seen over ocean.
+While over the sea there is little change in cooling rate, over land there is a noticeable increase in the cooling rate throughout the daylight hours.
+This leads to a peak at around 4\,pm, before the cooling rate falls back to its nighttime levels which are lower than that seen over ocean.
 Both tropics and mid-latitudes show similar diurnal cycles to land, albeit with a difference of 0.2\,\unit{K minute\textsuperscript{-1}} across the entire diurnal cycle.
 
 
@@ -506,7 +512,7 @@ In spring (fig.~\ref{fig:anvil_distribution_map}\,d), the number of anvils obser
 \end{figure}
 
 Figure~\ref{fig:anvil_monthly_cycles} shows how the annual distribution of anvil detections changes by month across different regions.
-Similarly to the annual distribution of cores shown in fig.~\ref{fig:core_annual_land_sea} shows a later peak over oceans in August--September compared to July--August over land.
+While similar to the annual distribution of cores shown in fig.~\ref{fig:core_annual_land_sea}, it shows a later peak over oceans in August--September compared to July--August over land.
 The mid-latitudes have a sharper peak around these two months, while the tropics show a broader distribution of anvil detections throughout the year.
 
 
@@ -541,36 +547,15 @@ Over the tropics (\textless30\,\textdegree\,N) no clear overall motion of anvils
     \label{fig:anvil_properties_maps}
 \end{figure}
 
-Figure~\ref{fig:anvil_properties_maps} shows maps of the average anvil properties for maximum area (a), lifetime (b), \acrshort{bt} (c), and number of cores (d) over each 2\texttimes2\,\textdegree grid box.
-Both the anvil maximum area and lifetime increase towards the North-West corner of the domain.
+Figure~\ref{fig:anvil_properties_maps} shows maps of the average anvil properties for the maximum area (a), lifetime (b), \acrshort{bt} (c), and number of cores (d) over each 2\texttimes2\,\textdegree grid box.
+Both the anvil maximum area and lifetime increase towards the northwest corner of the domain.
 While this may be due to the tendency of \acrshort{mcs}s to initiate East of the Rocky mountains \citep{feng_spatiotemporal_2019}, it may also be a sign of a systematic bias affecting the anvil areas.
 Both the increase in average anvil area and lifetime shown in fig.~\ref{fig:anvil_properties_maps}\,a and b appear to correlate with the satellite zenith angle (fig.~\ref{fig:abi_zenith_angles}).
-As the minimum core and anvil area requirement in the detection algorithm is determined by number of pixels, the minimum area in \unit{km^2} will increase with the zenith angle.
+As the minimum core and anvil area requirement in the detection algorithm is determined by the number of pixels, the minimum area in \unit{km^2} will increase with the zenith angle.
 As the anvil lifetime tends to correlate with the maximum area, this zenith angle bias may contribute to the patterns seen in both fig.~\ref{fig:anvil_properties_maps}\,a and b.
 
-The average anvil \acrshort{bt} becomes colder towards the South-West of the domain, while the average number of cores per anvil are too variable to see any clear spatial trends.
+The average anvil \acrshort{bt} becomes colder towards the southwest of the domain, while the average number of cores per anvil are too variable to see any clear spatial trends.
 As very large \acrshort{mcs}s with many cores are both rare and large outliers, they introduce a large amount of variability into the average number of cores per anvil when gridded by the initiation location.
-
-% There is again a land--sea contrast in the Caribbean and Gulf of Mexico.
-% The most notable change is the increase in anvil area towards the North--West of the domain.
-% This correlates with the change in sensor zenith angle---and hence the area of each pixel---shown in fig.~\ref{fig:abi_zenith_angles}.
-% It is possible that there is a bias towards observing larger anvils due to the larger pixel area at larger zenith angles.
-% However, previous studies have shown that this region is where most \acrshort{mcs}s in North America originate from \citep{feng_spatiotemporal_2019} which may also explain the large average areas.
-
-% Figure~\ref{fig:anvil_properties_maps}\,b shows the average anvil lifetime (in hours) for each 2\texttimes2\,\textdegree grid box.
-% There is a similar, but smaller, trend towards longer-lived anvils in the North-West of the domain as that seen for the anvil area in fig.~\ref{fig:anvil_properties_maps}\,a.
-% In addition, there is a tendency for average lifetimes over the ocean to be shorter than adjacent land regions.
-
-% Figure~\ref{fig:anvil_properties_maps}\,c shows the average \acrshort{bt} of anvils in each grid box.
-% Increasing latitude shows an increase (warming) of \acrshort{bt} over land.
-% In addition, there is a land--sea contrast, with warmer \acrshort{bt} over sea than land.
-% The coldest average \acrshort{bt} are observed over the Western coast of Mexico.
-
-% Figure~\ref{fig:anvil_properties_maps}\,d shows the average number of cores associated with each anvil in each grid box.
-% The Caribbean shows a noticeable land--sea contrast with an increase in the average number of cores over land, indicating that there is greater organisation of convection occurring there compared to over the sea.
-% For the majority of land regions the average is reasonably noisy.
-% This is primarily due to the presence of a small number of very large systems (including \acrshort{mcs}s), which have a very large number of cores and hence introduce noise to the spatial average.
-% In addition, there is see a reduction in the average number of cores towards the edge of the map which is likely due to larger anvils being more likely to be removed from the dataset by the criteria in table~\ref{table:anvil_validity_criteria}.
 
 %f
 \begin{figure}[tp]
@@ -616,7 +601,7 @@ Figure~\ref{fig:anvil_cores_and_coverage}\,e and f show the distribution of the 
 Overall, the vast majority of anvils detected are isolated \acrshort{dcc}s with only a single core.
 For anvils with greater than five cores, the number of systems observed drops to such a level that grouping of these \acrshort{dcc}s into bins of 6--9 cores and 10 or more is performed to ensure that there is a representative sample size of each group.
 Despite making up the majority of observed \acrshort{dcc}s, single core systems only make up 12\% of the total anvil coverage.
-Instead, despite being few in number, it is the most organised \acrshort{dcc}s---those with ten or more cores---which are responsible for the majority of anvil coverage due to their large area and lifetime.
+Instead, despite being few in number, the most organised \acrshort{dcc}s with ten or more cores are responsible for the majority of anvil coverage due to their large area and lifetime.
 The large area and lifetime of these systems---seen in the long tails of those distributions in fig.~\ref{fig:anvil_properties}---compound to result in this large coverage.
 
 %f
@@ -626,7 +611,7 @@ The large area and lifetime of these systems---seen in the long tails of those d
     \caption[
     The change in the average areas, lifetimes, \acrshort{bt} and number of cores of anvils observed over sea, land, tropics and mid-latitudes.
     ]{
-    The change in the average (a) areas, (b) lifetimes, (c) \acrshort{bt} and (d) number of cores of anvils observed over sea, land, tropics and mid-latitudes. The points with no fill show the average across all \acrshort{dcc}s, whereas the points with the black fill show the average for isolated \acrshort{dcc}s (with one core) only. Error bars show the standard error of the mean.
+    The change in the average (a) areas, (b) lifetimes, (c) \acrshort{bt} and (d) number of cores of anvils observed over sea, land, tropics and mid-latitudes. The points with no fill show the average across all \acrshort{dcc}s, whereas the points with the black fill show the average for isolated \acrshort{dcc}s (with one core) only. Error bars are not shown as the standard error of the mean is too small to be visible.
     }
     \label{fig:anvil_properties_regions}
 \end{figure}
@@ -634,7 +619,15 @@ The large area and lifetime of these systems---seen in the long tails of those d
 Figure~\ref{fig:anvil_properties_regions} shows how the averages of the maximum areas, lifetimes, \acrshort{bt} and number of cores vary between different regions.
 For both isolated and multi-core convection, the average areas and lifetimes shown in fig.~\ref{fig:anvil_properties_regions}\,a and b respectively are larger over land than sea, and in the mid-latitudes than in the tropics.
 For the anvil \acrshort{bt} shown in fig.~\ref{fig:anvil_properties_regions}\,c, both the mean and minimum \acrshort{bt} of anvils is colder over land than sea, and also colder in the tropics than in the mid-latitudes.
-\acrshort{dcc}s over land tend to have more cores than those over sea, however is is clear that as these differences also apply to isolated \acrshort{dcc}s, they are connected to changes in the convective processes and anvil evolution in the different regions, rather than simply a sampling bias.
+\acrshort{dcc}s over land tend to have more cores than those over the sea.
+
+As discussed in section~\ref{sec:core_properties} regarding fig.~\ref{fig:core_region_mean_properties}, it is expected that there will be some systematic bias in these mean properties, and that this error will be covariant for land and mid-latitude, and for sea and tropics regions due to their overlap.
+For both the average maximum area and the average lifetime of anvils shown in fig.~\ref{fig:anvil_properties_regions}\,a and b, evidence of this bias is seen as both land and mid-latitude regions display larger areas and longer lifetimes than sea and tropics respectively.
+On the contrary, similarly to fig.~\ref{fig:core_region_mean_properties}\,d while anvils over land have colder mean and minimum \acrshort{bt} than those over the ocean, anvils in the tropics tend to be colder than those in the mid-latitudes.
+This both indicates that these differences are real, and are as expected as the higher tropopause in the tropics can result in colder anvil clouds.
+While a difference in the average number of cores is seen between land and ocean, little difference is seen between tropics and mid-latitudes in this regard.
+The increased tendency of anvils to have multiple cores over land may influence the other differences seen in fig.~\ref{fig:anvil_properties_regions}, as more organised \acrshort{dcc}s tend to have large areas, longer lifetimes and colder \acrshort{ctt}.
+However, these differences also apply to isolated \acrshort{dcc}s (those indicated by the black points in fig.~\ref{fig:anvil_properties_regions}), indicating that they are connected to changes in the convective processes and anvil evolution in the different regions rather than a sampling bias.
 
 \subsection{Diurnal cycle of anvils}
 
@@ -652,7 +645,7 @@ For the anvil \acrshort{bt} shown in fig.~\ref{fig:anvil_properties_regions}\,c,
 
 Figure~\ref{fig:anvil_detection_time_map} shows the average local time of day of anvil detection.
 Similar to fig.~\ref{fig:core_detection_time_map} a strong land--sea contrast is seen.
-However, over parts of the Caribbean Sea the average time of anvil detection is in the afternoon rather than in the morning, which may be linked to anvils that initiate over land but are advected over the ocean.
+However, over parts of the Caribbean Sea, the average time of anvil detection is in the afternoon rather than in the morning, which may be linked to \acrshort{dcc}s that initiate over land but have anvils which are advected over the ocean.
 There is also a later average time of detection of anvils over the \acrshort{ngp} region, although this shows less of a contrast with surrounding land regions than that of the core initiation times.
 This indicates that the second peak of core convective activity during the nighttime and early morning in fig.~\ref{fig:core_ngp_contrast} is linked to long-lived, multiple core systems including \acrshort{mcs}s, similar to what was found by \citet{feng_spatiotemporal_2019}.
 
@@ -670,7 +663,7 @@ This indicates that the second peak of core convective activity during the night
 
 In fig.~\ref{fig:anvil_diurnal_distributions} the diurnal cycles of anvil detections are plotted by region.
 The distributions generally match those seen of the core detection times shown in fig.~\ref{fig:core_diurnal_land_sea}, as the majority of the observed anvils are isolated systems.
-The diurnal cycle of anvil detections over sea is much less pronounced however, which may lead to the increased variability seen in fig.~\ref{fig:anvil_detection_time_map}.
+The diurnal cycle of anvil detections over the sea is much less pronounced however, which may lead to the increased variability seen in fig.~\ref{fig:anvil_detection_time_map}.
 When comparing the hatched areas, indicating the proportion of the distribution consisting of multi-core anvils, over land, tropics and mid-latitudes the initiation of these organised systems occurs earlier in the day compared to isolated \acrshort{dcc}s.
 
 %f
@@ -717,12 +710,12 @@ Previous research has shown that solar heating during the daytime increases the 
     \caption[
     The average age of anvils observed over sea, land, tropics and mid-latitudes throughout the diurnal cycle.
     ]{
-    The average age of anvils observed over (a) sea, (b) land, (c) tropics (\textless 30\,\textdegree N) and (d) mid-latitudes (\textgreater 30\,\textdegree N) throughout the diurnal cycle. Error bars show the standard error of the mean.
+    The average age of anvils observed over (a) sea, (b) land, (c) tropics (\textless 30\,\textdegree N) and (d) mid-latitudes (\textgreater 30\,\textdegree N) throughout the diurnal cycle. Error bars are not shown as the standard error of the mean is too small to be visible.
     }
     \label{fig:anvil_diurnal_age}
 \end{figure}
 
-The difference in the distributions of anvil initiation times and anvil observation times indicates that the lifetime and age of observed anvils changes across the diurnal cycle.
+The difference in the distributions of anvil initiation times and anvil observation times indicates that the lifetime and age of observed anvils change across the diurnal cycle.
 Figure~\ref{fig:anvil_diurnal_age} shows the average age of anvils observed during each hour of the diurnal cycle.
 The increase in the age of anvils observed over sea throughout the daytime provides further evidence for the enhancement of anvil lifetime by \acrshort{sw} radiation.
 For anvil observations over land, there is greater interaction with the diurnal cycle of convection.
@@ -738,9 +731,9 @@ By applying the \textit{tobac-flow} algorithm to five years of multi-channel \ac
 Containing approximately 1.6 million cores and 400 thousand anvils which are considered valid for analysis over their entire lifecycle, this dataset provides valuable information about their properties, distributions and lifecycle in a Lagrangian framework.
 With five-minute temporal resolution, the properties of developing convective cores can be measured accurately, and then linked to the subsequent evolution of the anvil cloud.
 
-A number of key differences in the seasonal, diurnal and regional patterns are seen for \acrshort{dcc}s across North America.
+Several key differences in the seasonal, diurnal and regional patterns are seen for \acrshort{dcc}s across North America.
 The spatial distribution of \acrshort{dcc} cores depends strongly on the seasonal cycle.
-There is a large land/sea contrast in time of initiation, which also displays a sea breeze effect which extends for approximately 200\,\unit{km} inland.
+There is a large land/sea contrast in the time of initiation, which also displays a sea breeze effect which extends for approximately 200\,\unit{km} inland.
 The properties of cores themselves, including the lifetime, cooling rate, and time of initiation, have regional dependencies, with more intense convection occurring over land during the daytime and in the tropics.
 
 These differences extend to the anvils produced by these convective cores.
